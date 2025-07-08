@@ -9,24 +9,26 @@
 <body class="bg-[#121212] text-white font-sans leading-relaxed tracking-wide">
 
   <!-- Header -->
-  <header class="flex justify-between items-center p-6 max-w-7xl mx-auto">
-    <div class="text-xl font-bold">CRAYTIVO</div>
-    <nav class="space-x-6">
-      <a href="#about" class="hover:text-[#00E0C6]">About</a>
-      <a href="#services" class="hover:text-[#00E0C6]">Services</a>
-      <a href="#portfolio" class="hover:text-[#00E0C6]">Portfolio</a>
-      <a href="#contact" class="hover:text-[#00E0C6]">Contact</a>
-    </nav>
+  <header class="sticky top-0 bg-[#121212] z-50 border-b border-gray-800">
+    <div class="flex justify-between items-center p-6 max-w-7xl mx-auto">
+      <div class="text-xl font-bold">CRAYTIVO</div>
+      <nav class="space-x-6">
+        <a href="#about" class="hover:text-[#00E0C6]">About</a>
+        <a href="#services" class="hover:text-[#00E0C6]">Services</a>
+        <a href="#portfolio" class="hover:text-[#00E0C6]">Portfolio</a>
+        <a href="#contact" class="hover:text-[#00E0C6]">Contact</a>
+      </nav>
+    </div>
   </header>
 
   <!-- Hero Section -->
   <section class="text-center py-24 px-4" id="hero">
-    <div class="text-5xl font-extrabold mb-4">Start simple. Grow bold.</div>
+    <h1 class="text-5xl font-extrabold mb-4">Start simple. Grow bold.</h1>
     <p class="text-lg max-w-xl mx-auto text-gray-300 mb-8">
-      Craytivo builds modern, scalable websites that help your business grow with clarity and impact.
+      I help business owners turn ideas into bold, high-performing websites with modern design and clear function.
     </p>
     <a href="#contact" class="bg-[#00E0C6] text-black font-semibold py-3 px-6 rounded-full hover:bg-opacity-80 transition">
-      Work With Me
+      Let’s Work Together
     </a>
   </section>
 
@@ -34,7 +36,7 @@
   <section id="about" class="py-24 px-6 max-w-5xl mx-auto">
     <h2 class="text-3xl font-bold mb-6">About</h2>
     <p class="text-gray-300">
-      Craytivo is a web development studio focused on simplicity, function, and aesthetic excellence. I help business owners turn ideas into digital products.
+      Craytivo is a solo web studio focused on clear, conversion-driven design. I create fast, modern websites that connect with your audience and grow with your business. Whether you're launching a new brand or scaling an existing one, I build what you need.
     </p>
   </section>
 
@@ -44,16 +46,28 @@
       <h2 class="text-3xl font-bold mb-10">Services</h2>
       <div class="grid md:grid-cols-3 gap-8">
         <div class="bg-[#2a2a2a] p-6 rounded-xl border border-gray-700">
-          <h3 class="font-semibold text-xl mb-2">Starter Site</h3>
-          <p class="text-gray-300">A single-page website for personal brands or small businesses.</p>
+          <h3 class="font-semibold text-xl mb-2">Starter Package</h3>
+          <ul class="text-gray-300 list-disc pl-4">
+            <li>1-page responsive site</li>
+            <li>Custom branding integration</li>
+            <li>Contact form setup</li>
+          </ul>
         </div>
         <div class="bg-[#2a2a2a] p-6 rounded-xl border border-gray-700">
-          <h3 class="font-semibold text-xl mb-2">Business Site</h3>
-          <p class="text-gray-300">Multi-page responsive site with product, service, and contact pages.</p>
+          <h3 class="font-semibold text-xl mb-2">Business Package</h3>
+          <ul class="text-gray-300 list-disc pl-4">
+            <li>Multi-page site</li>
+            <li>Service + contact pages</li>
+            <li>Performance optimization</li>
+          </ul>
         </div>
         <div class="bg-[#2a2a2a] p-6 rounded-xl border border-gray-700">
-          <h3 class="font-semibold text-xl mb-2">Custom Solutions</h3>
-          <p class="text-gray-300">Tailored development for your web apps or unique brand experience.</p>
+          <h3 class="font-semibold text-xl mb-2">Custom Development</h3>
+          <ul class="text-gray-300 list-disc pl-4">
+            <li>Fully tailored web solutions</li>
+            <li>Interactive features & animations</li>
+            <li>Built to match your growth</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -63,16 +77,25 @@
   <section id="portfolio" class="py-24 px-6 max-w-5xl mx-auto">
     <h2 class="text-3xl font-bold mb-10">Portfolio</h2>
     <div class="grid md:grid-cols-3 gap-6">
-      <div class="bg-[#1e1e1e] p-4 rounded-xl border border-gray-700">Project 1</div>
-      <div class="bg-[#1e1e1e] p-4 rounded-xl border border-gray-700">Project 2</div>
-      <div class="bg-[#1e1e1e] p-4 rounded-xl border border-gray-700">Project 3</div>
+      <div class="bg-[#1e1e1e] p-4 rounded-xl border border-gray-700">
+        <h4 class="font-semibold mb-2">SaaS Landing Page</h4>
+        <p class="text-gray-400">Modern responsive landing page for a startup, optimized for conversion.</p>
+      </div>
+      <div class="bg-[#1e1e1e] p-4 rounded-xl border border-gray-700">
+        <h4 class="font-semibold mb-2">Local Business Site</h4>
+        <p class="text-gray-400">Multi-page website for a bakery with online ordering features.</p>
+      </div>
+      <div class="bg-[#1e1e1e] p-4 rounded-xl border border-gray-700">
+        <h4 class="font-semibold mb-2">Personal Brand</h4>
+        <p class="text-gray-400">Portfolio site for a creative freelancer with blog integration.</p>
+      </div>
     </div>
   </section>
 
   <!-- Contact -->
   <section id="contact" class="py-24 px-6 bg-[#1e1e1e]">
     <div class="max-w-xl mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-6">Contact</h2>
+      <h2 class="text-3xl font-bold mb-6">Get in Touch</h2>
       <form action="https://formspree.io/f/xanokynk" method="POST" class="space-y-6">
         <input type="text" name="name" placeholder="Your Name" class="w-full bg-transparent border-b border-gray-500 focus:outline-none py-2 text-white">
         <input type="email" name="email" placeholder="Your Email" class="w-full bg-transparent border-b border-gray-500 focus:outline-none py-2 text-white">
@@ -86,6 +109,12 @@
 
   <!-- Footer -->
   <footer class="text-center text-gray-400 py-10 text-sm border-t border-gray-700">
+    <div class="mb-2">
+      <a href="#about" class="mx-2 hover:text-white">About</a>
+      <a href="#services" class="mx-2 hover:text-white">Services</a>
+      <a href="#portfolio" class="mx-2 hover:text-white">Portfolio</a>
+      <a href="#contact" class="mx-2 hover:text-white">Contact</a>
+    </div>
     &copy; 2025 Craytivo. Start simple. Grow bold.
   </footer>
 
