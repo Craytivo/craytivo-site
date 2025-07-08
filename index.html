@@ -9,17 +9,22 @@
 <body class="bg-[#121212] text-white font-sans leading-relaxed tracking-wide">
 
   <!-- Header -->
-  <header class="sticky top-0 bg-[#121212] z-50 border-b border-gray-800">
-    <div class="flex justify-between items-center p-6 max-w-7xl mx-auto">
-      <div class="text-xl font-bold">CRAYTIVO</div>
-      <nav class="space-x-6">
-        <a href="#about" class="hover:text-[#00E0C6]">About</a>
-        <a href="#services" class="hover:text-[#00E0C6]">Services</a>
-        <a href="#portfolio" class="hover:text-[#00E0C6]">Portfolio</a>
-        <a href="#contact" class="hover:text-[#00E0C6]">Contact</a>
-      </nav>
+  <header class="sticky top-0 z-50 bg-[#121212]/80 backdrop-blur-md border-b border-gray-800 shadow-sm">
+  <div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
+    <div class="flex items-center space-x-3">
+      <img src="/logo-icon.svg" alt="Craytivo Logo" class="w-6 h-6">
+      <span class="text-xl font-bold tracking-wide">CRAYTIVO</span>
     </div>
-  </header>
+    <nav class="space-x-6 hidden md:flex">
+      <a href="#about" class="hover:text-[#00E0C6] transition">About</a>
+      <a href="#services" class="hover:text-[#00E0C6] transition">Services</a>
+      <a href="#portfolio" class="hover:text-[#00E0C6] transition">Portfolio</a>
+      <a href="#contact" class="hover:text-[#00E0C6] transition">Contact</a>
+    </nav>
+    <a href=\"#contact\" class=\"hidden md:inline-block bg-[#00E0C6] text-black text-sm px-4 py-2 rounded-full hover:bg-opacity-80 transition\">Hire Me</a>
+  </div>
+</header>
+
 
   <!-- Hero Section -->
   <section class="text-center py-24 px-4" id="hero">
