@@ -4,32 +4,41 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Craytivo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Montserrat', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
 </head>
 <body class="bg-[#121212] text-white font-sans leading-relaxed tracking-wide">
 
   <!-- Header -->
-  <header class="sticky top-0 z-50 bg-[#121212]/80 backdrop-blur-md border-b border-gray-800 shadow-sm">
-  <div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
-    <div class="flex items-center space-x-3">
-      <img src="assets\ChatGPT Image Jul 7, 2025, 10_19_01 PM.png" alt="Craytivo Logo" class="w-6 h-6">
-      <span class="text-xl font-bold tracking-wide">CRAYTIVO</span>
+  <header class="sticky top-0 bg-[#121212]/80 backdrop-blur-md z-50 border-b border-gray-800 shadow-sm">
+    <div class="flex justify-between items-center p-6 max-w-7xl mx-auto">
+      <div class="flex items-center space-x-4">
+        <img src="assets/logo-no-text.png" alt="Craytivo Logo" class="w-36">
+      </div>
+      <nav class="space-x-6">
+        <a href="#about" class="hover:text-[#00E0C6]">About</a>
+        <a href="#services" class="hover:text-[#00E0C6]">Services</a>
+        <a href="#portfolio" class="hover:text-[#00E0C6]">Portfolio</a>
+        <a href="#contact" class="hover:text-[#00E0C6]">Contact</a>
+      </nav>
     </div>
-    <nav class="space-x-6 hidden md:flex">
-      <a href="#about" class="hover:text-[#00E0C6] transition">About</a>
-      <a href="#services" class="hover:text-[#00E0C6] transition">Services</a>
-      <a href="#portfolio" class="hover:text-[#00E0C6] transition">Portfolio</a>
-      <a href="#contact" class="hover:text-[#00E0C6] transition">Contact</a>
-    </nav>
-    <a href=\"#contact\" class=\"hidden md:inline-block bg-[#00E0C6] text-black text-sm px-4 py-2 rounded-full hover:bg-opacity-80 transition\">Hire Me</a>
-  </div>
-</header>
-
+  </header>
 
   <!-- Hero Section -->
   <section class="text-center py-24 px-4" id="hero">
-    <h1 class="text-5xl font-extrabold mb-4">Start simple. Grow bold.</h1>
-    <p class="text-lg max-w-xl mx-auto text-gray-300 mb-8">
+    <h1 class="text-5xl font-extrabold uppercase mb-4">Start simple. Grow bold.</h1>
+    <p class="text-lg max-w-xl mx-auto text-gray-300 mb-8 font-medium">
       I help business owners turn ideas into bold, high-performing websites with modern design and clear function.
     </p>
     <a href="#contact" class="bg-[#00E0C6] text-black font-semibold py-3 px-6 rounded-full hover:bg-opacity-80 transition">
