@@ -6,6 +6,8 @@
   <title>Craytivo</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <script>
     tailwind.config = {
       theme: {
@@ -13,10 +15,20 @@
           fontFamily: {
             sans: ['Montserrat', 'sans-serif'],
           },
+          colors: {
+            crayYellow: '#FFD644',
+            crayTeal: '#00E0C6',
+            crayRed: '#E94F37',
+          }
         },
       },
     };
   </script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
 </head>
 <body class="bg-[#121212] text-white font-sans leading-relaxed tracking-wide">
 
@@ -24,63 +36,58 @@
   <header class="sticky top-0 bg-[#121212]/80 backdrop-blur-md z-50 border-b border-gray-800 shadow-sm">
     <div class="flex justify-between items-center py-2 px-6 max-w-7xl mx-auto">
       <div class="flex items-center space-x-4">
-        <img src="assets/logo-no-text.png" alt="Craytivo Logo" class="w-16">
-        <span class="text-lg font-extrabold tracking-wide uppercase">Craytivo</span>
+        <img src="assets/logo-no-text.png" alt="Craytivo Logo" class="w-20">
+        <span class="text-xl font-extrabold tracking-wide uppercase">Craytivo</span>
+      </div>
+      <div class="md:hidden">
+        <button id="menu-toggle" class="focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
       </div>
       <nav class="hidden md:flex space-x-6 text-sm">
-        <a href="#about" class="hover:text-[#00E0C6]">About</a>
-        <a href="#services" class="hover:text-[#00E0C6]">Services</a>
-        <a href="#pricing" class="hover:text-[#00E0C6]">Pricing</a>
-        <a href="#portfolio" class="hover:text-[#00E0C6]">Portfolio</a>
-        <a href="#contact" class="hover:text-[#00E0C6]">Contact</a>
+        <a href="#about" class="hover:text-crayTeal">About</a>
+        <a href="#services" class="hover:text-crayTeal">Services</a>
+        <a href="#pricing" class="hover:text-crayTeal">Pricing</a>
+        <a href="#portfolio" class="hover:text-crayTeal">Portfolio</a>
+        <a href="#contact" class="hover:text-crayTeal">Contact</a>
       </nav>
-      <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-      </button>
     </div>
-    <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-2">
-      <a href="#about" class="block hover:text-[#00E0C6]">About</a>
-      <a href="#services" class="block hover:text-[#00E0C6]">Services</a>
-      <a href="#pricing" class="block hover:text-[#00E0C6]">Pricing</a>
-      <a href="#portfolio" class="block hover:text-[#00E0C6]">Portfolio</a>
-      <a href="#contact" class="block hover:text-[#00E0C6]">Contact</a>
+    <div id="mobile-menu" class="hidden px-6 pb-4 md:hidden">
+      <a href="#about" class="block py-1 text-sm hover:text-crayTeal">About</a>
+      <a href="#services" class="block py-1 text-sm hover:text-crayTeal">Services</a>
+      <a href="#pricing" class="block py-1 text-sm hover:text-crayTeal">Pricing</a>
+      <a href="#portfolio" class="block py-1 text-sm hover:text-crayTeal">Portfolio</a>
+      <a href="#contact" class="block py-1 text-sm hover:text-crayTeal">Contact</a>
     </div>
   </header>
 
-  <script>
-    document.getElementById('mobile-menu-button').addEventListener('click', function () {
-      const menu = document.getElementById('mobile-menu');
-      menu.classList.toggle('hidden');
-    });
-  </script>
-
   <!-- Hero Section -->
   <section class="text-center py-24 px-4" id="hero">
-    <h1 class="text-5xl font-extrabold uppercase mb-4">Start simple. Grow bold.</h1>
-    <p class="text-lg max-w-xl mx-auto text-gray-300 mb-8 font-medium">
+    <h1 class="text-5xl font-extrabold uppercase mb-4" data-aos="fade-up">Start simple. <span class="text-crayYellow">Grow bold.</span></h1>
+    <p class="text-lg max-w-xl mx-auto text-gray-300 mb-8 font-medium" data-aos="fade-up" data-aos-delay="100">
       I help business owners turn ideas into bold, high-performing websites with modern design and clear function.
     </p>
-    <a href="#contact" class="bg-[#00E0C6] text-black font-semibold py-3 px-6 rounded-full hover:bg-opacity-80 transition">
+    <a href="#contact" class="bg-crayTeal text-black font-semibold py-3 px-6 rounded-full hover:bg-opacity-80 transition" data-aos="zoom-in" data-aos-delay="200">
       Let’s Work Together
     </a>
   </section>
 
   <!-- About -->
-  <section id="about" class="py-24 px-6 max-w-5xl mx-auto">
-    <h2 class="text-3xl font-bold mb-6">About</h2>
+  <section id="about" class="py-24 px-6 max-w-5xl mx-auto" data-aos="fade-up">
+    <h2 class="text-3xl font-bold mb-6 text-crayYellow">About</h2>
     <p class="text-gray-300">
       Craytivo is a solo web studio focused on clear, conversion-driven design. I create fast, modern websites that connect with your audience and grow with your business. Whether you're launching a new brand or scaling an existing one, I build what you need.
     </p>
   </section>
 
   <!-- Services -->
-  <section id="services" class="py-24 px-6 bg-[#1e1e1e]">
+  <section id="services" class="py-24 px-6 bg-[#1e1e1e]" data-aos="fade-up">
     <div class="max-w-5xl mx-auto">
-      <h2 class="text-3xl font-bold mb-10">Services</h2>
+      <h2 class="text-3xl font-bold mb-10 text-crayYellow">Services</h2>
       <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-[#2a2a2a] p-6 rounded-xl border border-gray-700">
+        <div class="bg-[#2a2a2a] p-6 rounded-xl border border-crayTeal" data-aos="fade-up">
           <h3 class="font-semibold text-xl mb-2">Starter Package</h3>
           <ul class="text-gray-300 list-disc pl-4">
             <li>1-page responsive site</li>
@@ -88,7 +95,7 @@
             <li>Contact form setup</li>
           </ul>
         </div>
-        <div class="bg-[#2a2a2a] p-6 rounded-xl border border-gray-700">
+        <div class="bg-[#2a2a2a] p-6 rounded-xl border border-crayYellow" data-aos="fade-up" data-aos-delay="100">
           <h3 class="font-semibold text-xl mb-2">Business Package</h3>
           <ul class="text-gray-300 list-disc pl-4">
             <li>Multi-page site</li>
@@ -96,7 +103,7 @@
             <li>Performance optimization</li>
           </ul>
         </div>
-        <div class="bg-[#2a2a2a] p-6 rounded-xl border border-gray-700">
+        <div class="bg-[#2a2a2a] p-6 rounded-xl border border-crayRed" data-aos="fade-up" data-aos-delay="200">
           <h3 class="font-semibold text-xl mb-2">Custom Development</h3>
           <ul class="text-gray-300 list-disc pl-4">
             <li>Fully tailored web solutions</li>
@@ -108,81 +115,15 @@
     </div>
   </section>
 
-  <!-- Pricing -->
-  <section id="pricing" class="py-24 px-6 max-w-5xl mx-auto">
-    <h2 class="text-3xl font-bold mb-10">Pricing</h2>
-    <div class="grid md:grid-cols-3 gap-8">
-      <div class="bg-[#2a2a2a] p-6 rounded-xl border border-gray-700">
-        <h3 class="font-semibold text-xl mb-2">Starter Package – $120</h3>
-        <ul class="text-gray-300 list-disc pl-4">
-          <li>1-page responsive site</li>
-          <li>Custom branding</li>
-          <li>Basic contact form</li>
-        </ul>
-      </div>
-      <div class="bg-[#2a2a2a] p-6 rounded-xl border border-gray-700">
-        <h3 class="font-semibold text-xl mb-2">Business Package – $220</h3>
-        <ul class="text-gray-300 list-disc pl-4">
-          <li>Up to 5 pages</li>
-          <li>Contact & service pages</li>
-          <li>Performance optimization</li>
-        </ul>
-      </div>
-      <div class="bg-[#2a2a2a] p-6 rounded-xl border border-gray-700">
-        <h3 class="font-semibold text-xl mb-2">Custom Development – from $300</h3>
-        <ul class="text-gray-300 list-disc pl-4">
-          <li>Custom features & layout</li>
-          <li>Interactive design</li>
-          <li>Consultation included</li>
-        </ul>
-      </div>
-    </div>
-    <div class="mt-12">
-      <h4 class="text-2xl font-semibold mb-4">Optional Add-Ons</h4>
-      <ul class="text-gray-300 list-disc pl-6">
-        <li>Logo design – $40</li>
-        <li>Email integration – $30</li>
-        <li>SEO optimization – $50</li>
-        <li>Google Analytics setup – $25</li>
-        <li>Monthly maintenance (optional) – $20/month</li>
-        <li>Hosting & domain setup – $30</li>
-      </ul>
-    </div>
-  </section>
+  <!-- Add JS & Init AOS -->
+  <script>
+    AOS.init();
 
-  <!-- Portfolio -->
-  <section id="portfolio" class="py-24 px-6 max-w-5xl mx-auto">
-    <h2 class="text-3xl font-bold mb-10">Portfolio</h2>
-    <p class="text-gray-400 text-sm">Coming soon — real projects from real clients.</p>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="py-24 px-6 bg-[#1e1e1e]">
-    <div class="max-w-xl mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-6">Get in Touch</h2>
-      <form action="https://formspree.io/f/xanokynk" method="POST" class="space-y-6">
-        <input type="text" name="name" placeholder="Your Name" class="w-full bg-transparent border-b border-gray-500 focus:outline-none py-2 text-white">
-        <input type="email" name="email" placeholder="Your Email" class="w-full bg-transparent border-b border-gray-500 focus:outline-none py-2 text-white">
-        <textarea name="message" rows="4" placeholder="Your Message" class="w-full bg-transparent border-b border-gray-500 focus:outline-none py-2 text-white"></textarea>
-        <button type="submit" class="bg-[#FFD644] text-black font-semibold py-2 px-6 rounded-full hover:bg-opacity-80 transition">
-          Send Message
-        </button>
-      </form>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="text-center text-gray-400 py-10 text-sm border-t border-gray-700">
-    <div class="mb-2">
-      <a href="#about" class="mx-2 hover:text-white">About</a>
-      <a href="#services" class="mx-2 hover:text-white">Services</a>
-      <a href="#pricing" class="mx-2 hover:text-white">Pricing</a>
-      <a href="#portfolio" class="mx-2 hover:text-white">Portfolio</a>
-      <a href="#contact" class="mx-2 hover:text-white">Contact</a>
-    </div>
-    &copy; 2025 Craytivo. Start simple. Grow bold.
-  </footer>
-
+    const toggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    toggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
 </body>
 </html>
-
