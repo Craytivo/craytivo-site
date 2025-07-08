@@ -1,11 +1,93 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Craytivo</title>
-  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <h1>Welcome to Craytivo!</h1>
-  <p>This is your live Netlify-powered site.</p>
+<body class="bg-[#121212] text-white font-sans leading-relaxed tracking-wide">
+
+  <!-- Header -->
+  <header class="flex justify-between items-center p-6 max-w-7xl mx-auto">
+    <div class="text-xl font-bold">CRAYTIVO</div>
+    <nav class="space-x-6">
+      <a href="#about" class="hover:text-[#00E0C6]">About</a>
+      <a href="#services" class="hover:text-[#00E0C6]">Services</a>
+      <a href="#portfolio" class="hover:text-[#00E0C6]">Portfolio</a>
+      <a href="#contact" class="hover:text-[#00E0C6]">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="text-center py-24 px-4" id="hero">
+    <div class="text-5xl font-extrabold mb-4">Start simple. Grow bold.</div>
+    <p class="text-lg max-w-xl mx-auto text-gray-300 mb-8">
+      Craytivo builds modern, scalable websites that help your business grow with clarity and impact.
+    </p>
+    <a href="#contact" class="bg-[#00E0C6] text-black font-semibold py-3 px-6 rounded-full hover:bg-opacity-80 transition">
+      Work With Me
+    </a>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-24 px-6 max-w-5xl mx-auto">
+    <h2 class="text-3xl font-bold mb-6">About</h2>
+    <p class="text-gray-300">
+      Craytivo is a web development studio focused on simplicity, function, and aesthetic excellence. I help business owners turn ideas into digital products.
+    </p>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="py-24 px-6 bg-[#1e1e1e]">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl font-bold mb-10">Services</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-[#2a2a2a] p-6 rounded-xl border border-gray-700">
+          <h3 class="font-semibold text-xl mb-2">Starter Site</h3>
+          <p class="text-gray-300">A single-page website for personal brands or small businesses.</p>
+        </div>
+        <div class="bg-[#2a2a2a] p-6 rounded-xl border border-gray-700">
+          <h3 class="font-semibold text-xl mb-2">Business Site</h3>
+          <p class="text-gray-300">Multi-page responsive site with product, service, and contact pages.</p>
+        </div>
+        <div class="bg-[#2a2a2a] p-6 rounded-xl border border-gray-700">
+          <h3 class="font-semibold text-xl mb-2">Custom Solutions</h3>
+          <p class="text-gray-300">Tailored development for your web apps or unique brand experience.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio -->
+  <section id="portfolio" class="py-24 px-6 max-w-5xl mx-auto">
+    <h2 class="text-3xl font-bold mb-10">Portfolio</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-[#1e1e1e] p-4 rounded-xl border border-gray-700">Project 1</div>
+      <div class="bg-[#1e1e1e] p-4 rounded-xl border border-gray-700">Project 2</div>
+      <div class="bg-[#1e1e1e] p-4 rounded-xl border border-gray-700">Project 3</div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-24 px-6 bg-[#1e1e1e]">
+    <div class="max-w-xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-6">Contact</h2>
+      <form action="https://formspree.io/f/xanokynk" method="POST" class="space-y-6">
+        <input type="text" name="name" placeholder="Your Name" class="w-full bg-transparent border-b border-gray-500 focus:outline-none py-2 text-white">
+        <input type="email" name="email" placeholder="Your Email" class="w-full bg-transparent border-b border-gray-500 focus:outline-none py-2 text-white">
+        <textarea name="message" rows="4" placeholder="Your Message" class="w-full bg-transparent border-b border-gray-500 focus:outline-none py-2 text-white"></textarea>
+        <button type="submit" class="bg-[#FFD644] text-black font-semibold py-2 px-6 rounded-full hover:bg-opacity-80 transition">
+          Send Message
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center text-gray-400 py-10 text-sm border-t border-gray-700">
+    &copy; 2025 Craytivo. Start simple. Grow bold.
+  </footer>
+
 </body>
 </html>
