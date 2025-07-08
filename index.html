@@ -115,15 +115,90 @@
     </div>
   </section>
 
-  <!-- Add JS & Init AOS -->
-  <script>
-    AOS.init();
+  <!-- Pricing -->
+<section id="pricing" class="py-24 px-6" data-aos="fade-up">
+  <div class="max-w-5xl mx-auto">
+    <h2 class="text-3xl font-bold mb-10 text-crayYellow">Pricing</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-[#2a2a2a] p-6 rounded-xl border border-crayTeal">
+        <h3 class="text-xl font-bold mb-2">Starter</h3>
+        <p class="text-crayTeal text-2xl font-semibold mb-4">$80</p>
+        <ul class="text-gray-300 list-disc pl-5 space-y-1">
+          <li>1-page site</li>
+          <li>Basic contact form</li>
+          <li>Mobile optimization</li>
+        </ul>
+      </div>
+      <div class="bg-[#2a2a2a] p-6 rounded-xl border border-crayYellow">
+        <h3 class="text-xl font-bold mb-2">Business</h3>
+        <p class="text-crayYellow text-2xl font-semibold mb-4">$180</p>
+        <ul class="text-gray-300 list-disc pl-5 space-y-1">
+          <li>Multi-page site</li>
+          <li>Basic SEO</li>
+          <li>Custom contact + service pages</li>
+        </ul>
+      </div>
+      <div class="bg-[#2a2a2a] p-6 rounded-xl border border-crayRed">
+        <h3 class="text-xl font-bold mb-2">Custom</h3>
+        <p class="text-crayRed text-2xl font-semibold mb-4">Starting at $250</p>
+        <ul class="text-gray-300 list-disc pl-5 space-y-1">
+          <li>Custom features</li>
+          <li>Advanced animations</li>
+          <li>High-performance design</li>
+        </ul>
+      </div>
+    </div>
+    <div class="mt-10">
+      <h4 class="text-xl font-semibold text-white mb-4">Optional Add-ons:</h4>
+      <ul class="text-gray-300 list-disc pl-5 space-y-1">
+        <li>Copywriting: $40</li>
+        <li>Brand Kit Design: $50</li>
+        <li>Ongoing Updates & Maintenance: $25/mo</li>
+        <li>Google Analytics Integration: $20</li>
+        <li>Domain Setup Assistance: $15</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
-    const toggle = document.getElementById('menu-toggle');
-    const mobileMenu = document.getElementById('mobile-menu');
-    toggle.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
-  </script>
+<!-- Portfolio -->
+<section id="portfolio" class="py-24 px-6 bg-[#1e1e1e]" data-aos="fade-up">
+  <div class="max-w-5xl mx-auto text-center">
+    <h2 class="text-3xl font-bold text-crayYellow mb-6">Portfolio</h2>
+    <p class="text-gray-300 mb-6">My work speaks for itself. Soon you'll see a showcase of previous projects here.</p>
+    <div class="rounded-lg border border-dashed border-gray-600 p-10 text-gray-500">
+      Coming soon...
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="py-24 px-6" data-aos="fade-up">
+  <div class="max-w-2xl mx-auto text-center">
+    <h2 class="text-3xl font-bold text-crayYellow mb-6">Contact</h2>
+    <p class="text-gray-300 mb-8">Have a project in mind or questions about working together? Send a message below.</p>
+    <form class="space-y-4">
+      <input type="text" placeholder="Your Name" class="w-full px-4 py-3 rounded bg-[#1e1e1e] border border-gray-600 text-white" required>
+      <input type="email" placeholder="Your Email" class="w-full px-4 py-3 rounded bg-[#1e1e1e] border border-gray-600 text-white" required>
+      <textarea rows="5" placeholder="Your Message" class="w-full px-4 py-3 rounded bg-[#1e1e1e] border border-gray-600 text-white" required></textarea>
+      <button type="submit" class="bg-crayTeal text-black font-semibold px-6 py-3 rounded hover:bg-opacity-80 transition">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-[#121212] border-t border-gray-700 py-6 text-center text-gray-500 text-sm">
+  <div>&copy; 2025 Craytivo. Built with purpose.</div>
+</footer>
+
+<script>
+  AOS.init();
+  const toggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  toggle.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+</script>
+
 </body>
 </html>
