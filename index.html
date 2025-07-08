@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Craytivo</title>
+  <link rel="icon" type="image/png" href="/assets/favicon.png">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -22,24 +23,36 @@
 
   <!-- Header -->
   <header class="sticky top-0 bg-[#121212]/80 backdrop-blur-md z-50 border-b border-gray-800 shadow-sm">
-    <div class="flex justify-between items-center py-3 px-6 max-w-7xl mx-auto">
-      <div class="flex items-center space-x-4">
-        <img src="assets/logo-no-text.png" alt="Craytivo Logo" class="w-20">
-        <span class="text-xl font-extrabold tracking-wide uppercase">Craytivo</span>
+    <div class="flex justify-between items-center py-2 px-6 max-w-7xl mx-auto">
+      <div class="flex items-center space-x-3">
+        <img src="assets/logo-no-text.png" alt="Craytivo Logo" class="w-16">
+        <span class="text-lg font-extrabold tracking-wide uppercase">Craytivo</span>
       </div>
-      <nav class="space-x-6 text-sm">
+      <nav class="hidden md:flex space-x-6 text-sm">
         <a href="#about" class="hover:text-[#00E0C6]">About</a>
         <a href="#services" class="hover:text-[#00E0C6]">Services</a>
         <a href="#pricing" class="hover:text-[#00E0C6]">Pricing</a>
-        <a href="#portfolio" class="hover:text-[#00E0C6]">Portfolio</a>
         <a href="#contact" class="hover:text-[#00E0C6]">Contact</a>
       </nav>
+      <div class="md:hidden">
+        <button id="menu-btn" class="text-white focus:outline-none">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+      <a href="#about" class="block py-2 hover:text-[#00E0C6]">About</a>
+      <a href="#services" class="block py-2 hover:text-[#00E0C6]">Services</a>
+      <a href="#pricing" class="block py-2 hover:text-[#00E0C6]">Pricing</a>
+      <a href="#contact" class="block py-2 hover:text-[#00E0C6]">Contact</a>
     </div>
   </header>
 
   <!-- Hero Section -->
   <section class="text-center py-24 px-4" id="hero">
-    <h1 class="text-4xl font-extrabold uppercase mb-4">Start simple. <span class="text-[#00E0C6]">Grow bold.</span></h1>
+    <h1 class="text-5xl font-extrabold uppercase mb-4">Start simple. Grow bold.</h1>
     <p class="text-lg max-w-xl mx-auto text-gray-300 mb-8 font-medium">
       I help business owners turn ideas into bold, high-performing websites with modern design and clear function.
     </p>
@@ -61,7 +74,7 @@
     <div class="max-w-5xl mx-auto">
       <h2 class="text-3xl font-bold mb-10">Services</h2>
       <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-[#2a2a2a] p-6 rounded-xl border-t-4 border-[#00E0C6]">
+        <div class="bg-[#2a2a2a] p-6 rounded-xl border border-gray-700">
           <h3 class="font-semibold text-xl mb-2">Starter Package</h3>
           <ul class="text-gray-300 list-disc pl-4">
             <li>1-page responsive site</li>
@@ -69,7 +82,7 @@
             <li>Contact form setup</li>
           </ul>
         </div>
-        <div class="bg-[#2a2a2a] p-6 rounded-xl border-t-4 border-[#FFD644]">
+        <div class="bg-[#2a2a2a] p-6 rounded-xl border border-gray-700">
           <h3 class="font-semibold text-xl mb-2">Business Package</h3>
           <ul class="text-gray-300 list-disc pl-4">
             <li>Multi-page site</li>
@@ -77,7 +90,7 @@
             <li>Performance optimization</li>
           </ul>
         </div>
-        <div class="bg-[#2a2a2a] p-6 rounded-xl border-t-4 border-[#FF5C8A]">
+        <div class="bg-[#2a2a2a] p-6 rounded-xl border border-gray-700">
           <h3 class="font-semibold text-xl mb-2">Custom Development</h3>
           <ul class="text-gray-300 list-disc pl-4">
             <li>Fully tailored web solutions</li>
@@ -91,97 +104,34 @@
 
   <!-- Pricing -->
   <section id="pricing" class="py-24 px-6 max-w-5xl mx-auto">
-    <h2 class="text-3xl font-bold mb-10 text-center">Pricing</h2>
-    <div class="grid md:grid-cols-3 gap-8 text-sm">
+    <h2 class="text-3xl font-bold mb-10">Pricing</h2>
+    <div class="grid md:grid-cols-3 gap-8">
       <div class="bg-[#2a2a2a] p-6 rounded-xl border border-gray-700">
-        <h3 class="text-xl font-semibold mb-2">Starter – $120 USD</h3>
-        <ul class="text-gray-300 list-disc pl-4">
+        <h3 class="font-semibold text-xl mb-4">Starter - $100</h3>
+        <p class="text-gray-300 mb-4">Perfect for individuals and small projects.</p>
+        <ul class="text-gray-400 list-disc pl-5">
           <li>1-page responsive site</li>
-          <li>Branded styling</li>
           <li>Contact form</li>
-          <li>Mobile-ready</li>
-          <li>5–7 day delivery</li>
         </ul>
       </div>
       <div class="bg-[#2a2a2a] p-6 rounded-xl border border-gray-700">
-        <h3 class="text-xl font-semibold mb-2">Business – $350 USD</h3>
-        <ul class="text-gray-300 list-disc pl-4">
-          <li>3–5 responsive pages</li>
-          <li>SEO & speed optimization</li>
-          <li>Google indexing</li>
-          <li>WhatsApp/email integration</li>
-          <li>7–10 day delivery</li>
+        <h3 class="font-semibold text-xl mb-4">Business - $200</h3>
+        <p class="text-gray-300 mb-4">For growing businesses that need more pages.</p>
+        <ul class="text-gray-400 list-disc pl-5">
+          <li>Up to 5 pages</li>
+          <li>Performance optimization</li>
         </ul>
       </div>
       <div class="bg-[#2a2a2a] p-6 rounded-xl border border-gray-700">
-        <h3 class="text-xl font-semibold mb-2">Custom – from $700 USD</h3>
-        <ul class="text-gray-300 list-disc pl-4">
-          <li>Fully custom design</li>
-          <li>CMS or dynamic features</li>
-          <li>Animations or blog/store</li>
-          <li>Includes revisions</li>
-          <li>Flexible timeline</li>
+        <h3 class="font-semibold text-xl mb-4">Add-ons</h3>
+        <ul class="text-gray-400 list-disc pl-5">
+          <li>Logo design - $40</li>
+          <li>Domain setup - $25</li>
+          <li>Analytics - $25</li>
+          <li>SEO - $25</li>
         </ul>
       </div>
     </div>
-
-    <div class="mt-12">
-      <h3 class="text-2xl font-semibold mb-4 text-center">Optional Add-Ons</h3>
-      <div class="overflow-x-auto">
-        <table class="table-auto w-full text-left text-gray-300 text-sm border-collapse">
-          <thead>
-            <tr class="text-white border-b border-gray-700">
-              <th class="py-2 px-4">Add-On</th>
-              <th class="py-2 px-4">Price (USD)</th>
-              <th class="py-2 px-4">Details</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="border-b border-gray-800">
-              <td class="py-2 px-4">Logo Design</td>
-              <td class="py-2 px-4">$50</td>
-              <td class="py-2 px-4">Simple, professional logo tailored to your brand</td>
-            </tr>
-            <tr class="border-b border-gray-800">
-              <td class="py-2 px-4">Domain + Hosting Setup</td>
-              <td class="py-2 px-4">$30</td>
-              <td class="py-2 px-4">Setup and connect your domain, email, and hosting</td>
-            </tr>
-            <tr class="border-b border-gray-800">
-              <td class="py-2 px-4">Social Media Integration</td>
-              <td class="py-2 px-4">$20</td>
-              <td class="py-2 px-4">Embed social links, chat buttons, or feeds</td>
-            </tr>
-            <tr class="border-b border-gray-800">
-              <td class="py-2 px-4">Copywriting Assistance</td>
-              <td class="py-2 px-4">$40</td>
-              <td class="py-2 px-4">Help writing content for key pages</td>
-            </tr>
-            <tr class="border-b border-gray-800">
-              <td class="py-2 px-4">Google Analytics</td>
-              <td class="py-2 px-4">$15</td>
-              <td class="py-2 px-4">Track traffic and user behavior</td>
-            </tr>
-            <tr class="border-b border-gray-800">
-              <td class="py-2 px-4">Monthly Website Updates</td>
-              <td class="py-2 px-4">$20/mo</td>
-              <td class="py-2 px-4">Small updates and maintenance</td>
-            </tr>
-            <tr>
-              <td class="py-2 px-4">Express Delivery</td>
-              <td class="py-2 px-4">+25%</td>
-              <td class="py-2 px-4">Faster turnaround for urgent needs</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </section>
-
-  <!-- Portfolio -->
-  <section id="portfolio" class="py-24 px-6 max-w-5xl mx-auto">
-    <h2 class="text-3xl font-bold mb-10">Portfolio</h2>
-    <p class="text-gray-400">Portfolio samples coming soon. Check back for updates or get in touch to request examples.</p>
   </section>
 
   <!-- Contact -->
@@ -189,9 +139,9 @@
     <div class="max-w-xl mx-auto text-center">
       <h2 class="text-3xl font-bold mb-6">Get in Touch</h2>
       <form action="https://formspree.io/f/xanokynk" method="POST" class="space-y-6">
-        <input type="text" name="name" placeholder="Your Name" class="w-full bg-transparent border-b border-gray-500 focus:outline-none py-2 text-white">
-        <input type="email" name="email" placeholder="Your Email" class="w-full bg-transparent border-b border-gray-500 focus:outline-none py-2 text-white">
-        <textarea name="message" rows="4" placeholder="Your Message" class="w-full bg-transparent border-b border-gray-500 focus:outline-none py-2 text-white"></textarea>
+        <input type="text" name="name" placeholder="Your Name" required class="w-full bg-transparent border-b border-gray-500 focus:outline-none py-2 text-white">
+        <input type="email" name="email" placeholder="Your Email" required class="w-full bg-transparent border-b border-gray-500 focus:outline-none py-2 text-white">
+        <textarea name="message" rows="4" placeholder="Your Message" required class="w-full bg-transparent border-b border-gray-500 focus:outline-none py-2 text-white"></textarea>
         <button type="submit" class="bg-[#FFD644] text-black font-semibold py-2 px-6 rounded-full hover:bg-opacity-80 transition">
           Send Message
         </button>
@@ -205,11 +155,15 @@
       <a href="#about" class="mx-2 hover:text-white">About</a>
       <a href="#services" class="mx-2 hover:text-white">Services</a>
       <a href="#pricing" class="mx-2 hover:text-white">Pricing</a>
-      <a href="#portfolio" class="mx-2 hover:text-white">Portfolio</a>
       <a href="#contact" class="mx-2 hover:text-white">Contact</a>
     </div>
     &copy; 2025 Craytivo. Start simple. Grow bold.
   </footer>
 
+  <script>
+    document.getElementById('menu-btn').addEventListener('click', () => {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+  </script>
 </body>
 </html>
