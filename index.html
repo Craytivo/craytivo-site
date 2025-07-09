@@ -93,30 +93,24 @@
 </header>
 
 <!-- Hero Section -->
-<section id="hero" class="relative h-[80vh] flex items-center justify-center text-center px-4 bg-gradient-to-br from-[#121212] via-[#1e1e1e] to-[#121212] overflow-hidden">
-  <!-- Decorative background SVG (optional) -->
-  <svg class="absolute top-0 left-0 w-[600px] opacity-10 blur-xl pointer-events-none" viewBox="0 0 600 600">
-    <circle cx="300" cy="300" r="300" fill="#00E0C6" />
-  </svg>
-
-  <div class="relative z-10 max-w-2xl mx-auto">
-    <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold uppercase leading-tight mb-4" data-aos="fade-up">
-      Start Simple.<br><span class="bg-gradient-to-r from-crayYellow via-crayTeal to-crayRed bg-clip-text text-transparent">Grow Bold.</span>
+<section class="relative h-[80vh] flex flex-col justify-center items-center text-center px-4 py-6 bg-[#121212]" id="hero">
+  <div class="max-w-xl mx-auto z-10 relative">
+    <h1 class="text-4xl sm:text-5xl font-extrabold uppercase mb-4 leading-tight" data-aos="fade-up">
+      Start simple. <span class="text-crayYellow">Grow bold.</span>
     </h1>
-
-    <p class="text-gray-300 text-base sm:text-lg font-medium mb-6" data-aos="fade-up" data-aos-delay="100">
-      Websites built to convert. I help business owners like you turn bold ideas into sleek, high-performance websites — fast.
+    <p class="text-base sm:text-lg text-gray-300 font-medium mb-6" data-aos="fade-up" data-aos-delay="100">
+      I help business owners turn ideas into bold, high-performing websites with modern design and clear function.
     </p>
-
-    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center" data-aos="zoom-in" data-aos-delay="200">
-      <a href="#contact" class="bg-crayTeal text-black font-semibold py-3 px-6 rounded-full shadow-lg hover:bg-opacity-90 transition duration-300 hover:scale-105">
-        Let’s Work Together
-      </a>
-      <a href="#pricing" class="text-crayTeal border border-crayTeal font-medium py-3 px-6 rounded-full hover:bg-crayTeal hover:text-black transition duration-300">
-        See Pricing
-      </a>
-    </div>
+    <a href="#contact"
+       class="bg-crayTeal text-black font-semibold py-3 px-6 rounded-full shadow-lg hover:bg-opacity-90 transition duration-300 hover:scale-105"
+       data-aos="zoom-in"
+       data-aos-delay="200">
+      Let’s Work Together
+    </a>
   </div>
+
+  <!-- Gradient Fade to About -->
+  <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-b from-transparent to-[#1e1e1e] pointer-events-none z-0"></div>
 </section>
 
   <!-- About -->
