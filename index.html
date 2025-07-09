@@ -4,6 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Craytivo</title>
+  <meta name="description" content="Craytivo builds bold, custom websites for business owners in Zimbabwe and beyond." />
+  <meta property="og:title" content="Craytivo - Bold Web Design" />
+  <meta property="og:image" content="https://craytivo.com/assets/preview.jpg" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -28,9 +31,16 @@
     html {
       scroll-behavior: smooth;
     }
+    body {
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
   </style>
 </head>
 <body class="bg-[#121212] text-white font-sans leading-relaxed tracking-wide">
+
+  <!-- Scroll Progress Bar -->
+  <div id="progress-bar" class="fixed top-0 left-0 h-1 bg-crayTeal z-50"></div>
 
   <!-- Header -->
   <header class="sticky top-0 bg-[#121212]/80 backdrop-blur-md z-50 border-b border-gray-800 shadow-sm">
@@ -64,23 +74,22 @@
   </header>
 
   <!-- Hero Section -->
-<section class="relative bg-gradient-to-b from-[#121212] to-[#1e1e1e] py-16 px-4 text-center" id="hero">
-  <div class="max-w-xl mx-auto flex flex-col items-center justify-center">
-    <h1 class="text-4xl sm:text-5xl font-extrabold uppercase mb-4 leading-tight" data-aos="fade-up">
-      Start simple. <span class="text-crayYellow">Grow bold.</span>
-    </h1>
-    <p class="text-base sm:text-lg text-gray-300 font-medium mb-6" data-aos="fade-up" data-aos-delay="100">
-      I help business owners turn ideas into bold, high-performing websites with modern design and clear function.
-    </p>
-    <a href="#contact"
-       class="bg-crayTeal text-black font-semibold py-3 px-6 rounded-full shadow-lg hover:bg-opacity-90 transition duration-300 hover:scale-105"
-       data-aos="zoom-in"
-       data-aos-delay="200">
-      Let’s Work Together
-    </a>
-  </div>
-</section>
-
+  <section class="h-[80vh] bg-gradient-to-b from-[#121212] to-[#1e1e1e] flex flex-col justify-center items-center text-center px-4 py-6" id="hero">
+    <div class="max-w-xl mx-auto">
+      <h1 class="text-4xl sm:text-5xl font-extrabold uppercase mb-4 leading-tight" data-aos="fade-up">
+        Start simple. <span class="text-crayYellow">Grow bold.</span>
+      </h1>
+      <p class="text-base sm:text-lg text-gray-300 font-medium mb-6" data-aos="fade-up" data-aos-delay="100">
+        I help business owners turn ideas into bold, high-performing websites with modern design and clear function.
+      </p>
+      <a href="#contact"
+         class="bg-crayTeal text-black font-semibold py-3 px-6 rounded-full shadow-lg hover:bg-opacity-90 transition duration-300 hover:scale-105"
+         data-aos="zoom-in"
+         data-aos-delay="200">
+        Let’s Work Together
+      </a>
+    </div>
+  </section>
 
   <!-- About -->
   <section id="about" class="py-16 px-6 max-w-5xl mx-auto" data-aos="fade-up">
