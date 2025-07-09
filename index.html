@@ -39,12 +39,42 @@
     transition: padding 0.3s ease;
   }
   .animate-spin-slow {
-    animation: spin 60s linear infinite;
+    animation: spin 40s linear infinite;
   }
   @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
   }
+  .animated-border {
+    position: relative;
+  }
+
+  .animated-border {
+    position: relative;
+  }
+
+  .animated-border::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 1px;
+    background: linear-gradient(130deg, #00E0C6, #FFD644, #E94F37);
+    border-radius: inherit;
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    z-index: -1;
+    transform-origin: center;
+    animation: rock-gradient 6s ease-in-out infinite alternate;
+  }
+
+  @keyframes rock-gradient {
+    0%   { transform: rotate(-6deg); }
+    100% { transform: rotate(6deg); }
+  }
+
 </style>
 
 </head>
@@ -100,36 +130,54 @@
 </header>
 
 <!-- Hero Section -->
-<section id="hero" class="relative h-[80vh] overflow-hidden flex items-center justify-center px-4 py-6 text-center">
-  <!-- Gradient background -->
-  <div class="absolute inset-0 bg-gradient-to-br from-[#1a1a1a] via-[#121212] to-[#0d0d0d] z-0"></div>
+<section id="hero" class="relative h-[80vh] flex flex-col justify-center items-center text-center px-4 py-6 overflow-hidden">
+  <!-- Background pattern and gradient -->
+  <div class="absolute inset-0 z-0">
+    <div class="w-full h-full bg-[url('/assets/topography.svg')] bg-repeat opacity-35"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent to-[#121212]"></div>
+  </div>
 
-  <!-- Abstract animated SVG blob -->
-  <svg class="absolute top-[-100px] right-[-100px] w-[500px] h-[500px] opacity-25 animate-spin-slow z-0" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
-    <g transform="translate(300,300)">
-      <path fill="#00E0C6" d="M154.2,-188.3C194.9,-154.4,217.5,-97.4,212.4,-47.3C207.2,2.8,174.3,46,143.6,80.7C112.9,115.3,84.4,141.4,45.5,160.3C6.7,179.3,-42.5,191.2,-81.3,173.8C-120,156.3,-148.3,109.4,-177.3,57.1C-206.3,4.8,-236,-52.9,-222.1,-96.4C-208.2,-140,-150.7,-169.2,-97.1,-198.6C-43.5,-228,6.2,-257.7,54.4,-253.2C102.6,-248.7,149.4,-209.1,154.2,-188.3Z" />
-    </g>
-  </svg>
+  <!-- Glassmorphism Card Content -->
+<div class="animated-border relative z-10 backdrop-blur-md bg-white/5 border border-white/10 rounded-xl p-6 sm:p-10 max-w-xl mx-auto shadow-lg hover:shadow-2xl transition-all duration-300">  <span class="inline-block mb-3 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-crayTeal bg-white/10 border border-crayTeal/40 rounded-full">
+    Web Design Studio
+  </span>
 
-  <!-- Content Card -->
-  <div class="relative z-10 max-w-xl mx-auto backdrop-blur-md bg-white/5 border border-white/10 rounded-xl shadow-xl p-6 sm:p-10">
-    <h1 class="text-4xl sm:text-5xl font-extrabold uppercase text-white leading-tight mb-4" data-aos="fade-up">
-      Start simple. <span class="text-crayYellow">Grow bold.</span>
-    </h1>
-    <p class="text-base sm:text-lg text-gray-300 font-medium mb-6" data-aos="fade-up" data-aos-delay="100">
-      I help business owners turn ideas into bold, high-performing websites with modern design and clear function.
-    </p>
-    <a href="#contact"
-       class="bg-crayTeal text-black font-semibold py-3 px-6 rounded-full shadow-lg hover:bg-opacity-90 transition duration-300 hover:scale-105"
-       data-aos="zoom-in"
-       data-aos-delay="200">
-      Let’s Work Together
+  <!-- Main headline -->
+  <h1 class="text-4xl sm:text-5xl font-extrabold uppercase mb-4 leading-tight text-white" data-aos="fade-up">
+    Start simple. <span class="text-crayYellow">Grow bold.</span>
+  </h1>
+
+  <!-- Subheadline -->
+  <p class="text-base sm:text-lg text-gray-300 font-medium mb-6" data-aos="fade-up" data-aos-delay="100">
+    I help business owners turn ideas into bold, high-performing websites with modern design and clear function.
+  </p>
+
+  <!-- CTA Button -->
+  <a href="#contact"
+     class="inline-block bg-crayTeal text-black font-semibold py-3 px-6 rounded-full shadow-lg hover:bg-opacity-90 hover:scale-105 active:scale-100 transition duration-300"
+     data-aos="zoom-in"
+     data-aos-delay="200">
+    Let’s Work Together
+  </a>
+
+  <!-- Trust Signal -->
+  <p class="mt-5 text-sm text-gray-400" data-aos="fade-up" data-aos-delay="300">
+    Trusted by startups & SMEs 
+  </p>
+</div>
+
+
+  <!-- Scroll Down Prompt -->
+  <div class="absolute bottom-4 animate-bounce z-10">
+    <a href="#about" class="text-crayTeal text-sm tracking-wider font-medium">
+      Scroll Down ↓
     </a>
   </div>
 
-  <!-- Bottom fade to #121212 -->
-  <div class="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-b from-transparent to-[#121212] pointer-events-none z-0"></div>
+  <!-- Bottom Fade to About Section -->
+  <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-b from-transparent to-[#121212] z-0"></div>
 </section>
+
 
 
 
