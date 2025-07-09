@@ -93,9 +93,18 @@
 </header>
 
 <!-- Hero Section -->
-<section class="relative h-[80vh] flex flex-col justify-center items-center text-center px-4 py-6 bg-[#121212]" id="hero">
-  <div class="max-w-xl mx-auto z-10 relative">
-    <h1 class="text-4xl sm:text-5xl font-extrabold uppercase mb-4 leading-tight" data-aos="fade-up">
+<section id="hero" class="relative h-[80vh] overflow-hidden flex items-center justify-center px-4 py-6 text-center">
+  <!-- Gradient background -->
+  <div class="absolute inset-0 bg-gradient-to-br from-[#1a1a1a] via-[#121212] to-[#0d0d0d] z-0"></div>
+
+  <!-- Top-right animated SVG blob -->
+  <svg class="absolute top-[-80px] right-[-80px] w-96 h-96 opacity-30 animate-pulse z-0" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <path fill="#00E0C6" d="M51.3,-65.5C66.3,-54.5,78,-38.6,79.5,-22.1C81.1,-5.5,72.5,11.6,62.7,26.3C52.9,41,42,53.2,28.5,60.5C15,67.8,-1.2,70.1,-17.8,66.5C-34.4,62.8,-51.3,53.1,-59.2,39.6C-67.1,26.1,-65.9,8.9,-64.1,-9.3C-62.2,-27.6,-59.6,-46.8,-48.3,-59.6C-37,-72.4,-18.5,-78.8,-1,-77.5C16.5,-76.2,33,-67.5,51.3,-65.5Z" transform="translate(100 100)" />
+  </svg>
+
+  <!-- Content Card -->
+  <div class="relative z-10 max-w-xl mx-auto backdrop-blur-md bg-white/5 border border-white/10 rounded-xl shadow-xl p-6 sm:p-10">
+    <h1 class="text-4xl sm:text-5xl font-extrabold uppercase text-white leading-tight mb-4" data-aos="fade-up">
       Start simple. <span class="text-crayYellow">Grow bold.</span>
     </h1>
     <p class="text-base sm:text-lg text-gray-300 font-medium mb-6" data-aos="fade-up" data-aos-delay="100">
@@ -109,9 +118,10 @@
     </a>
   </div>
 
-  <!-- Gradient Fade at Bottom -->
+  <!-- Bottom fade to #121212 -->
   <div class="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-b from-transparent to-[#121212] pointer-events-none z-0"></div>
 </section>
+
 
 
   <!-- About -->
