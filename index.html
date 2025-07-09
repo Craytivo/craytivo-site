@@ -180,8 +180,6 @@
 
 
 
-
-
   <!-- About -->
   <section id="about" class="py-16 px-6 max-w-5xl mx-auto" data-aos="fade-up">
     <h2 class="text-3xl font-bold mb-6 text-crayYellow">About</h2>
@@ -191,37 +189,59 @@
   </section>
 
   <!-- Services -->
-  <section id="services" class="py-16 px-6 bg-[#1e1e1e]" data-aos="fade-up">
-    <div class="max-w-5xl mx-auto">
-      <h2 class="text-3xl font-bold mb-10 text-crayYellow">Services</h2>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-[#2a2a2a] p-6 rounded-xl border border-crayTeal" data-aos="fade-up">
-          <h3 class="font-semibold text-xl mb-2">Starter Package</h3>
-          <ul class="text-gray-300 list-disc pl-4">
-            <li>1-page responsive site</li>
-            <li>Custom branding integration</li>
-            <li>Contact form setup</li>
-          </ul>
+<section id="services" class="py-24 px-6 bg-[#1e1e1e]" data-aos="fade-up">
+  <div class="max-w-6xl mx-auto text-center">
+    <h2 class="text-3xl sm:text-4xl font-bold text-crayYellow mb-12">What I Offer</h2>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <!-- Starter -->
+      <div class="bg-white/5 border border-crayTeal/30 rounded-2xl p-8 backdrop-blur-sm shadow-lg transition transform hover:-translate-y-1 hover:shadow-xl group" data-aos="fade-up">
+        <div class="flex justify-center items-center w-14 h-14 mb-4 mx-auto rounded-full bg-crayTeal/20">
+          <svg class="w-6 h-6 text-crayTeal" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
         </div>
-        <div class="bg-[#2a2a2a] p-6 rounded-xl border border-crayYellow" data-aos="fade-up" data-aos-delay="100">
-          <h3 class="font-semibold text-xl mb-2">Business Package</h3>
-          <ul class="text-gray-300 list-disc pl-4">
-            <li>Multi-page site</li>
-            <li>Service + contact pages</li>
-            <li>Performance optimization</li>
-          </ul>
+        <h3 class="text-xl font-semibold mb-4 text-white">Starter Package</h3>
+        <ul class="text-gray-300 space-y-2 text-sm">
+          <li>✔️ 1-page responsive site</li>
+          <li>✔️ Custom branding integration</li>
+          <li>✔️ Contact form setup</li>
+        </ul>
+      </div>
+
+      <!-- Business -->
+      <div class="bg-white/5 border border-crayYellow/30 rounded-2xl p-8 backdrop-blur-sm shadow-lg transition transform hover:-translate-y-1 hover:shadow-xl group" data-aos="fade-up" data-aos-delay="100">
+        <div class="flex justify-center items-center w-14 h-14 mb-4 mx-auto rounded-full bg-crayYellow/20">
+          <svg class="w-6 h-6 text-crayYellow" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 7h18M3 12h18M3 17h18" />
+          </svg>
         </div>
-        <div class="bg-[#2a2a2a] p-6 rounded-xl border border-crayRed" data-aos="fade-up" data-aos-delay="200">
-          <h3 class="font-semibold text-xl mb-2">Custom Development</h3>
-          <ul class="text-gray-300 list-disc pl-4">
-            <li>Fully tailored web solutions</li>
-            <li>Interactive features & animations</li>
-            <li>Built to match your growth</li>
-          </ul>
+        <h3 class="text-xl font-semibold mb-4 text-white">Business Package</h3>
+        <ul class="text-gray-300 space-y-2 text-sm">
+          <li>✔️ Multi-page site</li>
+          <li>✔️ Service + contact pages</li>
+          <li>✔️ Performance optimization</li>
+        </ul>
+      </div>
+
+      <!-- Custom -->
+      <div class="bg-white/5 border border-crayRed/30 rounded-2xl p-8 backdrop-blur-sm shadow-lg transition transform hover:-translate-y-1 hover:shadow-xl group" data-aos="fade-up" data-aos-delay="200">
+        <div class="flex justify-center items-center w-14 h-14 mb-4 mx-auto rounded-full bg-crayRed/20">
+          <svg class="w-6 h-6 text-crayRed" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+          </svg>
         </div>
+        <h3 class="text-xl font-semibold mb-4 text-white">Custom Development</h3>
+        <ul class="text-gray-300 space-y-2 text-sm">
+          <li>✔️ Fully tailored web solutions</li>
+          <li>✔️ Interactive features & animations</li>
+          <li>✔️ Built to match your growth</li>
+        </ul>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
 
   <!-- Pricing -->
   <section id="pricing" class="py-24 px-6" data-aos="fade-up">
@@ -280,27 +300,74 @@
     </div>
   </section>
 
-  <!-- Contact -->
-  <section id="contact" class="py-24 px-6" data-aos="fade-up">
-    <div class="max-w-2xl mx-auto text-center">
-      <h2 class="text-3xl font-bold text-crayYellow mb-6">Contact</h2>
-      <p class="text-gray-300 mb-8">Have a project in mind or questions about working together? Send a message below.</p>
-      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="space-y-4" id="contact-form">
-        <input type="hidden" name="form-name" value="contact">
-        <p class="hidden">
-          <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
-        </p>
-        <label class="block text-left text-sm text-gray-400" for="name">Name</label>
-        <input type="text" id="name" name="name" placeholder="e.g. Jane Doe" required class="w-full px-4 py-3 rounded bg-[#1e1e1e] border border-gray-600 text-white focus:ring-2 focus:ring-crayTeal">
-        <label class="block text-left text-sm text-gray-400" for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="e.g. you@email.com" required class="w-full px-4 py-3 rounded bg-[#1e1e1e] border border-gray-600 text-white focus:ring-2 focus:ring-crayTeal">
-        <label class="block text-left text-sm text-gray-400" for="message">Message</label>
-        <textarea id="message" name="message" rows="5" placeholder="How can I help you?" required class="w-full px-4 py-3 rounded bg-[#1e1e1e] border border-gray-600 text-white focus:ring-2 focus:ring-crayTeal"></textarea>
-        <button type="submit" class="bg-crayTeal text-black font-semibold px-6 py-3 rounded hover:bg-opacity-80 transition">Send Message</button>
-        <div id="form-success" class="hidden text-crayTeal font-medium mt-4">✅ Your message has been sent!</div>
-      </form>
-    </div>
-  </section>
+<!-- Contact -->
+<section id="contact" class="py-24 px-6 bg-[#121212]" data-aos="fade-up">
+  <div class="max-w-2xl mx-auto text-center bg-white/5 border border-white/10 backdrop-blur-md p-10 rounded-xl shadow-lg">
+    <h2 class="text-3xl font-bold text-crayYellow mb-4">Let’s Connect</h2>
+    <p class="text-gray-300 mb-8">Have a project in mind? Reach out below — I typically respond within 24 hours.</p>
+
+    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field"
+      class="space-y-6" id="contact-form" novalidate>
+      <input type="hidden" name="form-name" value="contact" />
+      <p class="hidden">
+        <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+      </p>
+
+      <!-- Name Field -->
+      <div class="text-left relative">
+        <label for="name" class="block text-sm text-gray-400 mb-1">Name</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          required
+          class="form-input peer w-full px-4 py-3 rounded-lg bg-[#1e1e1e] border border-gray-700 text-white placeholder-transparent focus:outline-none focus:ring-2 focus:ring-crayTeal transition"
+        />
+        <span class="text-sm text-red-500 mt-1 hidden" id="name-error">Please enter your name.</span>
+      </div>
+
+      <!-- Email Field -->
+      <div class="text-left relative">
+        <label for="email" class="block text-sm text-gray-400 mb-1">Email</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+          class="form-input peer w-full px-4 py-3 rounded-lg bg-[#1e1e1e] border border-gray-700 text-white placeholder-transparent focus:outline-none focus:ring-2 focus:ring-crayTeal transition"
+        />
+        <span class="text-sm text-red-500 mt-1 hidden" id="email-error">Enter a valid email.</span>
+      </div>
+
+      <!-- Message Field -->
+      <div class="text-left relative">
+        <label for="message" class="block text-sm text-gray-400 mb-1">Message</label>
+        <textarea
+          id="message"
+          name="message"
+          rows="5"
+          required
+          class="form-textarea peer w-full px-4 py-3 rounded-lg bg-[#1e1e1e] border border-gray-700 text-white placeholder-transparent focus:outline-none focus:ring-2 focus:ring-crayTeal transition"
+        ></textarea>
+        <span class="text-sm text-red-500 mt-1 hidden" id="message-error">Please enter a message.</span>
+      </div>
+
+      <!-- Submit Button -->
+      <button
+        type="submit"
+        id="submit-button"
+        disabled
+        class="inline-flex items-center gap-2 bg-crayTeal text-black font-semibold px-6 py-3 rounded-full transition duration-300 shadow-md opacity-50 cursor-not-allowed"
+      >
+        Send Message
+      </button>
+
+      <div id="form-success" class="hidden text-crayTeal font-medium mt-4">
+        ✅ Your message has been sent!
+      </div>
+    </form>
+  </div>
+</section>
 
   <!-- Footer -->
   <footer class="bg-[#121212] border-t border-gray-700 py-6 text-center text-gray-500 text-sm">
@@ -338,6 +405,57 @@
       header.classList.add('py-2');
     }
   });
+  // Enable/disable submit button based on validity
+  const form = document.getElementById("contact-form");
+  const submitBtn = document.getElementById("submit-button");
+
+  const fields = [
+    { id: "name", errorId: "name-error" },
+    { id: "email", errorId: "email-error" },
+    { id: "message", errorId: "message-error" },
+  ];
+
+  const validateField = (input, errorEl) => {
+    const isTouched = input.dataset.touched === "true";
+    const isValid = input.checkValidity();
+
+    if (isTouched) {
+      if (!isValid) {
+        input.classList.add("border-red-500");
+        input.classList.remove("border-green-500");
+        errorEl.classList.remove("hidden");
+      } else {
+        input.classList.remove("border-red-500");
+        input.classList.add("border-green-500");
+        errorEl.classList.add("hidden");
+      }
+    }
+  };
+
+  fields.forEach(({ id, errorId }) => {
+    const input = document.getElementById(id);
+    const errorEl = document.getElementById(errorId);
+
+    input.addEventListener("blur", () => {
+      input.dataset.touched = "true";
+      validateField(input, errorEl);
+      validateForm();
+    });
+
+    input.addEventListener("input", () => {
+      validateField(input, errorEl);
+      validateForm();
+    });
+  });
+
+  function validateForm() {
+    const allValid = form.checkValidity();
+    submitBtn.disabled = !allValid;
+    submitBtn.classList.toggle("opacity-50", !allValid);
+    submitBtn.classList.toggle("cursor-not-allowed", !allValid);
+  }
+
+  window.addEventListener("load", validateForm);
 </script>
 
 
