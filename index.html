@@ -67,13 +67,71 @@
     mask-composite: exclude;
     z-index: -1;
     transform-origin: center;
-    animation: rock-gradient 6s ease-in-out infinite alternate;
+    animation: rock-gradient 5s ease-in-out infinite alternate;
   }
 
   @keyframes rock-gradient {
-    0%   { transform: rotate(-6deg); }
-    100% { transform: rotate(6deg); }
+    0%   { transform: rotate(-3deg); }
+    100% { transform: rotate(3deg); }
   }
+
+  .animated-ring::before {
+    content: "";
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    z-index: 2;
+    border-radius: 1rem;
+    background: conic-gradient(from 0deg, #00E0C6, #FFD644, #E94F37, #00E0C6);
+    animation: rotateRing 6s linear infinite;
+    opacity: 0.15;
+    pointer-events: none;
+  }
+
+  @keyframes rotateRing {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .animated-ring > .inner-card {
+    position: relative;
+    z-index: 3;
+  }
+
+  .contact-animated-ring::before {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  z-index: 0;
+  border-radius: 1rem;
+  background: conic-gradient(from 0deg, #00E0C6, #FFD644, #E94F37, #00E0C6);
+  opacity: 0.2;
+  transform: var(--contact-ring-transform, translate(0, 0) scale(1));
+  transition: transform 0.2s ease;
+  pointer-events: none;
+}
+.contact-animated-ring::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 400px;
+  height: 400px;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(0, 224, 198, 0.25), transparent 70%);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  z-index: 1;
+}
+
 
 </style>
 
@@ -259,51 +317,85 @@
 
 
 
-  <!-- Pricing -->
-  <section id="pricing" class="py-24 px-6" data-aos="fade-up">
-    <div class="max-w-5xl mx-auto">
-      <h2 class="text-3xl font-bold mb-10 text-crayYellow">Pricing</h2>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-[#2a2a2a] p-6 rounded-xl border border-crayTeal">
-          <h3 class="text-xl font-bold mb-2">Starter</h3>
-          <p class="text-crayTeal text-2xl font-semibold mb-4">$120</p>
-          <ul class="text-gray-300 list-disc pl-5 space-y-1">
-            <li>1-page site</li>
-            <li>Basic contact form</li>
-            <li>Mobile optimization</li>
-          </ul>
-        </div>
-        <div class="bg-[#2a2a2a] p-6 rounded-xl border border-crayYellow">
-          <h3 class="text-xl font-bold mb-2">Business</h3>
-          <p class="text-crayYellow text-2xl font-semibold mb-4">$220</p>
-          <ul class="text-gray-300 list-disc pl-5 space-y-1">
-            <li>Multi-page site</li>
-            <li>Basic SEO</li>
-            <li>Custom contact + service pages</li>
-          </ul>
-        </div>
-        <div class="bg-[#2a2a2a] p-6 rounded-xl border border-crayRed">
-          <h3 class="text-xl font-bold mb-2">Custom</h3>
-          <p class="text-crayRed text-2xl font-semibold mb-4">Starting at $320</p>
-          <ul class="text-gray-300 list-disc pl-5 space-y-1">
-            <li>Custom features</li>
-            <li>Advanced animations</li>
-            <li>High-performance design</li>
-          </ul>
-        </div>
+ <!-- Pricing -->
+<section id="pricing" class="py-32 px-6 bg-[#121212]" data-aos="fade-up">
+  <div class="max-w-6xl mx-auto text-center">
+    <h2 class="text-4xl font-extrabold text-crayYellow mb-4">Pricing Plans</h2>
+    <p class="text-gray-400 mb-8">Flexible plans that fit your business goals.</p>
+
+    <!-- Toggle -->
+    <div class="flex items-center justify-center mb-12 gap-4 text-sm text-gray-300">
+      <span>One-Time</span>
+      <label class="relative inline-flex items-center cursor-pointer">
+        <input type="checkbox" value="" id="pricing-toggle" class="sr-only peer">
+        <div class="w-11 h-6 bg-gray-600 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all"></div>
+      </label>
+      <span>Monthly</span>
+    </div>
+
+    <!-- Pricing Cards -->
+    <div class="grid md:grid-cols-3 gap-8" id="pricing-cards">
+      <!-- Starter -->
+      <div class="bg-[#1e1e1e] border border-crayTeal rounded-2xl p-8 text-left shadow-lg hover:shadow-xl transition duration-300">
+        <h3 class="text-xl font-bold text-white mb-2">Starter</h3>
+        <p class="text-3xl font-bold text-crayTeal mb-4 price" data-onetime="$120" data-monthly="$15/mo">$120</p>
+        <ul class="text-gray-300 space-y-2 list-inside list-disc">
+          <li>1-page responsive website</li>
+          <li>Basic contact form</li>
+          <li>Mobile-friendly design</li>
+        </ul>
       </div>
-      <div class="mt-10">
-        <h4 class="text-xl font-semibold text-white mb-4">Optional Add-ons:</h4>
-        <ul class="text-gray-300 list-disc pl-5 space-y-1">
-          <li>Copywriting: $40</li>
-          <li>Brand Kit Design: $50</li>
-          <li>Ongoing Updates & Maintenance: $25/mo</li>
-          <li>Google Analytics Integration: $20</li>
-          <li>Domain Setup Assistance: $15</li>
+
+      <!-- Business -->
+      <div class="bg-[#1e1e1e] border border-crayYellow rounded-2xl p-8 text-left shadow-lg hover:shadow-xl transition duration-300">
+        <h3 class="text-xl font-bold text-white mb-2">Business</h3>
+        <p class="text-3xl font-bold text-crayYellow mb-4 price" data-onetime="$220" data-monthly="$30/mo">$220</p>
+        <ul class="text-gray-300 space-y-2 list-inside list-disc">
+          <li>Multi-page site</li>
+          <li>Custom contact & service pages</li>
+          <li>Basic SEO</li>
+        </ul>
+      </div>
+
+      <!-- Custom -->
+      <div class="bg-[#1e1e1e] border border-crayRed rounded-2xl p-8 text-left shadow-lg hover:shadow-xl transition duration-300">
+        <h3 class="text-xl font-bold text-white mb-2">Custom</h3>
+        <p class="text-3xl font-bold text-crayRed mb-4">From $320</p>
+        <ul class="text-gray-300 space-y-2 list-inside list-disc">
+          <li>Fully customized features</li>
+          <li>Advanced animations</li>
+          <li>Performance-optimized design</li>
         </ul>
       </div>
     </div>
-  </section>
+
+    <!-- Add-ons -->
+    <div class="mt-16 text-left">
+      <h4 class="text-2xl font-bold text-white mb-6 text-center">Optional Add-ons</h4>
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6 text-sm text-gray-300">
+        <div class="bg-[#1a1a1a] border border-gray-700 p-4 rounded-xl shadow-sm">💬 Copywriting — <span class="text-white font-medium">$40</span></div>
+        <div class="bg-[#1a1a1a] border border-gray-700 p-4 rounded-xl shadow-sm">🎨 Brand Kit Design — <span class="text-white font-medium">$50</span></div>
+        <div class="bg-[#1a1a1a] border border-gray-700 p-4 rounded-xl shadow-sm">🔧 Maintenance (Monthly) — <span class="text-white font-medium">$25</span></div>
+        <div class="bg-[#1a1a1a] border border-gray-700 p-4 rounded-xl shadow-sm">📊 Google Analytics — <span class="text-white font-medium">$20</span></div>
+        <div class="bg-[#1a1a1a] border border-gray-700 p-4 rounded-xl shadow-sm">🌐 Domain Setup — <span class="text-white font-medium">$15</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Toggle Script -->
+<script>
+  const pricingToggle = document.getElementById('pricing-toggle');
+  const prices = document.querySelectorAll('.price');
+
+  pricingToggle.addEventListener('change', () => {
+    const type = pricingToggle.checked ? 'monthly' : 'onetime';
+    prices.forEach(price => {
+      price.textContent = price.dataset[type];
+    });
+  });
+</script>
+
 
   <!-- 3-Step CTA Section -->
 <section id="cta-steps" class="relative py-24 px-6 bg-[#121212] overflow-hidden" data-aos="fade-up">
@@ -354,78 +446,119 @@
   </section>
 
 <!-- Contact -->
-<section id="contact" class="py-24 px-6 bg-[#121212]" data-aos="fade-up">
-  <div class="max-w-2xl mx-auto text-center bg-white/5 border border-white/10 backdrop-blur-md p-10 rounded-xl shadow-lg">
-    <h2 class="text-3xl font-bold text-crayYellow mb-4">Let’s Connect</h2>
-    <p class="text-gray-300 mb-8">Have a project in mind? Reach out below — I typically respond within 24 hours.</p>
+<section id="contact" class="py-32 px-6 bg-[#121212] relative overflow-hidden" data-aos="fade-up">
+  <!-- Decorative Top Accent -->
+  <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-1/2 h-[2px] bg-gradient-to-r from-crayTeal via-crayYellow to-crayRed opacity-40 rounded-full"></div>
 
-    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field"
-      class="space-y-6" id="contact-form" novalidate>
-      <input type="hidden" name="form-name" value="contact" />
-      <p class="hidden">
-        <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+  <!-- Outer Animated Border Ring -->
+<div class="contact-animated-ring relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md shadow-2xl max-w-2xl mx-auto">    <div class="relative z-10 text-center p-10">
+      <h2 class="text-4xl font-extrabold text-crayYellow mb-4" data-aos="fade-up">Let’s Connect</h2>
+      <p class="text-gray-300 mb-10" data-aos="fade-up" data-aos-delay="100">
+        Have a project in mind? Reach out — I typically respond within 24 hours.
       </p>
 
-      <!-- Name Field -->
-      <div class="text-left relative">
-        <label for="name" class="block text-sm text-gray-400 mb-1">Name</label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          required
-          class="form-input peer w-full px-4 py-3 rounded-lg bg-[#1e1e1e] border border-gray-700 text-white placeholder-transparent focus:outline-none focus:ring-2 focus:ring-crayTeal transition"
-        />
-        <span class="text-sm text-red-500 mt-1 hidden" id="name-error">Please enter your name.</span>
-      </div>
+      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field"
+        class="space-y-6 text-left" id="contact-form" novalidate>
+        <input type="hidden" name="form-name" value="contact" />
+        <p class="hidden">
+          <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+        </p>
 
-      <!-- Email Field -->
-      <div class="text-left relative">
-        <label for="email" class="block text-sm text-gray-400 mb-1">Email</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          required
-          class="form-input peer w-full px-4 py-3 rounded-lg bg-[#1e1e1e] border border-gray-700 text-white placeholder-transparent focus:outline-none focus:ring-2 focus:ring-crayTeal transition"
-        />
-        <span class="text-sm text-red-500 mt-1 hidden" id="email-error">Enter a valid email.</span>
-      </div>
+        <!-- Name Field -->
+        <div class="relative group">
+          <label for="name" class="block text-sm text-gray-400 mb-1">Name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            placeholder="Your name"
+            class="peer w-full px-4 py-3 bg-[#1e1e1e] text-white rounded-lg border border-gray-700 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-crayTeal transition"
+          />
+          <span class="text-sm text-red-500 mt-1 hidden" id="name-error">Please enter your name.</span>
+        </div>
 
-      <!-- Message Field -->
-      <div class="text-left relative">
-        <label for="message" class="block text-sm text-gray-400 mb-1">Message</label>
-        <textarea
-          id="message"
-          name="message"
-          rows="5"
-          required
-          class="form-textarea peer w-full px-4 py-3 rounded-lg bg-[#1e1e1e] border border-gray-700 text-white placeholder-transparent focus:outline-none focus:ring-2 focus:ring-crayTeal transition"
-        ></textarea>
-        <span class="text-sm text-red-500 mt-1 hidden" id="message-error">Please enter a message.</span>
-      </div>
+        <!-- Email Field -->
+        <div class="relative group">
+          <label for="email" class="block text-sm text-gray-400 mb-1">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            placeholder="Your email"
+            class="peer w-full px-4 py-3 bg-[#1e1e1e] text-white rounded-lg border border-gray-700 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-crayTeal transition"
+          />
+          <span class="text-sm text-red-500 mt-1 hidden" id="email-error">Enter a valid email.</span>
+        </div>
 
-      <!-- Submit Button -->
-      <button
-        type="submit"
-        id="submit-button"
-        disabled
-        class="inline-flex items-center gap-2 bg-crayTeal text-black font-semibold px-6 py-3 rounded-full transition duration-300 shadow-md opacity-50 cursor-not-allowed"
-      >
-        Send Message
-      </button>
+        <!-- Message Field -->
+        <div class="relative group">
+          <label for="message" class="block text-sm text-gray-400 mb-1">Message</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="5"
+            required
+            placeholder="Your message..."
+            class="peer w-full px-4 py-3 bg-[#1e1e1e] text-white rounded-lg border border-gray-700 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-crayTeal transition"
+          ></textarea>
+          <span class="text-sm text-red-500 mt-1 hidden" id="message-error">Please enter a message.</span>
+        </div>
 
-      <div id="form-success" class="hidden text-crayTeal font-medium mt-4">
-        ✅ Your message has been sent!
-      </div>
-    </form>
+        <!-- Submit Button -->
+        <button
+          type="submit"
+          id="submit-button"
+          disabled
+          class="inline-flex items-center gap-2 bg-crayTeal text-black font-semibold px-6 py-3 rounded-full transition duration-300 shadow-md opacity-50 cursor-not-allowed hover:bg-opacity-90 hover:scale-105 active:scale-100"
+        >
+          Send Message
+        </button>
+
+        <div id="form-success" class="hidden text-crayTeal font-medium mt-4">
+          ✅ Your message has been sent!
+        </div>
+      </form>
+    </div>
   </div>
 </section>
 
-  <!-- Footer -->
-  <footer class="bg-[#121212] border-t border-gray-700 py-6 text-center text-gray-500 text-sm">
+
+
+
+<!-- Footer Accent Line -->
+<div class="h-[2px] w-full bg-gradient-to-r from-crayRed via-crayTeal to-crayYellow opacity-60"></div>
+
+<!-- Footer -->
+<footer class="bg-[#121212] border-t border-gray-700 py-6 text-center text-gray-500 text-sm">
+  <div class="flex flex-col md:flex-row justify-center items-center gap-4">
     <div>&copy; 2025 Craytivo. Built with purpose.</div>
-  </footer>
+
+    <!-- Social Icons -->
+    <div class="flex space-x-4">
+      <!-- Facebook -->
+      <a href="https://facebook.com" target="_blank" aria-label="Facebook" class="hover:text-crayTeal transition">
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M22 12a10 10 0 10-11.6 9.9v-7H8v-2.9h2.4V9.8c0-2.4 1.4-3.8 3.6-3.8 1 0 2 .2 2 .2v2.3h-1.2c-1.2 0-1.6.8-1.6 1.6v1.9h2.7l-.4 2.9h-2.3v7A10 10 0 0022 12z" />
+        </svg>
+      </a>
+      <!-- Twitter -->
+      <a href="https://twitter.com" target="_blank" aria-label="Twitter" class="hover:text-crayTeal transition">
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M23 3a10.9 10.9 0 01-3.14 1.53A4.48 4.48 0 0012.15 8v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5.5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
+        </svg>
+      </a>
+      <!-- Instagram -->
+      <a href="https://instagram.com" target="_blank" aria-label="Instagram" class="hover:text-crayTeal transition">
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M7.75 2A5.75 5.75 0 002 7.75v8.5A5.75 5.75 0 007.75 22h8.5A5.75 5.75 0 0022 16.25v-8.5A5.75 5.75 0 0016.25 2h-8.5zm0 1.5h8.5A4.25 4.25 0 0120.5 7.75v8.5a4.25 4.25 0 01-4.25 4.25h-8.5A4.25 4.25 0 013.5 16.25v-8.5A4.25 4.25 0 017.75 3.5zm8.25 2.25a.75.75 0 10.001 1.5.75.75 0 00-.001-1.5zM12 7a5 5 0 100 10 5 5 0 000-10zm0 1.5a3.5 3.5 0 110 7 3.5 3.5 0 010-7z" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
 
  <!-- Scripts -->
 <script>
@@ -510,6 +643,38 @@
 
   window.addEventListener("load", validateForm);
 </script>
+<script>
+  const ring = document.querySelector(".contact-animated-ring");
+  const glow = document.createElement("div");
+  glow.classList.add("contact-animated-ring-glow");
+  ring.appendChild(glow);
+
+  // Reuse the glow style from CSS
+  glow.style.position = "absolute";
+  glow.style.width = "400px";
+  glow.style.height = "400px";
+  glow.style.pointerEvents = "none";
+  glow.style.background = "radial-gradient(circle, rgba(0, 224, 198, 0.25), transparent 70%)";
+  glow.style.borderRadius = "50%";
+  glow.style.zIndex = "1";
+  glow.style.transition = "opacity 0.3s ease";
+  glow.style.opacity = "0";
+
+  ring.addEventListener("mousemove", (e) => {
+    const rect = ring.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    glow.style.left = `${x}px`;
+    glow.style.top = `${y}px`;
+    glow.style.opacity = "1";
+    glow.style.transform = "translate(-50%, -50%)";
+  });
+
+  ring.addEventListener("mouseleave", () => {
+    glow.style.opacity = "0";
+  });
+</script>
+
 
 
   
