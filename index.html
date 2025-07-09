@@ -4,9 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Craytivo</title>
-  <meta name="description" content="Craytivo builds bold, custom websites for business owners in Zimbabwe and beyond." />
-  <meta property="og:title" content="Craytivo - Bold Web Design" />
-  <meta property="og:image" content="https://craytivo.com/assets/preview.jpg" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -31,16 +28,9 @@
     html {
       scroll-behavior: smooth;
     }
-    body {
-      opacity: 0;
-      transition: opacity 0.5s ease;
-    }
   </style>
 </head>
 <body class="bg-[#121212] text-white font-sans leading-relaxed tracking-wide">
-
-  <!-- Scroll Progress Bar -->
-  <div id="progress-bar" class="fixed top-0 left-0 h-1 bg-crayTeal z-50"></div>
 
   <!-- Header -->
   <header class="sticky top-0 bg-[#121212]/80 backdrop-blur-md z-50 border-b border-gray-800 shadow-sm">
@@ -74,30 +64,30 @@
   </header>
 
   <!-- Hero Section -->
-  <section class="h-screen flex flex-col justify-center items-center text-center px-4 py-6" id="hero">
+  <section class="h-[80vh] flex flex-col justify-center items-center text-center px-4 py-6" id="hero">
     <h1 class="text-5xl font-extrabold uppercase mb-4" data-aos="fade-up">Start simple. <span class="text-crayYellow">Grow bold.</span></h1>
     <p class="text-lg max-w-xl mx-auto text-gray-300 mb-8 font-medium" data-aos="fade-up" data-aos-delay="100">
       I help business owners turn ideas into bold, high-performing websites with modern design and clear function.
     </p>
-    <a href="#contact" class="bg-crayTeal text-black font-semibold py-3 px-6 rounded-full hover:bg-opacity-80 transition hover:shadow-[0_0_15px_#00E0C6]" data-aos="zoom-in" data-aos-delay="200">
+    <a href="#contact" class="bg-crayTeal text-black font-semibold py-3 px-6 rounded-full hover:bg-opacity-80 transition" data-aos="zoom-in" data-aos-delay="200">
       Let’s Work Together
     </a>
   </section>
 
-  <!-- About Section -->
-  <section id="about" class="py-20 px-6 max-w-5xl mx-auto" data-aos="fade-up">
+  <!-- About -->
+  <section id="about" class="py-16 px-6 max-w-5xl mx-auto" data-aos="fade-up">
     <h2 class="text-3xl font-bold mb-6 text-crayYellow">About</h2>
     <p class="text-gray-300">
       Craytivo is a solo web studio focused on clear, conversion-driven design. I create fast, modern websites that connect with your audience and grow with your business. Whether you're launching a new brand or scaling an existing one, I build what you need.
     </p>
   </section>
 
-  <!-- Services Section -->
-  <section id="services" class="py-20 px-6 bg-[#1e1e1e]" data-aos="fade-up">
+  <!-- Services -->
+  <section id="services" class="py-16 px-6 bg-[#1e1e1e]" data-aos="fade-up">
     <div class="max-w-5xl mx-auto">
       <h2 class="text-3xl font-bold mb-10 text-crayYellow">Services</h2>
       <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-[#2a2a2a] p-6 rounded-xl border border-crayTeal">
+        <div class="bg-[#2a2a2a] p-6 rounded-xl border border-crayTeal" data-aos="fade-up">
           <h3 class="font-semibold text-xl mb-2">Starter Package</h3>
           <ul class="text-gray-300 list-disc pl-4">
             <li>1-page responsive site</li>
@@ -105,7 +95,7 @@
             <li>Contact form setup</li>
           </ul>
         </div>
-        <div class="bg-[#2a2a2a] p-6 rounded-xl border border-crayYellow">
+        <div class="bg-[#2a2a2a] p-6 rounded-xl border border-crayYellow" data-aos="fade-up" data-aos-delay="100">
           <h3 class="font-semibold text-xl mb-2">Business Package</h3>
           <ul class="text-gray-300 list-disc pl-4">
             <li>Multi-page site</li>
@@ -113,7 +103,7 @@
             <li>Performance optimization</li>
           </ul>
         </div>
-        <div class="bg-[#2a2a2a] p-6 rounded-xl border border-crayRed">
+        <div class="bg-[#2a2a2a] p-6 rounded-xl border border-crayRed" data-aos="fade-up" data-aos-delay="200">
           <h3 class="font-semibold text-xl mb-2">Custom Development</h3>
           <ul class="text-gray-300 list-disc pl-4">
             <li>Fully tailored web solutions</li>
@@ -125,94 +115,113 @@
     </div>
   </section>
 
-  <!-- Pricing Section -->
-  <section id="pricing" class="py-20 px-6" data-aos="fade-up">
-    <div class="max-w-5xl mx-auto">
-      <h2 class="text-3xl font-bold mb-10 text-crayYellow">Pricing</h2>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-[#2a2a2a] p-6 rounded-xl border border-crayTeal">
-          <h3 class="text-xl font-bold mb-2">Starter</h3>
-          <p class="text-crayTeal text-2xl font-semibold mb-4">$120</p>
-          <ul class="text-gray-300 list-disc pl-5 space-y-1">
-            <li>1-page site</li>
-            <li>Basic contact form</li>
-            <li>Mobile optimization</li>
-          </ul>
-        </div>
-        <div class="bg-[#2a2a2a] p-6 rounded-xl border border-crayYellow">
-          <h3 class="text-xl font-bold mb-2">Business</h3>
-          <p class="text-crayYellow text-2xl font-semibold mb-4">$220</p>
-          <ul class="text-gray-300 list-disc pl-5 space-y-1">
-            <li>Multi-page site</li>
-            <li>Basic SEO</li>
-            <li>Custom contact + service pages</li>
-          </ul>
-        </div>
-        <div class="bg-[#2a2a2a] p-6 rounded-xl border border-crayRed">
-          <h3 class="text-xl font-bold mb-2">Custom</h3>
-          <p class="text-crayRed text-2xl font-semibold mb-4">Starting at $320</p>
-          <ul class="text-gray-300 list-disc pl-5 space-y-1">
-            <li>Custom features</li>
-            <li>Advanced animations</li>
-            <li>High-performance design</li>
-          </ul>
-        </div>
-      </div>
-      <div class="mt-10">
-        <h4 class="text-xl font-semibold text-white mb-4">Optional Add-ons:</h4>
+
+  <!-- Pricing -->
+<section id="pricing" class="py-24 px-6" data-aos="fade-up">
+  <div class="max-w-5xl mx-auto">
+    <h2 class="text-3xl font-bold mb-10 text-crayYellow">Pricing</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-[#2a2a2a] p-6 rounded-xl border border-crayTeal">
+        <h3 class="text-xl font-bold mb-2">Starter</h3>
+        <p class="text-crayTeal text-2xl font-semibold mb-4">$120</p>
         <ul class="text-gray-300 list-disc pl-5 space-y-1">
-          <li>Copywriting: $40</li>
-          <li>Brand Kit Design: $50</li>
-          <li>Ongoing Updates & Maintenance: $25/mo</li>
-          <li>Google Analytics Integration: $20</li>
-          <li>Domain Setup Assistance: $15</li>
+          <li>1-page site</li>
+          <li>Basic contact form</li>
+          <li>Mobile optimization</li>
+        </ul>
+      </div>
+      <div class="bg-[#2a2a2a] p-6 rounded-xl border border-crayYellow">
+        <h3 class="text-xl font-bold mb-2">Business</h3>
+        <p class="text-crayYellow text-2xl font-semibold mb-4">$220</p>
+        <ul class="text-gray-300 list-disc pl-5 space-y-1">
+          <li>Multi-page site</li>
+          <li>Basic SEO</li>
+          <li>Custom contact + service pages</li>
+        </ul>
+      </div>
+      <div class="bg-[#2a2a2a] p-6 rounded-xl border border-crayRed">
+        <h3 class="text-xl font-bold mb-2">Custom</h3>
+        <p class="text-crayRed text-2xl font-semibold mb-4">Starting at $320</p>
+        <ul class="text-gray-300 list-disc pl-5 space-y-1">
+          <li>Custom features</li>
+          <li>Advanced animations</li>
+          <li>High-performance design</li>
         </ul>
       </div>
     </div>
-  </section>
+    <div class="mt-10">
+      <h4 class="text-xl font-semibold text-white mb-4">Optional Add-ons:</h4>
+      <ul class="text-gray-300 list-disc pl-5 space-y-1">
+        <li>Copywriting: $40</li>
+        <li>Brand Kit Design: $50</li>
+        <li>Ongoing Updates & Maintenance: $25/mo</li>
+        <li>Google Analytics Integration: $20</li>
+        <li>Domain Setup Assistance: $15</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
-  <!-- Portfolio Section -->
-  <section id="portfolio" class="py-20 px-6 bg-[#1e1e1e]" data-aos="fade-up">
-    <div class="max-w-5xl mx-auto text-center">
-      <h2 class="text-3xl font-bold text-crayYellow mb-6">Portfolio</h2>
-      <p class="text-gray-300 mb-6">My work speaks for itself. Soon you'll see a showcase of previous projects here.</p>
-      <div class="rounded-lg border border-dashed border-gray-600 p-10 text-gray-500">
-        Coming soon...
+<!-- Portfolio -->
+<section id="portfolio" class="py-24 px-6 bg-[#1e1e1e]" data-aos="fade-up">
+  <div class="max-w-5xl mx-auto text-center">
+    <h2 class="text-3xl font-bold text-crayYellow mb-6">Portfolio</h2>
+    <p class="text-gray-300 mb-6">My work speaks for itself. Soon you'll see a showcase of previous projects here.</p>
+    <div class="rounded-lg border border-dashed border-gray-600 p-10 text-gray-500">
+      Coming soon...
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="py-24 px-6" data-aos="fade-up">
+  <div class="max-w-2xl mx-auto text-center">
+    <h2 class="text-3xl font-bold text-crayYellow mb-6">Contact</h2>
+    <p class="text-gray-300 mb-8">Have a project in mind or questions about working together? Send a message below.</p>
+
+    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="space-y-4" id="contact-form">
+      <input type="hidden" name="form-name" value="contact">
+      <p class="hidden">
+        <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+      </p>
+
+      <label class="block text-left text-sm text-gray-400" for="name">Name</label>
+      <input type="text" id="name" name="name" placeholder="e.g. Jane Doe" required aria-required="true" aria-label="Your name" class="w-full px-4 py-3 rounded bg-[#1e1e1e] border border-gray-600 text-white focus:outline-none focus:ring-2 focus:ring-crayTeal focus:border-crayTeal">
+
+      <label class="block text-left text-sm text-gray-400" for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="e.g. you@email.com" required aria-required="true" aria-label="Your email" class="w-full px-4 py-3 rounded bg-[#1e1e1e] border border-gray-600 text-white focus:outline-none focus:ring-2 focus:ring-crayTeal focus:border-crayTeal">
+
+      <label class="block text-left text-sm text-gray-400" for="message">Message</label>
+      <textarea id="message" name="message" rows="5" placeholder="How can I help you?" required aria-required="true" aria-label="Your message" class="w-full px-4 py-3 rounded bg-[#1e1e1e] border border-gray-600 text-white focus:outline-none focus:ring-2 focus:ring-crayTeal focus:border-crayTeal"></textarea>
+
+      <button type="submit" id="submit-button" class="bg-crayTeal text-black font-semibold px-6 py-3 rounded hover:bg-opacity-80 transition">Send Message</button>
+
+      <div id="form-success" class="hidden text-crayTeal font-medium mt-4">
+        ✅ Your message has been sent!
       </div>
-    </div>
-  </section>
+    </form>
+  </div>
+</section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="py-20 px-6" data-aos="fade-up">
-    <div class="max-w-2xl mx-auto text-center">
-      <h2 class="text-3xl font-bold text-crayYellow mb-6">Contact</h2>
-      <p class="text-gray-300 mb-8">Have a project in mind or questions about working together? Send a message below.</p>
-      <a href="mailto:hello@craytivo.com" class="text-crayTeal text-lg underline">hello@craytivo.com</a>
-    </div>
-  </section>
 
-  <!-- Footer -->
-  <footer class="bg-[#121212] border-t border-gray-700 py-6 text-center text-gray-500 text-sm">
-    <div>&copy; 2025 Craytivo. Built with purpose.</div>
-  </footer>
+<!-- Footer -->
+<footer class="bg-[#121212] border-t border-gray-700 py-6 text-center text-gray-500 text-sm">
+  <div>&copy; 2025 Craytivo. Built with purpose.</div>
+</footer>
 
-  <script>
-    window.onload = () => {
-      document.body.style.opacity = 1;
-    };
-    window.addEventListener('scroll', () => {
-      const docHeight = document.body.scrollHeight - window.innerHeight;
-      const scrollTop = window.scrollY;
-      const scrollPercent = (scrollTop / docHeight) * 100;
-      document.getElementById('progress-bar').style.width = scrollPercent + '%';
-    });
-    AOS.init();
-    const toggle = document.getElementById('menu-toggle');
-    const mobileMenu = document.getElementById('mobile-menu');
-    toggle.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
-  </script>
+<script>
+  AOS.init();
+  const toggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  toggle.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+
+  // Success message logic if redirected from Netlify
+  if (window.location.search.includes("success=true")) {
+    document.getElementById('form-success').classList.remove('hidden');
+  }
+</script>
 
 </body>
 </html>
