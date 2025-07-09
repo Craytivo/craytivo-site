@@ -42,36 +42,51 @@
   <!-- Scroll Progress Bar -->
   <div id="progress-bar" class="fixed top-0 left-0 h-1 bg-crayTeal z-50"></div>
 
-  <!-- Header -->
-  <header class="sticky top-0 bg-[#121212]/80 backdrop-blur-md z-50 border-b border-gray-800 shadow-sm">
-    <div class="flex justify-between items-center py-2 px-6 max-w-7xl mx-auto">
-      <div class="flex items-center space-x-4">
-        <img src="assets/logo-no-text.png" alt="Craytivo Logo" class="w-16">
-        <span class="text-xl font-extrabold tracking-wide uppercase">Craytivo</span>
-      </div>
-      <div class="md:hidden">
-        <button id="menu-toggle" class="focus:outline-none">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
-      </div>
-      <nav class="hidden md:flex space-x-6 text-sm">
-        <a href="#about" class="hover:text-crayTeal">About</a>
-        <a href="#services" class="hover:text-crayTeal">Services</a>
-        <a href="#pricing" class="hover:text-crayTeal">Pricing</a>
-        <a href="#portfolio" class="hover:text-crayTeal">Portfolio</a>
-        <a href="#contact" class="hover:text-crayTeal">Contact</a>
-      </nav>
+  <header class="sticky top-0 z-50 bg-gradient-to-b from-[#121212]/90 to-[#121212]/60 backdrop-blur-md border-b border-gray-700 shadow-[0_2px_15px_rgba(0,0,0,0.2)] py-2 transition-all duration-300">
+  <div class="flex justify-between items-center px-6 max-w-7xl mx-auto">
+    <div class="flex items-center space-x-4">
+      <img src="assets/logo-no-text.png" alt="Craytivo Logo" class="w-16 transition-transform duration-300 hover:scale-105">
+      <span class="text-xl font-extrabold tracking-wide uppercase">Craytivo</span>
     </div>
-    <div id="mobile-menu" class="hidden px-6 pb-4 md:hidden">
-      <a href="#about" class="block py-1 text-sm hover:text-crayTeal">About</a>
-      <a href="#services" class="block py-1 text-sm hover:text-crayTeal">Services</a>
-      <a href="#pricing" class="block py-1 text-sm hover:text-crayTeal">Pricing</a>
-      <a href="#portfolio" class="block py-1 text-sm hover:text-crayTeal">Portfolio</a>
-      <a href="#contact" class="block py-1 text-sm hover:text-crayTeal">Contact</a>
+    <div class="md:hidden">
+      <button id="menu-toggle" class="focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
     </div>
-  </header>
+    <nav class="hidden md:flex space-x-6 text-sm">
+      <a href="#about" class="relative group hover:text-crayTeal transition">
+        About
+        <span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-crayTeal group-hover:w-full transition-all duration-300 ease-in-out"></span>
+      </a>
+      <a href="#services" class="relative group hover:text-crayTeal transition">
+        Services
+        <span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-crayTeal group-hover:w-full transition-all duration-300 ease-in-out"></span>
+      </a>
+      <a href="#pricing" class="relative group hover:text-crayTeal transition">
+        Pricing
+        <span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-crayTeal group-hover:w-full transition-all duration-300 ease-in-out"></span>
+      </a>
+      <a href="#portfolio" class="relative group hover:text-crayTeal transition">
+        Portfolio
+        <span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-crayTeal group-hover:w-full transition-all duration-300 ease-in-out"></span>
+      </a>
+      <a href="#contact" class="relative group hover:text-crayTeal transition">
+        Contact
+        <span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-crayTeal group-hover:w-full transition-all duration-300 ease-in-out"></span>
+      </a>
+    </nav>
+  </div>
+
+  <div id="mobile-menu" class="hidden px-6 pb-4 md:hidden">
+    <a href="#about" class="block py-1 text-sm hover:text-crayTeal">About</a>
+    <a href="#services" class="block py-1 text-sm hover:text-crayTeal">Services</a>
+    <a href="#pricing" class="block py-1 text-sm hover:text-crayTeal">Pricing</a>
+    <a href="#portfolio" class="block py-1 text-sm hover:text-crayTeal">Portfolio</a>
+    <a href="#contact" class="block py-1 text-sm hover:text-crayTeal">Contact</a>
+  </div>
+</header>
 
   <!-- Hero Section -->
   <section class="h-[80vh] flex flex-col justify-center items-center text-center px-4 py-6" id="hero">
