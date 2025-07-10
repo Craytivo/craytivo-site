@@ -168,20 +168,41 @@
   <!-- Scroll Progress Bar -->
   <div id="progress-bar" class="fixed top-0 left-0 h-1 bg-crayTeal z-50"></div>
 
-<header class="sticky top-0 z-50 bg-[#121212]/80 backdrop-blur-xl border-b border-white/10 shadow-lg py-3">
+<header id="mainHeader" class="sticky top-0 z-50 bg-[#121212]/80 backdrop-blur-xl border-b border-white/10 shadow-lg py-3 transition-all duration-300">
   <div class="flex justify-between items-center px-6 max-w-7xl mx-auto">
-    <!-- Logo -->
+    <!-- Logo and Text -->
     <div class="flex items-center space-x-3">
-      <img src="assets/logo-no-text.png" alt="Craytivo Logo" class="w-12 md:w-14">
-      <span class="text-xl font-extrabold tracking-wide uppercase text-white">Craytivo</span>
+      <img id="headerLogo" src="assets/logo-no-text.png" alt="Craytivo Logo" class="w-12 md:w-14 transition-all duration-300">
+      <span id="headerText" class="text-xl font-extrabold tracking-wide uppercase text-white transition-opacity duration-300">Craytivo</span>
     </div>
 
+    <!-- Title Vanish On Scroll -->
+    <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const headerText = document.getElementById("headerText");
+    const headerLogo = document.getElementById("headerLogo");
+
+    window.addEventListener("scroll", () => {
+      const scrolled = window.scrollY > 80;
+
+      if (scrolled) {
+        headerText.classList.add("opacity-0");
+        headerLogo.classList.add("scale-110");
+      } else {
+        headerText.classList.remove("opacity-0");
+        headerLogo.classList.remove("scale-110");
+      }
+    });
+  });
+</script>
+
+
     <!-- Hamburger Icon -->
-<button id="hamburgerBtn" class="md:hidden text-white focus:outline-none">
-  <svg id="hamburgerIcon" class="w-6 h-6 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-    <path id="hamburgerLines" stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-  </svg>
-</button>
+<button id="hamburgerBtn" class="md:hidden text-white focus:outline-none z-50">
+      <svg id="hamburgerIcon" class="w-6 h-6 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path id="hamburgerLines" stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
 
 <!-- Mobile Nav Menu -->
 <div id="mobileNav" class="hidden flex-col md:hidden px-6 pb-4 bg-transparent text-white transition-all duration-300 ease-in-out origin-top">
@@ -204,14 +225,6 @@
     </nav>
   </div>
 
-<!-- Mobile Nav Menu -->
-<div id="mobileNav" class="hidden flex-col md:hidden px-6 pb-4 bg-gradient-to-b from-black/40 to-black/10 backdrop-blur-md text-white rounded-b-xl shadow-xl z-40">
-  <a href="#about" class="py-2 text-lg font-semibold tracking-wide hover:text-crayTeal transition duration-200">About</a>
-  <a href="#benefits" class="py-2 text-lg font-semibold tracking-wide hover:text-crayTeal transition duration-200">Services</a>
-  <a href="#pricing" class="py-2 text-lg font-semibold tracking-wide hover:text-crayTeal transition duration-200">Pricing</a>
-  <a href="#portfolio" class="py-2 text-lg font-semibold tracking-wide hover:text-crayTeal transition duration-200">Portfolio</a>
-  <a href="#contact" class="py-2 text-lg font-semibold tracking-wide hover:text-crayTeal transition duration-200">Contact</a>
-</div>
 
 
 </header>
@@ -275,10 +288,6 @@ const menuToggleBtn = document.getElementById("menu-toggle");
   
 
 </script>
-
-
-
-
 
 
 
