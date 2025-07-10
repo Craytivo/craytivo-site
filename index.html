@@ -15,21 +15,38 @@
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Montserrat', 'sans-serif'],
-          },
-          colors: {
-            crayYellow: '#FFD644',
-            crayTeal: '#00E0C6',
-            crayRed: '#E94F37',
-          }
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          sans: ['Montserrat', 'sans-serif'],
         },
-      },
-    };
-  </script>
+        colors: {
+          crayYellow: '#FFD644',
+          crayTeal: '#00E0C6',
+          crayRed: '#E94F37',
+        },
+        animation: {
+          'fade-in': 'fadeIn 0.3s ease-out forwards',
+          'pulse-slow': 'pulseSlow 6s ease-in-out infinite',
+        },
+        keyframes: {
+          fadeIn: {
+            '0%': { opacity: '0', transform: 'translateY(-10px)' },
+            '100%': { opacity: '1', transform: 'translateY(0)' },
+          },
+          pulseSlow: {
+            '0%, 100%': { opacity: '1', transform: 'scale(1)' },
+            '50%': { opacity: '0.5', transform: 'scale(1.05)' },
+          }
+        }
+      }
+    }
+  };
+</script>
+
+
+
   <style>
   html {
     scroll-behavior: smooth;
@@ -139,59 +156,132 @@
 </style>
 
 </head>
+
 <body class="bg-[#121212] text-white font-sans leading-relaxed tracking-wide">
 
   <!-- Scroll Progress Bar -->
   <div id="progress-bar" class="fixed top-0 left-0 h-1 bg-crayTeal z-50"></div>
 
-  <header class="sticky top-0 z-50 bg-gradient-to-b from-[#121212]/90 to-[#121212]/60 backdrop-blur-md border-b border-gray-700 shadow-[0_2px_15px_rgba(0,0,0,0.2)] py-2 transition-all duration-300">
+<header class="sticky top-0 z-50 bg-[#121212]/80 backdrop-blur-xl border-b border-white/10 shadow-lg py-3">
   <div class="flex justify-between items-center px-6 max-w-7xl mx-auto">
-    <div class="flex items-center space-x-4">
-      <img src="assets/logo-no-text.png" alt="Craytivo Logo" class="w-16 transition-transform duration-300 hover:scale-105">
-      <span class="text-xl font-extrabold tracking-wide uppercase">Craytivo</span>
+    <!-- Logo -->
+    <div class="flex items-center space-x-3">
+      <img src="assets/logo-no-text.png" alt="Craytivo Logo" class="w-12 md:w-14">
+      <span class="text-xl font-extrabold tracking-wide uppercase text-white">Craytivo</span>
     </div>
-    <div class="md:hidden">
-      <button id="menu-toggle" class="focus:outline-none">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-      </button>
-    </div>
-    <nav class="hidden md:flex space-x-6 text-sm">
-      <a href="#about" class="relative group hover:text-crayTeal transition">
-        About
-        <span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-crayTeal group-hover:w-full transition-all duration-300 ease-in-out"></span>
-      </a>
-      <a href="#services" class="relative group hover:text-crayTeal transition">
-        Services
-        <span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-crayTeal group-hover:w-full transition-all duration-300 ease-in-out"></span>
-      </a>
-      <a href="#pricing" class="relative group hover:text-crayTeal transition">
-        Pricing
-        <span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-crayTeal group-hover:w-full transition-all duration-300 ease-in-out"></span>
-      </a>
-      <a href="#portfolio" class="relative group hover:text-crayTeal transition">
-        Portfolio
-        <span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-crayTeal group-hover:w-full transition-all duration-300 ease-in-out"></span>
-      </a>
-      <a href="#contact" class="relative group hover:text-crayTeal transition">
-        Contact
-        <span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-crayTeal group-hover:w-full transition-all duration-300 ease-in-out"></span>
-      </a>
+
+    <!-- Hamburger Icon -->
+<button id="hamburgerBtn" class="md:hidden text-white focus:outline-none">
+  <svg id="hamburgerIcon" class="w-6 h-6 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+    <path id="hamburgerLines" stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+  </svg>
+</button>
+
+<!-- Mobile Nav Menu -->
+<div id="mobileNav" class="hidden flex-col md:hidden px-6 pb-4 bg-[#121212] text-white transition-all duration-300 ease-in-out origin-top animate-fade-in">
+  <a href="#about" class="py-2 hover:text-crayTeal block">About</a>
+  <a href="#services" class="py-2 hover:text-crayTeal block">Services</a>
+  <a href="#pricing" class="py-2 hover:text-crayTeal block">Pricing</a>
+  <a href="#portfolio" class="py-2 hover:text-crayTeal block">Portfolio</a>
+  <a href="#contact" class="py-2 hover:text-crayTeal block">Contact</a>
+</div>
+
+
+    <!-- Desktop Nav -->
+    <nav class="hidden md:flex space-x-8 text-sm font-medium text-white">
+      <a href="#about" class="hover:text-crayTeal">About</a>
+      <a href="#services" class="hover:text-crayTeal">Services</a>
+      <a href="#pricing" class="hover:text-crayTeal">Pricing</a>
+      <a href="#portfolio" class="hover:text-crayTeal">Portfolio</a>
+      <a href="#contact" class="hover:text-crayTeal">Contact</a>
     </nav>
   </div>
 
-  <div id="mobile-menu" class="hidden px-6 pb-4 md:hidden">
-    <a href="#about" class="block py-1 text-sm hover:text-crayTeal">About</a>
-    <a href="#services" class="block py-1 text-sm hover:text-crayTeal">Services</a>
-    <a href="#pricing" class="block py-1 text-sm hover:text-crayTeal">Pricing</a>
-    <a href="#portfolio" class="block py-1 text-sm hover:text-crayTeal">Portfolio</a>
-    <a href="#contact" class="block py-1 text-sm hover:text-crayTeal">Contact</a>
+  <!-- Mobile Nav Menu -->
+  <div id="mobileNav" class="hidden flex-col md:hidden px-6 pb-4 bg-[#121212] text-white">
+    <a href="#about" class="py-2 hover:text-crayTeal">About</a>
+    <a href="#services" class="py-2 hover:text-crayTeal">Services</a>
+    <a href="#pricing" class="py-2 hover:text-crayTeal">Pricing</a>
+    <a href="#portfolio" class="py-2 hover:text-crayTeal">Portfolio</a>
+    <a href="#contact" class="py-2 hover:text-crayTeal">Contact</a>
   </div>
 </header>
+<div id="menu-overlay" class="fixed inset-0 bg-black bg-opacity-60 z-40 hidden transition-opacity duration-300 md:hidden"></div>
+
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const hamburgerBtn = document.getElementById("hamburgerBtn");
+    const hamburgerIcon = document.getElementById("hamburgerIcon");
+    const hamburgerLines = document.getElementById("hamburgerLines");
+    const mobileNav = document.getElementById("mobileNav");
+
+    const navLinks = mobileNav.querySelectorAll("a");
+
+    const hamburgerSVG = `<path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />`;
+    const closeSVG = `<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />`;
+
+    hamburgerBtn.addEventListener("click", () => {
+      mobileNav.classList.toggle("hidden");
+      hamburgerIcon.innerHTML = mobileNav.classList.contains("hidden") ? hamburgerSVG : closeSVG;
+    });
+
+    navLinks.forEach(link => {
+      link.addEventListener("click", () => {
+        mobileNav.classList.add("hidden");
+        hamburgerIcon.innerHTML = hamburgerSVG;
+      });
+    });
+  });
+
+const menuToggleBtn = document.getElementById("menu-toggle");
+  const mobileNavMenu = document.getElementById("mobile-menu");
+  const menuOverlay = document.getElementById("menu-overlay");
+
+  function toggleMenu() {
+    const isOpen = !mobileNavMenu.classList.contains("hidden");
+
+    mobileNavMenu.classList.toggle("hidden");
+    menuOverlay.classList.toggle("hidden");
+    menuToggleBtn.setAttribute("aria-expanded", String(!isOpen));
+
+    // Toggle icon from hamburger to X
+    menuToggleBtn.innerHTML = isOpen
+      ? `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+         </svg>`
+      : `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+         </svg>`;
+  }
+
+  menuToggleBtn.addEventListener("click", toggleMenu);
+
+  // Close on overlay click or link click
+  menuOverlay.addEventListener("click", toggleMenu);
+  document.querySelectorAll("#mobile-menu a").forEach(link =>
+    link.addEventListener("click", toggleMenu)
+  );
+  
+
+</script>
+
+
+
+
+
+
+
 
 <!-- Hero Section -->
 <section id="hero" class="relative h-[80vh] flex flex-col justify-center items-center text-center px-4 py-6 overflow-hidden">
+  
+  <!-- Decorative SVG Accent -->
+<svg class="absolute top-12 right-12 w-72 h-72 text-crayTeal opacity-10 blur-3xl animate-pulse-slow pointer-events-none z-0" 
+     fill="currentColor" viewBox="0 0 200 200">
+  <circle cx="100" cy="100" r="100" />
+</svg>
   <!-- Background pattern and gradient -->
   <div class="absolute inset-0 z-0">
     <div class="w-full h-full bg-[url('/assets/topography.svg')] bg-repeat opacity-35"></div>
@@ -199,20 +289,23 @@
   </div>
 
   <!-- Glassmorphism Card Content -->
-  <div class="animated-border relative z-10 backdrop-blur-md bg-white/5 border border-white/10 rounded-xl p-6 sm:p-10 max-w-xl mx-auto shadow-lg hover:shadow-2xl transition-all duration-300">
+  <div class="animated-border relative z-10 backdrop-blur-md bg-white/5 border border-white/10 rounded-xl p-8 sm:p-14 max-w-xl mx-auto shadow-lg hover:shadow-xl transition-all duration-300">
     <span class="inline-block mb-3 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-crayTeal bg-white/10 border border-crayTeal/40 rounded-full">
       Web Design Studio
     </span>
 
     <!-- Main headline -->
-    <h1 class="text-4xl sm:text-5xl font-extrabold uppercase mb-4 leading-tight text-white" data-aos="fade-up">
-      Websites That Help You <span class="text-crayYellow">Find, Track & Win</span> Clients
-    </h1>
+<h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-tight mb-4"
+     data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
+  Websites That Help You <span class="text-crayYellow">Find, Track & Win</span> Clients
+</h1>
+
 
     <!-- Subheadline -->
-    <p class="text-base sm:text-lg text-gray-300 font-medium mb-6" data-aos="fade-up" data-aos-delay="100">
-      Craytivo builds strategic websites for small and medium-sized businesses ready to grow.
-    </p>
+    <p class="text-base sm:text-lg text-gray-300 font-light mb-6 max-w-xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+  Craytivo builds strategic websites for small and medium-sized businesses ready to grow.
+</p>
+
 
     <!-- CTA Button -->
     <a href="#contact"
@@ -223,21 +316,37 @@
     </a>
 
     <!-- Target audience text -->
-    <p class="mt-5 text-sm text-gray-400" data-aos="fade-up" data-aos-delay="300">
-      For entrepreneurs, service providers & business owners ready to elevate their online presence.
-    </p>
+    <p class="mt-5 text-sm text-gray-400 italic tracking-wide" data-aos="fade-up" data-aos-delay="300">
+  For entrepreneurs, service providers & business owners ready to elevate their online presence.
+</p>
+
   </div>
 
   <!-- Scroll Down Prompt -->
-  <div class="absolute bottom-4 animate-bounce z-10">
-    <a href="#about" class="text-crayTeal text-sm tracking-wider font-medium">
-      Scroll Down ↓
-    </a>
-  </div>
+  <div class="absolute bottom-6 z-10 opacity-80 hover:opacity-100 transition">
+  <a href="#about" class="text-crayTeal text-xs uppercase tracking-widest font-medium">↓ Scroll</a>
+</div>
+
 
   <!-- Bottom Fade to About Section -->
   <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-b from-transparent to-[#121212] z-0"></div>
+
+
 </section>
+
+<script>
+  const hero = document.getElementById("hero");
+hero.addEventListener("mousemove", (e) => {
+  const x = (e.clientX / window.innerWidth - 0.5) * 10;
+  const y = (e.clientY / window.innerHeight - 0.5) * 10;
+  hero.style.transform = `rotateX(${y}deg) rotateY(${x}deg)`;
+});
+hero.addEventListener("mouseleave", () => {
+  hero.style.transform = "";
+});
+
+
+</script>
 
 
 
@@ -523,13 +632,7 @@
         Have a project in mind? Reach out — I typically respond within 24 hours.
       </p>
 
-      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field"
-        class="space-y-6 text-left" id="contact-form" novalidate>
-        <input type="hidden" name="form-name" value="contact" />
-        <p class="hidden">
-          <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
-        </p>
-
+<form action="https://formspree.io/f/mjkrnyrn" method="POST" class="space-y-6 text-left" id="contact-form" novalidate>
         <!-- Name Field -->
         <div class="relative group">
           <label for="name" class="block text-sm text-gray-400 mb-1">Name</label>
@@ -588,54 +691,84 @@
       </form>
     </div>
   </div>
-</section>
+
+ <!-- Glass Success Modal -->
+<div id="success-modal" class="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-50 ...">
+  <div class="bg-white/10 backdrop-blur-lg rounded-xl border border-white/20 shadow-xl max-w-md w-full p-6 text-center">
+    <h3 class="text-2xl font-bold text-crayYellow mb-2">Message Sent Successfully</h3>
+<p class="text-gray-200">Thanks for reaching out — I’ll be in touch shortly!</p>
+
+    <button onclick="closeModal()" class="mt-2 px-5 py-2 bg-crayTeal text-black rounded-full font-medium hover:scale-105 transition">
+      Close
+    </button>
+  </div>
+</div>
 
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const netlifyForm = document.querySelector('form[name="contact"]');
-    const submitButton = document.getElementById("submit-button");
-    const successMessage = document.getElementById("form-success");
+  const contactForm = document.getElementById("contact-form");
+  const modal = document.getElementById("success-modal");
 
-    if (!netlifyForm) return;
+  contactForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-    netlifyForm.addEventListener("submit", async function (event) {
-      event.preventDefault();
-
-      const formData = new FormData(netlifyForm);
-      formData.append("form-name", "contact"); // Netlify requires this
-
-      submitButton.disabled = true;
-      submitButton.classList.add("opacity-50", "cursor-not-allowed");
-
-      try {
-        const response = await fetch("/", {
-          method: "POST",
-          headers: { "Content-Type": "application/x-www-form-urlencoded" },
-          body: new URLSearchParams(formData).toString(),
-        });
-
-        if (response.ok) {
-          netlifyForm.reset();
-          successMessage.classList.remove("hidden");
-          submitButton.classList.add("hidden");
-        } else {
-          alert("Something went wrong. Please try again.");
-          submitButton.disabled = false;
-          submitButton.classList.remove("opacity-50", "cursor-not-allowed");
-        }
-      } catch (err) {
-        alert("Network error. Please try again.");
-        submitButton.disabled = false;
-        submitButton.classList.remove("opacity-50", "cursor-not-allowed");
-      }
+    const formData = new FormData(contactForm);
+    const response = await fetch(contactForm.action, {
+      method: "POST",
+      body: formData,
+      headers: { Accept: "application/json" }
     });
+
+    if (response.ok) {
+      contactForm.reset();
+      showModal();
+    } else {
+      alert("Something went wrong. Please try again.");
+    }
   });
+
+  function showModal() {
+    modal.classList.remove("pointer-events-none", "opacity-0", "scale-95");
+    modal.classList.add("opacity-100", "scale-100");
+
+    setTimeout(() => {
+      closeModal();
+    }, 5000); // Auto-close after 5 seconds
+  }
+
+  function closeModal() {
+    modal.classList.add("pointer-events-none", "opacity-0", "scale-95");
+    modal.classList.remove("opacity-100", "scale-100");
+  }
+
+  document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") closeModal();
+});
+
+function showModal() {
+  modal.classList.remove("pointer-events-none", "opacity-0", "scale-95");
+  modal.classList.add("opacity-100", "scale-100");
+
+  // 🚫 Prevent background scroll
+  document.body.style.overflow = "hidden";
+
+  setTimeout(() => {
+    closeModal();
+  }, 5000);
+}
+
+function closeModal() {
+  modal.classList.add("pointer-events-none", "opacity-0", "scale-95");
+  modal.classList.remove("opacity-100", "scale-100");
+
+  // ✅ Restore background scroll
+  document.body.style.overflow = "";
+}
+
 </script>
 
 
 
-
-
+</section>
 
 
 <!-- Footer Accent Line -->
