@@ -602,17 +602,15 @@
       event.preventDefault();
 
       const formData = new FormData(netlifyForm);
+      formData.append("form-name", "contact"); // Netlify requires this
 
-      // Disable button during submission
       submitButton.disabled = true;
       submitButton.classList.add("opacity-50", "cursor-not-allowed");
 
       try {
         const response = await fetch("/", {
           method: "POST",
-          headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
-          },
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
           body: new URLSearchParams(formData).toString(),
         });
 
@@ -633,6 +631,7 @@
     });
   });
 </script>
+
 
 
 
