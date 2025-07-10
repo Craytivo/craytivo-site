@@ -590,6 +590,52 @@
   </div>
 </section>
 
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const netlifyForm = document.querySelector('form[name="contact"]');
+    const submitButton = document.getElementById("submit-button");
+    const successMessage = document.getElementById("form-success");
+
+    if (!netlifyForm) return;
+
+    netlifyForm.addEventListener("submit", async function (event) {
+      event.preventDefault();
+
+      const formData = new FormData(netlifyForm);
+
+      // Disable button during submission
+      submitButton.disabled = true;
+      submitButton.classList.add("opacity-50", "cursor-not-allowed");
+
+      try {
+        const response = await fetch("/", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+          body: new URLSearchParams(formData).toString(),
+        });
+
+        if (response.ok) {
+          netlifyForm.reset();
+          successMessage.classList.remove("hidden");
+          submitButton.classList.add("hidden");
+        } else {
+          alert("Something went wrong. Please try again.");
+          submitButton.disabled = false;
+          submitButton.classList.remove("opacity-50", "cursor-not-allowed");
+        }
+      } catch (err) {
+        alert("Network error. Please try again.");
+        submitButton.disabled = false;
+        submitButton.classList.remove("opacity-50", "cursor-not-allowed");
+      }
+    });
+  });
+</script>
+
+
+
 
 
 
