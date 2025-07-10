@@ -3,8 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Craytivo</title>
-  <meta name="description" content="Craytivo builds bold, custom websites for business owners in Zimbabwe and beyond." />
+  <link href="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/css/lightbox.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/js/lightbox-plus-jquery.min.js"></script>
+
+<title>Craytivo – Affordable Custom Web Design for Small Businesses in Zimbabwe & Canada</title>
+<meta name="description" content="Craytivo helps small businesses in Zimbabwe and Canada grow with bold, mobile-friendly, lead-generating websites. Affordable pricing and fast turnaround." />
   <meta property="og:title" content="Craytivo - Bold Web Design" />
   <meta property="og:image" content="https://craytivo.com/assets/preview.jpg" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&display=swap" rel="stylesheet">
@@ -336,7 +339,7 @@
     <!-- Pricing Cards -->
     <div class="grid md:grid-cols-3 gap-8" id="pricing-cards">
       <!-- Starter -->
-      <div class="bg-[#1e1e1e] border border-crayTeal rounded-2xl p-8 text-left shadow-lg hover:shadow-xl transition duration-300">
+<div class="bg-[#1e1e1e] border border-crayYellow rounded-2xl p-8 text-left shadow-lg hover:shadow-xl transition-transform duration-300 hover:scale-105" data-aos="fade-up" data-aos-delay="200">
         <h3 class="text-xl font-bold text-white mb-2">Starter</h3>
         <p class="text-3xl font-bold text-crayTeal mb-4 price" data-onetime="$120" data-monthly="$15/mo">$120</p>
         <ul class="text-gray-300 space-y-2 list-inside list-disc">
@@ -347,7 +350,7 @@
       </div>
 
       <!-- Business -->
-      <div class="bg-[#1e1e1e] border border-crayYellow rounded-2xl p-8 text-left shadow-lg hover:shadow-xl transition duration-300">
+<div class="bg-[#1e1e1e] border border-crayYellow rounded-2xl p-8 text-left shadow-lg hover:shadow-xl transition-transform duration-300 hover:scale-105" data-aos="fade-up" data-aos-delay="200">
         <h3 class="text-xl font-bold text-white mb-2">Business</h3>
         <p class="text-3xl font-bold text-crayYellow mb-4 price" data-onetime="$220" data-monthly="$30/mo">$220</p>
         <ul class="text-gray-300 space-y-2 list-inside list-disc">
@@ -358,14 +361,15 @@
       </div>
 
       <!-- Custom -->
-      <div class="bg-[#1e1e1e] border border-crayRed rounded-2xl p-8 text-left shadow-lg hover:shadow-xl transition duration-300">
+<div class="bg-[#1e1e1e] border border-crayYellow rounded-2xl p-8 text-left shadow-lg hover:shadow-xl transition-transform duration-300 hover:scale-105" data-aos="fade-up" data-aos-delay="200">
         <h3 class="text-xl font-bold text-white mb-2">Custom</h3>
         <p class="text-3xl font-bold text-crayRed mb-4">From $320</p>
-        <ul class="text-gray-300 space-y-2 list-inside list-disc">
-          <li>Fully customized features</li>
-          <li>Advanced animations</li>
-          <li>Performance-optimized design</li>
-        </ul>
+<ul class="text-gray-300 space-y-2 list-inside list-disc">
+  <li>Up to 5 pages</li>
+  <li>Fully custom layout and animations</li>
+  <li>Performance optimization</li>
+</ul>
+
       </div>
     </div>
 
@@ -381,6 +385,13 @@
       </div>
     </div>
   </div>
+
+  <div class="mt-16 text-center">
+  <a href="#contact" class="inline-block bg-crayTeal text-black font-semibold py-3 px-6 rounded-full shadow-lg hover:bg-opacity-90 hover:scale-105 transition duration-300">
+    Ready to Start? Contact Me
+  </a>
+</div>
+
 </section>
 
 <!-- Toggle Script -->
@@ -434,16 +445,65 @@
   </div>
 </section>
 
-  <!-- Portfolio -->
-  <section id="portfolio" class="py-24 px-6 bg-[#1e1e1e]" data-aos="fade-up">
-    <div class="max-w-5xl mx-auto text-center">
-      <h2 class="text-3xl font-bold text-crayYellow mb-6">Portfolio</h2>
-      <p class="text-gray-300 mb-6">My work speaks for itself. Soon you'll see a showcase of previous projects here.</p>
-      <div class="rounded-lg border border-dashed border-gray-600 p-10 text-gray-500">
-        Coming soon...
+<!-- Portfolio -->
+<section id="portfolio" class="py-24 px-6 bg-[#1e1e1e]" data-aos="fade-up">
+  <div class="max-w-5xl mx-auto text-center">
+    <h2 class="text-3xl font-bold text-crayYellow mb-6">Portfolio</h2>
+    <p class="text-gray-300 mb-6">Websites I’ve helped build — from real estate to ecommerce to digital strategy.</p>
+
+    <div class="grid sm:grid-cols-2 gap-8 mt-10 text-left">
+      <!-- Example Project -->
+      <div class="relative bg-[#1a1a1a] border border-gray-700 p-6 rounded-xl hover:border-crayTeal transition duration-300 hover:shadow-2xl hover:-translate-y-1 transform hover:scale-105 group" data-aos="zoom-in">
+        <a href="assets\images\marina-homes.png" data-lightbox="portfolio" data-title="Marina Homes - Real Estate Website">
+          <img src="assets\images\marina-homes.png" alt="Marina Homes Screenshot" class="rounded-lg mb-4 shadow-md w-full h-48 object-cover group-hover:opacity-90 transition duration-300" />
+        </a>
+        <h3 class="text-xl font-semibold text-white mb-1 group-hover:text-crayTeal">Marina Homes</h3>
+        <p class="text-gray-400 text-sm">Luxury new home builder site showcasing real estate developments.</p>
+        <a href="https://marinahomes.ca/" target="_blank" class="inline-block mt-3 text-crayTeal text-sm font-medium group-hover:underline">Visit Website →</a>
+      </div>
+
+      <!-- Repeat for other projects -->
+      <div class="relative bg-[#1a1a1a] border border-gray-700 p-6 rounded-xl hover:border-crayTeal transition duration-300 hover:shadow-2xl hover:-translate-y-1 transform hover:scale-105 group" data-aos="zoom-in">
+        <a href="assets\images\purpose-path.png" data-lightbox="portfolio" data-title="Purpose Path - Marketing Agency">
+          <img src="assets\images\purpose-path.png" alt="Purpose Path Screenshot" class="rounded-lg mb-4 shadow-md w-full h-48 object-cover group-hover:opacity-90 transition duration-300" />
+        </a>
+        <h3 class="text-xl font-semibold text-white mb-1 group-hover:text-crayTeal">Purpose Path</h3>
+        <p class="text-gray-400 text-sm">Marketing agency site built with strategy and growth in mind.</p>
+        <a href="https://purposepath.ca/" target="_blank" class="inline-block mt-3 text-crayTeal text-sm font-medium group-hover:underline">Visit Website →</a>
+      </div>
+
+      <div class="relative bg-[#1a1a1a] border border-gray-700 p-6 rounded-xl hover:border-crayTeal transition duration-300 hover:shadow-2xl hover:-translate-y-1 transform hover:scale-105 group" data-aos="zoom-in">
+        <a href="assets\images\zemlar.png" data-lightbox="portfolio" data-title="Zemlar Offices - Flexible Workspace">
+          <img src="assets\images\zemlar.png" alt="Zemlar Offices Screenshot" class="rounded-lg mb-4 shadow-md w-full h-48 object-cover group-hover:opacity-90 transition duration-300" />
+        </a>
+        <h3 class="text-xl font-semibold text-white mb-1 group-hover:text-crayTeal">Zemlar Offices</h3>
+        <p class="text-gray-400 text-sm">Professional site for B2B office space solutions across Canada.</p>
+        <a href="https://zemlar.ca/" target="_blank" class="inline-block mt-3 text-crayTeal text-sm font-medium group-hover:underline">Visit Website →</a>
+      </div>
+
+      <div class="relative bg-[#1a1a1a] border border-gray-700 p-6 rounded-xl hover:border-crayTeal transition duration-300 hover:shadow-2xl hover:-translate-y-1 transform hover:scale-105 group" data-aos="zoom-in">
+        <a href="assets\images\icare.png" data-lightbox="portfolio" data-title="ICARE Naturals - Skincare Ecommerce">
+          <img src="assets\images\icare.png" alt="ICARE Naturals Screenshot" class="rounded-lg mb-4 shadow-md w-full h-48 object-cover group-hover:opacity-90 transition duration-300" />
+        </a>
+        <h3 class="text-xl font-semibold text-white mb-1 group-hover:text-crayTeal">ICARE Naturals</h3>
+        <p class="text-gray-400 text-sm">Clean, ecommerce-optimized design for a natural skincare brand.</p>
+        <a href="https://icarenaturals.ca/" target="_blank" class="inline-block mt-3 text-crayTeal text-sm font-medium group-hover:underline">Visit Website →</a>
+      </div>
+
+      <div class="relative bg-[#1a1a1a] border border-gray-700 p-6 rounded-xl hover:border-crayTeal transition duration-300 hover:shadow-2xl hover:-translate-y-1 transform hover:scale-105 group" data-aos="zoom-in">
+        <a href="assets\images\flc.png" data-lightbox="portfolio" data-title="Freedom Life Church - Ministry Website">
+          <img src="assets\images\flc.png" alt="Freedom Life Church Screenshot" class="rounded-lg mb-4 shadow-md w-full h-48 object-cover group-hover:opacity-90 transition duration-300" />
+        </a>
+        <h3 class="text-xl font-semibold text-white mb-1 group-hover:text-crayTeal">Freedom Life Church</h3>
+        <p class="text-gray-400 text-sm">Modern church website with events, giving, and media integration.</p>
+        <a href="https://freedomlifechurch.ca/" target="_blank" class="inline-block mt-3 text-crayTeal text-sm font-medium group-hover:underline">Visit Website →</a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
+
+
 
 <!-- Contact -->
 <section id="contact" class="py-32 px-6 bg-[#121212] relative overflow-hidden" data-aos="fade-up">
