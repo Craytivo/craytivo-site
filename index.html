@@ -7,7 +7,8 @@
 
   <script src="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/js/lightbox-plus-jquery.min.js"></script>
 
-<title>Craytivo – Affordable Custom Web Design for Small Businesses in Zimbabwe & Canada</title>
+<title>Craytivo – Affordable Custom Web Design for Canadian Small Businesses</title>
+
 <meta name="description" content="Craytivo helps small businesses in Zimbabwe and Canada grow with bold, mobile-friendly, lead-generating websites. Affordable pricing and fast turnaround." />
   <meta property="og:title" content="Craytivo - Bold Web Design" />
   <meta property="og:image" content="https://craytivo.com/assets/preview.jpg" />
@@ -169,33 +170,56 @@
   <!-- Scroll Progress Bar -->
   <div id="progress-bar" class="fixed top-0 left-0 h-1 bg-crayTeal z-50"></div>
 
-<header id="mainHeader" class="sticky top-0 z-50 bg-[#121212]/80 backdrop-blur-xl border-b border-white/10 shadow-lg py-3 transition-all duration-300">
+<header id="mainHeader" class="sticky top-0 z-50 bg-[#121212]/80 backdrop-blur-md border-b border-white/10 py-3 transition-all duration-300 shadow-none">
   <div class="flex justify-between items-center px-6 max-w-7xl mx-auto">
-    <!-- Logo and Text -->
-    <div class="flex items-center space-x-3">
-      <img id="headerLogo" src="assets/logo-no-text.png" alt="Craytivo Logo" class="w-12 md:w-14 transition-all duration-300">
+    <!-- Logo Only (text fades out on scroll) -->
+    <div class="flex items-center space-x-3 transition-all duration-300">
+      <img id="headerLogo" src="assets/logo-no-text.png" alt="Craytivo Logo" class="w-12 md:w-14 transition-transform duration-300">
       <span id="headerText" class="text-xl font-extrabold tracking-wide uppercase text-white transition-opacity duration-300">Craytivo</span>
     </div>
 
     <!-- Title Vanish On Scroll -->
-    <script>
+<script>
   document.addEventListener("DOMContentLoaded", () => {
+    const header = document.getElementById("mainHeader");
     const headerText = document.getElementById("headerText");
     const headerLogo = document.getElementById("headerLogo");
+    const gradientLine = document.getElementById("header-gradient-line");
+    const twitterIcon = document.getElementById("twitterIcon"); // ✅ Add this line
 
     window.addEventListener("scroll", () => {
-      const scrolled = window.scrollY > 80;
+      const scrolled = window.scrollY > 60;
 
       if (scrolled) {
-        headerText.classList.add("opacity-0");
+        header.classList.remove("py-3", "bg-[#121212]/80", "backdrop-blur-md", "shadow-none");
+        header.classList.add("py-2", "bg-[#121212]/95", "backdrop-blur-xl", "shadow-md");
+
+        headerText.classList.add("opacity-0", "scale-90");
         headerLogo.classList.add("scale-110");
+
+        gradientLine.classList.add("opacity-100");
+        gradientLine.classList.remove("opacity-0");
+
+        twitterIcon.classList.add("scale-110", "opacity-90"); // ✅ Animate Twitter icon
       } else {
-        headerText.classList.remove("opacity-0");
+        header.classList.remove("py-2", "bg-[#121212]/95", "backdrop-blur-xl", "shadow-md");
+        header.classList.add("py-3", "bg-[#121212]/80", "backdrop-blur-md", "shadow-none");
+
+        headerText.classList.remove("opacity-0", "scale-90");
         headerLogo.classList.remove("scale-110");
+
+        gradientLine.classList.remove("opacity-100");
+        gradientLine.classList.add("opacity-0");
+
+        twitterIcon.classList.remove("scale-110", "opacity-90"); // ✅ Reset Twitter icon
       }
     });
   });
 </script>
+
+
+
+
 
 
     <!-- Hamburger Icon -->
@@ -212,21 +236,36 @@
   <a href="#pricing" class="py-2 hover:text-crayTeal block opacity-0 animate-fade-in-up" style="animation-delay: 0.3s;">Pricing</a>
   <a href="#portfolio" class="py-2 hover:text-crayTeal block opacity-0 animate-fade-in-up" style="animation-delay: 0.4s;">Portfolio</a>
   <a href="#contact" class="py-2 hover:text-crayTeal block opacity-0 animate-fade-in-up" style="animation-delay: 0.5s;">Contact</a>
+<a href="https://twitter.com/craytivo" target="_blank" class="py-2 mt-2 border border-crayTeal rounded-full text-center text-crayTeal text-sm font-medium hover:bg-crayTeal/10 transition block opacity-0 animate-fade-in-up" style="animation-delay: 0.6s;">
+  Twitter
+</a>
+
 </div>
 
 
-
-    <!-- Desktop Nav -->
+<!-- Desktop Nav -->
     <nav class="hidden md:flex space-x-8 text-sm font-medium text-white">
       <a href="#about" class="hover:text-crayTeal">About</a>
-<a href="#benefits" class="hover:text-crayTeal">Services</a>
+      <a href="#benefits" class="hover:text-crayTeal">Services</a>
       <a href="#pricing" class="hover:text-crayTeal">Pricing</a>
       <a href="#portfolio" class="hover:text-crayTeal">Portfolio</a>
       <a href="#contact" class="hover:text-crayTeal">Contact</a>
     </nav>
+
+<!-- Twitter Button (no stroke outline, filled icon) -->
+    <a href="https://twitter.com/craytivo" target="_blank" rel="noopener noreferrer"
+   id="twitterIcon"
+   class="hidden md:inline-flex items-center space-x-2 px-4 py-1.5 text-crayTeal rounded-full text-sm font-medium hover:bg-crayTeal/10 transition-transform duration-300 ml-4">
+  <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+    <path d="M23 3a10.9 10.9 0 01-3.14 1.53A4.48 4.48 0 0012.15 8v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5.5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/>
+  </svg>
+</a>
+
   </div>
 
-
+<!-- Thin Gradient Line on Scroll -->
+  <div id="header-gradient-line" class="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-white/10 via-white/5 to-white/10 opacity-0 transition-opacity duration-300"></div>
+</header>
 
 </header>
 <div id="menu-overlay" class="fixed inset-0 bg-black bg-opacity-60 z-40 hidden transition-opacity duration-300 md:hidden"></div>
@@ -371,11 +410,11 @@ hero.addEventListener("mouseleave", () => {
 
  <!-- About -->
 <section id="about" class="py-28 px-6 max-w-6xl mx-auto text-center" data-aos="fade-up">
-  <h2 class="text-4xl sm:text-5xl font-extrabold mb-6 text-crayYellow tracking-tight">
+  <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-crayYellow tracking-tight">
     Elevate Your Digital Presence with Craytivo
   </h2>
 
-  <p class="text-gray-300 text-lg sm:text-xl mb-14 max-w-3xl mx-auto leading-relaxed font-medium">
+  <p class="text-gray-300 text-base sm:text-lg mb-14 max-w-3xl mx-auto leading-relaxed font-medium">
     Your brand deserves more than a generic website — it deserves a refined, results-driven platform that commands attention and builds lasting trust.<br><br>
     At Craytivo, I craft sleek, high-performance websites tailored to ambitious businesses ready to grow, lead, and convert. Every detail is strategic. Every element is intentional. The result? A digital experience that not only looks exceptional — but works relentlessly for your brand.<br><br>
     This isn’t template design. This is digital craftsmanship — built to set you apart.
@@ -410,12 +449,12 @@ hero.addEventListener("mouseleave", () => {
 
 
 
-<section id="benefits" class="py-28 px-6 bg-[#1e1e1e]" data-aos="fade-up">
+<section id="benefits" class="py-24 px-6 bg-[#1e1e1e]" data-aos="fade-up">
   <div class="max-w-6xl mx-auto text-center">
-    <h2 class="text-5xl sm:text-6xl font-extrabold text-crayYellow mb-8 tracking-tight leading-tight">
+    <h2 class="text-3xl sm:text-4xl font-bold text-crayYellow mb-6 tracking-tight leading-snug">
       What You Get with Craytivo
     </h2>
-    <p class="text-gray-300 text-lg sm:text-xl mb-16 max-w-3xl mx-auto leading-relaxed font-medium">
+    <p class="text-gray-300 text-base sm:text-lg mb-14 max-w-3xl mx-auto leading-relaxed font-medium">
       Every site is handcrafted to elevate your brand — optimized for performance, trust, and lead generation.
     </p>
 
@@ -423,45 +462,45 @@ hero.addEventListener("mouseleave", () => {
       
       <!-- Benefit 1 -->
       <div class="flex flex-col items-center text-center bg-white/5 backdrop-blur-md p-8 rounded-2xl border border-white/10 shadow-lg hover:scale-105 transition-transform duration-300">
-        <div class="w-16 h-16 flex items-center justify-center bg-crayTeal/20 rounded-full mb-5">
-          <svg class="w-7 h-7 text-crayTeal" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <div class="w-14 h-14 flex items-center justify-center bg-crayTeal/20 rounded-full mb-4">
+          <svg class="w-6 h-6 text-crayTeal" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         </div>
-        <h3 class="text-white font-semibold text-xl mb-2">Mobile-First Design</h3>
+        <h3 class="text-white font-semibold text-lg mb-2">Mobile-First Design</h3>
         <p class="text-gray-400 text-sm leading-relaxed">Your website will look and perform flawlessly across all devices — from smartphones to desktops.</p>
       </div>
 
       <!-- Benefit 2 -->
       <div class="flex flex-col items-center text-center bg-white/5 backdrop-blur-md p-8 rounded-2xl border border-white/10 shadow-lg hover:scale-105 transition-transform duration-300">
-        <div class="w-16 h-16 flex items-center justify-center bg-crayYellow/20 rounded-full mb-5">
-          <svg class="w-7 h-7 text-crayYellow" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <div class="w-14 h-14 flex items-center justify-center bg-crayYellow/20 rounded-full mb-4">
+          <svg class="w-6 h-6 text-crayYellow" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" d="M3 8h18M3 16h18" />
           </svg>
         </div>
-        <h3 class="text-white font-semibold text-xl mb-2">Lead Capture Systems</h3>
+        <h3 class="text-white font-semibold text-lg mb-2">Lead Capture Systems</h3>
         <p class="text-gray-400 text-sm leading-relaxed">Smart forms and built-in lead flows help you grow your client list with ease.</p>
       </div>
 
       <!-- Benefit 3 -->
       <div class="flex flex-col items-center text-center bg-white/5 backdrop-blur-md p-8 rounded-2xl border border-white/10 shadow-lg hover:scale-105 transition-transform duration-300">
-        <div class="w-16 h-16 flex items-center justify-center bg-crayRed/20 rounded-full mb-5">
-          <svg class="w-7 h-7 text-crayRed" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <div class="w-14 h-14 flex items-center justify-center bg-crayRed/20 rounded-full mb-4">
+          <svg class="w-6 h-6 text-crayRed" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
           </svg>
         </div>
-        <h3 class="text-white font-semibold text-xl mb-2">Optimized Performance</h3>
+        <h3 class="text-white font-semibold text-lg mb-2">Optimized Performance</h3>
         <p class="text-gray-400 text-sm leading-relaxed">Lightning-fast load times, clean code, and SEO foundations to get your site seen.</p>
       </div>
 
       <!-- Benefit 4 -->
       <div class="flex flex-col items-center text-center bg-white/5 backdrop-blur-md p-8 rounded-2xl border border-white/10 shadow-lg hover:scale-105 transition-transform duration-300">
-        <div class="w-16 h-16 flex items-center justify-center bg-crayTeal/20 rounded-full mb-5">
-          <svg class="w-7 h-7 text-crayTeal" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <div class="w-14 h-14 flex items-center justify-center bg-crayTeal/20 rounded-full mb-4">
+          <svg class="w-6 h-6 text-crayTeal" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m2 8H7a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v12a2 2 0 01-2 2z" />
           </svg>
         </div>
-        <h3 class="text-white font-semibold text-xl mb-2">CRM & Automation</h3>
+        <h3 class="text-white font-semibold text-lg mb-2">CRM & Automation</h3>
         <p class="text-gray-400 text-sm leading-relaxed">Seamless contact and CRM-ready features ensure you never miss an opportunity.</p>
       </div>
 
@@ -472,8 +511,9 @@ hero.addEventListener("mouseleave", () => {
 
 
 
+
  <!-- Pricing -->
-<section id="pricing" class="py-32 px-6 bg-[#121212]" data-aos="fade-up">
+<section id="pricing" class="pb-20 pt-32 px-6 bg-[#121212]" data-aos="fade-up">
   <div class="max-w-6xl mx-auto text-center">
     <h2 class="text-4xl font-extrabold text-crayYellow mb-4">Pricing Plans</h2>
     <p class="text-gray-400 mb-8">Flexible plans that fit your business goals.</p>
@@ -618,7 +658,7 @@ hero.addEventListener("mouseleave", () => {
 
 
   <!-- 3-Step CTA Section -->
-<section id="cta-steps" class="relative py-24 px-6 bg-[#121212] overflow-hidden" data-aos="fade-up">
+<section id="cta-steps" class="relative pt-16 pb-24 px-6 bg-[#121212] overflow-hidden" data-aos="fade-up">
   <div class="max-w-6xl mx-auto text-center">
     <h2 class="text-3xl sm:text-4xl font-bold text-crayYellow mb-4">Get Your Website in 3 Easy Steps</h2>
     <p class="text-gray-300 mb-12">No tech stress. Just results. Here's how it works:</p>
@@ -654,76 +694,110 @@ hero.addEventListener("mouseleave", () => {
   </div>
 </section>
 
-<!-- Portfolio -->
 <section id="portfolio" class="py-24 px-6 bg-[#1e1e1e] overflow-hidden" data-aos="fade-up">
   <div class="max-w-6xl mx-auto text-center">
-    <h2 class="text-4xl sm:text-5xl font-extrabold text-crayYellow tracking-tight mb-6">Selected Projects</h2>
-    <p class="text-gray-300 text-lg sm:text-xl mb-12 leading-relaxed max-w-3xl mx-auto">
-      A curated selection of modern, high-performing websites built to drive results and elevate brands.
+    <h2 class="text-3xl sm:text-4xl font-bold text-crayYellow tracking-tight mb-6">
+      Selected Projects
+    </h2>
+    <p class="text-gray-300 text-base sm:text-lg mb-14 leading-relaxed max-w-3xl mx-auto font-medium">
+      A curated selection of high-performing websites built to drive results and elevate brands.
     </p>
 
     <div class="grid sm:grid-cols-2 gap-8 mt-10 text-left">
-      
-      <!-- Project 1 -->
+
+      <!-- Project Cards -->
+      <!-- Repeat pattern -->
       <article class="bg-white/5 border border-white/10 backdrop-blur-lg rounded-2xl shadow-xl p-6 transition hover:scale-[1.02] hover:-translate-y-1 duration-300">
         <div class="overflow-hidden rounded-xl border border-white/10 shadow-md mb-4">
-          <img src="assets/images/marina-homes.png" alt="Marina Homes" class="w-full h-48 object-cover rounded-xl" />
+          <img 
+            src="assets/images/marina-homes-768.webp"
+            srcset="assets/images/marina-homes-400.webp 400w, assets/images/marina-homes-768.webp 768w, assets/images/marina-homes-1024.webp 1024w"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 48vw, 31vw"
+            loading="lazy"
+            width="640" height="320"
+            alt="Luxury real estate website design for Marina Homes"
+            class="w-full h-48 object-cover rounded-xl" />
         </div>
-        <h3 class="text-white text-lg font-semibold mb-1">Marina Homes</h3>
-        <p class="text-gray-400 text-sm mb-2">
-          A luxury real estate website for Marina Homes, designed to showcase their elegant developments and convert visitors into qualified leads.
-          Focused on high-end aesthetics, responsive performance, and SEO-friendly architecture, this site blends design and utility to attract investors and buyers alike.
+        <h3 class="text-white text-base sm:text-lg font-semibold mb-1">Marina Homes</h3>
+        <p class="text-gray-400 text-sm leading-relaxed mb-2">
+          A luxury real estate site showcasing elegant developments — built to convert browsers into buyers.
         </p>
         <a href="https://marinahomes.ca/" target="_blank" class="text-crayTeal text-sm font-medium hover:underline">Visit Website →</a>
       </article>
 
-      <!-- Project 2 -->
+      <!-- Continue same format for other projects -->
+      <!-- Purpose Path -->
       <article class="bg-white/5 border border-white/10 backdrop-blur-lg rounded-2xl shadow-xl p-6 transition hover:scale-[1.02] hover:-translate-y-1 duration-300">
         <div class="overflow-hidden rounded-xl border border-white/10 shadow-md mb-4">
-          <img src="assets/images/purpose-path.png" alt="Purpose Path" class="w-full h-48 object-cover rounded-xl" />
+          <img 
+            src="assets/images/purpose-path-768.webp"
+            srcset="assets/images/purpose-path-400.webp 400w, assets/images/purpose-path-768.webp 768w, assets/images/purpose-path-1024.webp 1024w"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 48vw, 31vw"
+            loading="lazy"
+            width="640" height="320"
+            alt="Conversion-focused marketing site for Purpose Path"
+            class="w-full h-48 object-cover rounded-xl" />
         </div>
-        <h3 class="text-white text-lg font-semibold mb-1">Purpose Path</h3>
-        <p class="text-gray-400 text-sm mb-2">
-          A bold, conversion-focused site for a growing marketing agency. Built with client acquisition in mind,
-          the site features dynamic service pages, persuasive copywriting, and analytics integration — tailored for lead generation and brand authority.
+        <h3 class="text-white text-base sm:text-lg font-semibold mb-1">Purpose Path</h3>
+        <p class="text-gray-400 text-sm leading-relaxed mb-2">
+          A bold, high-converting website for a growing marketing agency with lead-gen baked in.
         </p>
         <a href="https://purposepath.ca/" target="_blank" class="text-crayTeal text-sm font-medium hover:underline">Visit Website →</a>
       </article>
 
-      <!-- Project 3 -->
+      <!-- Zemlar Offices -->
       <article class="bg-white/5 border border-white/10 backdrop-blur-lg rounded-2xl shadow-xl p-6 transition hover:scale-[1.02] hover:-translate-y-1 duration-300">
         <div class="overflow-hidden rounded-xl border border-white/10 shadow-md mb-4">
-          <img src="assets/images/zemlar.png" alt="Zemlar Offices" class="w-full h-48 object-cover rounded-xl" />
+          <img 
+            src="assets/images/zemlar-768.webp"
+            srcset="assets/images/zemlar-400.webp 400w, assets/images/zemlar-768.webp 768w, assets/images/zemlar-1024.webp 1024w"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 48vw, 31vw"
+            loading="lazy"
+            width="640" height="320"
+            alt="Zemlar flexible workspace site UX"
+            class="w-full h-48 object-cover rounded-xl" />
         </div>
-        <h3 class="text-white text-lg font-semibold mb-1">Zemlar Offices</h3>
-        <p class="text-gray-400 text-sm mb-2">
-          A scalable B2B website designed for Canada's premier flexible workspace provider.
-          Featuring seamless navigation, location-based CTAs, and commercial leasing integration — this build supports Zemlar’s growth across cities with trust-building UX and enterprise-grade performance.
+        <h3 class="text-white text-base sm:text-lg font-semibold mb-1">Zemlar Offices</h3>
+        <p class="text-gray-400 text-sm leading-relaxed mb-2">
+          A scalable B2B site for Canada’s top flexible office provider — sleek and built for scale.
         </p>
         <a href="https://zemlar.ca/" target="_blank" class="text-crayTeal text-sm font-medium hover:underline">Visit Website →</a>
       </article>
 
-      <!-- Project 4 -->
+      <!-- ICARE Naturals -->
       <article class="bg-white/5 border border-white/10 backdrop-blur-lg rounded-2xl shadow-xl p-6 transition hover:scale-[1.02] hover:-translate-y-1 duration-300">
         <div class="overflow-hidden rounded-xl border border-white/10 shadow-md mb-4">
-          <img src="assets/images/icare.png" alt="ICARE Naturals" class="w-full h-48 object-cover rounded-xl" />
+          <img 
+            src="assets/images/icare-768.webp"
+            srcset="assets/images/icare-400.webp 400w, assets/images/icare-768.webp 768w, assets/images/icare-1024.webp 1024w"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 48vw, 31vw"
+            loading="lazy"
+            width="640" height="320"
+            alt="ICARE Naturals Shopify ecommerce design"
+            class="w-full h-48 object-cover rounded-xl" />
         </div>
-        <h3 class="text-white text-lg font-semibold mb-1">ICARE Naturals</h3>
-        <p class="text-gray-400 text-sm mb-2">
-          A Shopify-powered ecommerce site for a clean beauty brand. Designed for performance and product storytelling,
-          this storefront features a seamless buying experience, trust signals, mobile-first UI, and optimized checkout — all built to boost conversions.
+        <h3 class="text-white text-base sm:text-lg font-semibold mb-1">ICARE Naturals</h3>
+        <p class="text-gray-400 text-sm leading-relaxed mb-2">
+          A Shopify storefront for a clean beauty brand — fast, elegant, and built to sell.
         </p>
         <a href="https://icarenaturals.ca/" target="_blank" class="text-crayTeal text-sm font-medium hover:underline">Visit Website →</a>
       </article>
 
-      <!-- Project 5 -->
+      <!-- Freedom Life Church (Full Width on Mobile) -->
       <article class="bg-white/5 border border-white/10 backdrop-blur-lg rounded-2xl shadow-xl p-6 transition hover:scale-[1.02] hover:-translate-y-1 duration-300 sm:col-span-2">
         <div class="overflow-hidden rounded-xl border border-white/10 shadow-md mb-4">
-          <img src="assets/images/flc.png" alt="Freedom Life Church" class="w-full h-48 object-cover rounded-xl" />
+          <img 
+            src="assets/images/flc-768.webp"
+            srcset="assets/images/flc-400.webp 400w, assets/images/flc-768.webp 768w, assets/images/flc-1024.webp 1024w"
+            sizes="(max-width: 640px) 100vw, 95vw"
+            loading="lazy"
+            width="1024" height="480"
+            alt="Freedom Life Church custom church website design"
+            class="w-full h-48 object-cover rounded-xl" />
         </div>
-        <h3 class="text-white text-lg font-semibold mb-1">Freedom Life Church</h3>
-        <p class="text-gray-400 text-sm mb-2">
-          A modern, feature-rich website for a growing church. This build includes media streaming, online giving, event scheduling, and mobile-first layouts — enabling both engagement and spiritual outreach through a frictionless digital experience.
+        <h3 class="text-white text-base sm:text-lg font-semibold mb-1">Freedom Life Church</h3>
+        <p class="text-gray-400 text-sm leading-relaxed mb-2">
+          A modern platform for a growing church with giving, streaming, and event features.
         </p>
         <a href="https://freedomlifechurch.ca/" target="_blank" class="text-crayTeal text-sm font-medium hover:underline">Visit Website →</a>
       </article>
@@ -732,21 +806,23 @@ hero.addEventListener("mouseleave", () => {
   </div>
 </section>
 
+
+
 <!-- Testimonials -->
 <section id="testimonials" class="py-24 px-6 bg-[#121212] text-center relative overflow-hidden" data-aos="fade-up">
   <!-- Top Accent Line -->
   <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-1/2 h-[2px] bg-gradient-to-r from-crayTeal via-crayYellow to-crayRed opacity-30 rounded-full"></div>
 
   <div class="max-w-4xl mx-auto">
-    <h2 class="text-4xl sm:text-5xl font-extrabold text-crayYellow tracking-tight mb-10">Client Testimonials</h2>
-    <p class="text-gray-300 text-lg sm:text-xl leading-relaxed mb-16 max-w-3xl mx-auto">
-      Hear from the people and brands that trusted Craytivo to elevate their digital presence.
+    <h2 class="text-3xl sm:text-4xl font-bold text-crayYellow tracking-tight mb-8">Client Testimonials</h2>
+    <p class="text-gray-300 text-base sm:text-lg leading-relaxed mb-14 max-w-3xl mx-auto font-medium">
+      Hear from the people and brands who trusted Craytivo to elevate their digital presence.
     </p>
 
     <div class="grid sm:grid-cols-2 gap-8">
       <!-- Testimonial 1 -->
       <div class="bg-white/5 border border-white/10 backdrop-blur-md p-6 rounded-2xl shadow-lg text-left transition hover:scale-[1.02] duration-300">
-        <p class="text-gray-300 text-base mb-4 italic leading-relaxed">
+        <p class="text-gray-300 text-sm sm:text-base mb-4 italic leading-relaxed">
           “Craytivo didn’t just build us a site — they helped redefine our brand online. The attention to UX, performance, and design truly exceeded expectations.”
         </p>
         <div>
@@ -757,10 +833,9 @@ hero.addEventListener("mouseleave", () => {
 
       <!-- Testimonial 2 -->
       <div class="bg-white/5 border border-white/10 backdrop-blur-md p-6 rounded-2xl shadow-lg text-left transition hover:scale-[1.02] duration-300">
-        <p class="text-gray-300 text-base mb-4 italic leading-relaxed">
-  “I was honestly blown away that it was just one person behind Craytivo. Communication was clear, fast, and effortless the entire way through. He nailed the design exactly how we envisioned it — and quickly. Since launching, our bounce rate has dropped significantly and we’ve seen a noticeable increase in client inquiries.”
-</p>
-
+        <p class="text-gray-300 text-sm sm:text-base mb-4 italic leading-relaxed">
+          “I was honestly blown away that it was just one person behind Craytivo. Communication was clear, fast, and effortless the entire way through. He nailed the design exactly how we envisioned it — and quickly. Since launching, our bounce rate has dropped significantly and we’ve seen a noticeable increase in client inquiries.”
+        </p>
         <div>
           <p class="text-white font-semibold text-sm">Ahmed K.</p>
           <p class="text-gray-400 text-xs">Founder, Purpose Path</p>
@@ -769,7 +844,7 @@ hero.addEventListener("mouseleave", () => {
 
       <!-- Testimonial 3 -->
       <div class="bg-white/5 border border-white/10 backdrop-blur-md p-6 rounded-2xl shadow-lg text-left transition hover:scale-[1.02] duration-300">
-        <p class="text-gray-300 text-base mb-4 italic leading-relaxed">
+        <p class="text-gray-300 text-sm sm:text-base mb-4 italic leading-relaxed">
           “Craytivo transformed our old site into a modern lead magnet. Their design decisions were rooted in real business needs, not just aesthetics.”
         </p>
         <div>
@@ -780,10 +855,9 @@ hero.addEventListener("mouseleave", () => {
 
       <!-- Testimonial 4 -->
       <div class="bg-white/5 border border-white/10 backdrop-blur-md p-6 rounded-2xl shadow-lg text-left transition hover:scale-[1.02] duration-300">
-        <p class="text-gray-300 text-base mb-4 italic leading-relaxed">
-  “We were praying for someone who truly understood our ministry’s heart — and Craytivo exceeded every expectation. He delivered a beautiful, functional site ahead of schedule, and since launching, we've seen more engagement and inquiries than ever before. I'm truly grateful for the care and excellence he brought to the project.”
-</p>
-
+        <p class="text-gray-300 text-sm sm:text-base mb-4 italic leading-relaxed">
+          “We were praying for someone who truly understood our ministry’s heart — and Craytivo exceeded every expectation. He delivered a beautiful, functional site ahead of schedule, and since launching, we've seen more engagement and inquiries than ever before. I'm truly grateful for the care and excellence he brought to the project.”
+        </p>
         <div>
           <p class="text-white font-semibold text-sm">Rohan S.</p>
           <p class="text-gray-400 text-xs">Pastor, Freedom Life Church</p>
@@ -792,14 +866,6 @@ hero.addEventListener("mouseleave", () => {
     </div>
   </div>
 </section>
-
-
-
-
-
-
-
-
 
 <!-- Contact -->
 <section id="contact" class="py-32 px-6 bg-[#121212] relative overflow-hidden" data-aos="fade-up">
@@ -1037,26 +1103,16 @@ hero.addEventListener("mouseleave", () => {
       </a>
       <div class="flex justify-center md:justify-end space-x-4 mt-2">
 
-        <!-- Facebook -->
-        <a href="https://facebook.com" target="_blank" aria-label="Facebook" class="hover:text-crayTeal transition">
-          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M22 12a10 10 0 10-11.6 9.9v-7H8v-2.9h2.4V9.8c0-2.4 1.4-3.8 3.6-3.8 1 0 2 .2 2 .2v2.3h-1.2c-1.2 0-1.6.8-1.6 1.6v1.9h2.7l-.4 2.9h-2.3v7A10 10 0 0022 12z" />
-          </svg>
-        </a>
+        
 
         <!-- Twitter -->
-        <a href="https://twitter.com" target="_blank" aria-label="Twitter" class="hover:text-crayTeal transition">
+        <a href="https://x.com/craytivo" target="_blank" aria-label="Twitter" class="hover:text-crayTeal transition">
           <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
             <path d="M23 3a10.9 10.9 0 01-3.14 1.53A4.48 4.48 0 0012.15 8v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5.5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
           </svg>
         </a>
 
-        <!-- Instagram -->
-        <a href="https://instagram.com" target="_blank" aria-label="Instagram" class="hover:text-crayTeal transition">
-          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M7.75 2A5.75 5.75 0 002 7.75v8.5A5.75 5.75 0 007.75 22h8.5A5.75 5.75 0 0022 16.25v-8.5A5.75 5.75 0 0016.25 2h-8.5zm0 1.5h8.5A4.25 4.25 0 0120.5 7.75v8.5a4.25 4.25 0 01-4.25 4.25h-8.5A4.25 4.25 0 013.5 16.25v-8.5A4.25 4.25 0 017.75 3.5zm8.25 2.25a.75.75 0 10.001 1.5.75.75 0 00-.001-1.5zM12 7a5 5 0 100 10 5 5 0 000-10zm0 1.5a3.5 3.5 0 110 7 3.5 3.5 0 010-7z" />
-          </svg>
-        </a>
+        
 
       </div>
     </div>
