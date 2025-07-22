@@ -1,47 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Basic Meta -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Craytivo | Fast, Affordable Web Design for Small Businesses in Canada </title>
-<meta name="description" content="Craytivo builds fast, affordable websites for small businesses in Canada and Zimbabwe. Mobile-first, lead-generating design with quick turnaround and clear pricing." />
-<!-- Favicon -->
-  <link rel="icon" href="assets\images\favicon.png" type="image/svg+xml" />
-  
-  <!-- Meta SEO Essentials -->
-<meta name="keywords" content="web design, custom websites, small business websites, Zimbabwe web design, Canada web development, Craytivo, mobile websites, affordable web design, lead generation sites" />
-<meta name="author" content="Craytivo" />
-<link rel="canonical" href="https://craytivo.com/" />
-<meta name="robots" content="index, follow" />
+  <title>Craytivo | Fast, Affordable Web Design for Small Businesses in Canada</title>
+  <meta name="description" content="Craytivo builds fast, affordable websites for small businesses in Canada and Zimbabwe. Mobile-first, lead-generating design with quick turnaround and clear pricing." />
+  <meta name="keywords" content="web design, custom websites, small business websites, Zimbabwe web design, Canada web development, Craytivo, mobile websites, affordable web design, lead generation sites" />
+  <meta name="author" content="Craytivo" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://craytivo.com/" />
 
-<!-- Open Graph (Facebook, LinkedIn) -->
-<meta property="og:title" content="Craytivo – Affordable Custom Web Design for Canadian Small Businesses" />
-<meta property="og:description" content="We build fast, mobile-optimized websites for small businesses in Canada & Zimbabwe. Custom design. Affordable rates. Fast turnaround." />
-<meta property="og:image" content="https://craytivo.com/assets/preview.jpg" />
-<meta property="og:url" content="https://craytivo.com/" />
-<meta property="og:type" content="website" />
+  <!-- Favicon -->
+  <link rel="icon" href="assets/images/favicon.png" type="image/png" />
 
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Craytivo – Bold Custom Web Design" />
-<meta name="twitter:description" content="Craytivo builds sleek, mobile-first websites that help Canadian and Zimbabwean small businesses grow online." />
-<meta name="twitter:image" content="https://craytivo.com/assets/preview.jpg" />
-
-
-
-  <link href="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/css/lightbox.min.css" rel="stylesheet" />
-
-  <script src="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/js/lightbox-plus-jquery.min.js"></script>
-
-
-<meta name="description" content="Craytivo helps small businesses in Zimbabwe and Canada grow with bold, mobile-friendly, lead-generating websites. Affordable pricing and fast turnaround." />
-  <meta property="og:title" content="Craytivo - Bold Web Design" />
+  <!-- Open Graph (Facebook, LinkedIn) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://craytivo.com/" />
+  <meta property="og:title" content="Craytivo – Affordable Custom Web Design for Canadian Small Businesses" />
+  <meta property="og:description" content="We build fast, mobile-optimized websites for small businesses in Canada & Zimbabwe. Custom design. Affordable rates. Fast turnaround." />
   <meta property="og:image" content="https://craytivo.com/assets/preview.jpg" />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Craytivo – Bold Custom Web Design" />
+  <meta name="twitter:description" content="Craytivo builds sleek, mobile-first websites that help Canadian and Zimbabwean small businesses grow online." />
+  <meta name="twitter:image" content="https://craytivo.com/assets/preview.jpg" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- AOS (Animate On Scroll) -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <script>
+
+  <!-- Lightbox -->
+  <link href="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/css/lightbox.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/js/lightbox-plus-jquery.min.js"></script>
+  <!-- Tailwind Custom Config -->
+<script>
   tailwind.config = {
     theme: {
       extend: {
@@ -70,38 +70,39 @@
           pulseSlow: {
             '0%, 100%': { opacity: '1', transform: 'scale(1)' },
             '50%': { opacity: '0.5', transform: 'scale(1.05)' },
-          }
-        }
-      }
-    }
+          },
+        },
+      },
+    },
   };
 </script>
 
-
-
-
-  <style>
+<!-- Custom Global Styles -->
+<style>
   html {
     scroll-behavior: smooth;
   }
+
   body {
     opacity: 0;
     transition: opacity 0.5s ease;
   }
+
   header {
     transition: padding 0.3s ease;
   }
+
+  /* Slow Spin Animation */
   .animate-spin-slow {
     animation: spin 40s linear infinite;
   }
+
   @keyframes spin {
-    0% { transform: rotate(0deg); }
+    0%   { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
   }
-  .animated-border {
-    position: relative;
-  }
 
+  /* Animated Gradient Border */
   .animated-border {
     position: relative;
   }
@@ -128,13 +129,11 @@
     100% { transform: rotate(3deg); }
   }
 
+  /* Animated Ring Border */
   .animated-ring::before {
     content: "";
     position: absolute;
-    top: -3px;
-    left: -3px;
-    right: -3px;
-    bottom: -3px;
+    top: -3px; left: -3px; right: -3px; bottom: -3px;
     z-index: 2;
     border-radius: 1rem;
     background: conic-gradient(from 0deg, #00E0C6, #FFD644, #E94F37, #00E0C6);
@@ -144,12 +143,8 @@
   }
 
   @keyframes rotateRing {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
+    0%   { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
   }
 
   .animated-ring > .inner-card {
@@ -157,37 +152,36 @@
     z-index: 3;
   }
 
+  /* Contact Ring Effect */
   .contact-animated-ring::before {
-  content: "";
-  position: absolute;
-  inset: -3px;
-  z-index: 0;
-  border-radius: 1rem;
-  background: conic-gradient(from 0deg, #00E0C6, #FFD644, #E94F37, #00E0C6);
-  opacity: 0.2;
-  transform: var(--contact-ring-transform, translate(0, 0) scale(1));
-  transition: transform 0.2s ease;
-  pointer-events: none;
-}
-.contact-animated-ring::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 400px;
-  height: 400px;
-  pointer-events: none;
-  background: radial-gradient(circle, rgba(0, 224, 198, 0.25), transparent 70%);
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  transition: opacity 0.2s ease;
-  z-index: 1;
-}
+    content: "";
+    position: absolute;
+    inset: -3px;
+    z-index: 0;
+    border-radius: 1rem;
+    background: conic-gradient(from 0deg, #00E0C6, #FFD644, #E94F37, #00E0C6);
+    opacity: 0.2;
+    transform: var(--contact-ring-transform, translate(0, 0) scale(1));
+    transition: transform 0.2s ease;
+    pointer-events: none;
+  }
 
-
+  .contact-animated-ring::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0, 224, 198, 0.25), transparent 70%);
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+    z-index: 1;
+  }
 </style>
-
 </head>
 
 <body class="bg-[#121212] text-white font-sans leading-relaxed tracking-wide">
@@ -197,79 +191,22 @@
 
 <header id="mainHeader" class="sticky top-0 z-50 bg-[#121212]/80 backdrop-blur-md border-b border-white/10 py-3 transition-all duration-300 shadow-none">
   <div class="flex justify-between items-center px-6 max-w-7xl mx-auto">
-    <!-- Logo Only (text fades out on scroll) -->
-    <div class="flex items-center space-x-3 transition-all duration-300">
+
+    <!-- Logo + Brand Name -->
+    <a href="/" aria-label="Craytivo Home" class="flex items-center space-x-3 transition-all duration-300">
       <img id="headerLogo" src="assets/logo-no-text.png" alt="Craytivo Logo" class="w-12 md:w-14 transition-transform duration-300">
       <span id="headerText" class="text-xl font-extrabold tracking-wide uppercase text-white transition-opacity duration-300">Craytivo</span>
-    </div>
+    </a>
 
-    <!-- Title Vanish On Scroll -->
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const header = document.getElementById("mainHeader");
-    const headerText = document.getElementById("headerText");
-    const headerLogo = document.getElementById("headerLogo");
-    const gradientLine = document.getElementById("header-gradient-line");
-    const twitterIcon = document.getElementById("twitterIcon"); // ✅ Add this line
-
-    window.addEventListener("scroll", () => {
-      const scrolled = window.scrollY > 60;
-
-      if (scrolled) {
-        header.classList.remove("py-3", "bg-[#121212]/80", "backdrop-blur-md", "shadow-none");
-        header.classList.add("py-2", "bg-[#121212]/95", "backdrop-blur-xl", "shadow-md");
-
-        headerText.classList.add("opacity-0", "scale-90");
-        headerLogo.classList.add("scale-110");
-
-        gradientLine.classList.add("opacity-100");
-        gradientLine.classList.remove("opacity-0");
-
-        twitterIcon.classList.add("scale-110", "opacity-90"); // ✅ Animate Twitter icon
-      } else {
-        header.classList.remove("py-2", "bg-[#121212]/95", "backdrop-blur-xl", "shadow-md");
-        header.classList.add("py-3", "bg-[#121212]/80", "backdrop-blur-md", "shadow-none");
-
-        headerText.classList.remove("opacity-0", "scale-90");
-        headerLogo.classList.remove("scale-110");
-
-        gradientLine.classList.remove("opacity-100");
-        gradientLine.classList.add("opacity-0");
-
-        twitterIcon.classList.remove("scale-110", "opacity-90"); // ✅ Reset Twitter icon
-      }
-    });
-  });
-</script>
-
-
-
-
-
-
-    <!-- Hamburger Icon -->
-<button id="hamburgerBtn" class="md:hidden text-white focus:outline-none z-50">
+    <!-- Hamburger Icon (Mobile Toggle) -->
+    <button id="hamburgerBtn" class="md:hidden text-white focus:outline-none z-50" aria-label="Toggle navigation">
       <svg id="hamburgerIcon" class="w-6 h-6 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
         <path id="hamburgerLines" stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
       </svg>
     </button>
 
-<!-- Mobile Nav Menu -->
-<div id="mobileNav" class="hidden flex-col md:hidden px-6 pb-4 bg-transparent text-white transition-all duration-300 ease-in-out origin-top">
-  <a href="#about" class="py-2 hover:text-crayTeal block opacity-0 animate-fade-in-up" style="animation-delay: 0.1s;">About</a>
-  <a href="#benefits" class="py-2 hover:text-crayTeal block opacity-0 animate-fade-in-up" style="animation-delay: 0.2s;">Services</a>
-  <a href="#pricing" class="py-2 hover:text-crayTeal block opacity-0 animate-fade-in-up" style="animation-delay: 0.3s;">Pricing</a>
-  <a href="#portfolio" class="py-2 hover:text-crayTeal block opacity-0 animate-fade-in-up" style="animation-delay: 0.4s;">Portfolio</a>
-  <a href="#contact" class="py-2 hover:text-crayTeal block opacity-0 animate-fade-in-up" style="animation-delay: 0.5s;">Contact</a>
-<a href="https://twitter.com/craytivo" target="_blank" class="py-2 mt-2 border border-crayTeal rounded-full text-center text-crayTeal text-sm font-medium hover:bg-crayTeal/10 transition block opacity-0 animate-fade-in-up" style="animation-delay: 0.6s;">
-  Twitter
-</a>
-
-</div>
-
-
-<!-- Desktop Nav -->
-    <nav class="hidden md:flex space-x-8 text-sm font-medium text-white">
+    <!-- Desktop Nav -->
+    <nav class="hidden md:flex space-x-8 text-sm font-medium text-white" aria-label="Main navigation">
       <a href="#about" class="hover:text-crayTeal">About</a>
       <a href="#benefits" class="hover:text-crayTeal">Services</a>
       <a href="#pricing" class="hover:text-crayTeal">Pricing</a>
@@ -277,28 +214,38 @@
       <a href="#contact" class="hover:text-crayTeal">Contact</a>
     </nav>
 
-<!-- Twitter Button (no stroke outline, filled icon) -->
+    <!-- Twitter Icon (Desktop) -->
     <a href="https://twitter.com/craytivo" target="_blank" rel="noopener noreferrer"
-   id="twitterIcon"
-   class="hidden md:inline-flex items-center space-x-2 px-4 py-1.5 text-crayTeal rounded-full text-sm font-medium hover:bg-crayTeal/10 transition-transform duration-300 ml-4">
-  <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
-    <path d="M23 3a10.9 10.9 0 01-3.14 1.53A4.48 4.48 0 0012.15 8v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5.5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/>
-  </svg>
-</a>
-
+       id="twitterIcon"
+       aria-label="Visit Craytivo on Twitter"
+       class="hidden md:inline-flex items-center space-x-2 px-4 py-1.5 text-crayTeal rounded-full text-sm font-medium hover:bg-crayTeal/10 transition-transform duration-300 ml-4">
+      <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M23 3a10.9 10.9 0 01-3.14 1.53A4.48 4.48 0 0012.15 8v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5.5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/>
+      </svg>
+    </a>
   </div>
 
-<!-- Thin Gradient Line on Scroll -->
+  <!-- Mobile Nav Menu -->
+  <div id="mobileNav" class="hidden flex-col md:hidden px-6 pb-4 bg-transparent text-white transition-all duration-300 ease-in-out origin-top" aria-label="Mobile navigation">
+    <a href="#about" class="py-2 hover:text-crayTeal block opacity-0 animate-fade-in-up" style="animation-delay: 0.1s;">About</a>
+    <a href="#benefits" class="py-2 hover:text-crayTeal block opacity-0 animate-fade-in-up" style="animation-delay: 0.2s;">Services</a>
+    <a href="#pricing" class="py-2 hover:text-crayTeal block opacity-0 animate-fade-in-up" style="animation-delay: 0.3s;">Pricing</a>
+    <a href="#portfolio" class="py-2 hover:text-crayTeal block opacity-0 animate-fade-in-up" style="animation-delay: 0.4s;">Portfolio</a>
+    <a href="#contact" class="py-2 hover:text-crayTeal block opacity-0 animate-fade-in-up" style="animation-delay: 0.5s;">Contact</a>
+    <a href="https://twitter.com/craytivo" target="_blank" rel="noopener noreferrer"
+       class="py-2 mt-2 border border-crayTeal rounded-full text-center text-crayTeal text-sm font-medium hover:bg-crayTeal/10 transition block opacity-0 animate-fade-in-up"
+       style="animation-delay: 0.6s;">Twitter</a>
+  </div>
+
+  <!-- Gradient Divider Line -->
   <div id="header-gradient-line" class="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-white/10 via-white/5 to-white/10 opacity-0 transition-opacity duration-300"></div>
 </header>
 
-</header>
 <div id="menu-overlay" class="fixed inset-0 bg-black bg-opacity-60 z-40 hidden transition-opacity duration-300 md:hidden"></div>
 
-
-
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
+  document.addEventListener("DOMContentLoaded", () => {
+    // ===== Primary Mobile Nav =====
     const hamburgerBtn = document.getElementById("hamburgerBtn");
     const hamburgerIcon = document.getElementById("hamburgerIcon");
     const hamburgerLines = document.getElementById("hamburgerLines");
@@ -310,562 +257,573 @@
     const closeSVG = `<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />`;
 
     hamburgerBtn.addEventListener("click", () => {
+      const isOpen = !mobileNav.classList.contains("hidden");
       mobileNav.classList.toggle("hidden");
-      hamburgerIcon.innerHTML = mobileNav.classList.contains("hidden") ? hamburgerSVG : closeSVG;
+      hamburgerIcon.innerHTML = isOpen ? hamburgerSVG : closeSVG;
+      hamburgerBtn.setAttribute("aria-expanded", String(!isOpen)); // accessibility
     });
 
     navLinks.forEach(link => {
       link.addEventListener("click", () => {
         mobileNav.classList.add("hidden");
         hamburgerIcon.innerHTML = hamburgerSVG;
+        hamburgerBtn.setAttribute("aria-expanded", "false");
       });
     });
+
+    // ===== Optional Overlay Menu (if used elsewhere) =====
+    const menuToggleBtn = document.getElementById("menu-toggle");
+    const mobileNavMenu = document.getElementById("mobile-menu");
+    const menuOverlay = document.getElementById("menu-overlay");
+
+    if (menuToggleBtn && mobileNavMenu && menuOverlay) {
+      function toggleMenu() {
+        const isOpen = !mobileNavMenu.classList.contains("hidden");
+
+        mobileNavMenu.classList.toggle("hidden");
+        menuOverlay.classList.toggle("hidden");
+        menuToggleBtn.setAttribute("aria-expanded", String(!isOpen));
+
+        // Icon toggle
+        menuToggleBtn.innerHTML = isOpen
+          ? `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+             </svg>`
+          : `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+             </svg>`;
+      }
+
+      menuToggleBtn.addEventListener("click", toggleMenu);
+      menuOverlay.addEventListener("click", toggleMenu);
+      document.querySelectorAll("#mobile-menu a").forEach(link =>
+        link.addEventListener("click", toggleMenu)
+      );
+    }
   });
-
-const menuToggleBtn = document.getElementById("menu-toggle");
-  const mobileNavMenu = document.getElementById("mobile-menu");
-  const menuOverlay = document.getElementById("menu-overlay");
-
-  function toggleMenu() {
-    const isOpen = !mobileNavMenu.classList.contains("hidden");
-
-    mobileNavMenu.classList.toggle("hidden");
-    menuOverlay.classList.toggle("hidden");
-    menuToggleBtn.setAttribute("aria-expanded", String(!isOpen));
-
-    // Toggle icon from hamburger to X
-    menuToggleBtn.innerHTML = isOpen
-      ? `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-         </svg>`
-      : `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-         </svg>`;
-  }
-
-  menuToggleBtn.addEventListener("click", toggleMenu);
-
-  // Close on overlay click or link click
-  menuOverlay.addEventListener("click", toggleMenu);
-  document.querySelectorAll("#mobile-menu a").forEach(link =>
-    link.addEventListener("click", toggleMenu)
-  );
-  
-
 </script>
 
-
-
-
 <!-- Hero Section -->
-<section id="hero" class="relative h-[80vh] flex flex-col justify-center items-center text-center px-4 py-6 overflow-hidden">
-  
+<section id="hero" class="relative h-[80vh] flex flex-col justify-center items-center text-center px-4 py-6 overflow-hidden" role="region" aria-label="Craytivo Web Design Hero">
+
   <!-- Decorative SVG Accent -->
-<svg class="absolute top-12 right-12 w-72 h-72 text-crayTeal opacity-10 blur-3xl animate-pulse-slow pointer-events-none z-0" 
-     fill="currentColor" viewBox="0 0 200 200">
-  <circle cx="100" cy="100" r="100" />
-</svg>
+  <svg class="absolute top-12 right-12 w-72 h-72 text-crayTeal opacity-10 blur-3xl animate-pulse-slow pointer-events-none z-0" 
+       fill="currentColor" viewBox="0 0 200 200" aria-hidden="true">
+    <circle cx="100" cy="100" r="100" />
+  </svg>
+
   <!-- Background pattern and gradient -->
   <div class="absolute inset-0 z-0">
     <div class="w-full h-full bg-[url('/assets/topography.svg')] bg-repeat opacity-35"></div>
     <div class="absolute inset-0 bg-gradient-to-b from-transparent to-[#121212]"></div>
   </div>
 
-  <!-- Glassmorphism Card Content -->
-<div class="animated-border relative z-10 backdrop-blur-md bg-white/5 border border-white/10 rounded-xl p-8 sm:p-14 max-w-4xl w-full mx-auto shadow-lg hover:shadow-xl transition-all duration-300">
+  <!-- Hero Card -->
+  <div class="animated-border relative z-10 backdrop-blur-md bg-white/5 border border-white/10 rounded-xl p-8 sm:p-14 max-w-4xl w-full mx-auto shadow-lg hover:shadow-xl transition-all duration-300">
+    
+    <!-- Tagline -->
     <span class="inline-block mb-3 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-crayTeal bg-white/10 border border-crayTeal/40 rounded-full">
-      Web Design Studio
+      Edmonton Web Design Studio
     </span>
 
-    <!-- Main headline -->
-<h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight mb-4">
-
-  Websites That Help You <span class="text-crayYellow">Find, Track & Win</span> Clients
-</h1>
-
+    <!-- Headline -->
+    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight mb-4">
+      Affordable <span class="text-crayYellow">Websites That Win Clients</span> in Edmonton
+    </h1>
 
     <!-- Subheadline -->
     <p class="text-base sm:text-lg text-gray-300 font-light mb-6 max-w-xl mx-auto" data-aos="fade-up" data-aos-delay="100">
-  Craytivo builds strategic websites for small and medium-sized businesses ready to grow.
-</p>
+      Craytivo builds mobile-optimized websites that help Edmonton small businesses stand out, generate leads, and grow online — fast turnaround, transparent pricing.
+    </p>
 
-
-    <!-- CTA Button -->
+    <!-- CTA -->
     <a href="#contact"
        class="inline-block bg-crayTeal text-black font-semibold py-3 px-6 rounded-full shadow-lg hover:bg-opacity-90 hover:scale-105 active:scale-100 transition duration-300"
        data-aos="zoom-in"
        data-aos-delay="200">
-      Get Started
+      Book Your Free Discovery Call
     </a>
 
-    <!-- Target audience text -->
+    <!-- Audience -->
     <p class="mt-5 text-sm text-gray-400 italic tracking-wide" data-aos="fade-up" data-aos-delay="300">
-  For entrepreneurs, service providers & business owners ready to elevate their online presence.
-</p>
-
+      Serving Edmonton-based entrepreneurs, contractors, creatives, and service providers.
+    </p>
   </div>
 
-  <!-- Scroll Down Prompt -->
+  <!-- Scroll Prompt -->
   <div class="absolute bottom-6 z-10 opacity-80 hover:opacity-100 transition">
-  <a href="#about" class="text-crayTeal text-xs uppercase tracking-widest font-medium">↓ Scroll</a>
-</div>
+    <a href="#about" class="text-crayTeal text-xs uppercase tracking-widest font-medium">↓ Scroll to Learn More</a>
+  </div>
 
-
-  <!-- Bottom Fade to About Section -->
+  <!-- Gradient Overlay -->
   <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-b from-transparent to-[#121212] z-0"></div>
-
-
 </section>
 
+
 <script>
-  const hero = document.getElementById("hero");
-hero.addEventListener("mousemove", (e) => {
-  const x = (e.clientX / window.innerWidth - 0.5) * 10;
-  const y = (e.clientY / window.innerHeight - 0.5) * 10;
-  hero.style.transform = `rotateX(${y}deg) rotateY(${x}deg)`;
-});
-hero.addEventListener("mouseleave", () => {
-  hero.style.transform = "";
-});
+  document.addEventListener("DOMContentLoaded", () => {
+    const hero = document.getElementById("hero");
 
+    let animationFrame;
 
+    function handleMouseMove(e) {
+      const x = (e.clientX / window.innerWidth - 0.5) * 10;
+      const y = (e.clientY / window.innerHeight - 0.5) * 10;
+
+      // Use requestAnimationFrame for better performance
+      if (animationFrame) cancelAnimationFrame(animationFrame);
+      animationFrame = requestAnimationFrame(() => {
+        hero.style.transform = `rotateX(${y}deg) rotateY(${x}deg)`;
+      });
+    }
+
+    function resetTilt() {
+      hero.style.transform = "";
+    }
+
+    hero.addEventListener("mousemove", handleMouseMove);
+    hero.addEventListener("mouseleave", resetTilt);
+  });
 </script>
 
 
 
- <!-- About -->
+<!-- About -->
 <section id="about" class="py-24 px-6 max-w-6xl mx-auto text-center" data-aos="fade-up">
   <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-crayYellow tracking-tight">
-    Premium Sites for Ambitious Brands
+    Edmonton Web Design for Growing Local Businesses
   </h2>
 
   <p class="text-gray-300 text-base sm:text-lg mb-14 max-w-2xl mx-auto leading-relaxed font-medium">
-    You’re here to lead. Your site should reflect that.<br><br>
-    Craytivo builds custom, high-performance websites designed to elevate trust and drive results — no fluff, just function and finesse.
-  </p>mo
+    Craytivo helps Edmonton entrepreneurs and small businesses grow online with high-performance websites that build trust and bring in leads.<br><br>
+    We create fast, conversion-focused websites that look amazing on mobile and turn visitors into loyal customers — without the high agency price tag.
+  </p>
+
   <div class="grid sm:grid-cols-3 gap-10 text-left mt-16">
     <!-- Card 1 -->
     <div class="bg-[#181818] border border-crayTeal/20 p-8 rounded-3xl shadow-lg hover:shadow-crayTeal/30 hover:scale-[1.03] transition-all duration-300">
-      <h3 class="text-crayTeal font-semibold text-xl mb-3 tracking-wide">Client-Centered Design</h3>
+      <h3 class="text-crayTeal font-semibold text-xl mb-3 tracking-wide">Conversion-Focused Layouts</h3>
       <p class="text-gray-400 text-base leading-relaxed">
-        I design with your audience in mind — every scroll, click, and section is crafted to drive connection and conversions.
+        Every click, scroll, and section is crafted to guide your visitors toward action — whether it’s booking, calling, or buying.
       </p>
     </div>
 
     <!-- Card 2 -->
     <div class="bg-[#181818] border border-crayYellow/20 p-8 rounded-3xl shadow-lg hover:shadow-crayYellow/30 hover:scale-[1.03] transition-all duration-300">
-      <h3 class="text-crayYellow font-semibold text-xl mb-3 tracking-wide">Built for Growth</h3>
+      <h3 class="text-crayYellow font-semibold text-xl mb-3 tracking-wide">Mobile-First, Edmonton-Focused</h3>
       <p class="text-gray-400 text-base leading-relaxed">
-        Your site will be lightning-fast, scalable, and mobile-first — built to grow with your brand, not against it.
+        Built for speed and responsiveness, your site will perform on any device — with a local SEO strategy to rank in Edmonton search results.
       </p>
     </div>
 
     <!-- Card 3 -->
     <div class="bg-[#181818] border border-crayRed/20 p-8 rounded-3xl shadow-lg hover:shadow-crayRed/30 hover:scale-[1.03] transition-all duration-300">
-      <h3 class="text-crayRed font-semibold text-xl mb-3 tracking-wide">Strategic from Day One</h3>
+      <h3 class="text-crayRed font-semibold text-xl mb-3 tracking-wide">Strategic Branding & Content</h3>
       <p class="text-gray-400 text-base leading-relaxed">
-        From brand identity to conversion strategy — every element is built with intention to move your business forward.
+        From page structure to messaging, we align every detail with your brand and business goals — perfect for startups and service-based businesses.
       </p>
     </div>
   </div>
 </section>
 
+<!-- 3-Step CTA Section -->
+<section id="cta-steps" class="relative pt-20 pb-24 px-6 bg-[#121212] overflow-hidden" data-aos="fade-up">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+    
+    <!-- Left Column: Text -->
+    <div>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-crayYellow mb-4 leading-snug">
+        Launch Your Website in 3 Simple Steps
+      </h2>
+      <p class="text-gray-300 text-base sm:text-lg font-medium mb-8 max-w-md leading-relaxed">
+        Whether you're a local Edmonton business or a personal brand, Craytivo makes the web design process seamless — from concept to launch.
+      </p>
+      <a href="#contact" class="inline-block bg-crayTeal text-black font-semibold py-3 px-6 rounded-full shadow-lg hover:bg-opacity-90 hover:scale-105 transition duration-300">
+        Start with a Free Call
+      </a>
+    </div>
 
-
-<section id="benefits" class="py-24 px-6 bg-[#1e1e1e]" data-aos="fade-up">
-  <div class="max-w-6xl mx-auto text-center">
-    <h2 class="text-3xl sm:text-4xl font-bold text-crayYellow mb-6 tracking-tight leading-snug">
-      What You Get with Craytivo
-    </h2>
-    <p class="text-gray-300 text-base sm:text-lg mb-14 max-w-3xl mx-auto leading-relaxed font-medium">
-      Every site is handcrafted to elevate your brand — optimized for performance, trust, and lead generation.
-    </p>
-
-    <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+    <!-- Right Column: Steps -->
+    <div class="space-y-8">
       
-      <!-- Benefit 1 -->
-      <div class="flex flex-col items-center text-center bg-white/5 backdrop-blur-md p-8 rounded-2xl border border-white/10 shadow-lg hover:scale-105 transition-transform duration-300">
-        <div class="w-14 h-14 flex items-center justify-center bg-crayTeal/20 rounded-full mb-4">
-          <svg class="w-6 h-6 text-crayTeal" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </div>
-        <h3 class="text-white font-semibold text-lg mb-2">Mobile-First Design</h3>
-        <p class="text-gray-400 text-sm leading-relaxed">Your website will look and perform flawlessly across all devices — from smartphones to desktops.</p>
-      </div>
-
-      <!-- Benefit 2 -->
-      <div class="flex flex-col items-center text-center bg-white/5 backdrop-blur-md p-8 rounded-2xl border border-white/10 shadow-lg hover:scale-105 transition-transform duration-300">
-        <div class="w-14 h-14 flex items-center justify-center bg-crayYellow/20 rounded-full mb-4">
-          <svg class="w-6 h-6 text-crayYellow" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M3 8h18M3 16h18" />
-          </svg>
-        </div>
-        <h3 class="text-white font-semibold text-lg mb-2">Lead Capture Systems</h3>
-        <p class="text-gray-400 text-sm leading-relaxed">Smart forms and built-in lead flows help you grow your client list with ease.</p>
-      </div>
-
-      <!-- Benefit 3 -->
-      <div class="flex flex-col items-center text-center bg-white/5 backdrop-blur-md p-8 rounded-2xl border border-white/10 shadow-lg hover:scale-105 transition-transform duration-300">
-        <div class="w-14 h-14 flex items-center justify-center bg-crayRed/20 rounded-full mb-4">
-          <svg class="w-6 h-6 text-crayRed" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
-          </svg>
-        </div>
-        <h3 class="text-white font-semibold text-lg mb-2">Optimized Performance</h3>
-        <p class="text-gray-400 text-sm leading-relaxed">Lightning-fast load times, clean code, and SEO foundations to get your site seen.</p>
-      </div>
-
-      <!-- Benefit 4 -->
-      <div class="flex flex-col items-center text-center bg-white/5 backdrop-blur-md p-8 rounded-2xl border border-white/10 shadow-lg hover:scale-105 transition-transform duration-300">
-        <div class="w-14 h-14 flex items-center justify-center bg-crayTeal/20 rounded-full mb-4">
-          <svg class="w-6 h-6 text-crayTeal" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m2 8H7a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v12a2 2 0 01-2 2z" />
-          </svg>
-        </div>
-        <h3 class="text-white font-semibold text-lg mb-2">CRM & Automation</h3>
-        <p class="text-gray-400 text-sm leading-relaxed">Seamless contact and CRM-ready features ensure you never miss an opportunity.</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-
-
-
- <!-- Pricing -->
-<section id="pricing" class="pb-20 pt-32 px-6 bg-[#121212]" data-aos="fade-up">
-  <div class="max-w-6xl mx-auto text-center">
-    <h2 class="text-4xl font-extrabold text-crayYellow mb-4">Pricing Plans</h2>
-    <p class="text-gray-400 mb-8">Flexible plans that fit your business goals.</p>
-
-   <!-- Pricing Cards -->
-<div class="grid md:grid-cols-3 gap-8" id="pricing-cards">
-  <!-- Starter -->
-  <div class="bg-[#1e1e1e] border border-crayYellow rounded-2xl p-8 text-left shadow-lg hover:shadow-xl transition-transform duration-300 hover:scale-105" data-aos="fade-up" data-aos-delay="200">
-    <h3 class="text-xl font-bold text-white mb-2">🟢 Starter</h3>
-    <p class="text-3xl font-bold text-crayTeal mb-4 price" data-onetime="$299">$299</p>
-    <ul class="text-gray-300 space-y-2 list-inside list-disc">
-      <li>1-page responsive website</li>
-      <li>Mobile optimization</li>
-      <li>Basic contact form</li>
-      <li>1 round of revisions</li>
-      <li>Basic brand color and font matching</li>
-      <li>Delivery in 7–10 days</li>
-    </ul>
-  </div>
-
-  <!-- Business -->
-  <div class="bg-[#1e1e1e] border border-crayYellow rounded-2xl p-8 text-left shadow-lg hover:shadow-xl transition-transform duration-300 hover:scale-105" data-aos="fade-up" data-aos-delay="200">
-    <h3 class="text-xl font-bold text-white mb-2">🔵 Business</h3>
-    <p class="text-3xl font-bold text-crayYellow mb-4 price" data-onetime="$599">$599</p>
-    <ul class="text-gray-300 space-y-2 list-inside list-disc">
-      <li>Up to 5 pages</li>
-      <li>Custom contact + services pages</li>
-      <li>SEO setup (titles, meta, schema basics)</li>
-      <li>Google Analytics integration</li>
-      <li>2 rounds of revisions</li>
-      <li>Basic speed optimization</li>
-      <li>Delivery in 10–14 days</li>
-    </ul>
-  </div>
-
-  <!-- Custom -->
-  <div class="bg-[#1e1e1e] border border-crayYellow rounded-2xl p-8 text-left shadow-lg hover:shadow-xl transition-transform duration-300 hover:scale-105" data-aos="fade-up" data-aos-delay="200">
-    <h3 class="text-xl font-bold text-white mb-2">🔴 Custom</h3>
-    <p class="text-3xl font-bold text-crayRed mb-4">From $899</p>
-    <ul class="text-gray-300 space-y-2 list-inside list-disc">
-      <li>Everything in Business +</li>
-      <li>Unlimited pages (within scope)</li>
-      <li>Full brand styling</li>
-      <li>Custom animations & transitions</li>
-      <li>Copywriting support</li>
-      <li>Priority delivery option</li>
-      <li>CMS integration (optional)</li>
-      <li>High-performance optimization</li>
-      <li>Ongoing support plan options</li>
-    </ul>
-  </div>
-</div>
-
-
-      </div>
-    </div>
-
-    <!-- Add-ons Interactive Section -->
-<div class="mt-16 text-left" id="addons-section">
-  <h4 class="text-2xl font-bold text-white mb-6 text-center" data-aos="fade-up">Optional Add-ons</h4>
-
-  <form class="grid sm:grid-cols-2 md:grid-cols-3 gap-6 text-sm text-gray-300" id="addons-form">
-    <label class="bg-[#1a1a1a] border border-gray-700 p-4 rounded-xl shadow-sm flex items-start space-x-3 cursor-pointer" data-aos="fade-up" data-aos-delay="100">
-      <input type="checkbox" value="120" data-name="Copywriting" class="addon-checkbox mt-1 accent-crayTeal">
-      <span>💬 Copywriting<br><span class="text-white font-medium">$120</span></span>
-    </label>
-    <label class="bg-[#1a1a1a] border border-gray-700 p-4 rounded-xl shadow-sm flex items-start space-x-3 cursor-pointer" data-aos="fade-up" data-aos-delay="200">
-      <input type="checkbox" value="150" data-name="Brand Kit Design" class="addon-checkbox mt-1 accent-crayTeal">
-      <span>🎨 Brand Kit Design<br><span class="text-white font-medium">$150</span></span>
-    </label>
-    <label class="bg-[#1a1a1a] border border-gray-700 p-4 rounded-xl shadow-sm flex items-start space-x-3 cursor-pointer" data-aos="fade-up" data-aos-delay="300">
-      <input type="checkbox" value="49" data-name="Maintenance" class="addon-checkbox mt-1 accent-crayTeal">
-      <span>🔧 Maintenance (Monthly)<br><span class="text-white font-medium">$49</span></span>
-    </label>
-    <label class="bg-[#1a1a1a] border border-gray-700 p-4 rounded-xl shadow-sm flex items-start space-x-3 cursor-pointer" data-aos="fade-up" data-aos-delay="400">
-      <input type="checkbox" value="35" data-name="Analytics Setup" class="addon-checkbox mt-1 accent-crayTeal">
-      <span>📊 Google Analytics Setup<br><span class="text-white font-medium">$35</span></span>
-    </label>
-    <label class="bg-[#1a1a1a] border border-gray-700 p-4 rounded-xl shadow-sm flex items-start space-x-3 cursor-pointer" data-aos="fade-up" data-aos-delay="500">
-      <input type="checkbox" value="40" data-name="Domain Setup & Email" class="addon-checkbox mt-1 accent-crayTeal">
-      <span>🌐 Domain Setup & Email<br><span class="text-white font-medium">$40</span></span>
-    </label>
-    <label class="bg-[#1a1a1a] border border-gray-700 p-4 rounded-xl shadow-sm flex items-start space-x-3 cursor-pointer" data-aos="fade-up" data-aos-delay="600">
-      <input type="checkbox" value="180" data-name="CMS Setup" class="addon-checkbox mt-1 accent-crayTeal">
-      <span>⚙️ CMS Setup<br><span class="text-white font-medium">$180</span></span>
-    </label>
-  </form>
-
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const checkboxes = document.querySelectorAll(".addon-checkbox");
-    const totalDisplay = document.getElementById("addon-total");
-    const summaryDisplay = document.getElementById("addon-summary");
-
-    function updateTotal() {
-      let total = 0;
-      let selected = [];
-
-      checkboxes.forEach(cb => {
-        if (cb.checked) {
-          total += parseFloat(cb.value);
-          selected.push(cb.getAttribute("data-name"));
-        }
-      });
-
-      let discountRate = 0;
-      if (selected.length >= 4) discountRate = 0.20;
-      else if (selected.length === 3) discountRate = 0.15;
-      else if (selected.length === 2) discountRate = 0.10;
-
-      const discountedTotal = total - total * discountRate;
-
-      totalDisplay.textContent = `$${discountedTotal.toFixed(2)}`;
-      summaryDisplay.textContent = selected.length
-        ? `${selected.join(", ")} (${(discountRate * 100)}% discount applied)`
-        : "No add-ons selected.";
-    }
-
-    checkboxes.forEach(cb => cb.addEventListener("change", updateTotal));
-  });
-</script>
-
-
-  <!-- Total Section -->
-  <div class="mt-10 text-center bg-[#1e1e1e] border border-crayTeal rounded-xl p-6 shadow-md text-white" data-aos="fade-up" data-aos-delay="700">
-    <h5 class="text-xl font-bold mb-2">💡 Your Add-on Total</h5>
-    <p id="addon-summary" class="text-sm text-gray-300 mb-1">No add-ons selected.</p>
-    <p class="text-3xl font-extrabold text-crayYellow" id="addon-total">$0</p>
-    <p class="text-xs text-gray-500 mt-1 italic">*Discounts apply automatically based on number of selections.</p>
-  </div>
-</div>
-
-
-
-  <div class="mt-16 text-center">
-  <a href="#contact" class="inline-block bg-crayTeal text-black font-semibold py-3 px-6 rounded-full shadow-lg hover:bg-opacity-90 hover:scale-105 transition duration-300">
-    Ready to Start? Contact Me
-  </a>
-</div>
-
-</section>
-
-
-  <!-- 3-Step CTA Section -->
-<section id="cta-steps" class="relative pt-16 pb-24 px-6 bg-[#121212] overflow-hidden" data-aos="fade-up">
-  <div class="max-w-6xl mx-auto text-center">
-    <h2 class="text-3xl sm:text-4xl font-bold text-crayYellow mb-4">Get Your Website in 3 Easy Steps</h2>
-    <p class="text-gray-300 mb-12">No tech stress. Just results. Here's how it works:</p>
-
-    <div class="grid md:grid-cols-3 gap-10">
       <!-- Step 1 -->
-      <div class="group relative bg-white/5 backdrop-blur-md p-8 rounded-2xl border border-crayTeal/30 shadow-xl hover:-translate-y-2 transition transform duration-300">
-        <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-crayTeal/20 rounded-full border border-crayTeal/40 animate-pulse">
-          <span class="text-crayTeal text-xl font-bold">1</span>
+      <div class="group flex items-start bg-white/5 backdrop-blur-md p-6 rounded-2xl border border-crayTeal/30 shadow-xl hover:-translate-y-1 transition duration-300">
+        <div class="w-12 h-12 flex-shrink-0 flex items-center justify-center bg-crayTeal/20 rounded-full border border-crayTeal/40 animate-pulse mr-4">
+          <span class="text-crayTeal text-lg font-bold">1</span>
         </div>
-        <h3 class="text-xl font-semibold text-white mb-2">Book a Free Call</h3>
-        <p class="text-gray-400 text-sm">Tell me your vision. I’ll help you get clarity on your site’s direction.</p>
+        <div>
+          <h3 class="text-white font-semibold text-lg mb-1">Book a Free Discovery Call</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            Share your goals and challenges. I’ll help you map out the best direction.
+          </p>
+        </div>
       </div>
 
       <!-- Step 2 -->
-      <div class="group relative bg-white/5 backdrop-blur-md p-8 rounded-2xl border border-crayYellow/30 shadow-xl hover:-translate-y-2 transition transform duration-300 delay-100">
-        <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-crayYellow/20 rounded-full border border-crayYellow/40 animate-bounce">
-          <span class="text-crayYellow text-xl font-bold">2</span>
+      <div class="group flex items-start bg-white/5 backdrop-blur-md p-6 rounded-2xl border border-crayYellow/30 shadow-xl hover:-translate-y-1 transition duration-300 delay-75">
+        <div class="w-12 h-12 flex-shrink-0 flex items-center justify-center bg-crayYellow/20 rounded-full border border-crayYellow/40 animate-bounce mr-4">
+          <span class="text-crayYellow text-lg font-bold">2</span>
         </div>
-        <h3 class="text-xl font-semibold text-white mb-2">Approve Your Design Plan</h3>
-        <p class="text-gray-400 text-sm">You’ll get a clear layout and visuals to review and approve before launch.</p>
+        <div>
+          <h3 class="text-white font-semibold text-lg mb-1">Review Your Design Plan</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            You'll receive a clean layout and design concept for approval before anything goes live.
+          </p>
+        </div>
       </div>
 
       <!-- Step 3 -->
-      <div class="group relative bg-white/5 backdrop-blur-md p-8 rounded-2xl border border-crayRed/30 shadow-xl hover:-translate-y-2 transition transform duration-300 delay-200">
-        <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-crayRed/20 rounded-full border border-crayRed/40 animate-ping">
-          <span class="text-crayRed text-xl font-bold">3</span>
+      <div class="group flex items-start bg-white/5 backdrop-blur-md p-6 rounded-2xl border border-crayRed/30 shadow-xl hover:-translate-y-1 transition duration-300 delay-150">
+        <div class="w-12 h-12 flex-shrink-0 flex items-center justify-center bg-crayRed/20 rounded-full border border-crayRed/40 animate-ping mr-4">
+          <span class="text-crayRed text-lg font-bold">3</span>
         </div>
-        <h3 class="text-xl font-semibold text-white mb-2">Launch a Site That Converts</h3>
-        <p class="text-gray-400 text-sm">Go live with a site that works hard for you—24/7 lead generation, no stress.</p>
+        <div>
+          <h3 class="text-white font-semibold text-lg mb-1">Launch with Confidence</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            Go live with a high-converting site that works for you 24/7 — built for results.
+          </p>
+        </div>
       </div>
+
     </div>
   </div>
 </section>
 
-<section id="portfolio" class="py-24 px-6 bg-[#1e1e1e] overflow-hidden" data-aos="fade-up">
+<!-- Benefits -->
+<section id="benefits" class="py-24 px-6 bg-[#1e1e1e]" data-aos="fade-up">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl sm:text-4xl font-bold text-crayYellow tracking-tight leading-snug">
+        Everything You Need to Succeed Online in Edmonton
+      </h2>
+      <p class="text-gray-300 text-base sm:text-lg mt-4 max-w-3xl mx-auto leading-relaxed font-medium">
+        Craytivo gives Edmonton-based service providers, freelancers, and small business owners the tools to turn clicks into clients.
+      </p>
+    </div>
+
+    <div class="space-y-14">
+
+      <!-- Benefit 1 -->
+      <div class="flex flex-col md:flex-row items-center gap-6 md:gap-10" data-aos="fade-up">
+        <div class="shrink-0 w-16 h-16 flex items-center justify-center bg-crayTeal/20 rounded-full border border-crayTeal/30">
+          <svg class="w-7 h-7 text-crayTeal" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </div>
+        <div class="text-white md:text-left text-center">
+          <h3 class="text-xl font-semibold mb-1">Mobile-Optimized Layout</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            Over 70% of your visitors are on mobile — we ensure your site loads fast and looks beautiful across every screen size.
+          </p>
+        </div>
+      </div>
+
+      <!-- Benefit 2 -->
+      <div class="flex flex-col md:flex-row-reverse items-center gap-6 md:gap-10" data-aos="fade-up">
+        <div class="shrink-0 w-16 h-16 flex items-center justify-center bg-crayYellow/20 rounded-full border border-crayYellow/30">
+          <svg class="w-7 h-7 text-crayYellow" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 8h18M3 16h18" />
+          </svg>
+        </div>
+        <div class="text-white md:text-left text-center">
+          <h3 class="text-xl font-semibold mb-1">Lead Generation Systems</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            Smart forms, booking links, and CTAs that help you convert Edmonton visitors into real clients.
+          </p>
+        </div>
+      </div>
+
+      <!-- Benefit 3 -->
+      <div class="flex flex-col md:flex-row items-center gap-6 md:gap-10" data-aos="fade-up">
+        <div class="shrink-0 w-16 h-16 flex items-center justify-center bg-crayRed/20 rounded-full border border-crayRed/30">
+          <svg class="w-7 h-7 text-crayRed" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+          </svg>
+        </div>
+        <div class="text-white md:text-left text-center">
+          <h3 class="text-xl font-semibold mb-1">Fast, SEO-Ready Code</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            Built with clean code, schema markup, and lightning load times — so your site ranks high in Edmonton search results.
+          </p>
+        </div>
+      </div>
+
+      <!-- Benefit 4 -->
+      <div class="flex flex-col md:flex-row-reverse items-center gap-6 md:gap-10" data-aos="fade-up">
+        <div class="shrink-0 w-16 h-16 flex items-center justify-center bg-crayTeal/20 rounded-full border border-crayTeal/30">
+          <svg class="w-7 h-7 text-crayTeal" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m2 8H7a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v12a2 2 0 01-2 2z" />
+          </svg>
+        </div>
+        <div class="text-white md:text-left text-center">
+          <h3 class="text-xl font-semibold mb-1">Automation-Ready Setup</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            From auto-replies to CRM syncs, your site is set up for smart growth with minimal manual work.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CTA -->
+    <div class="mt-20 text-center">
+      <a href="#contact" class="inline-block bg-crayTeal text-black font-semibold py-3 px-6 rounded-full shadow-lg hover:bg-opacity-90 hover:scale-105 active:scale-100 transition duration-300">
+        Let’s Build Your Site
+      </a>
+      <p class="mt-4 text-sm text-gray-400 italic">Proudly serving Edmonton and nearby communities</p>
+    </div>
+  </div>
+</section>
+
+
+
+<section id="pricing" class="pb-20 pt-32 px-6 bg-[#121212]" data-aos="fade-up">
   <div class="max-w-6xl mx-auto text-center">
-    <h2 class="text-3xl sm:text-4xl font-bold text-crayYellow tracking-tight mb-6">
-      Selected Projects
-    </h2>
+    <h2 class="text-4xl font-extrabold text-crayYellow mb-4">Pricing Plans</h2>
+    <p class="text-gray-400 mb-8">Flexible website packages for Edmonton-based small businesses and startups.</p>
+
+    <!-- Pricing Cards -->
+    <div class="grid md:grid-cols-3 gap-8" id="pricing-cards">
+      <!-- Starter -->
+      <div class="pricing-card bg-[#1e1e1e] border border-crayYellow rounded-2xl p-8 text-left shadow-lg hover:shadow-xl transition duration-300 hover:scale-105" data-plan="Starter" data-base="299">
+        <h3 class="text-xl font-bold text-white mb-2">🟢 Starter</h3>
+        <p class="text-3xl font-bold text-crayTeal mb-4">$<span class="base-price">299</span>+</p>
+        <ul class="text-gray-300 space-y-2 list-disc list-inside text-sm mb-6">
+          <li>1-page responsive website</li>
+          <li>Mobile optimization</li>
+          <li>Basic contact form</li>
+          <li>1 round of revisions</li>
+          <li>Basic branding</li>
+          <li>7–10 day delivery</li>
+        </ul>
+        <div class="total text-lg text-crayYellow font-bold">Total: $<span class="plan-total">299</span></div>
+      </div>
+
+      <!-- Business -->
+      <div class="pricing-card bg-[#1e1e1e] border border-crayYellow rounded-2xl p-8 text-left shadow-lg hover:shadow-xl transition duration-300 hover:scale-105" data-plan="Business" data-base="599">
+        <h3 class="text-xl font-bold text-white mb-2">🔵 Business</h3>
+        <p class="text-3xl font-bold text-crayYellow mb-4">$<span class="base-price">599</span>+</p>
+        <ul class="text-gray-300 space-y-2 list-disc list-inside text-sm mb-6">
+          <li>Up to 5 pages</li>
+          <li>SEO setup</li>
+          <li>GA4 integration</li>
+          <li>2 revision rounds</li>
+          <li>Basic speed optimization</li>
+          <li>10–14 day delivery</li>
+        </ul>
+        <div class="total text-lg text-crayYellow font-bold">Total: $<span class="plan-total">599</span></div>
+      </div>
+
+      <!-- Custom -->
+      <div class="pricing-card bg-[#1e1e1e] border border-crayYellow rounded-2xl p-8 text-left shadow-lg hover:shadow-xl transition duration-300 hover:scale-105" data-plan="Custom" data-base="899">
+        <h3 class="text-xl font-bold text-white mb-2">🔴 Custom</h3>
+        <p class="text-3xl font-bold text-crayRed mb-4">From $<span class="base-price">899</span>+</p>
+        <ul class="text-gray-300 space-y-2 list-disc list-inside text-sm mb-6">
+          <li>Unlimited pages</li>
+          <li>Full branding</li>
+          <li>Custom animations</li>
+          <li>Copywriting help</li>
+          <li>Optional CMS integration</li>
+          <li>Priority delivery</li>
+        </ul>
+        <div class="total text-lg text-crayYellow font-bold">Total: $<span class="plan-total">899</span></div>
+      </div>
+    </div>
+
+    <!-- Add-ons -->
+    <div class="mt-16">
+      <h4 class="text-2xl font-bold text-white mb-6 text-center">Optional Add-ons</h4>
+      <form id="addons-form" class="grid sm:grid-cols-2 md:grid-cols-3 gap-6 text-sm text-gray-300 max-w-5xl mx-auto">
+        <label class="flex gap-4 items-start bg-[#1a1a1a] p-4 rounded-xl border border-gray-700 shadow-sm">
+          <input type="checkbox" class="addon-checkbox mt-1 accent-crayTeal" data-name="Copywriting" value="120">
+          <span>💬 Copywriting<br><span class="text-white font-medium">$120</span></span>
+        </label>
+        <label class="flex gap-4 items-start bg-[#1a1a1a] p-4 rounded-xl border border-gray-700 shadow-sm">
+          <input type="checkbox" class="addon-checkbox mt-1 accent-crayTeal" data-name="Brand Kit Design" value="150">
+          <span>🎨 Brand Kit Design<br><span class="text-white font-medium">$150</span></span>
+        </label>
+        <label class="flex gap-4 items-start bg-[#1a1a1a] p-4 rounded-xl border border-gray-700 shadow-sm">
+          <input type="checkbox" class="addon-checkbox mt-1 accent-crayTeal" data-name="Maintenance" value="49">
+          <span>🔧 Maintenance (Monthly)<br><span class="text-white font-medium">$49</span></span>
+        </label>
+        <label class="flex gap-4 items-start bg-[#1a1a1a] p-4 rounded-xl border border-gray-700 shadow-sm">
+          <input type="checkbox" class="addon-checkbox mt-1 accent-crayTeal" data-name="Analytics Setup" value="35">
+          <span>📊 Google Analytics Setup<br><span class="text-white font-medium">$35</span></span>
+        </label>
+        <label class="flex gap-4 items-start bg-[#1a1a1a] p-4 rounded-xl border border-gray-700 shadow-sm">
+          <input type="checkbox" class="addon-checkbox mt-1 accent-crayTeal" data-name="Domain Setup" value="40">
+          <span>🌐 Domain Setup & Email<br><span class="text-white font-medium">$40</span></span>
+        </label>
+        <label class="flex gap-4 items-start bg-[#1a1a1a] p-4 rounded-xl border border-gray-700 shadow-sm">
+          <input type="checkbox" class="addon-checkbox mt-1 accent-crayTeal" data-name="CMS Setup" value="180">
+          <span>⚙️ CMS Setup<br><span class="text-white font-medium">$180</span></span>
+        </label>
+      </form>
+    </div>
+
+    <!-- CTA -->
+    <div class="mt-16 text-center">
+      <a href="#contact" class="inline-block bg-crayTeal text-black font-semibold py-3 px-6 rounded-full shadow-lg hover:bg-opacity-90 hover:scale-105 transition duration-300">
+        Ready to Build? Contact Me
+      </a>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const plans = document.querySelectorAll(".pricing-card");
+    const checkboxes = document.querySelectorAll(".addon-checkbox");
+
+    function updateTotals() {
+      plans.forEach(plan => {
+        const base = parseFloat(plan.dataset.base);
+        let total = base;
+        checkboxes.forEach(cb => {
+          if (cb.checked) {
+            total += parseFloat(cb.value);
+          }
+        });
+        plan.querySelector(".plan-total").textContent = total.toFixed(2);
+      });
+    }
+
+    checkboxes.forEach(cb => cb.addEventListener("change", updateTotals));
+  });
+</script>
+
+<!-- ======= Portfolio Section ======= -->
+<section id="portfolio" class="py-24 px-6 bg-[#1e1e1e] relative z-10 overflow-hidden" data-aos="fade-up">
+  <div class="max-w-6xl mx-auto text-center">
+    <h2 class="text-3xl sm:text-4xl font-bold text-crayYellow tracking-tight mb-6">Selected Projects</h2>
     <p class="text-gray-300 text-base sm:text-lg mb-14 leading-relaxed max-w-3xl mx-auto font-medium">
-      A curated selection of high-performing websites built to drive results and elevate brands.
+      A curated collection of result-driven websites designed to elevate Edmonton brands and beyond.
     </p>
 
     <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 auto-rows-fr text-left">
-      
       <!-- OT Vibez Studio -->
-      <article class="bg-white/5 border border-white/10 backdrop-blur-lg rounded-2xl shadow-xl p-6 transition hover:scale-[1.02] hover:-translate-y-1 duration-300">
-  <div class="overflow-hidden rounded-xl border border-white/10 shadow-md mb-4">
+      <article class="flex flex-col bg-white/5 border border-white/10 backdrop-blur-lg rounded-2xl shadow-xl p-6 transition hover:scale-[1.02] hover:-translate-y-1 duration-300">
+        <div class="aspect-video overflow-hidden rounded-xl border border-white/10 shadow mb-4">
           <img 
-            src="assets\images\ot-vibez-768w.webp"
-            srcset="assets\images\ot-vibez-400w.webp 400w, assets\images\ot-vibez-768w.webp 768w, assets\images\ot-vibez-1024w.webp 1024w"
+            src="assets/images/ot-vibez-768w.webp"
+            srcset="assets/images/ot-vibez-400w.webp 400w, assets/images/ot-vibez-768w.webp 768w, assets/images/ot-vibez-1024w.webp 1024w"
             sizes="(max-width: 640px) 100vw, 95vw"
-            loading="lazy"
-            width="1024" height="480"
             alt="OT Vibez Studio recording and rehearsal space"
-            class="w-full h-48 object-cover rounded-xl" />
+            class="w-full h-full object-cover" />
         </div>
-        <h3 class="text-white text-base sm:text-lg font-semibold mb-1">OT Vibez Studio</h3>
-        <p class="text-gray-400 text-sm leading-relaxed mb-2">
-          A bold website for Edmonton’s premier creative studio — optimized for mobile booking, SEO, and a luxurious user experience.
+        <h3 class="text-white text-lg font-semibold mb-1">OT Vibez Studio</h3>
+        <p class="text-gray-400 text-sm leading-relaxed mb-3">
+          A bold site for Edmonton’s premier creative studio — optimized for mobile booking, SEO, and premium UX.
         </p>
         <a href="https://otvibez.com/" target="_blank" class="text-crayTeal text-sm font-medium hover:underline">Visit Website →</a>
       </article>
 
       <!-- Marina Homes -->
-      <article class="bg-white/5 border border-white/10 backdrop-blur-lg rounded-2xl shadow-xl p-6 transition hover:scale-[1.02] hover:-translate-y-1 duration-300">
-        <div class="overflow-hidden rounded-xl border border-white/10 shadow-md mb-4">
+      <article class="flex flex-col bg-white/5 border border-white/10 backdrop-blur-lg rounded-2xl shadow-xl p-6 transition hover:scale-[1.02] hover:-translate-y-1 duration-300">
+        <div class="aspect-video overflow-hidden rounded-xl border border-white/10 shadow mb-4">
           <img 
-            src="assets/images/marina-homes-768.webp"
-            srcset="assets/images/marina-homes-400.webp 400w, assets/images/marina-homes-768.webp 768w, assets/images/marina-homes-1024.webp 1024w"
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 48vw, 31vw"
-            loading="lazy"
-            width="640" height="320"
-            alt="Luxury real estate website design for Marina Homes"
-            class="w-full h-48 object-cover rounded-xl" />
+  src="assets/images/marina-homes-768.webp"
+  srcset="assets/images/marina-homes-400.webp 400w, assets/images/marina-homes-768.webp 768w"
+  sizes="(max-width: 768px) 100vw, 768px"
+  alt="Luxury real estate website design for Marina Homes"
+  class="w-full h-full object-cover rounded-xl"
+/>
+
         </div>
-        <h3 class="text-white text-base sm:text-lg font-semibold mb-1">Marina Homes</h3>
-        <p class="text-gray-400 text-sm leading-relaxed mb-2">
+        <h3 class="text-white text-lg font-semibold mb-1">Marina Homes</h3>
+        <p class="text-gray-400 text-sm leading-relaxed mb-3">
           A luxury real estate site showcasing elegant developments — built to convert browsers into buyers.
         </p>
         <a href="https://marinahomes.ca/" target="_blank" class="text-crayTeal text-sm font-medium hover:underline">Visit Website →</a>
       </article>
 
       <!-- Purpose Path -->
-      <article class="bg-white/5 border border-white/10 backdrop-blur-lg rounded-2xl shadow-xl p-6 transition hover:scale-[1.02] hover:-translate-y-1 duration-300">
-        <div class="overflow-hidden rounded-xl border border-white/10 shadow-md mb-4">
+      <article class="flex flex-col bg-white/5 border border-white/10 backdrop-blur-lg rounded-2xl shadow-xl p-6 transition hover:scale-[1.02] hover:-translate-y-1 duration-300">
+        <div class="aspect-video overflow-hidden rounded-xl border border-white/10 shadow mb-4">
           <img 
             src="assets/images/purpose-path-768.webp"
             srcset="assets/images/purpose-path-400.webp 400w, assets/images/purpose-path-768.webp 768w, assets/images/purpose-path-1024.webp 1024w"
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 48vw, 31vw"
-            loading="lazy"
-            width="640" height="320"
+            sizes="(max-width: 640px) 100vw, 95vw"
             alt="Conversion-focused marketing site for Purpose Path"
-            class="w-full h-48 object-cover rounded-xl" />
+            class="w-full h-full object-cover" />
         </div>
-        <h3 class="text-white text-base sm:text-lg font-semibold mb-1">Purpose Path</h3>
-        <p class="text-gray-400 text-sm leading-relaxed mb-2">
+        <h3 class="text-white text-lg font-semibold mb-1">Purpose Path</h3>
+        <p class="text-gray-400 text-sm leading-relaxed mb-3">
           A bold, high-converting website for a growing marketing agency with lead-gen baked in.
         </p>
         <a href="https://purposepath.ca/" target="_blank" class="text-crayTeal text-sm font-medium hover:underline">Visit Website →</a>
       </article>
 
       <!-- Zemlar Offices -->
-      <article class="bg-white/5 border border-white/10 backdrop-blur-lg rounded-2xl shadow-xl p-6 transition hover:scale-[1.02] hover:-translate-y-1 duration-300">
-        <div class="overflow-hidden rounded-xl border border-white/10 shadow-md mb-4">
+      <article class="flex flex-col bg-white/5 border border-white/10 backdrop-blur-lg rounded-2xl shadow-xl p-6 transition hover:scale-[1.02] hover:-translate-y-1 duration-300">
+        <div class="aspect-video overflow-hidden rounded-xl border border-white/10 shadow mb-4">
           <img 
             src="assets/images/zemlar-768.webp"
             srcset="assets/images/zemlar-400.webp 400w, assets/images/zemlar-768.webp 768w, assets/images/zemlar-1024.webp 1024w"
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 48vw, 31vw"
-            loading="lazy"
-            width="640" height="320"
+            sizes="(max-width: 640px) 100vw, 95vw"
             alt="Zemlar flexible workspace site UX"
-            class="w-full h-48 object-cover rounded-xl" />
+            class="w-full h-full object-cover" />
         </div>
-        <h3 class="text-white text-base sm:text-lg font-semibold mb-1">Zemlar Offices</h3>
-        <p class="text-gray-400 text-sm leading-relaxed mb-2">
+        <h3 class="text-white text-lg font-semibold mb-1">Zemlar Offices</h3>
+        <p class="text-gray-400 text-sm leading-relaxed mb-3">
           A scalable B2B site for Canada’s top flexible office provider — sleek and built for scale.
         </p>
         <a href="https://zemlar.ca/" target="_blank" class="text-crayTeal text-sm font-medium hover:underline">Visit Website →</a>
       </article>
 
       <!-- ICARE Naturals -->
-      <article class="bg-white/5 border border-white/10 backdrop-blur-lg rounded-2xl shadow-xl p-6 transition hover:scale-[1.02] hover:-translate-y-1 duration-300">
-        <div class="overflow-hidden rounded-xl border border-white/10 shadow-md mb-4">
+      <article class="flex flex-col bg-white/5 border border-white/10 backdrop-blur-lg rounded-2xl shadow-xl p-6 transition hover:scale-[1.02] hover:-translate-y-1 duration-300">
+        <div class="aspect-video overflow-hidden rounded-xl border border-white/10 shadow mb-4">
           <img 
             src="assets/images/icare-768.webp"
             srcset="assets/images/icare-400.webp 400w, assets/images/icare-768.webp 768w, assets/images/icare-1024.webp 1024w"
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 48vw, 31vw"
-            loading="lazy"
-            width="640" height="320"
+            sizes="(max-width: 640px) 100vw, 95vw"
             alt="ICARE Naturals Shopify ecommerce design"
-            class="w-full h-48 object-cover rounded-xl" />
+            class="w-full h-full object-cover" />
         </div>
-        <h3 class="text-white text-base sm:text-lg font-semibold mb-1">ICARE Naturals</h3>
-        <p class="text-gray-400 text-sm leading-relaxed mb-2">
+        <h3 class="text-white text-lg font-semibold mb-1">ICARE Naturals</h3>
+        <p class="text-gray-400 text-sm leading-relaxed mb-3">
           A Shopify storefront for a clean beauty brand — fast, elegant, and built to sell.
         </p>
         <a href="https://icarenaturals.ca/" target="_blank" class="text-crayTeal text-sm font-medium hover:underline">Visit Website →</a>
       </article>
 
       <!-- Freedom Life Church -->
-      <article class="bg-white/5 border border-white/10 backdrop-blur-lg rounded-2xl shadow-xl p-6 transition hover:scale-[1.02] hover:-translate-y-1 duration-300">
-  <div class="overflow-hidden rounded-xl border border-white/10 shadow-md mb-4">
-    <img 
-      src="assets/images/flc-768.webp"
-      srcset="assets/images/flc-400.webp 400w, assets/images/flc-768.webp 768w, assets/images/flc-1024.webp 1024w"
-      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 48vw, 31vw"
-      loading="lazy"
-      width="1024" height="480"
-      alt="Freedom Life Church custom church website design"
-      class="w-full h-48 object-cover rounded-xl" />
-  </div>
-  <h3 class="text-white text-base sm:text-lg font-semibold mb-1">Freedom Life Church</h3>
-  <p class="text-gray-400 text-sm leading-relaxed mb-2">
-    A modern platform for a growing church with giving, streaming, and event features.
-  </p>
-  <a href="https://freedomlifechurch.ca/" target="_blank" class="text-crayTeal text-sm font-medium hover:underline">Visit Website →</a>
-</article>
-
+      <article class="flex flex-col bg-white/5 border border-white/10 backdrop-blur-lg rounded-2xl shadow-xl p-6 transition hover:scale-[1.02] hover:-translate-y-1 duration-300">
+        <div class="aspect-video overflow-hidden rounded-xl border border-white/10 shadow mb-4">
+          <img 
+            src="assets/images/flc-768.webp"
+            srcset="assets/images/flc-400.webp 400w, assets/images/flc-768.webp 768w, assets/images/flc-1024.webp 1024w"
+            sizes="(max-width: 640px) 100vw, 95vw"
+            alt="Freedom Life Church custom church website design"
+            class="w-full h-full object-cover" />
+        </div>
+        <h3 class="text-white text-lg font-semibold mb-1">Freedom Life Church</h3>
+        <p class="text-gray-400 text-sm leading-relaxed mb-3">
+          A modern platform for a growing church with giving, streaming, and event features.
+        </p>
+        <a href="https://freedomlifechurch.ca/" target="_blank" class="text-crayTeal text-sm font-medium hover:underline">Visit Website →</a>
+      </article>
     </div>
   </div>
 </section>
 
+<!-- ======= Testimonials Section ======= -->
+<section id="testimonials" class="py-24 px-6 bg-[#181818] relative z-0 overflow-hidden" data-aos="fade-up">
+  <!-- Decorative Accent Line -->
+  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-[2px] bg-gradient-to-r from-crayTeal via-crayYellow to-crayRed opacity-30 rounded-full"></div>
 
-
-
-
-<!-- Testimonials -->
-<section id="testimonials" class="py-24 px-6 bg-[#121212] text-center relative overflow-hidden" data-aos="fade-up">
-  <!-- Top Accent Line -->
-  <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-1/2 h-[2px] bg-gradient-to-r from-crayTeal via-crayYellow to-crayRed opacity-30 rounded-full"></div>
-
-  <div class="max-w-4xl mx-auto">
+  <div class="max-w-5xl mx-auto text-center">
     <h2 class="text-3xl sm:text-4xl font-bold text-crayYellow tracking-tight mb-8">Client Testimonials</h2>
-    <p class="text-gray-300 text-base sm:text-lg leading-relaxed mb-14 max-w-3xl mx-auto font-medium">
-      Hear from the people and brands who trusted Craytivo to elevate their digital presence.
+    <p class="text-gray-300 text-base sm:text-lg mb-14 max-w-3xl mx-auto font-medium leading-relaxed">
+      Trusted by founders, creatives, and teams looking to scale with confidence. Here's what they said:
     </p>
 
-    <div class="grid sm:grid-cols-2 gap-8">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
       <!-- Testimonial 1 -->
       <div class="bg-white/5 border border-white/10 backdrop-blur-md p-6 rounded-2xl shadow-lg text-left transition hover:scale-[1.02] duration-300">
         <p class="text-gray-300 text-sm sm:text-base mb-4 italic leading-relaxed">
-          “Craytivo didn’t just build us a site — they helped redefine our brand online. The attention to UX, performance, and design truly exceeded expectations.”
+          “Craytivo didn’t just build us a site — they redefined our online brand. Everything is clean, fast, and built to perform.”
         </p>
         <div>
           <p class="text-white font-semibold text-sm">Ayesha M.</p>
@@ -876,7 +834,7 @@ hero.addEventListener("mouseleave", () => {
       <!-- Testimonial 2 -->
       <div class="bg-white/5 border border-white/10 backdrop-blur-md p-6 rounded-2xl shadow-lg text-left transition hover:scale-[1.02] duration-300">
         <p class="text-gray-300 text-sm sm:text-base mb-4 italic leading-relaxed">
-          “I was honestly blown away that it was just one person behind Craytivo. Communication was clear, fast, and effortless the entire way through. He nailed the design exactly how we envisioned it — and quickly. Since launching, our bounce rate has dropped significantly and we’ve seen a noticeable increase in client inquiries.”
+          “I was honestly blown away that it was just one person behind Craytivo. He nailed the design exactly how we envisioned it — and quickly.”
         </p>
         <div>
           <p class="text-white font-semibold text-sm">Ahmed K.</p>
@@ -887,14 +845,15 @@ hero.addEventListener("mouseleave", () => {
       <!-- Testimonial 3 -->
       <div class="bg-white/5 border border-white/10 backdrop-blur-md p-6 rounded-2xl shadow-lg text-left transition hover:scale-[1.02] duration-300">
         <p class="text-gray-300 text-sm sm:text-base mb-4 italic leading-relaxed">
-          “Craytivo transformed our old site into a modern lead magnet. Their design decisions were rooted in real business needs, not just aesthetics.”
+          “Craytivo transformed our old site into a modern lead magnet. Their decisions were rooted in business needs, not just design.”
         </p>
         <div>
           <p class="text-white font-semibold text-sm">Lisa T.</p>
           <p class="text-gray-400 text-xs">COO, Marina Homes</p>
         </div>
       </div>
-      
+    </div>
+  </div>
 </section>
 
 <!-- Contact -->
@@ -1103,13 +1062,6 @@ hero.addEventListener("mouseleave", () => {
     if (e.key === "Escape") closeModal();
   });
 </script>
-
-
-
-
-
-
-</section>
 
 
 <!-- Footer Accent Line -->
