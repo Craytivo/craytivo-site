@@ -61,6 +61,9 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
+  <!-- Anime.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+
   <!-- Lightbox -->
   <link href="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/css/lightbox.min.css" rel="stylesheet" />
   <script src="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/js/lightbox-plus-jquery.min.js"></script>
@@ -208,41 +211,44 @@
 </style>
 </head>
 
-<body class="bg-[#121212] text-white font-sans leading-relaxed tracking-wide">
+<body class="bg-white text-gray-900 font-sans leading-relaxed tracking-wide min-h-screen flex flex-col">
 
   <!-- Scroll Progress Bar -->
   <div id="progress-bar" class="fixed top-0 left-0 h-1 bg-crayTeal z-50"></div>
 
-<header id="mainHeader" class="sticky top-0 z-50 bg-[#121212]/80 backdrop-blur-md border-b border-white/10 py-3 transition-all duration-300 shadow-none">
+  <!-- Main Content Wrapper -->
+  <div class="flex-grow">
+
+  <header id="mainHeader" class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 py-4 transition-all duration-300 shadow-sm">
   <div class="flex justify-between items-center px-6 max-w-7xl mx-auto">
 
     <!-- Logo + Brand Name -->
-    <a href="/" aria-label="Craytivo Home" class="flex items-center space-x-3 transition-all duration-300">
+    <a href="/" aria-label="Craytivo Home" class="flex items-center space-x-3 transition-all duration-300 hover:scale-105">
       <img id="headerLogo" src="assets/logo-no-text.png" alt="Craytivo Logo" class="w-12 md:w-14 transition-transform duration-300">
-      <span id="headerText" class="text-xl font-extrabold tracking-wide uppercase text-white transition-opacity duration-300">Craytivo</span>
+      <span id="headerText" class="text-xl md:text-2xl font-extrabold tracking-wide uppercase text-gray-900 transition-all duration-300">Craytivo</span>
     </a>
 
     <!-- Hamburger Icon (Mobile Toggle) -->
-    <button id="hamburgerBtn" class="md:hidden text-white focus:outline-none z-50" aria-label="Toggle navigation">
+    <button id="hamburgerBtn" class="md:hidden text-gray-700 hover:text-crayTeal focus:outline-none focus:ring-2 focus:ring-crayTeal/20 rounded-lg p-2 z-50 transition-all duration-300" aria-label="Toggle navigation">
       <svg id="hamburgerIcon" class="w-6 h-6 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
         <path id="hamburgerLines" stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
       </svg>
     </button>
 
     <!-- Desktop Nav -->
-    <nav class="hidden md:flex space-x-8 text-sm font-medium text-white" aria-label="Main navigation">
-      <a href="#about" class="hover:text-crayTeal">About</a>
-      <a href="#benefits" class="hover:text-crayTeal">Services</a>
-      <a href="#pricing" class="hover:text-crayTeal">Pricing</a>
-      <a href="#portfolio" class="hover:text-crayTeal">Portfolio</a>
-      <a href="#contact" class="hover:text-crayTeal">Contact</a>
+    <nav class="hidden md:flex items-center space-x-1 text-sm font-medium" aria-label="Main navigation">
+      <a href="#about" class="px-4 py-2 text-gray-700 hover:text-crayTeal hover:bg-crayTeal/5 rounded-lg transition-all duration-300">About</a>
+      <a href="#benefits" class="px-4 py-2 text-gray-700 hover:text-crayTeal hover:bg-crayTeal/5 rounded-lg transition-all duration-300">Services</a>
+      <a href="#pricing" class="px-4 py-2 text-gray-700 hover:text-crayTeal hover:bg-crayTeal/5 rounded-lg transition-all duration-300">Pricing</a>
+      <a href="#portfolio" class="px-4 py-2 text-gray-700 hover:text-crayTeal hover:bg-crayTeal/5 rounded-lg transition-all duration-300">Portfolio</a>
+      <a href="#contact" class="px-4 py-2 text-gray-700 hover:text-crayTeal hover:bg-crayTeal/5 rounded-lg transition-all duration-300">Contact</a>
     </nav>
 
     <!-- Twitter Icon (Desktop) -->
     <a href="https://twitter.com/craytivo" target="_blank" rel="noopener noreferrer"
        id="twitterIcon"
        aria-label="Visit Craytivo on Twitter"
-       class="hidden md:inline-flex items-center space-x-2 px-4 py-1.5 text-crayTeal rounded-full text-sm font-medium hover:bg-crayTeal/10 transition-transform duration-300 ml-4">
+       class="hidden md:inline-flex items-center justify-center w-10 h-10 text-crayTeal bg-crayTeal/10 hover:bg-crayTeal hover:text-white rounded-full transition-all duration-300 ml-4 hover:scale-110">
       <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
         <path d="M23 3a10.9 10.9 0 01-3.14 1.53A4.48 4.48 0 0012.15 8v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5.5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/>
       </svg>
@@ -250,14 +256,14 @@
   </div>
 
   <!-- Mobile Nav Menu -->
-  <div id="mobileNav" class="hidden flex-col md:hidden px-6 pb-4 bg-transparent text-white transition-all duration-300 ease-in-out origin-top" aria-label="Mobile navigation">
-    <a href="#about" class="py-2 hover:text-crayTeal block opacity-0 animate-fade-in-up" style="animation-delay: 0.1s;">About</a>
-    <a href="#benefits" class="py-2 hover:text-crayTeal block opacity-0 animate-fade-in-up" style="animation-delay: 0.2s;">Services</a>
-    <a href="#pricing" class="py-2 hover:text-crayTeal block opacity-0 animate-fade-in-up" style="animation-delay: 0.3s;">Pricing</a>
-    <a href="#portfolio" class="py-2 hover:text-crayTeal block opacity-0 animate-fade-in-up" style="animation-delay: 0.4s;">Portfolio</a>
-    <a href="#contact" class="py-2 hover:text-crayTeal block opacity-0 animate-fade-in-up" style="animation-delay: 0.5s;">Contact</a>
+  <div id="mobileNav" class="hidden flex-col md:hidden px-6 pb-4 bg-white/95 backdrop-blur-md text-gray-900 transition-all duration-300 ease-in-out origin-top border-t border-gray-200" aria-label="Mobile navigation">
+    <a href="#about" class="py-3 px-2 hover:text-crayTeal hover:bg-crayTeal/5 rounded-lg block opacity-0 animate-fade-in-up transition-all duration-300" style="animation-delay: 0.1s;">About</a>
+    <a href="#benefits" class="py-3 px-2 hover:text-crayTeal hover:bg-crayTeal/5 rounded-lg block opacity-0 animate-fade-in-up transition-all duration-300" style="animation-delay: 0.2s;">Services</a>
+    <a href="#pricing" class="py-3 px-2 hover:text-crayTeal hover:bg-crayTeal/5 rounded-lg block opacity-0 animate-fade-in-up transition-all duration-300" style="animation-delay: 0.3s;">Pricing</a>
+    <a href="#portfolio" class="py-3 px-2 hover:text-crayTeal hover:bg-crayTeal/5 rounded-lg block opacity-0 animate-fade-in-up transition-all duration-300" style="animation-delay: 0.4s;">Portfolio</a>
+    <a href="#contact" class="py-3 px-2 hover:text-crayTeal hover:bg-crayTeal/5 rounded-lg block opacity-0 animate-fade-in-up transition-all duration-300" style="animation-delay: 0.5s;">Contact</a>
     <a href="https://twitter.com/craytivo" target="_blank" rel="noopener noreferrer"
-       class="py-2 mt-2 border border-crayTeal rounded-full text-center text-crayTeal text-sm font-medium hover:bg-crayTeal/10 transition block opacity-0 animate-fade-in-up"
+       class="py-3 px-2 mt-2 border border-crayTeal rounded-lg text-center text-crayTeal text-sm font-medium hover:bg-crayTeal hover:text-white transition-all duration-300 block opacity-0 animate-fade-in-up"
        style="animation-delay: 0.6s;">Twitter</a>
   </div>
 
@@ -265,7 +271,7 @@
   <div id="header-gradient-line" class="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-white/10 via-white/5 to-white/10 opacity-0 transition-opacity duration-300"></div>
 </header>
 
-<div id="menu-overlay" class="fixed inset-0 bg-black bg-opacity-60 z-40 hidden transition-opacity duration-300 md:hidden"></div>
+<div id="menu-overlay" class="fixed inset-0 bg-gray-900 bg-opacity-50 z-40 hidden transition-opacity duration-300 md:hidden"></div>
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
@@ -328,85 +334,175 @@
 </script>
 
 <!-- Hero Section -->
-<section id="hero" class="relative h-[80vh] flex flex-col justify-center items-center text-center px-4 py-6 overflow-hidden" role="region" aria-label="Craytivo Web Design Hero">
+<section id="hero" class="relative min-h-screen flex flex-col justify-center items-center text-center px-4 py-6 overflow-hidden" role="region" aria-label="Craytivo Web Design Hero">
 
-  <!-- Decorative SVG Accent -->
-  <svg class="absolute top-12 right-12 w-72 h-72 text-crayTeal opacity-10 blur-3xl animate-pulse-slow pointer-events-none z-0" 
-       fill="currentColor" viewBox="0 0 200 200" aria-hidden="true">
-    <circle cx="100" cy="100" r="100" />
-  </svg>
-
-  <!-- Background pattern and gradient -->
+  <!-- Animated Background Elements -->
   <div class="absolute inset-0 z-0">
-    <div class="w-full h-full bg-[url('/assets/topography.svg')] bg-repeat opacity-35"></div>
-    <div class="absolute inset-0 bg-gradient-to-b from-transparent to-[#121212]"></div>
+    <!-- Floating Geometric Shapes -->
+    <div class="hero-shape hero-shape-1 absolute w-32 h-32 bg-crayTeal/20 rounded-full blur-xl" style="top: 20%; left: 10%;"></div>
+    <div class="hero-shape hero-shape-2 absolute w-48 h-48 bg-crayYellow/15 rounded-full blur-2xl" style="top: 60%; right: 15%;"></div>
+    <div class="hero-shape hero-shape-3 absolute w-24 h-24 bg-crayRed/20 rounded-full blur-lg" style="top: 80%; left: 20%;"></div>
+    <div class="hero-shape hero-shape-4 absolute w-64 h-64 bg-crayTeal/10 rounded-full blur-3xl" style="top: 10%; right: 10%;"></div>
+    <div class="hero-shape hero-shape-5 absolute w-40 h-40 bg-crayYellow/10 rounded-full blur-2xl" style="top: 40%; left: 5%;"></div>
+    
+    <!-- Additional Geometric Elements -->
+    <div class="hero-shape hero-shape-6 absolute w-20 h-20 bg-crayRed/15 rounded-lg blur-md rotate-45" style="top: 30%; right: 25%;"></div>
+    <div class="hero-shape hero-shape-7 absolute w-36 h-36 bg-crayTeal/8 rounded-full blur-2xl" style="top: 70%; left: 60%;"></div>
+    <div class="hero-shape hero-shape-8 absolute w-16 h-16 bg-crayYellow/25" style="top: 15%; left: 70%; clip-path: polygon(50% 0%, 0% 100%, 100% 100%);"></div>
+    
+    <!-- Dot Grid Pattern -->
+    <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle, #00E0C6 1px, transparent 1px); background-size: 40px 40px;"></div>
+    
+    <!-- Animated Grid Lines -->
+    <div class="hero-grid absolute inset-0 opacity-5">
+      <div class="grid-line grid-line-1 absolute h-full w-px bg-gradient-to-b from-transparent via-crayTeal to-transparent" style="left: 20%;"></div>
+      <div class="grid-line grid-line-2 absolute h-full w-px bg-gradient-to-b from-transparent via-crayYellow to-transparent" style="left: 50%;"></div>
+      <div class="grid-line grid-line-3 absolute h-full w-px bg-gradient-to-b from-transparent via-crayRed to-transparent" style="left: 80%;"></div>
+      <div class="grid-line grid-line-4 absolute w-full h-px bg-gradient-to-r from-transparent via-crayTeal to-transparent" style="top: 30%;"></div>
+      <div class="grid-line grid-line-5 absolute w-full h-px bg-gradient-to-r from-transparent via-crayYellow to-transparent" style="top: 70%;"></div>
+    </div>
+    
+    <!-- Enhanced Gradient Background -->
+    <div class="absolute inset-0 bg-gradient-to-br from-white via-gray-50 to-gray-100"></div>
+    <div class="absolute inset-0 bg-gradient-to-tr from-crayTeal/5 via-transparent to-crayYellow/5"></div>
+    <div class="absolute inset-0 bg-gradient-to-bl from-transparent via-crayRed/3 to-transparent"></div>
+    <div class="absolute inset-0 bg-radial-gradient from-crayTeal/8 via-transparent to-transparent" style="background: radial-gradient(circle at 20% 80%, rgba(0, 224, 198, 0.08) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(255, 214, 68, 0.06) 0%, transparent 50%);"></div>
   </div>
 
-  <!-- Hero Card -->
-  <div class="animated-border relative z-10 backdrop-blur-md bg-white/5 border border-white/10 rounded-xl p-8 sm:p-14 max-w-4xl w-full mx-auto shadow-lg hover:shadow-xl transition-all duration-300">
+  <!-- Main Hero Content -->
+  <div class="relative z-10 max-w-6xl mx-auto w-full">
     
-    <!-- Tagline -->
-    <span class="inline-block mb-3 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-crayTeal bg-white/10 border border-crayTeal/40 rounded-full">
-      Edmonton Web Design Studio
-    </span>
+    <!-- Animated Tagline -->
+    <div class="hero-tagline mb-6 opacity-0">
+      <span class="inline-block px-4 py-2 text-sm font-semibold uppercase tracking-wider text-crayTeal bg-white/80 backdrop-blur-sm border border-crayTeal/30 rounded-full shadow-lg">
+        Edmonton Web Design Studio
+      </span>
+    </div>
 
-    <!-- Headline -->
-    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight mb-4">
-      Affordable <span class="text-crayYellow">Websites That Win Clients</span> in Edmonton
-    </h1>
+    <!-- Main Headline with Staggered Animation -->
+    <div class="hero-headline mb-8">
+      <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-gray-900 leading-tight">
+        <span class="hero-word inline-block opacity-0" style="transform: translateY(50px);">Affordable</span>
+        <br class="sm:hidden" />
+        <span class="hero-word inline-block text-crayYellow ml-4 opacity-0" style="transform: translateY(50px);">Websites</span>
+        <br />
+        <span class="hero-word inline-block opacity-0" style="transform: translateY(50px);">That</span>
+        <span class="hero-word inline-block text-crayTeal ml-4 opacity-0" style="transform: translateY(50px);">Win</span>
+        <span class="hero-word inline-block ml-4 opacity-0" style="transform: translateY(50px);">Clients</span>
+      </h1>
+    </div>
 
-    <!-- Subheadline -->
-    <p class="text-base sm:text-lg text-gray-300 font-light mb-6 max-w-xl mx-auto" data-aos="fade-up" data-aos-delay="100">
-      Craytivo builds mobile-optimized websites that help Edmonton small businesses stand out, generate leads, and grow online — fast turnaround, transparent pricing.
-    </p>
+    <!-- Animated Subheadline -->
+    <div class="hero-subtitle mb-10 opacity-0">
+      <p class="text-lg sm:text-xl text-gray-600 font-light max-w-3xl mx-auto leading-relaxed">
+        Craytivo builds mobile-optimized websites that help Edmonton small businesses stand out, generate leads, and grow online — fast turnaround, transparent pricing.
+      </p>
+    </div>
 
-    <!-- CTA -->
-    <a href="#contact"
-       class="inline-block bg-crayTeal text-black font-semibold py-3 px-6 rounded-full shadow-lg hover:bg-opacity-90 hover:scale-105 active:scale-100 transition duration-300"
-       data-aos="zoom-in"
-       data-aos-delay="200">
-      Book Your Free Discovery Call
-    </a>
+    <!-- Animated CTA Buttons -->
+    <div class="hero-cta flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 opacity-0">
+      <a href="#contact" class="hero-btn-primary group relative overflow-hidden bg-crayTeal text-black font-semibold py-4 px-8 rounded-full shadow-xl transition-all duration-300 hover:shadow-2xl hover:scale-105">
+        <span class="relative z-10">Book Your Free Discovery Call</span>
+        <div class="absolute inset-0 bg-gradient-to-r from-crayTeal to-crayYellow opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+      </a>
+      <a href="#portfolio" class="hero-btn-secondary border-2 border-gray-300 text-gray-700 font-semibold py-4 px-8 rounded-full hover:border-crayTeal hover:text-crayTeal transition-all duration-300">
+        View Our Work
+      </a>
+    </div>
 
     <!-- Audience -->
-    <p class="mt-5 text-sm text-gray-400 italic tracking-wide" data-aos="fade-up" data-aos-delay="300">
-      Serving Edmonton-based entrepreneurs, contractors, creatives, and service providers.
-    </p>
+    <div class="hero-audience opacity-0">
+      <p class="text-sm text-gray-500 italic tracking-wide">
+        Serving Edmonton-based entrepreneurs, contractors, creatives, and service providers.
+      </p>
+    </div>
   </div>
 
-  <!-- Scroll Prompt -->
-  <div class="absolute bottom-6 z-10 opacity-80 hover:opacity-100 transition">
-    <a href="#about" class="text-crayTeal text-xs uppercase tracking-widest font-medium">↓ Scroll to Learn More</a>
+  <!-- Animated Scroll Prompt -->
+  <div class="hero-scroll absolute bottom-8 z-10 opacity-0">
+    <a href="#about" class="flex flex-col items-center text-crayTeal hover:text-crayYellow transition-colors duration-300">
+      <span class="text-xs uppercase tracking-widest font-medium mb-2">Scroll to Learn More</span>
+      <div class="w-6 h-10 border-2 border-current rounded-full flex justify-center">
+        <div class="w-1 h-3 bg-current rounded-full mt-2 animate-bounce"></div>
+      </div>
+    </a>
   </div>
 
   <!-- Gradient Overlay -->
-  <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-b from-transparent to-[#121212] z-0"></div>
+  <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-b from-transparent to-white z-0"></div>
 </section>
 
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    const hero = document.getElementById("hero");
+    // Hero Animations with Anime.js
+    const heroTimeline = anime.timeline({
+      easing: 'easeOutExpo',
+      duration: 1000
+    });
 
-    let animationFrame;
+    // Animate floating shapes
+    anime({
+      targets: '.hero-shape',
+      translateY: ['-20px', '20px'],
+      duration: 4000,
+      direction: 'alternate',
+      loop: true,
+      easing: 'easeInOutSine',
+      delay: anime.stagger(500)
+    });
 
-    function handleMouseMove(e) {
-      const x = (e.clientX / window.innerWidth - 0.5) * 10;
-      const y = (e.clientY / window.innerHeight - 0.5) * 10;
+    // Animate grid lines
+    anime({
+      targets: '.grid-line',
+      opacity: [0.05, 0.15, 0.05],
+      duration: 3000,
+      direction: 'alternate',
+      loop: true,
+      easing: 'easeInOutQuad',
+      delay: anime.stagger(200)
+    });
 
-      // Use requestAnimationFrame for better performance
-      if (animationFrame) cancelAnimationFrame(animationFrame);
-      animationFrame = requestAnimationFrame(() => {
-        hero.style.transform = `rotateX(${y}deg) rotateY(${x}deg)`;
-      });
-    }
-
-    function resetTilt() {
-      hero.style.transform = "";
-    }
-
-    hero.addEventListener("mousemove", handleMouseMove);
-    hero.addEventListener("mouseleave", resetTilt);
+    // Main content animation sequence
+    heroTimeline
+      .add({
+        targets: '.hero-tagline',
+        opacity: [0, 1],
+        translateY: [30, 0],
+        duration: 800
+      })
+      .add({
+        targets: '.hero-word',
+        opacity: [0, 1],
+        translateY: [50, 0],
+        duration: 600,
+        delay: anime.stagger(100)
+      }, '-=400')
+      .add({
+        targets: '.hero-subtitle',
+        opacity: [0, 1],
+        translateY: [30, 0],
+        duration: 800
+      }, '-=200')
+      .add({
+        targets: '.hero-cta',
+        opacity: [0, 1],
+        translateY: [30, 0],
+        scale: [0.9, 1],
+        duration: 800
+      }, '-=400')
+      .add({
+        targets: '.hero-audience',
+        opacity: [0, 1],
+        translateY: [20, 0],
+        duration: 600
+      }, '-=200')
+      .add({
+        targets: '.hero-scroll',
+        opacity: [0, 1],
+        translateY: [20, 0],
+        duration: 600
+      }, '-=100');
   });
 </script>
 
@@ -418,32 +514,32 @@
     Edmonton Web Design for Growing Local Businesses
   </h2>
 
-  <p class="text-gray-300 text-base sm:text-lg mb-14 max-w-2xl mx-auto leading-relaxed font-medium">
+  <p class="text-gray-600 text-base sm:text-lg mb-14 max-w-2xl mx-auto leading-relaxed font-medium">
     Craytivo helps Edmonton entrepreneurs and small businesses grow online with high-performance websites that build trust and bring in leads.<br><br>
     We create fast, conversion-focused websites that look amazing on mobile and turn visitors into loyal customers — without the high agency price tag.
   </p>
 
   <div class="grid sm:grid-cols-3 gap-10 text-left mt-16">
     <!-- Card 1 -->
-    <div class="bg-[#181818] border border-crayTeal/20 p-8 rounded-3xl shadow-lg hover:shadow-crayTeal/30 hover:scale-[1.03] transition-all duration-300">
+    <div class="bg-white border border-crayTeal/20 p-8 rounded-3xl shadow-lg hover:shadow-crayTeal/30 hover:scale-[1.03] transition-all duration-300">
       <h3 class="text-crayTeal font-semibold text-xl mb-3 tracking-wide">Conversion-Focused Layouts</h3>
-      <p class="text-gray-400 text-base leading-relaxed">
-        Every click, scroll, and section is crafted to guide your visitors toward action — whether it’s booking, calling, or buying.
+      <p class="text-gray-600 text-base leading-relaxed">
+        Every click, scroll, and section is crafted to guide your visitors toward action — whether it's booking, calling, or buying.
       </p>
     </div>
 
     <!-- Card 2 -->
-    <div class="bg-[#181818] border border-crayYellow/20 p-8 rounded-3xl shadow-lg hover:shadow-crayYellow/30 hover:scale-[1.03] transition-all duration-300">
+    <div class="bg-white border border-crayYellow/20 p-8 rounded-3xl shadow-lg hover:shadow-crayYellow/30 hover:scale-[1.03] transition-all duration-300">
       <h3 class="text-crayYellow font-semibold text-xl mb-3 tracking-wide">Mobile-First, Edmonton-Focused</h3>
-      <p class="text-gray-400 text-base leading-relaxed">
+      <p class="text-gray-600 text-base leading-relaxed">
         Built for speed and responsiveness, your site will perform on any device — with a local SEO strategy to rank in Edmonton search results.
       </p>
     </div>
 
     <!-- Card 3 -->
-    <div class="bg-[#181818] border border-crayRed/20 p-8 rounded-3xl shadow-lg hover:shadow-crayRed/30 hover:scale-[1.03] transition-all duration-300">
+    <div class="bg-white border border-crayRed/20 p-8 rounded-3xl shadow-lg hover:shadow-crayRed/30 hover:scale-[1.03] transition-all duration-300">
       <h3 class="text-crayRed font-semibold text-xl mb-3 tracking-wide">Strategic Branding & Content</h3>
-      <p class="text-gray-400 text-base leading-relaxed">
+      <p class="text-gray-600 text-base leading-relaxed">
         From page structure to messaging, we align every detail with your brand and business goals — perfect for startups and service-based businesses.
       </p>
     </div>
@@ -451,7 +547,7 @@
 </section>
 
 <!-- 3-Step CTA Section -->
-<section id="cta-steps" class="relative pt-20 pb-24 px-6 bg-[#121212] overflow-hidden" data-aos="fade-up">
+<section id="cta-steps" class="relative pt-20 pb-24 px-6 bg-gray-50 overflow-hidden" data-aos="fade-up">
   <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
     
     <!-- Left Column: Text -->
@@ -459,51 +555,50 @@
       <h2 class="text-3xl sm:text-4xl font-extrabold text-crayYellow mb-4 leading-snug">
         Launch Your Website in 3 Simple Steps
       </h2>
-      <p class="text-gray-300 text-base sm:text-lg font-medium mb-8 max-w-md leading-relaxed">
+      <p class="text-gray-600 text-base sm:text-lg font-medium mb-8 max-w-md leading-relaxed">
         Whether you're a local Edmonton business or a personal brand, Craytivo makes the web design process seamless — from concept to launch.
       </p>
       <a href="#contact" class="inline-block bg-crayTeal text-black font-semibold py-3 px-6 rounded-full shadow-lg hover:bg-opacity-90 hover:scale-105 transition duration-300">
         Start with a Free Call
       </a>
     </div>
-
     <!-- Right Column: Steps -->
     <div class="space-y-8">
       
       <!-- Step 1 -->
-      <div class="group flex items-start bg-white/5 backdrop-blur-md p-6 rounded-2xl border border-crayTeal/30 shadow-xl hover:-translate-y-1 transition duration-300">
+      <div class="group flex items-start bg-white backdrop-blur-md p-6 rounded-2xl border border-crayTeal/30 shadow-xl hover:-translate-y-1 transition duration-300">
         <div class="w-12 h-12 flex-shrink-0 flex items-center justify-center bg-crayTeal/20 rounded-full border border-crayTeal/40 animate-pulse mr-4">
           <span class="text-crayTeal text-lg font-bold">1</span>
         </div>
         <div>
-          <h3 class="text-white font-semibold text-lg mb-1">Book a Free Discovery Call</h3>
-          <p class="text-gray-400 text-sm leading-relaxed">
-            Share your goals and challenges. I’ll help you map out the best direction.
+          <h3 class="text-gray-900 font-semibold text-lg mb-1">Book a Free Discovery Call</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Share your goals and challenges. I'll help you map out the best direction.
           </p>
         </div>
       </div>
 
       <!-- Step 2 -->
-      <div class="group flex items-start bg-white/5 backdrop-blur-md p-6 rounded-2xl border border-crayYellow/30 shadow-xl hover:-translate-y-1 transition duration-300 delay-75">
+      <div class="group flex items-start bg-white backdrop-blur-md p-6 rounded-2xl border border-crayYellow/30 shadow-xl hover:-translate-y-1 transition duration-300 delay-75">
         <div class="w-12 h-12 flex-shrink-0 flex items-center justify-center bg-crayYellow/20 rounded-full border border-crayYellow/40 animate-bounce mr-4">
           <span class="text-crayYellow text-lg font-bold">2</span>
         </div>
         <div>
-          <h3 class="text-white font-semibold text-lg mb-1">Review Your Design Plan</h3>
-          <p class="text-gray-400 text-sm leading-relaxed">
+          <h3 class="text-gray-900 font-semibold text-lg mb-1">Review Your Design Plan</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
             You'll receive a clean layout and design concept for approval before anything goes live.
           </p>
         </div>
       </div>
 
       <!-- Step 3 -->
-      <div class="group flex items-start bg-white/5 backdrop-blur-md p-6 rounded-2xl border border-crayRed/30 shadow-xl hover:-translate-y-1 transition duration-300 delay-150">
+      <div class="group flex items-start bg-white backdrop-blur-md p-6 rounded-2xl border border-crayRed/30 shadow-xl hover:-translate-y-1 transition duration-300 delay-150">
         <div class="w-12 h-12 flex-shrink-0 flex items-center justify-center bg-crayRed/20 rounded-full border border-crayRed/40 animate-ping mr-4">
           <span class="text-crayRed text-lg font-bold">3</span>
         </div>
         <div>
-          <h3 class="text-white font-semibold text-lg mb-1">Launch with Confidence</h3>
-          <p class="text-gray-400 text-sm leading-relaxed">
+          <h3 class="text-gray-900 font-semibold text-lg mb-1">Launch with Confidence</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
             Go live with a high-converting site that works for you 24/7 — built for results.
           </p>
         </div>
@@ -514,13 +609,13 @@
 </section>
 
 <!-- Benefits -->
-<section id="benefits" class="py-24 px-6 bg-[#1e1e1e]" data-aos="fade-up">
+<section id="benefits" class="py-24 px-6 bg-white" data-aos="fade-up">
   <div class="max-w-6xl mx-auto">
     <div class="text-center mb-16">
       <h2 class="text-3xl sm:text-4xl font-bold text-crayYellow tracking-tight leading-snug">
         Everything You Need to Succeed Online in Edmonton
       </h2>
-      <p class="text-gray-300 text-base sm:text-lg mt-4 max-w-3xl mx-auto leading-relaxed font-medium">
+      <p class="text-gray-600 text-base sm:text-lg mt-4 max-w-3xl mx-auto leading-relaxed font-medium">
         Craytivo gives Edmonton-based service providers, freelancers, and small business owners the tools to turn clicks into clients.
       </p>
     </div>
@@ -534,9 +629,9 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         </div>
-        <div class="text-white md:text-left text-center">
+        <div class="text-gray-900 md:text-left text-center">
           <h3 class="text-xl font-semibold mb-1">Mobile-Optimized Layout</h3>
-          <p class="text-gray-400 text-sm leading-relaxed">
+          <p class="text-gray-600 text-sm leading-relaxed">
             Over 70% of your visitors are on mobile — we ensure your site loads fast and looks beautiful across every screen size.
           </p>
         </div>
@@ -549,9 +644,9 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M3 8h18M3 16h18" />
           </svg>
         </div>
-        <div class="text-white md:text-left text-center">
+        <div class="text-gray-900 md:text-left text-center">
           <h3 class="text-xl font-semibold mb-1">Lead Generation Systems</h3>
-          <p class="text-gray-400 text-sm leading-relaxed">
+          <p class="text-gray-600 text-sm leading-relaxed">
             Smart forms, booking links, and CTAs that help you convert Edmonton visitors into real clients.
           </p>
         </div>
@@ -564,9 +659,9 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
           </svg>
         </div>
-        <div class="text-white md:text-left text-center">
+        <div class="text-gray-900 md:text-left text-center">
           <h3 class="text-xl font-semibold mb-1">Fast, SEO-Ready Code</h3>
-          <p class="text-gray-400 text-sm leading-relaxed">
+          <p class="text-gray-600 text-sm leading-relaxed">
             Built with clean code, schema markup, and lightning load times — so your site ranks high in Edmonton search results.
           </p>
         </div>
@@ -579,9 +674,9 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m2 8H7a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v12a2 2 0 01-2 2z" />
           </svg>
         </div>
-        <div class="text-white md:text-left text-center">
+        <div class="text-gray-900 md:text-left text-center">
           <h3 class="text-xl font-semibold mb-1">Automation-Ready Setup</h3>
-          <p class="text-gray-400 text-sm leading-relaxed">
+          <p class="text-gray-600 text-sm leading-relaxed">
             From auto-replies to CRM syncs, your site is set up for smart growth with minimal manual work.
           </p>
         </div>
@@ -594,25 +689,25 @@
       <a href="#contact" class="inline-block bg-crayTeal text-black font-semibold py-3 px-6 rounded-full shadow-lg hover:bg-opacity-90 hover:scale-105 active:scale-100 transition duration-300">
         Let’s Build Your Site
       </a>
-      <p class="mt-4 text-sm text-gray-400 italic">Proudly serving Edmonton and nearby communities</p>
+      <p class="mt-4 text-sm text-gray-500 italic">Proudly serving Edmonton and nearby communities</p>
     </div>
   </div>
 </section>
 
 
 
-<section id="pricing" class="pb-20 pt-32 px-6 bg-[#121212]" data-aos="fade-up">
+<section id="pricing" class="pb-20 pt-32 px-6 bg-gray-50" data-aos="fade-up">
   <div class="max-w-6xl mx-auto text-center">
     <h2 class="text-4xl font-extrabold text-crayYellow mb-4">Pricing Plans</h2>
-    <p class="text-gray-400 mb-8">Flexible website packages for Edmonton-based small businesses and startups.</p>
+    <p class="text-gray-600 mb-8">Flexible website packages for Edmonton-based small businesses and startups.</p>
 
     <!-- Pricing Cards -->
     <div class="grid md:grid-cols-3 gap-8" id="pricing-cards">
       <!-- Starter -->
-      <div class="pricing-card bg-[#1e1e1e] border border-crayYellow rounded-2xl p-8 text-left shadow-lg hover:shadow-xl transition duration-300 hover:scale-105" data-plan="Starter" data-base="299">
-        <h3 class="text-xl font-bold text-white mb-2">🟢 Starter</h3>
+      <div class="pricing-card bg-white border border-crayYellow rounded-2xl p-8 text-left shadow-lg hover:shadow-xl transition duration-300 hover:scale-105" data-plan="Starter" data-base="299">
+        <h3 class="text-xl font-bold text-gray-900 mb-2">🟢 Starter</h3>
         <p class="text-3xl font-bold text-crayTeal mb-4">$<span class="base-price">299</span>+</p>
-        <ul class="text-gray-300 space-y-2 list-disc list-inside text-sm mb-6">
+        <ul class="text-gray-600 space-y-2 list-disc list-inside text-sm mb-6">
           <li>1-page responsive website</li>
           <li>Mobile optimization</li>
           <li>Basic contact form</li>
@@ -624,10 +719,10 @@
       </div>
 
       <!-- Business -->
-      <div class="pricing-card bg-[#1e1e1e] border border-crayYellow rounded-2xl p-8 text-left shadow-lg hover:shadow-xl transition duration-300 hover:scale-105" data-plan="Business" data-base="599">
-        <h3 class="text-xl font-bold text-white mb-2">🔵 Business</h3>
+      <div class="pricing-card bg-white border border-crayYellow rounded-2xl p-8 text-left shadow-lg hover:shadow-xl transition duration-300 hover:scale-105" data-plan="Business" data-base="599">
+        <h3 class="text-xl font-bold text-gray-900 mb-2">🔵 Business</h3>
         <p class="text-3xl font-bold text-crayYellow mb-4">$<span class="base-price">599</span>+</p>
-        <ul class="text-gray-300 space-y-2 list-disc list-inside text-sm mb-6">
+        <ul class="text-gray-600 space-y-2 list-disc list-inside text-sm mb-6">
           <li>Up to 5 pages</li>
           <li>SEO setup</li>
           <li>GA4 integration</li>
@@ -639,10 +734,10 @@
       </div>
 
       <!-- Custom -->
-      <div class="pricing-card bg-[#1e1e1e] border border-crayYellow rounded-2xl p-8 text-left shadow-lg hover:shadow-xl transition duration-300 hover:scale-105" data-plan="Custom" data-base="899">
-        <h3 class="text-xl font-bold text-white mb-2">🔴 Custom</h3>
+      <div class="pricing-card bg-white border border-crayYellow rounded-2xl p-8 text-left shadow-lg hover:shadow-xl transition duration-300 hover:scale-105" data-plan="Custom" data-base="899">
+        <h3 class="text-xl font-bold text-gray-900 mb-2">🔴 Custom</h3>
         <p class="text-3xl font-bold text-crayRed mb-4">From $<span class="base-price">899</span>+</p>
-        <ul class="text-gray-300 space-y-2 list-disc list-inside text-sm mb-6">
+        <ul class="text-gray-600 space-y-2 list-disc list-inside text-sm mb-6">
           <li>Unlimited pages</li>
           <li>Full branding</li>
           <li>Custom animations</li>
@@ -656,31 +751,31 @@
 
     <!-- Add-ons -->
     <div class="mt-16">
-      <h4 class="text-2xl font-bold text-white mb-6 text-center">Optional Add-ons</h4>
-      <form id="addons-form" class="grid sm:grid-cols-2 md:grid-cols-3 gap-6 text-sm text-gray-300 max-w-5xl mx-auto">
-        <label class="flex gap-4 items-start bg-[#1a1a1a] p-4 rounded-xl border border-gray-700 shadow-sm">
+      <h4 class="text-2xl font-bold text-gray-900 mb-6 text-center">Optional Add-ons</h4>
+      <form id="addons-form" class="grid sm:grid-cols-2 md:grid-cols-3 gap-6 text-sm text-gray-600 max-w-5xl mx-auto">
+        <label class="flex gap-4 items-start bg-white p-4 rounded-xl border border-gray-200 shadow-sm">
           <input type="checkbox" class="addon-checkbox mt-1 accent-crayTeal" data-name="Copywriting" value="120">
-          <span>💬 Copywriting<br><span class="text-white font-medium">$120</span></span>
+          <span>💬 Copywriting<br><span class="text-gray-900 font-medium">$120</span></span>
         </label>
-        <label class="flex gap-4 items-start bg-[#1a1a1a] p-4 rounded-xl border border-gray-700 shadow-sm">
+        <label class="flex gap-4 items-start bg-white p-4 rounded-xl border border-gray-200 shadow-sm">
           <input type="checkbox" class="addon-checkbox mt-1 accent-crayTeal" data-name="Brand Kit Design" value="150">
-          <span>🎨 Brand Kit Design<br><span class="text-white font-medium">$150</span></span>
+          <span>🎨 Brand Kit Design<br><span class="text-gray-900 font-medium">$150</span></span>
         </label>
-        <label class="flex gap-4 items-start bg-[#1a1a1a] p-4 rounded-xl border border-gray-700 shadow-sm">
+        <label class="flex gap-4 items-start bg-white p-4 rounded-xl border border-gray-200 shadow-sm">
           <input type="checkbox" class="addon-checkbox mt-1 accent-crayTeal" data-name="Maintenance" value="49">
-          <span>🔧 Maintenance (Monthly)<br><span class="text-white font-medium">$49</span></span>
+          <span>🔧 Maintenance (Monthly)<br><span class="text-gray-900 font-medium">$49</span></span>
         </label>
-        <label class="flex gap-4 items-start bg-[#1a1a1a] p-4 rounded-xl border border-gray-700 shadow-sm">
+        <label class="flex gap-4 items-start bg-white p-4 rounded-xl border border-gray-200 shadow-sm">
           <input type="checkbox" class="addon-checkbox mt-1 accent-crayTeal" data-name="Analytics Setup" value="35">
-          <span>📊 Google Analytics Setup<br><span class="text-white font-medium">$35</span></span>
+          <span>📊 Google Analytics Setup<br><span class="text-gray-900 font-medium">$35</span></span>
         </label>
-        <label class="flex gap-4 items-start bg-[#1a1a1a] p-4 rounded-xl border border-gray-700 shadow-sm">
+        <label class="flex gap-4 items-start bg-white p-4 rounded-xl border border-gray-200 shadow-sm">
           <input type="checkbox" class="addon-checkbox mt-1 accent-crayTeal" data-name="Domain Setup" value="40">
-          <span>🌐 Domain Setup & Email<br><span class="text-white font-medium">$40</span></span>
+          <span>🌐 Domain Setup & Email<br><span class="text-gray-900 font-medium">$40</span></span>
         </label>
-        <label class="flex gap-4 items-start bg-[#1a1a1a] p-4 rounded-xl border border-gray-700 shadow-sm">
+        <label class="flex gap-4 items-start bg-white p-4 rounded-xl border border-gray-200 shadow-sm">
           <input type="checkbox" class="addon-checkbox mt-1 accent-crayTeal" data-name="CMS Setup" value="180">
-          <span>⚙️ CMS Setup<br><span class="text-white font-medium">$180</span></span>
+          <span>⚙️ CMS Setup<br><span class="text-gray-900 font-medium">$180</span></span>
         </label>
       </form>
     </div>
@@ -717,17 +812,17 @@
 </script>
 
 <!-- ======= Portfolio Section ======= -->
-<section id="portfolio" class="py-24 px-6 bg-[#1e1e1e] relative z-10 overflow-hidden" data-aos="fade-up">
+<section id="portfolio" class="py-24 px-6 bg-white relative z-0 overflow-hidden" data-aos="fade-up">
   <div class="max-w-6xl mx-auto text-center">
     <h2 class="text-3xl sm:text-4xl font-bold text-crayYellow tracking-tight mb-6">Selected Projects</h2>
-    <p class="text-gray-300 text-base sm:text-lg mb-14 leading-relaxed max-w-3xl mx-auto font-medium">
+    <p class="text-gray-600 text-base sm:text-lg mb-14 leading-relaxed max-w-3xl mx-auto font-medium">
       A curated collection of result-driven websites designed to elevate Edmonton brands and beyond.
     </p>
 
     <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 auto-rows-fr text-left">
       <!-- OT Vibez Studio -->
-      <article class="flex flex-col bg-white/5 border border-white/10 backdrop-blur-lg rounded-2xl shadow-xl p-6 transition hover:scale-[1.02] hover:-translate-y-1 duration-300">
-        <div class="aspect-video overflow-hidden rounded-xl border border-white/10 shadow mb-4">
+      <article class="flex flex-col bg-white border border-gray-200 backdrop-blur-lg rounded-2xl shadow-xl p-6 transition hover:scale-[1.02] hover:-translate-y-1 duration-300">
+        <div class="aspect-video overflow-hidden rounded-xl border border-gray-200 shadow mb-4">
           <img 
             src="assets/images/ot-vibez-768w.webp"
             srcset="assets/images/ot-vibez-400w.webp 400w, assets/images/ot-vibez-768w.webp 768w, assets/images/ot-vibez-1024w.webp 1024w"
@@ -735,16 +830,16 @@
             alt="OT Vibez Studio recording and rehearsal space"
             class="w-full h-full object-cover" />
         </div>
-        <h3 class="text-white text-lg font-semibold mb-1">OT Vibez Studio</h3>
-        <p class="text-gray-400 text-sm leading-relaxed mb-3">
-          A bold site for Edmonton’s premier creative studio — optimized for mobile booking, SEO, and premium UX.
+        <h3 class="text-gray-900 text-lg font-semibold mb-1">OT Vibez Studio</h3>
+        <p class="text-gray-600 text-sm leading-relaxed mb-3">
+          A bold site for Edmonton's premier creative studio — optimized for mobile booking, SEO, and premium UX.
         </p>
         <a href="https://otvibez.com/" target="_blank" class="text-crayTeal text-sm font-medium hover:underline">Visit Website →</a>
       </article>
 
       <!-- Marina Homes -->
-      <article class="flex flex-col bg-white/5 border border-white/10 backdrop-blur-lg rounded-2xl shadow-xl p-6 transition hover:scale-[1.02] hover:-translate-y-1 duration-300">
-        <div class="aspect-video overflow-hidden rounded-xl border border-white/10 shadow mb-4">
+      <article class="flex flex-col bg-white border border-gray-200 backdrop-blur-lg rounded-2xl shadow-xl p-6 transition hover:scale-[1.02] hover:-translate-y-1 duration-300">
+        <div class="aspect-video overflow-hidden rounded-xl border border-gray-200 shadow mb-4">
           <img 
   src="assets/images/marina-homes-768.webp"
   srcset="assets/images/marina-homes-400.webp 400w, assets/images/marina-homes-768.webp 768w"
@@ -754,16 +849,16 @@
 />
 
         </div>
-        <h3 class="text-white text-lg font-semibold mb-1">Marina Homes</h3>
-        <p class="text-gray-400 text-sm leading-relaxed mb-3">
+        <h3 class="text-gray-900 text-lg font-semibold mb-1">Marina Homes</h3>
+        <p class="text-gray-600 text-sm leading-relaxed mb-3">
           A luxury real estate site showcasing elegant developments — built to convert browsers into buyers.
         </p>
         <a href="https://marinahomes.ca/" target="_blank" class="text-crayTeal text-sm font-medium hover:underline">Visit Website →</a>
       </article>
 
       <!-- Purpose Path -->
-      <article class="flex flex-col bg-white/5 border border-white/10 backdrop-blur-lg rounded-2xl shadow-xl p-6 transition hover:scale-[1.02] hover:-translate-y-1 duration-300">
-        <div class="aspect-video overflow-hidden rounded-xl border border-white/10 shadow mb-4">
+      <article class="flex flex-col bg-white border border-gray-200 backdrop-blur-lg rounded-2xl shadow-xl p-6 transition hover:scale-[1.02] hover:-translate-y-1 duration-300">
+        <div class="aspect-video overflow-hidden rounded-xl border border-gray-200 shadow mb-4">
           <img 
             src="assets/images/purpose-path-768.webp"
             srcset="assets/images/purpose-path-400.webp 400w, assets/images/purpose-path-768.webp 768w, assets/images/purpose-path-1024.webp 1024w"
@@ -771,8 +866,8 @@
             alt="Conversion-focused marketing site for Purpose Path"
             class="w-full h-full object-cover" />
         </div>
-        <h3 class="text-white text-lg font-semibold mb-1">Purpose Path</h3>
-        <p class="text-gray-400 text-sm leading-relaxed mb-3">
+        <h3 class="text-gray-900 text-lg font-semibold mb-1">Purpose Path</h3>
+        <p class="text-gray-600 text-sm leading-relaxed mb-3">
           A bold, high-converting website for a growing marketing agency with lead-gen baked in.
         </p>
         <a href="https://purposepath.ca/" target="_blank" class="text-crayTeal text-sm font-medium hover:underline">Visit Website →</a>
@@ -833,47 +928,47 @@
 </section>
 
 <!-- ======= Testimonials Section ======= -->
-<section id="testimonials" class="py-24 px-6 bg-[#181818] relative z-0 overflow-hidden" data-aos="fade-up">
+<section id="testimonials" class="py-24 px-6 bg-gray-50 relative z-0 overflow-hidden" data-aos="fade-up">
   <!-- Decorative Accent Line -->
-  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-[2px] bg-gradient-to-r from-crayTeal via-crayYellow to-crayRed opacity-30 rounded-full"></div>
+  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-[2px] bg-gradient-to-r from-crayTeal via-crayYellow to-crayRed opacity-60 rounded-full"></div>
 
   <div class="max-w-5xl mx-auto text-center">
     <h2 class="text-3xl sm:text-4xl font-bold text-crayYellow tracking-tight mb-8">Client Testimonials</h2>
-    <p class="text-gray-300 text-base sm:text-lg mb-14 max-w-3xl mx-auto font-medium leading-relaxed">
+    <p class="text-gray-600 text-base sm:text-lg mb-14 max-w-3xl mx-auto font-medium leading-relaxed">
       Trusted by founders, creatives, and teams looking to scale with confidence. Here's what they said:
     </p>
 
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
       <!-- Testimonial 1 -->
-      <div class="bg-white/5 border border-white/10 backdrop-blur-md p-6 rounded-2xl shadow-lg text-left transition hover:scale-[1.02] duration-300">
-        <p class="text-gray-300 text-sm sm:text-base mb-4 italic leading-relaxed">
-          “Craytivo didn’t just build us a site — they redefined our online brand. Everything is clean, fast, and built to perform.”
+      <div class="bg-white border border-gray-200 backdrop-blur-md p-6 rounded-2xl shadow-lg text-left transition hover:scale-[1.02] duration-300 hover:shadow-xl">
+        <p class="text-gray-700 text-sm sm:text-base mb-4 italic leading-relaxed">
+          "Craytivo didn't just build us a site — they redefined our online brand. Everything is clean, fast, and built to perform."
         </p>
         <div>
-          <p class="text-white font-semibold text-sm">Ayesha M.</p>
-          <p class="text-gray-400 text-xs">Founder, ICARE Naturals</p>
+          <p class="text-gray-900 font-semibold text-sm">Ayesha M.</p>
+          <p class="text-gray-500 text-xs">Founder, ICARE Naturals</p>
         </div>
       </div>
 
       <!-- Testimonial 2 -->
-      <div class="bg-white/5 border border-white/10 backdrop-blur-md p-6 rounded-2xl shadow-lg text-left transition hover:scale-[1.02] duration-300">
-        <p class="text-gray-300 text-sm sm:text-base mb-4 italic leading-relaxed">
-          “I was honestly blown away that it was just one person behind Craytivo. He nailed the design exactly how we envisioned it — and quickly.”
+      <div class="bg-white border border-gray-200 backdrop-blur-md p-6 rounded-2xl shadow-lg text-left transition hover:scale-[1.02] duration-300 hover:shadow-xl">
+        <p class="text-gray-700 text-sm sm:text-base mb-4 italic leading-relaxed">
+          "I was honestly blown away that it was just one person behind Craytivo. He nailed the design exactly how we envisioned it — and quickly."
         </p>
         <div>
-          <p class="text-white font-semibold text-sm">Ahmed K.</p>
-          <p class="text-gray-400 text-xs">Founder, Purpose Path</p>
+          <p class="text-gray-900 font-semibold text-sm">Ahmed K.</p>
+          <p class="text-gray-500 text-xs">Founder, Purpose Path</p>
         </div>
       </div>
 
       <!-- Testimonial 3 -->
-      <div class="bg-white/5 border border-white/10 backdrop-blur-md p-6 rounded-2xl shadow-lg text-left transition hover:scale-[1.02] duration-300">
-        <p class="text-gray-300 text-sm sm:text-base mb-4 italic leading-relaxed">
-          “Craytivo transformed our old site into a modern lead magnet. Their decisions were rooted in business needs, not just design.”
+      <div class="bg-white border border-gray-200 backdrop-blur-md p-6 rounded-2xl shadow-lg text-left transition hover:scale-[1.02] duration-300 hover:shadow-xl">
+        <p class="text-gray-700 text-sm sm:text-base mb-4 italic leading-relaxed">
+          "Craytivo transformed our old site into a modern lead magnet. Their decisions were rooted in business needs, not just design."
         </p>
         <div>
-          <p class="text-white font-semibold text-sm">Lisa T.</p>
-          <p class="text-gray-400 text-xs">COO, Marina Homes</p>
+          <p class="text-gray-900 font-semibold text-sm">Lisa T.</p>
+          <p class="text-gray-500 text-xs">COO, Marina Homes</p>
         </div>
       </div>
     </div>
@@ -881,56 +976,56 @@
 </section>
 
 <!-- Contact -->
-<section id="contact" class="py-32 px-6 bg-[#121212] relative overflow-hidden" data-aos="fade-up">
+<section id="contact" class="py-32 px-6 bg-white relative overflow-hidden" data-aos="fade-up">
   <!-- Decorative Top Accent -->
-  <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-1/2 h-[2px] bg-gradient-to-r from-crayTeal via-crayYellow to-crayRed opacity-40 rounded-full"></div>
+  <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-1/2 h-[2px] bg-gradient-to-r from-crayTeal via-crayYellow to-crayRed opacity-60 rounded-full"></div>
 
   <!-- Outer Animated Border Ring -->
-<div class="contact-animated-ring relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md shadow-2xl max-w-2xl mx-auto">    <div class="relative z-10 text-center p-10">
-      <h2 class="text-4xl font-extrabold text-crayYellow mb-4" data-aos="fade-up">Let’s Connect</h2>
-      <p class="text-gray-300 mb-10" data-aos="fade-up" data-aos-delay="100">
+<div class="contact-animated-ring relative overflow-hidden rounded-2xl border border-gray-200 bg-gray-50 backdrop-blur-md shadow-2xl max-w-2xl mx-auto">    <div class="relative z-10 text-center p-10">
+      <h2 class="text-4xl font-extrabold text-crayYellow mb-4" data-aos="fade-up">Let's Connect</h2>
+      <p class="text-gray-600 mb-10" data-aos="fade-up" data-aos-delay="100">
         Have a project in mind? Reach out — I typically respond within 24 hours.
       </p>
 
 <form action="https://formspree.io/f/mjkrnyrn" method="POST" class="space-y-6 text-left" id="contact-form" novalidate>
         <!-- Name Field -->
         <div class="relative group">
-          <label for="name" class="block text-sm text-gray-400 mb-1">Name</label>
+          <label for="name" class="block text-sm text-gray-700 mb-1">Name</label>
           <input
             type="text"
             id="name"
             name="name"
             required
             placeholder="Your name"
-            class="peer w-full px-4 py-3 bg-[#1e1e1e] text-white rounded-lg border border-gray-700 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-crayTeal transition"
+            class="peer w-full px-4 py-3 bg-white text-gray-900 rounded-lg border border-gray-300 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-crayTeal focus:border-crayTeal transition"
           />
           <span class="text-sm text-red-500 mt-1 hidden" id="name-error">Please enter your name.</span>
         </div>
 
         <!-- Email Field -->
         <div class="relative group">
-          <label for="email" class="block text-sm text-gray-400 mb-1">Email</label>
+          <label for="email" class="block text-sm text-gray-700 mb-1">Email</label>
           <input
             type="email"
             id="email"
             name="email"
             required
             placeholder="Your email"
-            class="peer w-full px-4 py-3 bg-[#1e1e1e] text-white rounded-lg border border-gray-700 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-crayTeal transition"
+            class="peer w-full px-4 py-3 bg-white text-gray-900 rounded-lg border border-gray-300 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-crayTeal focus:border-crayTeal transition"
           />
           <span class="text-sm text-red-500 mt-1 hidden" id="email-error">Enter a valid email.</span>
         </div>
 
         <!-- Message Field -->
         <div class="relative group">
-          <label for="message" class="block text-sm text-gray-400 mb-1">Message</label>
+          <label for="message" class="block text-sm text-gray-700 mb-1">Message</label>
           <textarea
             id="message"
             name="message"
             rows="5"
             required
             placeholder="Your message..."
-            class="peer w-full px-4 py-3 bg-[#1e1e1e] text-white rounded-lg border border-gray-700 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-crayTeal transition"
+            class="peer w-full px-4 py-3 bg-white text-gray-900 rounded-lg border border-gray-300 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-crayTeal focus:border-crayTeal transition"
           ></textarea>
           <span class="text-sm text-red-500 mt-1 hidden" id="message-error">Please enter a message.</span>
         </div>
@@ -955,7 +1050,7 @@
 
 <!-- Glass Success Modal -->
 <div id="success-modal" class="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-50 opacity-0 scale-95 pointer-events-none transition duration-300">
-  <div class="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl border border-white/20 shadow-2xl max-w-md w-full p-8 text-center animate-fade-in-up">
+  <div class="relative bg-white backdrop-blur-xl rounded-2xl border border-gray-200 shadow-2xl max-w-md w-full p-8 text-center animate-fade-in-up">
     
     <!-- Icon -->
     <div class="mx-auto mb-4 w-14 h-14 flex items-center justify-center rounded-full bg-crayTeal/20">
@@ -966,8 +1061,8 @@
 
     <!-- Heading -->
     <h3 class="text-2xl font-bold text-crayYellow mb-2">Message Sent!</h3>
-    <p class="text-gray-200 mb-6 leading-relaxed">
-      Thanks for reaching out — I’ll be in touch within 24 hours.
+    <p class="text-gray-600 mb-6 leading-relaxed">
+      Thanks for reaching out — I'll be in touch within 24 hours.
     </p>
 
     <!-- Close Button -->
@@ -1087,15 +1182,14 @@
   });
 </script>
 
-
-<!-- Footer Accent Line -->
-<div class="h-[2px] w-full bg-gradient-to-r from-crayRed via-crayTeal to-crayYellow opacity-60"></div>
+  </div>
+  <!-- End Main Content Wrapper -->
 
 <!-- Footer Accent Line -->
 <div class="h-[2px] w-full bg-gradient-to-r from-crayRed via-crayTeal to-crayYellow opacity-60"></div>
 
 <!-- Footer -->
-<footer class="bg-[#121212] border-t border-white/10 text-gray-400 py-8 px-6 text-sm">
+<footer class="bg-gray-50 border-t border-gray-200 text-gray-600 py-8 px-6 text-sm w-full mt-auto">
   <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center md:items-start gap-6">
 
     <!-- Left Column -->
@@ -1114,7 +1208,7 @@
       <!-- Legal Links -->
       <div class="space-x-3 text-xs">
         <a href="/privacy-policy.html" class="hover:text-crayTeal transition">Privacy Policy</a>
-        <span class="text-gray-600">|</span>
+        <span class="text-gray-400">|</span>
         <a href="/terms-of-service.html" class="hover:text-crayTeal transition">Terms of Service</a>
       </div>
 
