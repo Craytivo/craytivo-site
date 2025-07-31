@@ -192,6 +192,10 @@
     transition: transform 0.2s ease;
     pointer-events: none;
   }
+.blur-active {
+  filter: blur(4px);
+  transition: filter 0.3s ease;
+}
 
   .contact-animated-ring::after {
     content: "";
@@ -255,17 +259,22 @@
     </a>
   </div>
 
-  <!-- Mobile Nav Menu -->
-  <div id="mobileNav" class="hidden flex-col md:hidden px-6 pb-4 bg-white/95 backdrop-blur-md text-gray-900 transition-all duration-300 ease-in-out origin-top border-t border-gray-200" aria-label="Mobile navigation">
-    <a href="#about" class="py-3 px-2 hover:text-crayTeal hover:bg-crayTeal/5 rounded-lg block opacity-0 animate-fade-in-up transition-all duration-300" style="animation-delay: 0.1s;">About</a>
-    <a href="#benefits" class="py-3 px-2 hover:text-crayTeal hover:bg-crayTeal/5 rounded-lg block opacity-0 animate-fade-in-up transition-all duration-300" style="animation-delay: 0.2s;">Services</a>
-    <a href="#pricing" class="py-3 px-2 hover:text-crayTeal hover:bg-crayTeal/5 rounded-lg block opacity-0 animate-fade-in-up transition-all duration-300" style="animation-delay: 0.3s;">Pricing</a>
-    <a href="#portfolio" class="py-3 px-2 hover:text-crayTeal hover:bg-crayTeal/5 rounded-lg block opacity-0 animate-fade-in-up transition-all duration-300" style="animation-delay: 0.4s;">Portfolio</a>
-    <a href="#contact" class="py-3 px-2 hover:text-crayTeal hover:bg-crayTeal/5 rounded-lg block opacity-0 animate-fade-in-up transition-all duration-300" style="animation-delay: 0.5s;">Contact</a>
-    <a href="https://twitter.com/craytivo" target="_blank" rel="noopener noreferrer"
-       class="py-3 px-2 mt-2 border border-crayTeal rounded-lg text-center text-crayTeal text-sm font-medium hover:bg-crayTeal hover:text-white transition-all duration-300 block opacity-0 animate-fade-in-up"
-       style="animation-delay: 0.6s;">Twitter</a>
-  </div>
+  <!-- Mobile Nav Menu (Dropdown Card) -->
+<div id="mobileNav" class="opacity-0 scale-95 pointer-events-none transition-all duration-300 transform origin-top absolute top-full right-4 left-4 mt-2 bg-white rounded-xl shadow-xl z-40 py-4 px-4 w-[calc(100%-2rem)] max-w-xs mx-auto text-center space-y-1">
+  <a href="#about" class="block px-4 py-2 text-gray-700 hover:bg-crayTeal/10 rounded transition-all duration-200">About</a>
+  <a href="#benefits" class="block px-4 py-2 text-gray-700 hover:bg-crayTeal/10 rounded transition-all duration-200">Services</a>
+  <a href="#pricing" class="block px-4 py-2 text-gray-700 hover:bg-crayTeal/10 rounded transition-all duration-200">Pricing</a>
+  <a href="#portfolio" class="block px-4 py-2 text-gray-700 hover:bg-crayTeal/10 rounded transition-all duration-200">Portfolio</a>
+  <a href="#contact" class="block px-4 py-2 text-gray-700 hover:bg-crayTeal/10 rounded transition-all duration-200">Contact</a>
+  <a href="https://twitter.com/craytivo" target="_blank" rel="noopener noreferrer"
+     class="block px-4 py-2 border border-crayTeal text-crayTeal text-sm font-medium rounded hover:bg-crayTeal hover:text-white transition-all duration-200">
+    Twitter
+  </a>
+</div>
+
+<!-- Mobile Nav Overlay (blur effect) -->
+<div id="mobileNavOverlay" class="fixed inset-0 bg-white/30 backdrop-blur-sm z-30 opacity-0 pointer-events-none transition-all duration-300 md:hidden"></div>
+
 
   <!-- Gradient Divider Line -->
   <div id="header-gradient-line" class="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-white/10 via-white/5 to-white/10 opacity-0 transition-opacity duration-300"></div>
@@ -275,63 +284,95 @@
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    // ===== Primary Mobile Nav =====
     const hamburgerBtn = document.getElementById("hamburgerBtn");
     const hamburgerIcon = document.getElementById("hamburgerIcon");
-    const hamburgerLines = document.getElementById("hamburgerLines");
     const mobileNav = document.getElementById("mobileNav");
-
+    const mobileNavOverlay = document.getElementById("mobileNavOverlay");
+    const mainContent = document.getElementById("mainContent");
     const navLinks = mobileNav.querySelectorAll("a");
 
     const hamburgerSVG = `<path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />`;
     const closeSVG = `<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />`;
 
+    // Toggle menu open/close
     hamburgerBtn.addEventListener("click", () => {
-      const isOpen = !mobileNav.classList.contains("hidden");
-      mobileNav.classList.toggle("hidden");
+      const isOpen = !mobileNav.classList.contains("pointer-events-none");
+
+      if (!isOpen) {
+        // Show nav and overlay
+        mobileNav.classList.remove("pointer-events-none", "opacity-0", "scale-95");
+        mobileNav.classList.add("opacity-100", "scale-100");
+
+        mobileNavOverlay.classList.remove("opacity-0", "pointer-events-none");
+        mobileNavOverlay.classList.add("opacity-100");
+
+        document.body.classList.add("overflow-hidden");
+        mainContent.classList.add("blur-active");
+      } else {
+        // Hide nav and overlay
+        mobileNav.classList.remove("opacity-100", "scale-100");
+        mobileNav.classList.add("opacity-0", "scale-95");
+
+        mobileNavOverlay.classList.remove("opacity-100");
+        mobileNavOverlay.classList.add("opacity-0");
+
+        document.body.classList.remove("overflow-hidden");
+        mainContent.classList.remove("blur-active");
+
+        setTimeout(() => {
+          mobileNav.classList.add("pointer-events-none");
+          mobileNavOverlay.classList.add("pointer-events-none");
+        }, 300);
+      }
+
       hamburgerIcon.innerHTML = isOpen ? hamburgerSVG : closeSVG;
-      hamburgerBtn.setAttribute("aria-expanded", String(!isOpen)); // accessibility
+      hamburgerBtn.setAttribute("aria-expanded", String(!isOpen));
     });
 
+    // Close menu on nav link click
     navLinks.forEach(link => {
       link.addEventListener("click", () => {
-        mobileNav.classList.add("hidden");
+        mobileNav.classList.remove("opacity-100", "scale-100");
+        mobileNav.classList.add("opacity-0", "scale-95");
+
+        mobileNavOverlay.classList.remove("opacity-100");
+        mobileNavOverlay.classList.add("opacity-0");
+
+        document.body.classList.remove("overflow-hidden");
+        mainContent.classList.remove("blur-active");
+
+        setTimeout(() => {
+          mobileNav.classList.add("pointer-events-none");
+          mobileNavOverlay.classList.add("pointer-events-none");
+        }, 300);
+
         hamburgerIcon.innerHTML = hamburgerSVG;
         hamburgerBtn.setAttribute("aria-expanded", "false");
       });
     });
 
-    // ===== Optional Overlay Menu (if used elsewhere) =====
-    const menuToggleBtn = document.getElementById("menu-toggle");
-    const mobileNavMenu = document.getElementById("mobile-menu");
-    const menuOverlay = document.getElementById("menu-overlay");
+    // Close menu on overlay click
+    mobileNavOverlay.addEventListener("click", () => {
+      mobileNav.classList.remove("opacity-100", "scale-100");
+      mobileNav.classList.add("opacity-0", "scale-95");
 
-    if (menuToggleBtn && mobileNavMenu && menuOverlay) {
-      function toggleMenu() {
-        const isOpen = !mobileNavMenu.classList.contains("hidden");
+      mobileNavOverlay.classList.remove("opacity-100");
+      mobileNavOverlay.classList.add("opacity-0");
 
-        mobileNavMenu.classList.toggle("hidden");
-        menuOverlay.classList.toggle("hidden");
-        menuToggleBtn.setAttribute("aria-expanded", String(!isOpen));
+      document.body.classList.remove("overflow-hidden");
+      mainContent.classList.remove("blur-active");
 
-        // Icon toggle
-        menuToggleBtn.innerHTML = isOpen
-          ? `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-             </svg>`
-          : `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-             </svg>`;
-      }
+      setTimeout(() => {
+        mobileNav.classList.add("pointer-events-none");
+        mobileNavOverlay.classList.add("pointer-events-none");
+      }, 300);
 
-      menuToggleBtn.addEventListener("click", toggleMenu);
-      menuOverlay.addEventListener("click", toggleMenu);
-      document.querySelectorAll("#mobile-menu a").forEach(link =>
-        link.addEventListener("click", toggleMenu)
-      );
-    }
+      hamburgerIcon.innerHTML = hamburgerSVG;
+      hamburgerBtn.setAttribute("aria-expanded", "false");
+    });
   });
 </script>
+<div id="mainContent">
 
 <!-- Hero Section -->
 <section id="hero" class="relative min-h-screen flex flex-col justify-center items-center text-center px-4 py-6 overflow-hidden" role="region" aria-label="Craytivo Web Design Hero">
@@ -418,15 +459,16 @@
     </div>
   </div>
 
-  <!-- Animated Scroll Prompt -->
-  <div class="hero-scroll absolute bottom-8 z-10 opacity-0">
-    <a href="#about" class="flex flex-col items-center text-crayTeal hover:text-crayYellow transition-colors duration-300">
-      <span class="text-xs uppercase tracking-widest font-medium mb-2">Scroll to Learn More</span>
-      <div class="w-6 h-10 border-2 border-current rounded-full flex justify-center">
-        <div class="w-1 h-3 bg-current rounded-full mt-2 animate-bounce"></div>
-      </div>
-    </a>
-  </div>
+<!-- Animated Scroll Prompt (hidden on mobile) -->
+<div class="hero-scroll absolute z-10 opacity-0 hidden sm:block" style="bottom: 10vh;">
+  <a href="#about" class="flex flex-col items-center text-crayTeal hover:text-crayYellow transition-colors duration-300">
+    <span class="text-xs uppercase tracking-widest font-medium mb-2">Scroll to Learn More</span>
+    <div class="w-6 h-10 border-2 border-current rounded-full flex justify-center">
+      <div class="w-1 h-3 bg-current rounded-full mt-2 animate-bounce"></div>
+    </div>
+  </a>
+</div>
+
 
   <!-- Gradient Overlay -->
   <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-b from-transparent to-white z-0"></div>
@@ -509,7 +551,7 @@
 
 
 <!-- About -->
-<section id="about" class="py-24 px-6 max-w-6xl mx-auto text-center" data-aos="fade-up">
+<section id="about" class="py-24 px-6 max-w-6xl mx-auto text-center scroll-mt-24">
   <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-crayYellow tracking-tight">
     Edmonton Web Design for Growing Local Businesses
   </h2>
@@ -547,7 +589,7 @@
 </section>
 
 <!-- 3-Step CTA Section -->
-<section id="cta-steps" class="relative pt-20 pb-24 px-6 bg-gray-50 overflow-hidden" data-aos="fade-up">
+<section id="cta-steps" class="relative pt-20 pb-24 px-6 bg-gray-50 overflow-hidden scroll-mt-24" data-aos="fade-up">
   <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
     
     <!-- Left Column: Text -->
@@ -609,7 +651,7 @@
 </section>
 
 <!-- Benefits -->
-<section id="benefits" class="py-24 px-6 bg-white" data-aos="fade-up">
+<section id="benefits" class="py-24 px-6 bg-white scroll-mt-24" data-aos="fade-up">
   <div class="max-w-6xl mx-auto">
     <div class="text-center mb-16">
       <h2 class="text-3xl sm:text-4xl font-bold text-crayYellow tracking-tight leading-snug">
@@ -695,64 +737,77 @@
 </section>
 
 
+<!-- Pricing -->
+<section id="pricing" class="pb-24 pt-32 px-6 bg-gray-50 scroll-mt-24" data-aos="fade-up">
+  <div class="max-w-7xl mx-auto text-center">
+    <h2 class="text-4xl sm:text-5xl font-extrabold text-crayYellow mb-4 tracking-tight">Transparent Pricing</h2>
+    <p class="text-gray-600 text-lg max-w-2xl mx-auto mb-14">Flexible packages for Edmonton-based startups and small businesses.</p>
 
-<section id="pricing" class="pb-20 pt-32 px-6 bg-gray-50" data-aos="fade-up">
-  <div class="max-w-6xl mx-auto text-center">
-    <h2 class="text-4xl font-extrabold text-crayYellow mb-4">Pricing Plans</h2>
-    <p class="text-gray-600 mb-8">Flexible website packages for Edmonton-based small businesses and startups.</p>
-
-    <!-- Pricing Cards -->
+    <!-- Plans -->
     <div class="grid md:grid-cols-3 gap-8" id="pricing-cards">
-      <!-- Starter -->
-      <div class="pricing-card bg-white border border-crayYellow rounded-2xl p-8 text-left shadow-lg hover:shadow-xl transition duration-300 hover:scale-105" data-plan="Starter" data-base="299">
-        <h3 class="text-xl font-bold text-gray-900 mb-2">🟢 Starter</h3>
-        <p class="text-3xl font-bold text-crayTeal mb-4">$<span class="base-price">299</span>+</p>
-        <ul class="text-gray-600 space-y-2 list-disc list-inside text-sm mb-6">
-          <li>1-page responsive website</li>
-          <li>Mobile optimization</li>
-          <li>Basic contact form</li>
-          <li>1 round of revisions</li>
-          <li>Basic branding</li>
-          <li>7–10 day delivery</li>
-        </ul>
-        <div class="total text-lg text-crayYellow font-bold">Total: $<span class="plan-total">299</span></div>
+      <!-- Plan Card -->
+      <div class="pricing-card group bg-white border border-gray-200 rounded-2xl p-8 shadow-md hover:shadow-xl transition hover:scale-[1.03] flex flex-col justify-between" data-plan="Starter" data-base="299">
+        <div>
+          <h3 class="text-xl font-bold text-gray-900 mb-1">🟢 Starter</h3>
+          <p class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-crayTeal to-teal-500 mb-6">$<span class="base-price">299</span>+</p>
+          <ul class="text-sm text-gray-700 space-y-2 list-disc list-inside text-left mb-6">
+            <li>1 responsive page</li>
+            <li>Mobile optimized</li>
+            <li>Contact form (anti-spam)</li>
+            <li>Basic SEO setup</li>
+            <li>2 revision rounds</li>
+            <li>Basic branding</li>
+            <li>5–7 day delivery</li>
+          </ul>
+        </div>
+        <div class="text-lg font-semibold text-crayYellow mt-auto">Total: $<span class="plan-total">299</span></div>
       </div>
 
       <!-- Business -->
-      <div class="pricing-card bg-white border border-crayYellow rounded-2xl p-8 text-left shadow-lg hover:shadow-xl transition duration-300 hover:scale-105" data-plan="Business" data-base="599">
-        <h3 class="text-xl font-bold text-gray-900 mb-2">🔵 Business</h3>
-        <p class="text-3xl font-bold text-crayYellow mb-4">$<span class="base-price">599</span>+</p>
-        <ul class="text-gray-600 space-y-2 list-disc list-inside text-sm mb-6">
-          <li>Up to 5 pages</li>
-          <li>SEO setup</li>
-          <li>GA4 integration</li>
-          <li>2 revision rounds</li>
-          <li>Basic speed optimization</li>
-          <li>10–14 day delivery</li>
-        </ul>
-        <div class="total text-lg text-crayYellow font-bold">Total: $<span class="plan-total">599</span></div>
-      </div>
+<div class="pricing-card group bg-white border border-crayYellow rounded-2xl p-8 shadow-md hover:shadow-xl transition hover:scale-[1.03] flex flex-col justify-between relative" data-plan="Business" data-base="599">
+  <!-- Badge -->
+  <div class="absolute -top-3 -right-3">
+    <span class="bg-crayYellow text-white text-xs font-bold px-3 py-1 rounded-full shadow-md uppercase tracking-wide">Best Value</span>
+  </div>
+
+  <div>
+    <h3 class="text-xl font-bold text-gray-900 mb-1">🔵 Business</h3>
+    <p class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-crayYellow to-yellow-500 mb-6">$<span class="base-price">599</span>+</p>
+    <ul class="text-sm text-gray-700 space-y-2 list-disc list-inside text-left mb-6">
+      <li>Up to 5 pages</li>
+      <li>SEO setup</li>
+      <li>GA4 integration</li>
+      <li>Speed optimization</li>
+      <li>2 revision rounds</li>
+      <li>7–10 day delivery</li>
+    </ul>
+  </div>
+  <div class="text-lg font-semibold text-crayYellow mt-auto">Total: $<span class="plan-total">599</span></div>
+</div>
+
 
       <!-- Custom -->
-      <div class="pricing-card bg-white border border-crayYellow rounded-2xl p-8 text-left shadow-lg hover:shadow-xl transition duration-300 hover:scale-105" data-plan="Custom" data-base="899">
-        <h3 class="text-xl font-bold text-gray-900 mb-2">🔴 Custom</h3>
-        <p class="text-3xl font-bold text-crayRed mb-4">From $<span class="base-price">899</span>+</p>
-        <ul class="text-gray-600 space-y-2 list-disc list-inside text-sm mb-6">
-          <li>Unlimited pages</li>
-          <li>Full branding</li>
-          <li>Custom animations</li>
-          <li>Copywriting help</li>
-          <li>Optional CMS integration</li>
-          <li>Priority delivery</li>
-        </ul>
-        <div class="total text-lg text-crayYellow font-bold">Total: $<span class="plan-total">899</span></div>
+      <div class="pricing-card group bg-white border border-gray-200 rounded-2xl p-8 shadow-md hover:shadow-xl transition hover:scale-[1.03] flex flex-col justify-between" data-plan="Custom" data-base="899">
+        <div>
+          <h3 class="text-xl font-bold text-gray-900 mb-1">🔴 Custom</h3>
+          <p class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-crayRed to-rose-500 mb-6">From $<span class="base-price">899</span>+</p>
+          <ul class="text-sm text-gray-700 space-y-2 list-disc list-inside text-left mb-6">
+            <li>Unlimited pages</li>
+            <li>Full branding</li>
+            <li>Custom animations</li>
+            <li>Copywriting support</li>
+            <li>Optional CMS integration</li>
+            <li>Priority delivery</li>
+          </ul>
+        </div>
+        <div class="text-lg font-semibold text-crayYellow mt-auto">Total: $<span class="plan-total">899</span></div>
       </div>
     </div>
 
     <!-- Add-ons -->
-    <div class="mt-16">
-      <h4 class="text-2xl font-bold text-gray-900 mb-6 text-center">Optional Add-ons</h4>
-      <form id="addons-form" class="grid sm:grid-cols-2 md:grid-cols-3 gap-6 text-sm text-gray-600 max-w-5xl mx-auto">
+    <div class="mt-20">
+      <h4 class="text-2xl font-bold text-gray-900 mb-8 text-center">Optional Add-ons</h4>
+      <form id="addons-form" class="grid sm:grid-cols-2 md:grid-cols-3 gap-6 text-sm text-gray-700 max-w-5xl mx-auto">
         <label class="flex gap-4 items-start bg-white p-4 rounded-xl border border-gray-200 shadow-sm">
           <input type="checkbox" class="addon-checkbox mt-1 accent-crayTeal" data-name="Copywriting" value="120">
           <span>💬 Copywriting<br><span class="text-gray-900 font-medium">$120</span></span>
@@ -767,11 +822,11 @@
         </label>
         <label class="flex gap-4 items-start bg-white p-4 rounded-xl border border-gray-200 shadow-sm">
           <input type="checkbox" class="addon-checkbox mt-1 accent-crayTeal" data-name="Analytics Setup" value="35">
-          <span>📊 Google Analytics Setup<br><span class="text-gray-900 font-medium">$35</span></span>
+          <span>📊 Analytics Setup<br><span class="text-gray-900 font-medium">$35</span></span>
         </label>
         <label class="flex gap-4 items-start bg-white p-4 rounded-xl border border-gray-200 shadow-sm">
           <input type="checkbox" class="addon-checkbox mt-1 accent-crayTeal" data-name="Domain Setup" value="40">
-          <span>🌐 Domain Setup & Email<br><span class="text-gray-900 font-medium">$40</span></span>
+          <span>🌐 Domain & Email Setup<br><span class="text-gray-900 font-medium">$40</span></span>
         </label>
         <label class="flex gap-4 items-start bg-white p-4 rounded-xl border border-gray-200 shadow-sm">
           <input type="checkbox" class="addon-checkbox mt-1 accent-crayTeal" data-name="CMS Setup" value="180">
@@ -782,28 +837,28 @@
 
     <!-- CTA -->
     <div class="mt-16 text-center">
-      <a href="#contact" class="inline-block bg-crayTeal text-black font-semibold py-3 px-6 rounded-full shadow-lg hover:bg-opacity-90 hover:scale-105 transition duration-300">
+      <a href="#contact" class="inline-block bg-crayTeal text-black font-semibold py-3 px-6 rounded-full shadow-md hover:scale-105 transition duration-300">
         Ready to Build? Contact Me
       </a>
     </div>
   </div>
 </section>
 
+<!-- Script -->
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     const plans = document.querySelectorAll(".pricing-card");
     const checkboxes = document.querySelectorAll(".addon-checkbox");
 
     function updateTotals() {
+      const addonTotal = Array.from(checkboxes)
+        .filter(cb => cb.checked)
+        .reduce((sum, cb) => sum + parseFloat(cb.value), 0);
+
       plans.forEach(plan => {
         const base = parseFloat(plan.dataset.base);
-        let total = base;
-        checkboxes.forEach(cb => {
-          if (cb.checked) {
-            total += parseFloat(cb.value);
-          }
-        });
-        plan.querySelector(".plan-total").textContent = total.toFixed(2);
+        const newTotal = base + addonTotal;
+        plan.querySelector(".plan-total").textContent = newTotal.toFixed(2);
       });
     }
 
@@ -811,8 +866,11 @@
   });
 </script>
 
+
+
+
 <!-- ======= Portfolio Section ======= -->
-<section id="portfolio" class="py-24 px-6 bg-white relative z-0 overflow-hidden" data-aos="fade-up">
+<section id="portfolio" class="py-24 px-6 bg-white relative z-0 overflow-hidden scroll-mt-24" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
   <div class="max-w-6xl mx-auto text-center">
     <h2 class="text-3xl sm:text-4xl font-bold text-crayYellow tracking-tight mb-6">Selected Projects</h2>
     <p class="text-gray-600 text-base sm:text-lg mb-14 leading-relaxed max-w-3xl mx-auto font-medium">
@@ -883,7 +941,7 @@
             alt="Zemlar flexible workspace site UX"
             class="w-full h-full object-cover" />
         </div>
-        <h3 class="text-white text-lg font-semibold mb-1">Zemlar Offices</h3>
+        <h3 class="text-gray-900 text-lg font-semibold mb-1">Zemlar Offices</h3>
         <p class="text-gray-400 text-sm leading-relaxed mb-3">
           A scalable B2B site for Canada’s top flexible office provider — sleek and built for scale.
         </p>
@@ -900,7 +958,7 @@
             alt="ICARE Naturals Shopify ecommerce design"
             class="w-full h-full object-cover" />
         </div>
-        <h3 class="text-white text-lg font-semibold mb-1">ICARE Naturals</h3>
+        <h3 class="text-gray-900 text-lg font-semibold mb-1">ICARE Naturals</h3>
         <p class="text-gray-400 text-sm leading-relaxed mb-3">
           A Shopify storefront for a clean beauty brand — fast, elegant, and built to sell.
         </p>
@@ -917,7 +975,7 @@
             alt="Freedom Life Church custom church website design"
             class="w-full h-full object-cover" />
         </div>
-        <h3 class="text-white text-lg font-semibold mb-1">Freedom Life Church</h3>
+        <h3 class="text-gray-900 text-lg font-semibold mb-1">Freedom Life Church</h3>
         <p class="text-gray-400 text-sm leading-relaxed mb-3">
           A modern platform for a growing church with giving, streaming, and event features.
         </p>
@@ -928,7 +986,7 @@
 </section>
 
 <!-- ======= Testimonials Section ======= -->
-<section id="testimonials" class="py-24 px-6 bg-gray-50 relative z-0 overflow-hidden" data-aos="fade-up">
+<section id="testimonials" class="py-24 px-6 bg-gray-50 relative z-0 overflow-hidden scroll-mt-24" data-aos="fade-up">
   <!-- Decorative Accent Line -->
   <div class="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-[2px] bg-gradient-to-r from-crayTeal via-crayYellow to-crayRed opacity-60 rounded-full"></div>
 
@@ -976,7 +1034,7 @@
 </section>
 
 <!-- Contact -->
-<section id="contact" class="py-32 px-6 bg-white relative overflow-hidden" data-aos="fade-up">
+<section id="contact" class="py-32 px-6 bg-white relative overflow-hidden scroll-mt-24" data-aos="fade-up">
   <!-- Decorative Top Accent -->
   <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-1/2 h-[2px] bg-gradient-to-r from-crayTeal via-crayYellow to-crayRed opacity-60 rounded-full"></div>
 
@@ -1182,9 +1240,9 @@
   });
 </script>
 
-  </div>
+ 
   <!-- End Main Content Wrapper -->
-
+</div>
 <!-- Footer Accent Line -->
 <div class="h-[2px] w-full bg-gradient-to-r from-crayRed via-crayTeal to-crayYellow opacity-60"></div>
 
@@ -1224,7 +1282,7 @@
 
   </div>
 </footer>
-
+ 
 
 
 
@@ -1344,9 +1402,35 @@
   });
 </script>
 
+<!-- Force scroll to #portfolio after AOS loads -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const navLinks = document.querySelectorAll('a[href^="#"]');
+
+    navLinks.forEach(link => {
+      link.addEventListener("click", function (e) {
+        const targetId = this.getAttribute("href").substring(1);
+        const targetEl = document.getElementById(targetId);
+
+        if (targetEl) {
+          e.preventDefault();
+          // Wait a bit to let layout/animations finish
+          setTimeout(() => {
+            const offsetTop = targetEl.getBoundingClientRect().top + window.scrollY - 96; // 96px = scroll-mt-24
+            window.scrollTo({
+              top: offsetTop,
+              behavior: "smooth"
+            });
+          }, 100); // Delay may be adjusted (100–300ms if needed)
+        }
+      });
+    });
+  });
+</script>
 
 
   
 
 </body>
+</div>
 </html>
