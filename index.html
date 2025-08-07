@@ -63,8 +63,13 @@
   <meta name="twitter:description" content="Fast, affordable web design in Edmonton. Mobile-optimized websites that generate leads for small businesses." />
   <meta name="twitter:image" content="https://craytivo.com/assets/images/logo.png" />
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&display=swap" rel="stylesheet" />
+  <!-- Preload critical resources -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&display=swap"></noscript>
+  
+  <!-- Preload critical images -->
+  <link rel="preload" href="assets/logo-no-text.png" as="image" type="image/png">
+  <link rel="preload" href="assets/images/ot-vibez-768w.webp" as="image" type="image/webp">
 
   <!-- Structured Data for SEO -->
   <script type="application/ld+json">
@@ -143,16 +148,12 @@
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- AOS (Animate On Scroll) -->
+  <!-- AOS (Animate On Scroll) - Loaded asynchronously -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
 
-  <!-- Anime.js -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-
-  <!-- Lightbox -->
-  <link href="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/css/lightbox.min.css" rel="stylesheet" />
-  <script src="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/js/lightbox-plus-jquery.min.js"></script>
+  <!-- Anime.js - Loaded asynchronously -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" defer></script>
   <!-- Tailwind Custom Config -->
 <script>
   tailwind.config = {
@@ -408,6 +409,26 @@
 
   .hero-audience .w-2:nth-child(3) {
     animation-delay: 1.4s;
+  }
+
+  /* Performance optimizations */
+  .hero-shape, .grid-line {
+    will-change: transform, opacity;
+  }
+
+  /* Optimize animations for performance */
+  @media (prefers-reduced-motion: reduce) {
+    .hero-shape, .grid-line, .hero-word, .hero-tagline, .hero-subtitle, .hero-cta, .hero-audience, .hero-scroll {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+
+  /* Optimize for mobile performance */
+  @media (max-width: 768px) {
+    .hero-shape {
+      display: none;
+    }
   }
 </style>
 </head>
@@ -720,83 +741,119 @@
 
 
 <script>
+  // Optimized script loading with fallbacks
+  function loadScript(src, callback) {
+    const script = document.createElement('script');
+    script.src = src;
+    script.onload = callback;
+    script.onerror = () => console.warn(`Failed to load: ${src}`);
+    document.head.appendChild(script);
+  }
+
+  // Initialize animations when both libraries are loaded
+  function initializeAnimations() {
+    if (typeof anime !== 'undefined') {
+      // Hero Animations with Anime.js
+      const heroTimeline = anime.timeline({
+        easing: 'easeOutExpo',
+        duration: 1000
+      });
+
+      // Animate floating shapes
+      anime({
+        targets: '.hero-shape',
+        translateY: ['-20px', '20px'],
+        duration: 4000,
+        direction: 'alternate',
+        loop: true,
+        easing: 'easeInOutSine',
+        delay: anime.stagger(500)
+      });
+
+      // Animate grid lines
+      anime({
+        targets: '.grid-line',
+        opacity: [0.05, 0.15, 0.05],
+        duration: 3000,
+        direction: 'alternate',
+        loop: true,
+        easing: 'easeInOutQuad',
+        delay: anime.stagger(200)
+      });
+
+      // Main content animation sequence
+      heroTimeline
+        .add({
+          targets: '.hero-tagline',
+          opacity: [0, 1],
+          translateY: [30, 0],
+          duration: 800
+        })
+        .add({
+          targets: '.hero-word',
+          opacity: [0, 1],
+          translateY: [50, 0],
+          duration: 600,
+          delay: anime.stagger(100)
+        }, '-=400')
+        .add({
+          targets: '.hero-underline',
+          opacity: [0, 1],
+          scaleX: [0, 1],
+          duration: 800,
+          easing: 'easeOutQuart'
+        }, '-=200')
+        .add({
+          targets: '.hero-subtitle',
+          opacity: [0, 1],
+          translateY: [30, 0],
+          duration: 800
+        }, '-=200')
+        .add({
+          targets: '.hero-cta',
+          opacity: [0, 1],
+          translateY: [30, 0],
+          scale: [0.9, 1],
+          duration: 800
+        }, '-=400')
+        .add({
+          targets: '.hero-audience',
+          opacity: [0, 1],
+          translateY: [20, 0],
+          duration: 600
+        }, '-=200')
+        .add({
+          targets: '.hero-scroll',
+          opacity: [0, 1],
+          translateY: [20, 0],
+          duration: 600
+        }, '-=100');
+    }
+  }
+
+  // Load scripts asynchronously and initialize when ready
   document.addEventListener("DOMContentLoaded", () => {
-    // Hero Animations with Anime.js
-    const heroTimeline = anime.timeline({
-      easing: 'easeOutExpo',
-      duration: 1000
-    });
-
-    // Animate floating shapes
-    anime({
-      targets: '.hero-shape',
-      translateY: ['-20px', '20px'],
-      duration: 4000,
-      direction: 'alternate',
-      loop: true,
-      easing: 'easeInOutSine',
-      delay: anime.stagger(500)
-    });
-
-    // Animate grid lines
-    anime({
-      targets: '.grid-line',
-      opacity: [0.05, 0.15, 0.05],
-      duration: 3000,
-      direction: 'alternate',
-      loop: true,
-      easing: 'easeInOutQuad',
-      delay: anime.stagger(200)
-    });
-
-    // Main content animation sequence
-    heroTimeline
-      .add({
-        targets: '.hero-tagline',
-        opacity: [0, 1],
-        translateY: [30, 0],
-        duration: 800
-      })
-      .add({
-        targets: '.hero-word',
-        opacity: [0, 1],
-        translateY: [50, 0],
-        duration: 600,
-        delay: anime.stagger(100)
-      }, '-=400')
-      .add({
-        targets: '.hero-underline',
-        opacity: [0, 1],
-        scaleX: [0, 1],
-        duration: 800,
-        easing: 'easeOutQuart'
-      }, '-=200')
-      .add({
-        targets: '.hero-subtitle',
-        opacity: [0, 1],
-        translateY: [30, 0],
-        duration: 800
-      }, '-=200')
-      .add({
-        targets: '.hero-cta',
-        opacity: [0, 1],
-        translateY: [30, 0],
-        scale: [0.9, 1],
-        duration: 800
-      }, '-=400')
-      .add({
-        targets: '.hero-audience',
-        opacity: [0, 1],
-        translateY: [20, 0],
-        duration: 600
-      }, '-=200')
-      .add({
-        targets: '.hero-scroll',
-        opacity: [0, 1],
-        translateY: [20, 0],
-        duration: 600
-      }, '-=100');
+    // Check if anime.js is already loaded (from defer attribute)
+    if (typeof anime !== 'undefined') {
+      initializeAnimations();
+    } else {
+      // Fallback: load anime.js and initialize
+      loadScript('https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js', initializeAnimations);
+    }
   });
+
+  // Register Service Worker for caching
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js')
+        .then(registration => {
+          console.log('SW registered: ', registration);
+        })
+        .catch(registrationError => {
+          console.log('SW registration failed: ', registrationError);
+        });
+    });
+  }
 </script>
 
 
@@ -1150,9 +1207,11 @@
           <img 
             src="assets/images/ot-vibez-768w.webp"
             srcset="assets/images/ot-vibez-400w.webp 400w, assets/images/ot-vibez-768w.webp 768w, assets/images/ot-vibez-1024w.webp 1024w"
-            sizes="(max-width: 640px) 100vw, 95vw"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
             alt="OT Vibez Studio recording and rehearsal space"
-            class="w-full h-full object-cover" />
+            loading="lazy"
+            decoding="async"
+            class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" />
         </div>
         <h3 class="text-gray-900 text-lg font-semibold mb-3">OT Vibez Studio</h3>
         <p class="text-gray-600 text-sm leading-relaxed mb-4">
@@ -1167,9 +1226,11 @@
           <img 
   src="assets/images/marina-homes-768.webp"
   srcset="assets/images/marina-homes-400.webp 400w, assets/images/marina-homes-768.webp 768w"
-  sizes="(max-width: 768px) 100vw, 768px"
+  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
   alt="Luxury real estate website design for Marina Homes"
-  class="w-full h-full object-cover rounded-xl"
+  loading="lazy"
+  decoding="async"
+  class="w-full h-full object-cover rounded-xl transition-transform duration-300 hover:scale-105"
 />
 
         </div>
@@ -1186,9 +1247,11 @@
           <img 
             src="assets/images/purpose-path-768.webp"
             srcset="assets/images/purpose-path-400.webp 400w, assets/images/purpose-path-768.webp 768w, assets/images/purpose-path-1024.webp 1024w"
-            sizes="(max-width: 640px) 100vw, 95vw"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
             alt="Conversion-focused marketing site for Purpose Path"
-            class="w-full h-full object-cover" />
+            loading="lazy"
+            decoding="async"
+            class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" />
         </div>
         <h3 class="text-gray-900 text-lg font-semibold mb-3">Purpose Path</h3>
         <p class="text-gray-600 text-sm leading-relaxed mb-4">
@@ -1203,9 +1266,11 @@
           <img 
             src="assets/images/zemlar-768.webp"
             srcset="assets/images/zemlar-400.webp 400w, assets/images/zemlar-768.webp 768w, assets/images/zemlar-1024.webp 1024w"
-            sizes="(max-width: 640px) 100vw, 95vw"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
             alt="Zemlar flexible workspace site UX"
-            class="w-full h-full object-cover" />
+            loading="lazy"
+            decoding="async"
+            class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" />
         </div>
         <h3 class="text-gray-900 text-lg font-semibold mb-3">Zemlar Offices</h3>
         <p class="text-gray-600 text-sm leading-relaxed mb-4">
@@ -1220,9 +1285,11 @@
           <img 
             src="assets/images/icare-768.webp"
             srcset="assets/images/icare-400.webp 400w, assets/images/icare-768.webp 768w, assets/images/icare-1024.webp 1024w"
-            sizes="(max-width: 640px) 100vw, 95vw"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
             alt="ICARE Naturals Shopify ecommerce design"
-            class="w-full h-full object-cover" />
+            loading="lazy"
+            decoding="async"
+            class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" />
         </div>
         <h3 class="text-gray-900 text-lg font-semibold mb-3">ICARE Naturals</h3>
         <p class="text-gray-600 text-sm leading-relaxed mb-4">
@@ -1237,9 +1304,11 @@
           <img 
             src="assets/images/flc-768.webp"
             srcset="assets/images/flc-400.webp 400w, assets/images/flc-768.webp 768w, assets/images/flc-1024.webp 1024w"
-            sizes="(max-width: 640px) 100vw, 95vw"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
             alt="Freedom Life Church custom church website design"
-            class="w-full h-full object-cover" />
+            loading="lazy"
+            decoding="async"
+            class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" />
         </div>
         <h3 class="text-gray-900 text-lg font-semibold mb-3">Freedom Life Church</h3>
         <p class="text-gray-600 text-sm leading-relaxed mb-4">
@@ -1570,34 +1639,68 @@
 
  <!-- Scripts -->
 <script>
-  AOS.init();
-
-  window.addEventListener('DOMContentLoaded', () => {
-    document.body.style.opacity = 1;
-  });
-
-  const toggle = document.getElementById('menu-toggle');
-  const mobileMenu = document.getElementById('mobile-menu');
-  toggle.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
-  });
-
-  // Scroll progress bar
-  window.addEventListener('scroll', () => {
-    const winScroll = document.documentElement.scrollTop;
-    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    const scrolled = (winScroll / height) * 100;
-    document.getElementById('progress-bar').style.width = scrolled + "%";
-
-    // Header shrink effect
-    const header = document.querySelector('header');
-    if (window.scrollY > 50) {
-      header.classList.add('py-1');
-      header.classList.remove('py-2');
-    } else {
-      header.classList.remove('py-1');
-      header.classList.add('py-2');
+  // Optimized script initialization
+  document.addEventListener('DOMContentLoaded', () => {
+    // Initialize AOS with performance optimizations
+    if (typeof AOS !== 'undefined') {
+      AOS.init({
+        duration: 800,
+        easing: 'ease-out-cubic',
+        once: true, // Only animate once
+        offset: 100,
+        delay: 0
+      });
     }
+
+    // Fade in body
+    document.body.style.opacity = 1;
+
+    // Scroll progress bar with throttling
+    let ticking = false;
+    function updateProgressBar() {
+      const winScroll = document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      const progressBar = document.getElementById('progress-bar');
+      if (progressBar) {
+        progressBar.style.width = scrolled + "%";
+      }
+      ticking = false;
+    }
+
+    function requestTick() {
+      if (!ticking) {
+        requestAnimationFrame(updateProgressBar);
+        ticking = true;
+      }
+    }
+
+    window.addEventListener('scroll', requestTick, { passive: true });
+
+    // Header shrink effect with throttling
+    let headerTicking = false;
+    function updateHeader() {
+      const header = document.querySelector('header');
+      if (header) {
+        if (window.scrollY > 50) {
+          header.classList.add('py-1');
+          header.classList.remove('py-2');
+        } else {
+          header.classList.remove('py-1');
+          header.classList.add('py-2');
+        }
+      }
+      headerTicking = false;
+    }
+
+    function requestHeaderTick() {
+      if (!headerTicking) {
+        requestAnimationFrame(updateHeader);
+        headerTicking = true;
+      }
+    }
+
+    window.addEventListener('scroll', requestHeaderTick, { passive: true });
   });
   // Enable/disable submit button based on validity
   const form = document.getElementById("contact-form");
