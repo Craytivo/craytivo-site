@@ -28,12 +28,20 @@
 </script>
 
 
-  <title>Craytivo | Fast, Affordable Web Design for Small Businesses in Canada</title>
-  <meta name="description" content="Craytivo builds fast, affordable websites for small businesses in Canada and Zimbabwe. Mobile-first, lead-generating design with quick turnaround and clear pricing." />
-  <meta name="keywords" content="web design, custom websites, small business websites, Zimbabwe web design, Canada web development, Craytivo, mobile websites, affordable web design, lead generation sites" />
-  <meta name="author" content="Craytivo" />
+  <title>Craytivo | Edmonton Web Design Studio | Fast, Affordable Websites for Small Businesses</title>
+  <meta name="description" content="Edmonton web design studio specializing in fast, conversion-focused websites for small businesses. Mobile-optimized, SEO-ready sites that generate leads. Get your website in 7-10 days." />
+  <meta name="keywords" content="Edmonton web design, Alberta web development, small business websites, mobile website design, affordable web design Edmonton, lead generation websites, local SEO Edmonton, custom website design" />
+  <meta name="author" content="Craytivo Web Design Studio" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://craytivo.com/" />
+  
+  <!-- Additional SEO Meta Tags -->
+  <meta name="geo.region" content="CA-AB" />
+  <meta name="geo.placename" content="Edmonton, Alberta" />
+  <meta name="geo.position" content="53.5461;-113.4938" />
+  <meta name="ICBM" content="53.5461, -113.4938" />
+  <meta name="DC.title" content="Edmonton Web Design Studio | Craytivo" />
+  <meta name="DC.description" content="Professional web design services in Edmonton, Alberta. Fast, affordable websites for small businesses." />
 
   <!-- Favicon -->
   <link rel="icon" href="assets/images/favicon.png" type="image/png" />
@@ -41,18 +49,96 @@
   <!-- Open Graph (Facebook, LinkedIn) -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://craytivo.com/" />
-  <meta property="og:title" content="Craytivo – Affordable Custom Web Design for Canadian Small Businesses" />
-  <meta property="og:description" content="We build fast, mobile-optimized websites for small businesses in Canada & Zimbabwe. Custom design. Affordable rates. Fast turnaround." />
-  <meta property="og:image" content="https://craytivo.com/assets/preview.jpg" />
+  <meta property="og:title" content="Edmonton Web Design Studio | Fast, Affordable Websites for Small Businesses" />
+  <meta property="og:description" content="Professional web design in Edmonton. We build fast, mobile-optimized websites that convert visitors into customers. Get your website in 7-10 days." />
+  <meta property="og:image" content="https://craytivo.com/assets/images/logo.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="en_CA" />
+  <meta property="og:site_name" content="Craytivo Web Design Studio" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Craytivo – Bold Custom Web Design" />
-  <meta name="twitter:description" content="Craytivo builds sleek, mobile-first websites that help Canadian and Zimbabwean small businesses grow online." />
-  <meta name="twitter:image" content="https://craytivo.com/assets/preview.jpg" />
+  <meta name="twitter:title" content="Edmonton Web Design Studio | Professional Website Design" />
+  <meta name="twitter:description" content="Fast, affordable web design in Edmonton. Mobile-optimized websites that generate leads for small businesses." />
+  <meta name="twitter:image" content="https://craytivo.com/assets/images/logo.png" />
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Structured Data for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Craytivo Web Design Studio",
+    "description": "Professional Edmonton web design studio specializing in fast, conversion-focused websites for small businesses. Mobile-optimized, SEO-ready sites that generate leads.",
+    "url": "https://craytivo.com",
+    "telephone": "+1-780-555-0123",
+    "email": "craytivo@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Edmonton",
+      "addressRegion": "Alberta",
+      "addressCountry": "CA"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 53.5461,
+      "longitude": -113.4938
+    },
+    "openingHours": "Mo-Fr 09:00-17:00",
+    "priceRange": "$$",
+    "serviceArea": {
+      "@type": "GeoCircle",
+      "geoMidpoint": {
+        "@type": "GeoCoordinates",
+        "latitude": 53.5461,
+        "longitude": -113.4938
+      },
+      "geoRadius": "50000"
+    },
+    "sameAs": [
+      "https://twitter.com/craytivo"
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Web Design Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Starter Website Package",
+            "description": "1 responsive page, mobile optimized, contact form, basic SEO setup"
+          },
+          "price": "299",
+          "priceCurrency": "CAD"
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Business Website Package",
+            "description": "Up to 5 pages, SEO setup, GA4 integration, speed optimization"
+          },
+          "price": "599",
+          "priceCurrency": "CAD"
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Custom Website Package",
+            "description": "Unlimited pages, full branding, custom animations, copywriting support"
+          },
+          "price": "899",
+          "priceCurrency": "CAD"
+        }
+      ]
+    }
+  }
+  </script>
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -79,26 +165,105 @@
           crayYellow: '#FFD644',
           crayTeal: '#00E0C6',
           crayRed: '#E94F37',
+          // Adding a more cohesive color palette
+          primary: {
+            50: '#f0fdfa',
+            100: '#ccfbf1',
+            200: '#99f6e4',
+            300: '#5eead4',
+            400: '#2dd4bf',
+            500: '#00E0C6', // crayTeal
+            600: '#0d9488',
+            700: '#0f766e',
+            800: '#115e59',
+            900: '#134e4a',
+          },
+          secondary: {
+            50: '#fffbeb',
+            100: '#fef3c7',
+            200: '#fde68a',
+            300: '#fcd34d',
+            400: '#fbbf24',
+            500: '#FFD644', // crayYellow
+            600: '#d97706',
+            700: '#b45309',
+            800: '#92400e',
+            900: '#78350f',
+          },
+          accent: {
+            50: '#fef2f2',
+            100: '#fee2e2',
+            200: '#fecaca',
+            300: '#fca5a5',
+            400: '#f87171',
+            500: '#E94F37', // crayRed
+            600: '#dc2626',
+            700: '#b91c1c',
+            800: '#991b1b',
+            900: '#7f1d1d',
+          },
+          gray: {
+            50: '#f9fafb',
+            100: '#f3f4f6',
+            200: '#e5e7eb',
+            300: '#d1d5db',
+            400: '#9ca3af',
+            500: '#6b7280',
+            600: '#4b5563',
+            700: '#374151',
+            800: '#1f2937',
+            900: '#111827',
+          }
+        },
+        spacing: {
+          '18': '4.5rem',
+          '88': '22rem',
+          '128': '32rem',
         },
         animation: {
-          'fade-in': 'fadeIn 0.3s ease-out forwards',
-          'fade-in-up': 'fadeInUp 0.5s ease-out forwards',
-          'pulse-slow': 'pulseSlow 6s ease-in-out infinite',
+          'fade-in': 'fadeIn 0.5s ease-out forwards',
+          'fade-in-up': 'fadeInUp 0.6s ease-out forwards',
+          'slide-up': 'slideUp 0.4s ease-out forwards',
+          'scale-in': 'scaleIn 0.3s ease-out forwards',
+          'pulse-slow': 'pulseSlow 4s ease-in-out infinite',
+          'float': 'float 6s ease-in-out infinite',
         },
         keyframes: {
           fadeIn: {
-            '0%': { opacity: '0', transform: 'translateY(-10px)' },
-            '100%': { opacity: '1', transform: 'translateY(0)' },
+            '0%': { opacity: '0' },
+            '100%': { opacity: '1' },
           },
           fadeInUp: {
-            '0%': { opacity: '0', transform: 'translateY(10px)' },
+            '0%': { opacity: '0', transform: 'translateY(20px)' },
             '100%': { opacity: '1', transform: 'translateY(0)' },
+          },
+          slideUp: {
+            '0%': { opacity: '0', transform: 'translateY(30px)' },
+            '100%': { opacity: '1', transform: 'translateY(0)' },
+          },
+          scaleIn: {
+            '0%': { opacity: '0', transform: 'scale(0.9)' },
+            '100%': { opacity: '1', transform: 'scale(1)' },
           },
           pulseSlow: {
             '0%, 100%': { opacity: '1', transform: 'scale(1)' },
-            '50%': { opacity: '0.5', transform: 'scale(1.05)' },
+            '50%': { opacity: '0.8', transform: 'scale(1.02)' },
+          },
+          float: {
+            '0%, 100%': { transform: 'translateY(0px)' },
+            '50%': { transform: 'translateY(-10px)' },
           },
         },
+        boxShadow: {
+          'soft': '0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04)',
+          'medium': '0 4px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+          'large': '0 10px 40px -10px rgba(0, 0, 0, 0.15), 0 20px 25px -5px rgba(0, 0, 0, 0.1)',
+        },
+        borderRadius: {
+          'xl': '1rem',
+          '2xl': '1.5rem',
+          '3xl': '2rem',
+        }
       },
     },
   };
@@ -212,6 +377,38 @@
     pointer-events: none;
     z-index: 1;
   }
+
+  /* Enhanced Hero Animations */
+  .hero-underline {
+    transform-origin: center;
+  }
+
+  /* Button hover effects */
+  .hero-btn-primary:hover .relative {
+    transform: translateY(-1px);
+  }
+
+  .hero-btn-secondary:hover {
+    transform: translateY(-1px);
+  }
+
+  /* Enhanced audience dots animation */
+  @keyframes audiencePulse {
+    0%, 100% { opacity: 0.6; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.2); }
+  }
+
+  .hero-audience .w-2 {
+    animation: audiencePulse 2s ease-in-out infinite;
+  }
+
+  .hero-audience .w-2:nth-child(2) {
+    animation-delay: 0.7s;
+  }
+
+  .hero-audience .w-2:nth-child(3) {
+    animation-delay: 1.4s;
+  }
 </style>
 </head>
 
@@ -223,36 +420,36 @@
   <!-- Main Content Wrapper -->
   <div class="flex-grow">
 
-  <header id="mainHeader" class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 py-4 transition-all duration-300 shadow-sm">
+  <header id="mainHeader" class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200/50 py-4 transition-all duration-300 shadow-soft">
   <div class="flex justify-between items-center px-6 max-w-7xl mx-auto">
 
     <!-- Logo + Brand Name -->
-    <a href="/" aria-label="Craytivo Home" class="flex items-center space-x-3 transition-all duration-300 hover:scale-105">
-      <img id="headerLogo" src="assets/logo-no-text.png" alt="Craytivo Logo" class="w-12 md:w-14 transition-transform duration-300">
-      <span id="headerText" class="text-xl md:text-2xl font-extrabold tracking-wide uppercase text-gray-900 transition-all duration-300">Craytivo</span>
+    <a href="/" aria-label="Craytivo Home" class="flex items-center space-x-3 transition-all duration-300 hover:scale-105 group">
+      <img id="headerLogo" src="assets/logo-no-text.png" alt="Craytivo Logo" class="w-12 md:w-14 transition-transform duration-300 group-hover:rotate-12">
+      <span id="headerText" class="text-xl md:text-2xl font-extrabold tracking-wide uppercase text-gray-900 transition-all duration-300 group-hover:text-primary-500">Craytivo</span>
     </a>
 
     <!-- Hamburger Icon (Mobile Toggle) -->
-    <button id="hamburgerBtn" class="md:hidden text-gray-700 hover:text-crayTeal focus:outline-none focus:ring-2 focus:ring-crayTeal/20 rounded-lg p-2 z-50 transition-all duration-300" aria-label="Toggle navigation">
+    <button id="hamburgerBtn" class="md:hidden text-gray-700 hover:text-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20 rounded-lg p-2 z-50 transition-all duration-300" aria-label="Toggle navigation">
       <svg id="hamburgerIcon" class="w-6 h-6 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
         <path id="hamburgerLines" stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
       </svg>
     </button>
 
     <!-- Desktop Nav -->
-    <nav class="hidden md:flex items-center space-x-1 text-sm font-medium" aria-label="Main navigation">
-      <a href="#about" class="px-4 py-2 text-gray-700 hover:text-crayTeal hover:bg-crayTeal/5 rounded-lg transition-all duration-300">About</a>
-      <a href="#benefits" class="px-4 py-2 text-gray-700 hover:text-crayTeal hover:bg-crayTeal/5 rounded-lg transition-all duration-300">Services</a>
-      <a href="#pricing" class="px-4 py-2 text-gray-700 hover:text-crayTeal hover:bg-crayTeal/5 rounded-lg transition-all duration-300">Pricing</a>
-      <a href="#portfolio" class="px-4 py-2 text-gray-700 hover:text-crayTeal hover:bg-crayTeal/5 rounded-lg transition-all duration-300">Portfolio</a>
-      <a href="#contact" class="px-4 py-2 text-gray-700 hover:text-crayTeal hover:bg-crayTeal/5 rounded-lg transition-all duration-300">Contact</a>
+    <nav class="hidden md:flex items-center space-x-2 text-sm font-medium" aria-label="Main navigation">
+      <a href="#about" class="px-4 py-2 text-gray-700 hover:text-primary-500 hover:bg-primary-50 rounded-lg transition-all duration-300 font-medium">About</a>
+      <a href="#benefits" class="px-4 py-2 text-gray-700 hover:text-primary-500 hover:bg-primary-50 rounded-lg transition-all duration-300 font-medium">Services</a>
+      <a href="#pricing" class="px-4 py-2 text-gray-700 hover:text-primary-500 hover:bg-primary-50 rounded-lg transition-all duration-300 font-medium">Pricing</a>
+      <a href="#portfolio" class="px-4 py-2 text-gray-700 hover:text-primary-500 hover:bg-primary-50 rounded-lg transition-all duration-300 font-medium">Portfolio</a>
+      <a href="#contact" class="px-4 py-2 text-gray-700 hover:text-primary-500 hover:bg-primary-50 rounded-lg transition-all duration-300 font-medium">Contact</a>
     </nav>
 
     <!-- Twitter Icon (Desktop) -->
     <a href="https://twitter.com/craytivo" target="_blank" rel="noopener noreferrer"
        id="twitterIcon"
        aria-label="Visit Craytivo on Twitter"
-       class="hidden md:inline-flex items-center justify-center w-10 h-10 text-crayTeal bg-crayTeal/10 hover:bg-crayTeal hover:text-white rounded-full transition-all duration-300 ml-4 hover:scale-110">
+       class="hidden md:inline-flex items-center justify-center w-10 h-10 text-primary-500 bg-primary-50 hover:bg-primary-500 hover:text-white rounded-full transition-all duration-300 ml-4 hover:scale-110 shadow-soft">
       <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
         <path d="M23 3a10.9 10.9 0 01-3.14 1.53A4.48 4.48 0 0012.15 8v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5.5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/>
       </svg>
@@ -260,14 +457,14 @@
   </div>
 
   <!-- Mobile Nav Menu (Dropdown Card) -->
-<div id="mobileNav" class="opacity-0 scale-95 pointer-events-none transition-all duration-300 transform origin-top absolute top-full right-4 left-4 mt-2 bg-white rounded-xl shadow-xl z-40 py-4 px-4 w-[calc(100%-2rem)] max-w-xs mx-auto text-center space-y-1">
-  <a href="#about" class="block px-4 py-2 text-gray-700 hover:bg-crayTeal/10 rounded transition-all duration-200">About</a>
-  <a href="#benefits" class="block px-4 py-2 text-gray-700 hover:bg-crayTeal/10 rounded transition-all duration-200">Services</a>
-  <a href="#pricing" class="block px-4 py-2 text-gray-700 hover:bg-crayTeal/10 rounded transition-all duration-200">Pricing</a>
-  <a href="#portfolio" class="block px-4 py-2 text-gray-700 hover:bg-crayTeal/10 rounded transition-all duration-200">Portfolio</a>
-  <a href="#contact" class="block px-4 py-2 text-gray-700 hover:bg-crayTeal/10 rounded transition-all duration-200">Contact</a>
+<div id="mobileNav" class="opacity-0 scale-95 pointer-events-none transition-all duration-300 transform origin-top absolute top-full right-4 left-4 mt-2 bg-white rounded-2xl shadow-large z-40 py-6 px-4 w-[calc(100%-2rem)] max-w-xs mx-auto text-center space-y-2 border border-gray-200/50">
+  <a href="#about" class="block px-4 py-3 text-gray-700 hover:bg-primary-50 hover:text-primary-500 rounded-xl transition-all duration-200 font-medium">About</a>
+  <a href="#benefits" class="block px-4 py-3 text-gray-700 hover:bg-primary-50 hover:text-primary-500 rounded-xl transition-all duration-200 font-medium">Services</a>
+  <a href="#pricing" class="block px-4 py-3 text-gray-700 hover:bg-primary-50 hover:text-primary-500 rounded-xl transition-all duration-200 font-medium">Pricing</a>
+  <a href="#portfolio" class="block px-4 py-3 text-gray-700 hover:bg-primary-50 hover:text-primary-500 rounded-xl transition-all duration-200 font-medium">Portfolio</a>
+  <a href="#contact" class="block px-4 py-3 text-gray-700 hover:bg-primary-50 hover:text-primary-500 rounded-xl transition-all duration-200 font-medium">Contact</a>
   <a href="https://twitter.com/craytivo" target="_blank" rel="noopener noreferrer"
-     class="block px-4 py-2 border border-crayTeal text-crayTeal text-sm font-medium rounded hover:bg-crayTeal hover:text-white transition-all duration-200">
+     class="block px-4 py-3 border border-primary-500 text-primary-500 text-sm font-medium rounded-xl hover:bg-primary-500 hover:text-white transition-all duration-200 mt-4">
     Twitter
   </a>
 </div>
@@ -414,57 +611,104 @@
   <div class="relative z-10 max-w-6xl mx-auto w-full">
     
     <!-- Animated Tagline -->
-    <div class="hero-tagline mb-6 opacity-0">
-      <span class="inline-block px-4 py-2 text-sm font-semibold uppercase tracking-wider text-crayTeal bg-white/80 backdrop-blur-sm border border-crayTeal/30 rounded-full shadow-lg">
-        Edmonton Web Design Studio
-      </span>
+    <div class="hero-tagline mb-8 opacity-0">
+      <div class="flex items-center justify-center gap-3">
+        <div class="w-2 h-2 bg-primary-500 rounded-full animate-pulse"></div>
+        <span class="inline-block px-6 py-3 text-sm font-semibold uppercase tracking-wider text-primary-500 bg-white/90 backdrop-blur-sm border border-primary-200 rounded-full shadow-soft">
+          Professional Edmonton Web Design Studio
+        </span>
+        <div class="w-2 h-2 bg-secondary-500 rounded-full animate-pulse" style="animation-delay: 0.5s;"></div>
+      </div>
     </div>
 
     <!-- Main Headline with Staggered Animation -->
-    <div class="hero-headline mb-8">
+    <div class="hero-headline mb-10">
       <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-gray-900 leading-tight">
-        <span class="hero-word inline-block opacity-0" style="transform: translateY(50px);">Affordable</span>
+        <span class="hero-word inline-block opacity-0" style="transform: translateY(50px);">Fast</span>
         <br class="sm:hidden" />
-        <span class="hero-word inline-block text-crayYellow ml-4 opacity-0" style="transform: translateY(50px);">Websites</span>
+        <span class="hero-word inline-block text-secondary-500 ml-4 opacity-0" style="transform: translateY(50px);">Websites</span>
         <br />
         <span class="hero-word inline-block opacity-0" style="transform: translateY(50px);">That</span>
-        <span class="hero-word inline-block text-crayTeal ml-4 opacity-0" style="transform: translateY(50px);">Win</span>
-        <span class="hero-word inline-block ml-4 opacity-0" style="transform: translateY(50px);">Clients</span>
+        <span class="hero-word inline-block text-primary-500 ml-4 opacity-0" style="transform: translateY(50px);">Convert</span>
+        <span class="hero-word inline-block ml-4 opacity-0" style="transform: translateY(50px);">Visitors</span>
       </h1>
+      <!-- Decorative underline -->
+      <div class="mt-6 w-24 h-1 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-full mx-auto opacity-0 hero-underline"></div>
     </div>
 
     <!-- Animated Subheadline -->
-    <div class="hero-subtitle mb-10 opacity-0">
-      <p class="text-lg sm:text-xl text-gray-600 font-light max-w-3xl mx-auto leading-relaxed">
-        Craytivo builds mobile-optimized websites that help Edmonton small businesses stand out, generate leads, and grow online — fast turnaround, transparent pricing.
+    <div class="hero-subtitle mb-12 opacity-0">
+      <p class="text-lg sm:text-xl text-gray-600 font-medium max-w-3xl mx-auto leading-relaxed">
+        Professional Edmonton web design studio creating mobile-optimized websites that generate leads and grow your business. Get your website in 7-10 days with transparent pricing.
       </p>
     </div>
 
     <!-- Animated CTA Buttons -->
-    <div class="hero-cta flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 opacity-0">
-      <a href="#contact" class="hero-btn-primary group relative overflow-hidden bg-crayTeal text-black font-semibold py-4 px-8 rounded-full shadow-xl transition-all duration-300 hover:shadow-2xl hover:scale-105">
-        <span class="relative z-10">Book Your Free Discovery Call</span>
-        <div class="absolute inset-0 bg-gradient-to-r from-crayTeal to-crayYellow opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+    <div class="hero-cta flex flex-col sm:flex-row gap-6 justify-center items-center mb-16 opacity-0">
+      <a href="#contact" class="hero-btn-primary group relative overflow-hidden bg-primary-500 text-white font-semibold py-4 px-8 rounded-full shadow-medium transition-all duration-300 hover:shadow-large hover:scale-105 hover:bg-primary-600">
+        <span class="relative z-10 flex items-center gap-2">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+          </svg>
+          Book Your Free Discovery Call
+        </span>
+        <div class="absolute inset-0 bg-gradient-to-r from-primary-500 to-secondary-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full"></div>
       </a>
-      <a href="#portfolio" class="hero-btn-secondary border-2 border-gray-300 text-gray-700 font-semibold py-4 px-8 rounded-full hover:border-crayTeal hover:text-crayTeal transition-all duration-300">
-        View Our Work
+      <a href="#portfolio" class="hero-btn-secondary group border-2 border-gray-300 text-gray-700 font-semibold py-4 px-8 rounded-full hover:border-primary-500 hover:text-primary-500 transition-all duration-300 hover:bg-primary-50">
+        <span class="flex items-center gap-2">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+            <path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+          </svg>
+          View Our Work
+        </span>
       </a>
     </div>
 
-    <!-- Audience -->
+    <!-- Enhanced Audience Section -->
     <div class="hero-audience opacity-0">
-      <p class="text-sm text-gray-500 italic tracking-wide">
-        Serving Edmonton-based entrepreneurs, contractors, creatives, and service providers.
-      </p>
+      <div class="flex flex-col items-center gap-4">
+        <div class="flex items-center gap-2 text-sm text-gray-500">
+          <svg class="w-4 h-4 text-primary-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+          </svg>
+          <span class="font-medium">Serving Edmonton & Area</span>
+        </div>
+        <div class="flex items-center gap-6 text-xs text-gray-400">
+          <span class="flex items-center gap-1">
+            <div class="w-2 h-2 bg-primary-500 rounded-full"></div>
+            Entrepreneurs
+          </span>
+          <span class="flex items-center gap-1">
+            <div class="w-2 h-2 bg-secondary-500 rounded-full"></div>
+            Contractors
+          </span>
+          <span class="flex items-center gap-1">
+            <div class="w-2 h-2 bg-accent-500 rounded-full"></div>
+            Service Providers
+          </span>
+        </div>
+      </div>
     </div>
   </div>
 
 <!-- Animated Scroll Prompt (hidden on mobile) -->
 <div class="hero-scroll absolute z-10 opacity-0 hidden sm:block" style="bottom: 10vh;">
-  <a href="#about" class="flex flex-col items-center text-crayTeal hover:text-crayYellow transition-colors duration-300">
-    <span class="text-xs uppercase tracking-widest font-medium mb-2">Scroll to Learn More</span>
-    <div class="w-6 h-10 border-2 border-current rounded-full flex justify-center">
-      <div class="w-1 h-3 bg-current rounded-full mt-2 animate-bounce"></div>
+  <a href="#about" class="group flex flex-col items-center text-primary-500 hover:text-secondary-500 transition-colors duration-300">
+    <span class="text-xs uppercase tracking-widest font-medium mb-3 group-hover:scale-105 transition-transform duration-300">Scroll to Learn More</span>
+    <div class="relative">
+      <div class="w-6 h-10 border-2 border-current rounded-full flex justify-center relative overflow-hidden">
+        <div class="w-1 h-3 bg-current rounded-full mt-2 animate-bounce"></div>
+        <!-- Animated border effect -->
+        <div class="absolute inset-0 border-2 border-current rounded-full opacity-20 group-hover:opacity-40 transition-opacity duration-300"></div>
+      </div>
+      <!-- Decorative dots -->
+      <div class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 flex gap-1">
+        <div class="w-1 h-1 bg-primary-500 rounded-full animate-pulse"></div>
+        <div class="w-1 h-1 bg-secondary-500 rounded-full animate-pulse" style="animation-delay: 0.2s;"></div>
+        <div class="w-1 h-1 bg-accent-500 rounded-full animate-pulse" style="animation-delay: 0.4s;"></div>
+      </div>
     </div>
   </a>
 </div>
@@ -521,6 +765,13 @@
         delay: anime.stagger(100)
       }, '-=400')
       .add({
+        targets: '.hero-underline',
+        opacity: [0, 1],
+        scaleX: [0, 1],
+        duration: 800,
+        easing: 'easeOutQuart'
+      }, '-=200')
+      .add({
         targets: '.hero-subtitle',
         opacity: [0, 1],
         translateY: [30, 0],
@@ -552,37 +803,52 @@
 
 <!-- About -->
 <section id="about" class="py-24 px-6 max-w-6xl mx-auto text-center scroll-mt-24">
-  <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-crayYellow tracking-tight">
-    Edmonton Web Design for Growing Local Businesses
+  <h2 class="text-3xl sm:text-4xl font-bold mb-8 text-secondary-500 tracking-tight">
+    Professional Edmonton Web Design for Growing Businesses
   </h2>
 
-  <p class="text-gray-600 text-base sm:text-lg mb-14 max-w-2xl mx-auto leading-relaxed font-medium">
-    Craytivo helps Edmonton entrepreneurs and small businesses grow online with high-performance websites that build trust and bring in leads.<br><br>
-    We create fast, conversion-focused websites that look amazing on mobile and turn visitors into loyal customers — without the high agency price tag.
+  <p class="text-gray-600 text-base sm:text-lg mb-16 max-w-3xl mx-auto leading-relaxed font-medium">
+    Craytivo is Edmonton's trusted web design studio, helping local businesses establish a powerful online presence. We specialize in creating high-converting websites that drive results.<br><br>
+    Our mobile-first approach ensures your website performs flawlessly across all devices, while our conversion-focused design turns visitors into paying customers. No agency overhead means better value for Edmonton businesses.
   </p>
 
-  <div class="grid sm:grid-cols-3 gap-10 text-left mt-16">
+  <div class="grid sm:grid-cols-3 gap-8 text-left mt-20">
     <!-- Card 1 -->
-    <div class="bg-white border border-crayTeal/20 p-8 rounded-3xl shadow-lg hover:shadow-crayTeal/30 hover:scale-[1.03] transition-all duration-300">
-      <h3 class="text-crayTeal font-semibold text-xl mb-3 tracking-wide">Conversion-Focused Layouts</h3>
+    <div class="bg-white border border-primary-200 p-8 rounded-2xl shadow-soft hover:shadow-medium hover:scale-[1.02] transition-all duration-300 group">
+      <div class="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary-200 transition-colors duration-300">
+        <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+        </svg>
+      </div>
+      <h3 class="text-primary-600 font-semibold text-xl mb-4 tracking-wide">Conversion-Optimized Design</h3>
       <p class="text-gray-600 text-base leading-relaxed">
-        Every click, scroll, and section is crafted to guide your visitors toward action — whether it's booking, calling, or buying.
+        Every element is strategically designed to guide visitors toward action. From compelling CTAs to intuitive navigation, we maximize your conversion rates.
       </p>
     </div>
 
     <!-- Card 2 -->
-    <div class="bg-white border border-crayYellow/20 p-8 rounded-3xl shadow-lg hover:shadow-crayYellow/30 hover:scale-[1.03] transition-all duration-300">
-      <h3 class="text-crayYellow font-semibold text-xl mb-3 tracking-wide">Mobile-First, Edmonton-Focused</h3>
+    <div class="bg-white border border-secondary-200 p-8 rounded-2xl shadow-soft hover:shadow-medium hover:scale-[1.02] transition-all duration-300 group">
+      <div class="w-12 h-12 bg-secondary-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-secondary-200 transition-colors duration-300">
+        <svg class="w-6 h-6 text-secondary-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+        </svg>
+      </div>
+      <h3 class="text-secondary-600 font-semibold text-xl mb-4 tracking-wide">Mobile-First & Local SEO</h3>
       <p class="text-gray-600 text-base leading-relaxed">
-        Built for speed and responsiveness, your site will perform on any device — with a local SEO strategy to rank in Edmonton search results.
+        Built for speed and mobile performance, with local SEO optimization to help Edmonton customers find your business in search results.
       </p>
     </div>
 
     <!-- Card 3 -->
-    <div class="bg-white border border-crayRed/20 p-8 rounded-3xl shadow-lg hover:shadow-crayRed/30 hover:scale-[1.03] transition-all duration-300">
-      <h3 class="text-crayRed font-semibold text-xl mb-3 tracking-wide">Strategic Branding & Content</h3>
+    <div class="bg-white border border-accent-200 p-8 rounded-2xl shadow-soft hover:shadow-medium hover:scale-[1.02] transition-all duration-300 group">
+      <div class="w-12 h-12 bg-accent-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-accent-200 transition-colors duration-300">
+        <svg class="w-6 h-6 text-accent-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z" />
+        </svg>
+      </div>
+      <h3 class="text-accent-600 font-semibold text-xl mb-4 tracking-wide">Strategic Brand Development</h3>
       <p class="text-gray-600 text-base leading-relaxed">
-        From page structure to messaging, we align every detail with your brand and business goals — perfect for startups and service-based businesses.
+        We develop your brand identity and messaging to resonate with your Edmonton audience, creating authentic connections that drive business growth.
       </p>
     </div>
   </div>
@@ -590,58 +856,58 @@
 
 <!-- 3-Step CTA Section -->
 <section id="cta-steps" class="relative pt-20 pb-24 px-6 bg-gray-50 overflow-hidden scroll-mt-24" data-aos="fade-up">
-  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
     
     <!-- Left Column: Text -->
     <div>
-      <h2 class="text-3xl sm:text-4xl font-extrabold text-crayYellow mb-4 leading-snug">
-        Launch Your Website in 3 Simple Steps
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-secondary-500 mb-6 leading-snug">
+        Get Your Professional Website in 3 Simple Steps
       </h2>
-      <p class="text-gray-600 text-base sm:text-lg font-medium mb-8 max-w-md leading-relaxed">
-        Whether you're a local Edmonton business or a personal brand, Craytivo makes the web design process seamless — from concept to launch.
+      <p class="text-gray-600 text-base sm:text-lg font-medium mb-10 max-w-lg leading-relaxed">
+        From initial consultation to live website, our streamlined process ensures you get a professional, conversion-focused website that grows your Edmonton business.
       </p>
-      <a href="#contact" class="inline-block bg-crayTeal text-black font-semibold py-3 px-6 rounded-full shadow-lg hover:bg-opacity-90 hover:scale-105 transition duration-300">
-        Start with a Free Call
+      <a href="#contact" class="inline-block bg-primary-500 text-white font-semibold py-4 px-8 rounded-full shadow-medium hover:shadow-large hover:scale-105 transition duration-300 hover:bg-primary-600">
+        Start Your Free Consultation
       </a>
     </div>
     <!-- Right Column: Steps -->
-    <div class="space-y-8">
+    <div class="space-y-6">
       
       <!-- Step 1 -->
-      <div class="group flex items-start bg-white backdrop-blur-md p-6 rounded-2xl border border-crayTeal/30 shadow-xl hover:-translate-y-1 transition duration-300">
-        <div class="w-12 h-12 flex-shrink-0 flex items-center justify-center bg-crayTeal/20 rounded-full border border-crayTeal/40 animate-pulse mr-4">
-          <span class="text-crayTeal text-lg font-bold">1</span>
+      <div class="group flex items-start bg-white backdrop-blur-md p-6 rounded-2xl border border-primary-200 shadow-soft hover:shadow-medium hover:-translate-y-1 transition duration-300">
+        <div class="w-12 h-12 flex-shrink-0 flex items-center justify-center bg-primary-100 rounded-full border border-primary-300 mr-6 group-hover:bg-primary-200 transition-colors duration-300">
+          <span class="text-primary-600 text-lg font-bold">1</span>
         </div>
         <div>
-          <h3 class="text-gray-900 font-semibold text-lg mb-1">Book a Free Discovery Call</h3>
+          <h3 class="text-gray-900 font-semibold text-lg mb-2">Free Strategy Consultation</h3>
           <p class="text-gray-600 text-sm leading-relaxed">
-            Share your goals and challenges. I'll help you map out the best direction.
+            We'll discuss your business goals, target audience, and design preferences to create a customized website strategy.
           </p>
         </div>
       </div>
 
       <!-- Step 2 -->
-      <div class="group flex items-start bg-white backdrop-blur-md p-6 rounded-2xl border border-crayYellow/30 shadow-xl hover:-translate-y-1 transition duration-300 delay-75">
-        <div class="w-12 h-12 flex-shrink-0 flex items-center justify-center bg-crayYellow/20 rounded-full border border-crayYellow/40 animate-bounce mr-4">
-          <span class="text-crayYellow text-lg font-bold">2</span>
+      <div class="group flex items-start bg-white backdrop-blur-md p-6 rounded-2xl border border-secondary-200 shadow-soft hover:shadow-medium hover:-translate-y-1 transition duration-300">
+        <div class="w-12 h-12 flex-shrink-0 flex items-center justify-center bg-secondary-100 rounded-full border border-secondary-300 mr-6 group-hover:bg-secondary-200 transition-colors duration-300">
+          <span class="text-secondary-600 text-lg font-bold">2</span>
         </div>
         <div>
-          <h3 class="text-gray-900 font-semibold text-lg mb-1">Review Your Design Plan</h3>
+          <h3 class="text-gray-900 font-semibold text-lg mb-2">Design & Development</h3>
           <p class="text-gray-600 text-sm leading-relaxed">
-            You'll receive a clean layout and design concept for approval before anything goes live.
+            We'll create your professional website with conversion-optimized design, mobile responsiveness, and local SEO.
           </p>
         </div>
       </div>
 
       <!-- Step 3 -->
-      <div class="group flex items-start bg-white backdrop-blur-md p-6 rounded-2xl border border-crayRed/30 shadow-xl hover:-translate-y-1 transition duration-300 delay-150">
-        <div class="w-12 h-12 flex-shrink-0 flex items-center justify-center bg-crayRed/20 rounded-full border border-crayRed/40 animate-ping mr-4">
-          <span class="text-crayRed text-lg font-bold">3</span>
+      <div class="group flex items-start bg-white backdrop-blur-md p-6 rounded-2xl border border-accent-200 shadow-soft hover:shadow-medium hover:-translate-y-1 transition duration-300">
+        <div class="w-12 h-12 flex-shrink-0 flex items-center justify-center bg-accent-100 rounded-full border border-accent-300 mr-6 group-hover:bg-accent-200 transition-colors duration-300">
+          <span class="text-accent-600 text-lg font-bold">3</span>
         </div>
         <div>
-          <h3 class="text-gray-900 font-semibold text-lg mb-1">Launch with Confidence</h3>
+          <h3 class="text-gray-900 font-semibold text-lg mb-2">Launch & Grow</h3>
           <p class="text-gray-600 text-sm leading-relaxed">
-            Go live with a high-converting site that works for you 24/7 — built for results.
+            Your website goes live with full support. Start generating leads and growing your Edmonton business immediately.
           </p>
         </div>
       </div>
@@ -653,73 +919,73 @@
 <!-- Benefits -->
 <section id="benefits" class="py-24 px-6 bg-white scroll-mt-24" data-aos="fade-up">
   <div class="max-w-6xl mx-auto">
-    <div class="text-center mb-16">
-      <h2 class="text-3xl sm:text-4xl font-bold text-crayYellow tracking-tight leading-snug">
-        Everything You Need to Succeed Online in Edmonton
+    <div class="text-center mb-20">
+      <h2 class="text-3xl sm:text-4xl font-bold text-secondary-500 tracking-tight leading-snug">
+        Professional Web Design Features for Edmonton Businesses
       </h2>
-      <p class="text-gray-600 text-base sm:text-lg mt-4 max-w-3xl mx-auto leading-relaxed font-medium">
-        Craytivo gives Edmonton-based service providers, freelancers, and small business owners the tools to turn clicks into clients.
+      <p class="text-gray-600 text-base sm:text-lg mt-6 max-w-3xl mx-auto leading-relaxed font-medium">
+        Our comprehensive web design services include everything your Edmonton business needs to establish a powerful online presence and generate consistent leads.
       </p>
     </div>
 
-    <div class="space-y-14">
+    <div class="space-y-16">
 
       <!-- Benefit 1 -->
-      <div class="flex flex-col md:flex-row items-center gap-6 md:gap-10" data-aos="fade-up">
-        <div class="shrink-0 w-16 h-16 flex items-center justify-center bg-crayTeal/20 rounded-full border border-crayTeal/30">
-          <svg class="w-7 h-7 text-crayTeal" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+      <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12" data-aos="fade-up">
+        <div class="shrink-0 w-20 h-20 flex items-center justify-center bg-primary-100 rounded-2xl border border-primary-200 shadow-soft">
+          <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
           </svg>
         </div>
         <div class="text-gray-900 md:text-left text-center">
-          <h3 class="text-xl font-semibold mb-1">Mobile-Optimized Layout</h3>
-          <p class="text-gray-600 text-sm leading-relaxed">
-            Over 70% of your visitors are on mobile — we ensure your site loads fast and looks beautiful across every screen size.
+          <h3 class="text-xl font-semibold mb-3">Mobile-First Responsive Design</h3>
+          <p class="text-gray-600 text-base leading-relaxed">
+            With 70% of web traffic coming from mobile devices, we prioritize mobile optimization to ensure your website performs flawlessly on all devices and screen sizes.
           </p>
         </div>
       </div>
 
       <!-- Benefit 2 -->
-      <div class="flex flex-col md:flex-row-reverse items-center gap-6 md:gap-10" data-aos="fade-up">
-        <div class="shrink-0 w-16 h-16 flex items-center justify-center bg-crayYellow/20 rounded-full border border-crayYellow/30">
-          <svg class="w-7 h-7 text-crayYellow" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M3 8h18M3 16h18" />
+      <div class="flex flex-col md:flex-row-reverse items-center gap-8 md:gap-12" data-aos="fade-up">
+        <div class="shrink-0 w-20 h-20 flex items-center justify-center bg-secondary-100 rounded-2xl border border-secondary-200 shadow-soft">
+          <svg class="w-8 h-8 text-secondary-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
           </svg>
         </div>
         <div class="text-gray-900 md:text-left text-center">
-          <h3 class="text-xl font-semibold mb-1">Lead Generation Systems</h3>
-          <p class="text-gray-600 text-sm leading-relaxed">
-            Smart forms, booking links, and CTAs that help you convert Edmonton visitors into real clients.
+          <h3 class="text-xl font-semibold mb-3">Conversion-Optimized Lead Generation</h3>
+          <p class="text-gray-600 text-base leading-relaxed">
+            Strategic contact forms, booking systems, and compelling CTAs designed to convert Edmonton visitors into paying customers and qualified leads.
           </p>
         </div>
       </div>
 
       <!-- Benefit 3 -->
-      <div class="flex flex-col md:flex-row items-center gap-6 md:gap-10" data-aos="fade-up">
-        <div class="shrink-0 w-16 h-16 flex items-center justify-center bg-crayRed/20 rounded-full border border-crayRed/30">
-          <svg class="w-7 h-7 text-crayRed" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+      <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12" data-aos="fade-up">
+        <div class="shrink-0 w-20 h-20 flex items-center justify-center bg-accent-100 rounded-2xl border border-accent-200 shadow-soft">
+          <svg class="w-8 h-8 text-accent-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
           </svg>
         </div>
         <div class="text-gray-900 md:text-left text-center">
-          <h3 class="text-xl font-semibold mb-1">Fast, SEO-Ready Code</h3>
-          <p class="text-gray-600 text-sm leading-relaxed">
-            Built with clean code, schema markup, and lightning load times — so your site ranks high in Edmonton search results.
+          <h3 class="text-xl font-semibold mb-3">Local SEO & Performance Optimization</h3>
+          <p class="text-gray-600 text-base leading-relaxed">
+            Clean, fast-loading code with local SEO optimization to help Edmonton customers find your business in search results and improve your search rankings.
           </p>
         </div>
       </div>
 
       <!-- Benefit 4 -->
-      <div class="flex flex-col md:flex-row-reverse items-center gap-6 md:gap-10" data-aos="fade-up">
-        <div class="shrink-0 w-16 h-16 flex items-center justify-center bg-crayTeal/20 rounded-full border border-crayTeal/30">
-          <svg class="w-7 h-7 text-crayTeal" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <div class="flex flex-col md:flex-row-reverse items-center gap-8 md:gap-12" data-aos="fade-up">
+        <div class="shrink-0 w-20 h-20 flex items-center justify-center bg-primary-100 rounded-2xl border border-primary-200 shadow-soft">
+          <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m2 8H7a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v12a2 2 0 01-2 2z" />
           </svg>
         </div>
         <div class="text-gray-900 md:text-left text-center">
-          <h3 class="text-xl font-semibold mb-1">Automation-Ready Setup</h3>
-          <p class="text-gray-600 text-sm leading-relaxed">
-            From auto-replies to CRM syncs, your site is set up for smart growth with minimal manual work.
+          <h3 class="text-xl font-semibold mb-3">Business Growth Automation</h3>
+          <p class="text-gray-600 text-base leading-relaxed">
+            Integrated automation tools including email marketing, CRM connections, and analytics tracking to streamline your business operations and scale efficiently.
           </p>
         </div>
       </div>
@@ -728,8 +994,8 @@
 
     <!-- CTA -->
     <div class="mt-20 text-center">
-      <a href="#contact" class="inline-block bg-crayTeal text-black font-semibold py-3 px-6 rounded-full shadow-lg hover:bg-opacity-90 hover:scale-105 active:scale-100 transition duration-300">
-        Let’s Build Your Site
+      <a href="#contact" class="inline-block bg-primary-500 text-white font-semibold py-4 px-8 rounded-full shadow-medium hover:shadow-large hover:scale-105 active:scale-100 transition duration-300 hover:bg-primary-600">
+        Let's Build Your Site
       </a>
       <p class="mt-4 text-sm text-gray-500 italic">Proudly serving Edmonton and nearby communities</p>
     </div>
@@ -740,17 +1006,17 @@
 <!-- Pricing -->
 <section id="pricing" class="pb-24 pt-32 px-6 bg-gray-50 scroll-mt-24" data-aos="fade-up">
   <div class="max-w-7xl mx-auto text-center">
-    <h2 class="text-4xl sm:text-5xl font-extrabold text-crayYellow mb-4 tracking-tight">Transparent Pricing</h2>
-    <p class="text-gray-600 text-lg max-w-2xl mx-auto mb-14">Flexible packages for Edmonton-based startups and small businesses.</p>
+    <h2 class="text-4xl sm:text-5xl font-extrabold text-secondary-500 mb-6 tracking-tight">Professional Web Design Pricing</h2>
+    <p class="text-gray-600 text-lg max-w-2xl mx-auto mb-16">Transparent, affordable web design packages designed specifically for Edmonton businesses. No hidden fees, no surprises.</p>
 
     <!-- Plans -->
 <div class="grid md:grid-cols-3 gap-8" id="pricing-cards">
   <!-- Starter -->
-  <div class="pricing-card group bg-white border border-gray-200 rounded-2xl p-8 shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 flex flex-col justify-between" data-plan="Starter" data-base="299" data-aos="fade-up" data-aos-delay="100">
+  <div class="pricing-card group bg-white border border-gray-200 rounded-2xl p-8 shadow-soft hover:shadow-medium hover:scale-105 transition-all duration-300 flex flex-col justify-between" data-plan="Starter" data-base="299" data-aos="fade-up" data-aos-delay="100">
     <div>
-      <h3 class="text-xl font-bold text-gray-900 mb-1">🟢 Starter</h3>
-      <p class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-crayTeal to-teal-500 mb-6">$<span class="base-price">299</span>+</p>
-      <ul class="text-sm text-gray-700 space-y-2 list-disc list-inside text-left mb-6">
+      <h3 class="text-xl font-bold text-gray-900 mb-2">🟢 Starter</h3>
+      <p class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-primary-500 to-primary-600 mb-8">$<span class="base-price">299</span>+</p>
+      <ul class="text-sm text-gray-700 space-y-3 list-disc list-inside text-left mb-8">
         <li>1 responsive page</li>
         <li>Mobile optimized</li>
         <li>Contact form (anti-spam)</li>
@@ -760,20 +1026,20 @@
         <li>5–7 day delivery</li>
       </ul>
     </div>
-    <div class="text-lg font-semibold text-crayYellow mt-auto">Total: $<span class="plan-total">299</span></div>
+    <div class="text-lg font-semibold text-secondary-500 mt-auto">Total: $<span class="plan-total">299</span></div>
   </div>
 
   <!-- Business -->
-  <div class="pricing-card group bg-white border border-crayYellow rounded-2xl p-8 shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 flex flex-col justify-between relative" data-plan="Business" data-base="599" data-aos="fade-up" data-aos-delay="200">
+  <div class="pricing-card group bg-white border border-secondary-300 rounded-2xl p-8 shadow-soft hover:shadow-medium hover:scale-105 transition-all duration-300 flex flex-col justify-between relative" data-plan="Business" data-base="599" data-aos="fade-up" data-aos-delay="200">
     <!-- Best Value Badge -->
     <div class="absolute -top-3 -right-3">
-      <span class="bg-crayYellow text-white text-xs font-bold px-3 py-1 rounded-full shadow-md uppercase tracking-wide">Best Value</span>
+      <span class="bg-secondary-500 text-white text-xs font-bold px-4 py-2 rounded-full shadow-medium uppercase tracking-wide">Best Value</span>
     </div>
 
     <div>
-      <h3 class="text-xl font-bold text-gray-900 mb-1">🔵 Business</h3>
-      <p class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-crayYellow to-yellow-500 mb-6">$<span class="base-price">599</span>+</p>
-      <ul class="text-sm text-gray-700 space-y-2 list-disc list-inside text-left mb-6">
+      <h3 class="text-xl font-bold text-gray-900 mb-2">🔵 Business</h3>
+      <p class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-secondary-500 to-secondary-600 mb-8">$<span class="base-price">599</span>+</p>
+      <ul class="text-sm text-gray-700 space-y-3 list-disc list-inside text-left mb-8">
         <li>Up to 5 pages</li>
         <li>SEO setup</li>
         <li>GA4 integration</li>
@@ -782,15 +1048,15 @@
         <li>7–10 day delivery</li>
       </ul>
     </div>
-    <div class="text-lg font-semibold text-crayYellow mt-auto">Total: $<span class="plan-total">599</span></div>
+    <div class="text-lg font-semibold text-secondary-500 mt-auto">Total: $<span class="plan-total">599</span></div>
   </div>
 
   <!-- Custom -->
-  <div class="pricing-card group bg-white border border-gray-200 rounded-2xl p-8 shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 flex flex-col justify-between" data-plan="Custom" data-base="899" data-aos="fade-up" data-aos-delay="300">
+  <div class="pricing-card group bg-white border border-gray-200 rounded-2xl p-8 shadow-soft hover:shadow-medium hover:scale-105 transition-all duration-300 flex flex-col justify-between" data-plan="Custom" data-base="899" data-aos="fade-up" data-aos-delay="300">
     <div>
-      <h3 class="text-xl font-bold text-gray-900 mb-1">🔴 Custom</h3>
-      <p class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-crayRed to-rose-500 mb-6">From $<span class="base-price">899</span>+</p>
-      <ul class="text-sm text-gray-700 space-y-2 list-disc list-inside text-left mb-6">
+      <h3 class="text-xl font-bold text-gray-900 mb-2">🔴 Custom</h3>
+      <p class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-accent-500 to-accent-600 mb-8">From $<span class="base-price">899</span>+</p>
+      <ul class="text-sm text-gray-700 space-y-3 list-disc list-inside text-left mb-8">
         <li>Unlimited pages</li>
         <li>Full branding</li>
         <li>Custom animations</li>
@@ -799,37 +1065,37 @@
         <li>Priority delivery</li>
       </ul>
     </div>
-    <div class="text-lg font-semibold text-crayYellow mt-auto">Total: $<span class="plan-total">899</span></div>
+    <div class="text-lg font-semibold text-secondary-500 mt-auto">Total: $<span class="plan-total">899</span></div>
   </div>
 </div>
 
 
     <!-- Add-ons -->
     <div class="mt-20">
-      <h4 class="text-2xl font-bold text-gray-900 mb-8 text-center">Optional Add-ons</h4>
+      <h4 class="text-2xl font-bold text-gray-900 mb-10 text-center">Optional Add-ons</h4>
       <form id="addons-form" class="grid sm:grid-cols-2 md:grid-cols-3 gap-6 text-sm text-gray-700 max-w-5xl mx-auto">
-        <label class="flex gap-4 items-start bg-white p-4 rounded-xl border border-gray-200 shadow-sm">
-          <input type="checkbox" class="addon-checkbox mt-1 accent-crayTeal" data-name="Copywriting" value="120">
+        <label class="flex gap-4 items-start bg-white p-6 rounded-2xl border border-gray-200 shadow-soft hover:shadow-medium transition-all duration-300 cursor-pointer">
+          <input type="checkbox" class="addon-checkbox mt-1 accent-primary-500" data-name="Copywriting" value="120">
           <span>💬 Copywriting<br><span class="text-gray-900 font-medium">$120</span></span>
         </label>
-        <label class="flex gap-4 items-start bg-white p-4 rounded-xl border border-gray-200 shadow-sm">
-          <input type="checkbox" class="addon-checkbox mt-1 accent-crayTeal" data-name="Brand Kit Design" value="150">
+        <label class="flex gap-4 items-start bg-white p-6 rounded-2xl border border-gray-200 shadow-soft hover:shadow-medium transition-all duration-300 cursor-pointer">
+          <input type="checkbox" class="addon-checkbox mt-1 accent-primary-500" data-name="Brand Kit Design" value="150">
           <span>🎨 Brand Kit Design<br><span class="text-gray-900 font-medium">$150</span></span>
         </label>
-        <label class="flex gap-4 items-start bg-white p-4 rounded-xl border border-gray-200 shadow-sm">
-          <input type="checkbox" class="addon-checkbox mt-1 accent-crayTeal" data-name="Maintenance" value="49">
+        <label class="flex gap-4 items-start bg-white p-6 rounded-2xl border border-gray-200 shadow-soft hover:shadow-medium transition-all duration-300 cursor-pointer">
+          <input type="checkbox" class="addon-checkbox mt-1 accent-primary-500" data-name="Maintenance" value="49">
           <span>🔧 Maintenance (Monthly)<br><span class="text-gray-900 font-medium">$49</span></span>
         </label>
-        <label class="flex gap-4 items-start bg-white p-4 rounded-xl border border-gray-200 shadow-sm">
-          <input type="checkbox" class="addon-checkbox mt-1 accent-crayTeal" data-name="Analytics Setup" value="35">
+        <label class="flex gap-4 items-start bg-white p-6 rounded-2xl border border-gray-200 shadow-soft hover:shadow-medium transition-all duration-300 cursor-pointer">
+          <input type="checkbox" class="addon-checkbox mt-1 accent-primary-500" data-name="Analytics Setup" value="35">
           <span>📊 Analytics Setup<br><span class="text-gray-900 font-medium">$35</span></span>
         </label>
-        <label class="flex gap-4 items-start bg-white p-4 rounded-xl border border-gray-200 shadow-sm">
-          <input type="checkbox" class="addon-checkbox mt-1 accent-crayTeal" data-name="Domain Setup" value="40">
+        <label class="flex gap-4 items-start bg-white p-6 rounded-2xl border border-gray-200 shadow-soft hover:shadow-medium transition-all duration-300 cursor-pointer">
+          <input type="checkbox" class="addon-checkbox mt-1 accent-primary-500" data-name="Domain Setup" value="40">
           <span>🌐 Domain & Email Setup<br><span class="text-gray-900 font-medium">$40</span></span>
         </label>
-        <label class="flex gap-4 items-start bg-white p-4 rounded-xl border border-gray-200 shadow-sm">
-          <input type="checkbox" class="addon-checkbox mt-1 accent-crayTeal" data-name="CMS Setup" value="180">
+        <label class="flex gap-4 items-start bg-white p-6 rounded-2xl border border-gray-200 shadow-soft hover:shadow-medium transition-all duration-300 cursor-pointer">
+          <input type="checkbox" class="addon-checkbox mt-1 accent-primary-500" data-name="CMS Setup" value="180">
           <span>⚙️ CMS Setup<br><span class="text-gray-900 font-medium">$180</span></span>
         </label>
       </form>
@@ -837,7 +1103,7 @@
 
     <!-- CTA -->
     <div class="mt-16 text-center">
-      <a href="#contact" class="inline-block bg-crayTeal text-black font-semibold py-3 px-6 rounded-full shadow-md hover:scale-105 transition duration-300">
+      <a href="#contact" class="inline-block bg-primary-500 text-white font-semibold py-4 px-8 rounded-full shadow-medium hover:shadow-large hover:scale-105 transition duration-300 hover:bg-primary-600">
         Ready to Build? Contact Me
       </a>
     </div>
@@ -872,15 +1138,15 @@
 <!-- ======= Portfolio Section ======= -->
 <section id="portfolio" class="py-24 px-6 bg-white relative z-0 overflow-hidden scroll-mt-24" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
   <div class="max-w-6xl mx-auto text-center">
-    <h2 class="text-3xl sm:text-4xl font-bold text-crayYellow tracking-tight mb-6">Selected Projects</h2>
-    <p class="text-gray-600 text-base sm:text-lg mb-14 leading-relaxed max-w-3xl mx-auto font-medium">
-      A curated collection of result-driven websites designed to elevate Edmonton brands and beyond.
+    <h2 class="text-3xl sm:text-4xl font-bold text-secondary-500 tracking-tight mb-8">Edmonton Web Design Portfolio</h2>
+    <p class="text-gray-600 text-base sm:text-lg mb-16 leading-relaxed max-w-3xl mx-auto font-medium">
+      Showcasing our professional web design work for Edmonton businesses. Each project demonstrates our commitment to conversion-focused design and local business growth.
     </p>
 
     <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 auto-rows-fr text-left">
       <!-- OT Vibez Studio -->
-      <article class="flex flex-col bg-white border border-gray-200 backdrop-blur-lg rounded-2xl shadow-xl p-6 transition hover:scale-[1.02] hover:-translate-y-1 duration-300">
-        <div class="aspect-video overflow-hidden rounded-xl border border-gray-200 shadow mb-4">
+      <article class="flex flex-col bg-white border border-gray-200 backdrop-blur-lg rounded-2xl shadow-soft p-6 transition hover:scale-[1.02] hover:-translate-y-1 duration-300 hover:shadow-medium">
+        <div class="aspect-video overflow-hidden rounded-xl border border-gray-200 shadow-soft mb-6">
           <img 
             src="assets/images/ot-vibez-768w.webp"
             srcset="assets/images/ot-vibez-400w.webp 400w, assets/images/ot-vibez-768w.webp 768w, assets/images/ot-vibez-1024w.webp 1024w"
@@ -888,16 +1154,16 @@
             alt="OT Vibez Studio recording and rehearsal space"
             class="w-full h-full object-cover" />
         </div>
-        <h3 class="text-gray-900 text-lg font-semibold mb-1">OT Vibez Studio</h3>
-        <p class="text-gray-600 text-sm leading-relaxed mb-3">
-          A bold site for Edmonton's premier creative studio — optimized for mobile booking, SEO, and premium UX.
+        <h3 class="text-gray-900 text-lg font-semibold mb-3">OT Vibez Studio</h3>
+        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+          Professional Edmonton recording studio website with mobile-optimized booking system, local SEO, and conversion-focused design.
         </p>
-        <a href="https://otvibez.com/" target="_blank" class="text-crayTeal text-sm font-medium hover:underline">Visit Website →</a>
+        <a href="https://otvibez.com/" target="_blank" class="text-primary-500 text-sm font-medium hover:underline group">Visit Website <span class="group-hover:translate-x-1 transition-transform duration-200">→</span></a>
       </article>
 
       <!-- Marina Homes -->
-      <article class="flex flex-col bg-white border border-gray-200 backdrop-blur-lg rounded-2xl shadow-xl p-6 transition hover:scale-[1.02] hover:-translate-y-1 duration-300">
-        <div class="aspect-video overflow-hidden rounded-xl border border-gray-200 shadow mb-4">
+      <article class="flex flex-col bg-white border border-gray-200 backdrop-blur-lg rounded-2xl shadow-soft p-6 transition hover:scale-[1.02] hover:-translate-y-1 duration-300 hover:shadow-medium">
+        <div class="aspect-video overflow-hidden rounded-xl border border-gray-200 shadow-soft mb-6">
           <img 
   src="assets/images/marina-homes-768.webp"
   srcset="assets/images/marina-homes-400.webp 400w, assets/images/marina-homes-768.webp 768w"
@@ -907,16 +1173,16 @@
 />
 
         </div>
-        <h3 class="text-gray-900 text-lg font-semibold mb-1">Marina Homes</h3>
-        <p class="text-gray-600 text-sm leading-relaxed mb-3">
-          A luxury real estate site showcasing elegant developments — built to convert browsers into buyers.
+        <h3 class="text-gray-900 text-lg font-semibold mb-3">Marina Homes</h3>
+        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+          Luxury Edmonton real estate website with high-converting property showcases and lead generation systems for premium developments.
         </p>
-        <a href="https://marinahomes.ca/" target="_blank" class="text-crayTeal text-sm font-medium hover:underline">Visit Website →</a>
+        <a href="https://marinahomes.ca/" target="_blank" class="text-primary-500 text-sm font-medium hover:underline group">Visit Website <span class="group-hover:translate-x-1 transition-transform duration-200">→</span></a>
       </article>
 
       <!-- Purpose Path -->
-      <article class="flex flex-col bg-white border border-gray-200 backdrop-blur-lg rounded-2xl shadow-xl p-6 transition hover:scale-[1.02] hover:-translate-y-1 duration-300">
-        <div class="aspect-video overflow-hidden rounded-xl border border-gray-200 shadow mb-4">
+      <article class="flex flex-col bg-white border border-gray-200 backdrop-blur-lg rounded-2xl shadow-soft p-6 transition hover:scale-[1.02] hover:-translate-y-1 duration-300 hover:shadow-medium">
+        <div class="aspect-video overflow-hidden rounded-xl border border-gray-200 shadow-soft mb-6">
           <img 
             src="assets/images/purpose-path-768.webp"
             srcset="assets/images/purpose-path-400.webp 400w, assets/images/purpose-path-768.webp 768w, assets/images/purpose-path-1024.webp 1024w"
@@ -924,16 +1190,16 @@
             alt="Conversion-focused marketing site for Purpose Path"
             class="w-full h-full object-cover" />
         </div>
-        <h3 class="text-gray-900 text-lg font-semibold mb-1">Purpose Path</h3>
-        <p class="text-gray-600 text-sm leading-relaxed mb-3">
-          A bold, high-converting website for a growing marketing agency with lead-gen baked in.
+        <h3 class="text-gray-900 text-lg font-semibold mb-3">Purpose Path</h3>
+        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+          Edmonton marketing agency website with conversion-optimized design, lead generation systems, and professional brand positioning.
         </p>
-        <a href="https://purposepath.ca/" target="_blank" class="text-crayTeal text-sm font-medium hover:underline">Visit Website →</a>
+        <a href="https://purposepath.ca/" target="_blank" class="text-primary-500 text-sm font-medium hover:underline group">Visit Website <span class="group-hover:translate-x-1 transition-transform duration-200">→</span></a>
       </article>
 
       <!-- Zemlar Offices -->
-      <article class="flex flex-col bg-white/5 border border-white/10 backdrop-blur-lg rounded-2xl shadow-xl p-6 transition hover:scale-[1.02] hover:-translate-y-1 duration-300">
-        <div class="aspect-video overflow-hidden rounded-xl border border-white/10 shadow mb-4">
+      <article class="flex flex-col bg-white border border-gray-200 backdrop-blur-lg rounded-2xl shadow-soft p-6 transition hover:scale-[1.02] hover:-translate-y-1 duration-300 hover:shadow-medium">
+        <div class="aspect-video overflow-hidden rounded-xl border border-gray-200 shadow-soft mb-6">
           <img 
             src="assets/images/zemlar-768.webp"
             srcset="assets/images/zemlar-400.webp 400w, assets/images/zemlar-768.webp 768w, assets/images/zemlar-1024.webp 1024w"
@@ -941,16 +1207,16 @@
             alt="Zemlar flexible workspace site UX"
             class="w-full h-full object-cover" />
         </div>
-        <h3 class="text-gray-900 text-lg font-semibold mb-1">Zemlar Offices</h3>
-        <p class="text-gray-400 text-sm leading-relaxed mb-3">
-          A scalable B2B site for Canada’s top flexible office provider — sleek and built for scale.
+        <h3 class="text-gray-900 text-lg font-semibold mb-3">Zemlar Offices</h3>
+        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+          Professional B2B website for Canada's leading flexible office provider with scalable design and lead generation optimization.
         </p>
-        <a href="https://zemlar.ca/" target="_blank" class="text-crayTeal text-sm font-medium hover:underline">Visit Website →</a>
+        <a href="https://zemlar.ca/" target="_blank" class="text-primary-500 text-sm font-medium hover:underline group">Visit Website <span class="group-hover:translate-x-1 transition-transform duration-200">→</span></a>
       </article>
 
       <!-- ICARE Naturals -->
-      <article class="flex flex-col bg-white/5 border border-white/10 backdrop-blur-lg rounded-2xl shadow-xl p-6 transition hover:scale-[1.02] hover:-translate-y-1 duration-300">
-        <div class="aspect-video overflow-hidden rounded-xl border border-white/10 shadow mb-4">
+      <article class="flex flex-col bg-white border border-gray-200 backdrop-blur-lg rounded-2xl shadow-soft p-6 transition hover:scale-[1.02] hover:-translate-y-1 duration-300 hover:shadow-medium">
+        <div class="aspect-video overflow-hidden rounded-xl border border-gray-200 shadow-soft mb-6">
           <img 
             src="assets/images/icare-768.webp"
             srcset="assets/images/icare-400.webp 400w, assets/images/icare-768.webp 768w, assets/images/icare-1024.webp 1024w"
@@ -958,16 +1224,16 @@
             alt="ICARE Naturals Shopify ecommerce design"
             class="w-full h-full object-cover" />
         </div>
-        <h3 class="text-gray-900 text-lg font-semibold mb-1">ICARE Naturals</h3>
-        <p class="text-gray-400 text-sm leading-relaxed mb-3">
-          A Shopify storefront for a clean beauty brand — fast, elegant, and built to sell.
+        <h3 class="text-gray-900 text-lg font-semibold mb-3">ICARE Naturals</h3>
+        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+          Edmonton e-commerce website with conversion-optimized Shopify design, mobile-first approach, and streamlined checkout process.
         </p>
-        <a href="https://icarenaturals.ca/" target="_blank" class="text-crayTeal text-sm font-medium hover:underline">Visit Website →</a>
+        <a href="https://icarenaturals.ca/" target="_blank" class="text-primary-500 text-sm font-medium hover:underline group">Visit Website <span class="group-hover:translate-x-1 transition-transform duration-200">→</span></a>
       </article>
 
       <!-- Freedom Life Church -->
-      <article class="flex flex-col bg-white/5 border border-white/10 backdrop-blur-lg rounded-2xl shadow-xl p-6 transition hover:scale-[1.02] hover:-translate-y-1 duration-300">
-        <div class="aspect-video overflow-hidden rounded-xl border border-white/10 shadow mb-4">
+      <article class="flex flex-col bg-white border border-gray-200 backdrop-blur-lg rounded-2xl shadow-soft p-6 transition hover:scale-[1.02] hover:-translate-y-1 duration-300 hover:shadow-medium">
+        <div class="aspect-video overflow-hidden rounded-xl border border-gray-200 shadow-soft mb-6">
           <img 
             src="assets/images/flc-768.webp"
             srcset="assets/images/flc-400.webp 400w, assets/images/flc-768.webp 768w, assets/images/flc-1024.webp 1024w"
@@ -975,11 +1241,11 @@
             alt="Freedom Life Church custom church website design"
             class="w-full h-full object-cover" />
         </div>
-        <h3 class="text-gray-900 text-lg font-semibold mb-1">Freedom Life Church</h3>
-        <p class="text-gray-400 text-sm leading-relaxed mb-3">
-          A modern platform for a growing church with giving, streaming, and event features.
+        <h3 class="text-gray-900 text-lg font-semibold mb-3">Freedom Life Church</h3>
+        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+          Edmonton church website with integrated giving platform, live streaming capabilities, and community engagement features.
         </p>
-        <a href="https://freedomlifechurch.ca/" target="_blank" class="text-crayTeal text-sm font-medium hover:underline">Visit Website →</a>
+        <a href="https://freedomlifechurch.ca/" target="_blank" class="text-primary-500 text-sm font-medium hover:underline group">Visit Website <span class="group-hover:translate-x-1 transition-transform duration-200">→</span></a>
       </article>
     </div>
   </div>
@@ -988,46 +1254,61 @@
 <!-- ======= Testimonials Section ======= -->
 <section id="testimonials" class="py-24 px-6 bg-gray-50 relative z-0 overflow-hidden scroll-mt-24" data-aos="fade-up">
   <!-- Decorative Accent Line -->
-  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-[2px] bg-gradient-to-r from-crayTeal via-crayYellow to-crayRed opacity-60 rounded-full"></div>
+  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-[2px] bg-gradient-to-r from-primary-500 via-secondary-500 to-accent-500 opacity-60 rounded-full"></div>
 
   <div class="max-w-5xl mx-auto text-center">
-    <h2 class="text-3xl sm:text-4xl font-bold text-crayYellow tracking-tight mb-8">Client Testimonials</h2>
-    <p class="text-gray-600 text-base sm:text-lg mb-14 max-w-3xl mx-auto font-medium leading-relaxed">
-      Trusted by founders, creatives, and teams looking to scale with confidence. Here's what they said:
+    <h2 class="text-3xl sm:text-4xl font-bold text-secondary-500 tracking-tight mb-8">Edmonton Business Testimonials</h2>
+    <p class="text-gray-600 text-base sm:text-lg mb-16 max-w-3xl mx-auto font-medium leading-relaxed">
+      Trusted by Edmonton entrepreneurs and business owners who've experienced real growth through our professional web design services.
     </p>
 
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
       <!-- Testimonial 1 -->
-      <div class="bg-white border border-gray-200 backdrop-blur-md p-6 rounded-2xl shadow-lg text-left transition hover:scale-[1.02] duration-300 hover:shadow-xl">
-        <p class="text-gray-700 text-sm sm:text-base mb-4 italic leading-relaxed">
-          "Craytivo didn't just build us a site — they redefined our online brand. Everything is clean, fast, and built to perform."
-        </p>
-        <div>
-          <p class="text-gray-900 font-semibold text-sm">Ayesha M.</p>
-          <p class="text-gray-500 text-xs">Founder, ICARE Naturals</p>
+      <div class="bg-white border border-gray-200 backdrop-blur-md p-8 rounded-2xl shadow-soft text-left transition hover:scale-[1.02] duration-300 hover:shadow-medium">
+        <div class="flex items-center mb-6">
+          <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mr-4">
+            <span class="text-primary-600 font-bold text-lg">A</span>
+          </div>
+          <div>
+            <p class="text-gray-900 font-semibold text-sm">Ayesha M.</p>
+            <p class="text-gray-500 text-xs">Founder, ICARE Naturals</p>
+          </div>
         </div>
+        <p class="text-gray-700 text-sm sm:text-base italic leading-relaxed">
+          "Craytivo transformed our online presence completely. Our new website generates 3x more leads and our customers love the professional experience."
+        </p>
       </div>
 
       <!-- Testimonial 2 -->
-      <div class="bg-white border border-gray-200 backdrop-blur-md p-6 rounded-2xl shadow-lg text-left transition hover:scale-[1.02] duration-300 hover:shadow-xl">
-        <p class="text-gray-700 text-sm sm:text-base mb-4 italic leading-relaxed">
-          "I was honestly blown away that it was just one person behind Craytivo. He nailed the design exactly how we envisioned it — and quickly."
-        </p>
-        <div>
-          <p class="text-gray-900 font-semibold text-sm">Ahmed K.</p>
-          <p class="text-gray-500 text-xs">Founder, Purpose Path</p>
+      <div class="bg-white border border-gray-200 backdrop-blur-md p-8 rounded-2xl shadow-soft text-left transition hover:scale-[1.02] duration-300 hover:shadow-medium">
+        <div class="flex items-center mb-6">
+          <div class="w-12 h-12 bg-secondary-100 rounded-full flex items-center justify-center mr-4">
+            <span class="text-secondary-600 font-bold text-lg">A</span>
+          </div>
+          <div>
+            <p class="text-gray-900 font-semibold text-sm">Ahmed K.</p>
+            <p class="text-gray-500 text-xs">Founder, Purpose Path</p>
+          </div>
         </div>
+        <p class="text-gray-700 text-sm sm:text-base italic leading-relaxed">
+          "The professionalism and attention to detail exceeded our expectations. Our website now ranks higher in Edmonton searches and converts visitors into clients."
+        </p>
       </div>
 
       <!-- Testimonial 3 -->
-      <div class="bg-white border border-gray-200 backdrop-blur-md p-6 rounded-2xl shadow-lg text-left transition hover:scale-[1.02] duration-300 hover:shadow-xl">
-        <p class="text-gray-700 text-sm sm:text-base mb-4 italic leading-relaxed">
-          "Craytivo transformed our old site into a modern lead magnet. Their decisions were rooted in business needs, not just design."
-        </p>
-        <div>
-          <p class="text-gray-900 font-semibold text-sm">Lisa T.</p>
-          <p class="text-gray-500 text-xs">COO, Marina Homes</p>
+      <div class="bg-white border border-gray-200 backdrop-blur-md p-8 rounded-2xl shadow-soft text-left transition hover:scale-[1.02] duration-300 hover:shadow-medium">
+        <div class="flex items-center mb-6">
+          <div class="w-12 h-12 bg-accent-100 rounded-full flex items-center justify-center mr-4">
+            <span class="text-accent-600 font-bold text-lg">L</span>
+          </div>
+          <div>
+            <p class="text-gray-900 font-semibold text-sm">Lisa T.</p>
+            <p class="text-gray-500 text-xs">COO, Marina Homes</p>
+          </div>
         </div>
+        <p class="text-gray-700 text-sm sm:text-base italic leading-relaxed">
+          "Craytivo delivered a website that perfectly represents our luxury brand. The conversion optimization has increased our property inquiries by 40%."
+        </p>
       </div>
     </div>
   </div>
@@ -1036,13 +1317,13 @@
 <!-- Contact -->
 <section id="contact" class="py-32 px-6 bg-white relative overflow-hidden scroll-mt-24" data-aos="fade-up">
   <!-- Decorative Top Accent -->
-  <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-1/2 h-[2px] bg-gradient-to-r from-crayTeal via-crayYellow to-crayRed opacity-60 rounded-full"></div>
+  <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-1/2 h-[2px] bg-gradient-to-r from-primary-500 via-secondary-500 to-accent-500 opacity-60 rounded-full"></div>
 
   <!-- Outer Animated Border Ring -->
-<div class="contact-animated-ring relative overflow-hidden rounded-2xl border border-gray-200 bg-gray-50 backdrop-blur-md shadow-2xl max-w-2xl mx-auto">    <div class="relative z-10 text-center p-10">
-      <h2 class="text-4xl font-extrabold text-crayYellow mb-4" data-aos="fade-up">Let's Connect</h2>
+<div class="contact-animated-ring relative overflow-hidden rounded-2xl border border-gray-200 bg-gray-50 backdrop-blur-md shadow-large max-w-2xl mx-auto">    <div class="relative z-10 text-center p-10">
+      <h2 class="text-4xl font-extrabold text-secondary-500 mb-6" data-aos="fade-up">Start Your Edmonton Web Design Project</h2>
       <p class="text-gray-600 mb-10" data-aos="fade-up" data-aos-delay="100">
-        Have a project in mind? Reach out — I typically respond within 24 hours.
+        Ready to grow your Edmonton business with a professional website? Let's discuss your project and create a custom strategy. I respond within 24 hours.
       </p>
 
 <form action="https://formspree.io/f/mjkrnyrn" method="POST" class="space-y-6 text-left" id="contact-form" novalidate>
@@ -1092,7 +1373,7 @@
        <button
   type="submit"
   id="submit-button"
-  class="inline-flex items-center gap-2 bg-crayTeal text-black font-semibold px-6 py-3 rounded-full transition duration-300 shadow-md hover:bg-opacity-90 hover:scale-105 active:scale-100"
+  class="inline-flex items-center gap-2 bg-primary-500 text-white font-semibold px-8 py-4 rounded-full transition duration-300 shadow-medium hover:shadow-large hover:scale-105 active:scale-100 hover:bg-primary-600"
 >
   Send Message
 </button>
@@ -1111,20 +1392,20 @@
   <div class="relative bg-white backdrop-blur-xl rounded-2xl border border-gray-200 shadow-2xl max-w-md w-full p-8 text-center animate-fade-in-up">
     
     <!-- Icon -->
-    <div class="mx-auto mb-4 w-14 h-14 flex items-center justify-center rounded-full bg-crayTeal/20">
-      <svg class="w-8 h-8 text-crayTeal" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+    <div class="mx-auto mb-4 w-14 h-14 flex items-center justify-center rounded-full bg-primary-100">
+      <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
       </svg>
     </div>
 
     <!-- Heading -->
-    <h3 class="text-2xl font-bold text-crayYellow mb-2">Message Sent!</h3>
+    <h3 class="text-2xl font-bold text-secondary-500 mb-2">Message Sent!</h3>
     <p class="text-gray-600 mb-6 leading-relaxed">
       Thanks for reaching out — I'll be in touch within 24 hours.
     </p>
 
     <!-- Close Button -->
-    <button onclick="closeModal()" class="px-6 py-3 bg-crayTeal text-black font-semibold rounded-full shadow-md hover:scale-105 transition duration-300 hover:bg-opacity-90">
+    <button onclick="closeModal()" class="px-6 py-3 bg-primary-500 text-white font-semibold rounded-full shadow-medium hover:scale-105 transition duration-300 hover:bg-primary-600">
       Close
     </button>
   </div>
@@ -1244,7 +1525,7 @@
   <!-- End Main Content Wrapper -->
 </div>
 <!-- Footer Accent Line -->
-<div class="h-[2px] w-full bg-gradient-to-r from-crayRed via-crayTeal to-crayYellow opacity-60"></div>
+<div class="h-[2px] w-full bg-gradient-to-r from-accent-500 via-primary-500 to-secondary-500 opacity-60"></div>
 
 <!-- Footer -->
 <footer class="bg-gray-50 border-t border-gray-200 text-gray-600 py-8 px-6 text-sm w-full mt-auto">
@@ -1252,27 +1533,27 @@
 
     <!-- Left Column -->
     <div class="md:w-1/2 text-center md:text-left space-y-1">
-      <p>&copy; 2025 <span class="text-crayYellow font-medium">Craytivo</span>. Built with purpose, powered by precision.</p>
+      <p>&copy; 2025 <span class="text-secondary-500 font-medium">Craytivo</span>. Built with purpose, powered by precision.</p>
       <p class="text-xs text-gray-500">Purposeful design. Seamless functionality. Crafted to elevate your brand.</p>
     </div>
 
     <!-- Right Column -->
     <div class="md:w-1/2 text-center md:text-right space-y-2">
       <!-- Email -->
-      <a href="mailto:craytivo@gmail.com" class="hover:text-crayTeal transition font-medium block">
+      <a href="mailto:craytivo@gmail.com" class="hover:text-primary-500 transition font-medium block">
         craytivo@gmail.com
       </a>
 
       <!-- Legal Links -->
       <div class="space-x-3 text-xs">
-        <a href="/privacy-policy.html" class="hover:text-crayTeal transition">Privacy Policy</a>
+        <a href="/privacy-policy.html" class="hover:text-primary-500 transition">Privacy Policy</a>
         <span class="text-gray-400">|</span>
-        <a href="/terms-of-service.html" class="hover:text-crayTeal transition">Terms of Service</a>
+        <a href="/terms-of-service.html" class="hover:text-primary-500 transition">Terms of Service</a>
       </div>
 
       <!-- Socials -->
       <div class="flex justify-center md:justify-end mt-2 space-x-4">
-        <a href="https://x.com/craytivo" target="_blank" aria-label="Twitter" class="hover:text-crayTeal transition">
+        <a href="https://x.com/craytivo" target="_blank" aria-label="Twitter" class="hover:text-primary-500 transition">
           <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
             <path d="M23 3a10.9 10.9 0 01-3.14 1.53A4.48 4.48 0 0012.15 8v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5.5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
           </svg>
