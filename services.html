@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Craytivo - Professional Web Design & Development Services | Fast Delivery</title>
-    <meta name="description" content="Transform your business with professional web design services. Get a stunning, fast-loading website in 7-10 days. Free audit included. Landing pages, business sites, and CRO optimization.">
-    <meta name="keywords" content="web design services, website development, landing page design, conversion optimization, business website, fast website delivery">
+    <title>Craytivo - Professional Web Design & Development Services | 7-10 Day Delivery</title>
+    <meta name="description" content="Transform your business with professional web design that drives results. Get a stunning, fast-loading website in 7-10 days. Free audit included. 30+ happy clients.">
+    <meta name="keywords" content="web design, website development, professional web design, fast website delivery, conversion optimization, small business website, landing page design">
     <meta name="author" content="Craytivo">
     <meta name="robots" content="index, follow">
     <meta name="language" content="English">
@@ -13,21 +13,21 @@
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://craytivo.com/services.html">
-    <meta property="og:title" content="Craytivo - Professional Web Design Services">
-    <meta property="og:description" content="Transform your business with professional web design services. Get a stunning, fast-loading website in 7-10 days. Free audit included.">
+    <meta property="og:url" content="https://craytivo.com/">
+    <meta property="og:title" content="Craytivo - Professional Web Design & Development Services">
+    <meta property="og:description" content="Transform your business with professional web design that drives results. Get a stunning, fast-loading website in 7-10 days. Free audit included.">
     <meta property="og:image" content="https://craytivo.com/assets/logo.png">
     <meta property="og:site_name" content="Craytivo">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://craytivo.com/services.html">
-    <meta property="twitter:title" content="Craytivo - Professional Web Design Services">
-    <meta property="twitter:description" content="Transform your business with professional web design services. Get a stunning, fast-loading website in 7-10 days.">
+    <meta property="twitter:url" content="https://craytivo.com/">
+    <meta property="twitter:title" content="Craytivo - Professional Web Design & Development Services">
+    <meta property="twitter:description" content="Transform your business with professional web design that drives results. Get a stunning, fast-loading website in 7-10 days.">
     <meta property="twitter:image" content="https://craytivo.com/assets/logo.png">
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://craytivo.com/services.html">
+    <link rel="canonical" href="https://craytivo.com/">
     
     <!-- Favicon and App Icons -->
     <link rel="icon" type="image/png" href="assets/logo.png" sizes="32x32">
@@ -74,7 +74,6 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link rel="dns-prefetch" href="//calendly.com">
     <link rel="dns-prefetch" href="//formspree.io">
-    
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -123,44 +122,16 @@
             width: 100% !important;
         }
         
+        /* Smooth transitions for active states */
         .nav-link, .mobile-nav-link {
             transition: all 0.3s ease;
         }
         
+        /* Enhanced hover effects */
         .nav-link:hover {
             transform: translateY(-1px);
         }
         
-        /* Mobile menu background blur effects - completely isolated approach */
-        .mobile-menu-open .hero-section {
-            filter: blur(8px);
-            transition: filter 0.3s ease;
-        }
-        
-        /* Force mobile menu elements to never have blur - highest priority */
-        #mobileNav,
-        #mobileMenuOverlay {
-            filter: none !important;
-            backdrop-filter: none !important;
-        }
-        
-        /* Force all children of mobile menu to never have blur */
-        #mobileNav *,
-        #mobileMenuOverlay * {
-            filter: none !important;
-            backdrop-filter: none !important;
-        }
-        
-        /* Additional protection for mobile menu */
-        body.mobile-menu-open #mobileNav,
-        body.mobile-menu-open #mobileMenuOverlay,
-        body.mobile-menu-open #mobileNav *,
-        body.mobile-menu-open #mobileMenuOverlay * {
-            filter: none !important;
-            backdrop-filter: none !important;
-        }
-        
-        /* Enhanced hover effects */
         .mobile-nav-link:hover {
             transform: translateX(8px);
         }
@@ -196,10 +167,71 @@
             min-height: 100vh;
             overflow-x: hidden;
         }
+        
+
+        
+        /* Mobile menu background blur effects - completely isolated approach */
+        .mobile-menu-open .hero-section {
+            filter: blur(8px);
+            transition: filter 0.3s ease;
+        }
+        
+        .mobile-menu-open .how-it-works-section {
+            filter: blur(8px);
+            transition: filter 0.3s ease;
+        }
+        
+        .mobile-menu-open .work-section {
+            filter: blur(8px);
+            transition: filter 0.3s ease;
+        }
+        
+        .mobile-menu-open .pricing-section {
+            filter: blur(8px);
+            transition: filter 0.3s ease;
+        }
+        
+        .mobile-menu-open .faq-section {
+            filter: blur(8px);
+            transition: filter 0.3s ease;
+        }
+        
+        .mobile-menu-open .contact-section {
+            filter: blur(8px);
+            transition: filter 0.3s ease;
+        }
+        
+        /* Header blur removed - only blur content sections to avoid mobile menu conflicts */
+        /* .mobile-menu-open header {
+            filter: blur(4px);
+            transition: filter 0.3s ease;
+        } */
+        
+        /* Force mobile menu elements to never have blur - highest priority */
+        #mobileNav,
+        #mobileMenuOverlay {
+            filter: none !important;
+            backdrop-filter: none !important;
+        }
+        
+        /* Force all children of mobile menu to never have blur */
+        #mobileNav *,
+        #mobileMenuOverlay * {
+            filter: none !important;
+            backdrop-filter: none !important;
+        }
+        
+        /* Additional protection for mobile menu */
+        body.mobile-menu-open #mobileNav,
+        body.mobile-menu-open #mobileMenuOverlay,
+        body.mobile-menu-open #mobileNav *,
+        body.mobile-menu-open #mobileMenuOverlay * {
+            filter: none !important;
+            backdrop-filter: none !important;
+        }
     </style>
 </head>
 <body class="font-primary text-night bg-timberwolf relative">
-    <!-- Header -->
     <header class="sticky top-0 z-50 bg-white/75 backdrop-blur-md text-night py-1 shadow-md border-b border-gray-100/60 transition-all duration-300" id="mainHeader">
         <div class="max-w-7xl mx-auto px-6 flex justify-between items-center gap-6">
             <a href="#" class="flex items-center transition-transform duration-300 hover:scale-105">
@@ -218,18 +250,12 @@
                         <span class="absolute bottom-0 left-1/2 w-0 h-0.5 bg-gradient-to-r from-auburn to-burnt-umber transition-all duration-300 transform -translate-x-1/2 group-hover:w-4/5 rounded-full"></span>
                         <span class="absolute inset-0 bg-auburn/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                     </a></li>
-                    
                     <li><a href="pricing.html" class="nav-link text-sm font-medium text-night/80 hover:text-auburn hover:bg-auburn/10 px-4 py-2.5 rounded-lg transition-all duration-300 relative group" data-section="pricing">
                         <span class="relative z-10">Pricing</span>
                         <span class="absolute bottom-0 left-1/2 w-0 h-0.5 bg-gradient-to-r from-auburn to-burnt-umber transition-all duration-300 transform -translate-x-1/2 group-hover:w-4/5 rounded-full"></span>
                         <span class="absolute inset-0 bg-auburn/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                     </a></li>
-                    <li><a href="#work" class="nav-link text-sm font-medium text-night/80 hover:text-auburn hover:bg-auburn/10 px-4 py-2.5 rounded-lg transition-all duration-300 relative group" data-section="work">
-                        <span class="relative z-10">Portfolio</span>
-                        <span class="absolute bottom-0 left-1/2 w-0 h-0.5 bg-gradient-to-r from-auburn to-burnt-umber transition-all duration-300 transform -translate-x-1/2 group-hover:w-4/5 rounded-full"></span>
-                        <span class="absolute inset-0 bg-auburn/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-                    </a></li>
-                    <li><a href="#contact" class="nav-link text-sm font-medium text-night/80 hover:text-auburn hover:bg-auburn/10 px-4 py-2.5 rounded-lg transition-all duration-300 relative group" data-section="contact">
+                    <li><a href="contact.html" class="nav-link text-sm font-medium text-night/80 hover:text-auburn hover:bg-auburn/10 px-4 py-2.5 rounded-lg transition-all duration-300 relative group" data-section="contact">
                         <span class="relative z-10">Contact</span>
                         <span class="absolute bottom-0 left-1/2 w-0 h-0.5 bg-gradient-to-r from-auburn to-burnt-umber transition-all duration-300 transform -translate-x-1/2 group-hover:w-4/5 rounded-full"></span>
                         <span class="absolute inset-0 bg-auburn/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
@@ -276,7 +302,7 @@
                 <div class="flex-1 px-6 py-6 bg-white/90">
                     <ul class="space-y-3">
                         <li class="group">
-                            <a href="#home" class="flex items-center space-x-3 text-base font-semibold text-night hover:text-auburn transition-all duration-300 group-hover:translate-x-2 whitespace-nowrap">
+                            <a href="index.html" class="flex items-center space-x-3 text-base font-semibold text-night hover:text-auburn transition-all duration-300 group-hover:translate-x-2 whitespace-nowrap">
                                 <div class="w-8 h-8 bg-white/80 rounded-lg flex items-center justify-center group-hover:bg-white/90 transition-all duration-300 group-hover:scale-110 shadow-lg group-hover:shadow-xl flex-shrink-0">
                                     <svg class="w-4 h-4 text-auburn group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7a2 2 0 012-2h6.586a2 2 0 012 2v6.586a2 2 0 01-2 2H5a2 2 0 01-2-2V7z"></path>
@@ -302,21 +328,9 @@
                                 </span>
                             </a>
                         </li>
+                        
                         <li class="group">
-                            <a href="#work" class="mobile-nav-link flex items-center space-x-3 text-base font-semibold text-night hover:text-auburn transition-all duration-300 group-hover:translate-x-2 whitespace-nowrap" data-section="work">
-                                <div class="w-8 h-8 bg-white/80 rounded-lg flex items-center justify-center group-hover:bg-white/90 transition-all duration-300 group-hover:scale-110 shadow-lg group-hover:shadow-xl flex-shrink-0">
-                                    <svg class="w-4 h-4 text-auburn group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
-                                    </svg>
-                                </div>
-                                <span class="relative">
-                                    Portfolio
-                                    <span class="absolute -bottom-1 left-0 w-0 h-1 bg-gradient-to-r from-auburn to-burnt-umber transition-all duration-300 group-hover:w-full rounded-full"></span>
-                                </span>
-                            </a>
-                        </li>
-                        <li class="group">
-                            <a href="#pricing" class="mobile-nav-link flex items-center space-x-3 text-base font-semibold text-night hover:text-auburn transition-all duration-300 group-hover:translate-x-2 whitespace-nowrap" data-section="pricing">
+                            <a href="pricing.html" class="mobile-nav-link flex items-center space-x-3 text-base font-semibold text-night hover:text-auburn transition-all duration-300 group-hover:translate-x-2 whitespace-nowrap" data-section="pricing">
                                 <div class="w-8 h-8 bg-white/80 rounded-lg flex items-center justify-center group-hover:bg-white/90 transition-all duration-300 group-hover:scale-110 shadow-lg group-hover:shadow-xl flex-shrink-0">
                                     <svg class="w-4 h-4 text-auburn group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
@@ -328,19 +342,7 @@
                                 </span>
                             </a>
                         </li>
-                        <li class="group">
-                            <a href="#faq" class="mobile-nav-link flex items-center space-x-3 text-base font-semibold text-night hover:text-auburn transition-all duration-300 group-hover:translate-x-2 whitespace-nowrap" data-section="faq">
-                                <div class="w-8 h-8 bg-white/80 rounded-lg flex items-center justify-center group-hover:bg-white/90 transition-all duration-300 group-hover:scale-110 shadow-lg group-hover:shadow-xl flex-shrink-0">
-                                    <svg class="w-4 h-4 text-auburn group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                    </svg>
-                                </div>
-                                <span class="relative">
-                                    FAQ
-                                    <span class="absolute -bottom-1 left-0 w-0 h-1 bg-gradient-to-r from-auburn to-burnt-umber transition-all duration-300 group-hover:w-full rounded-full"></span>
-                                </span>
-                            </a>
-                        </li>
+                    
                         <li class="group">
                             <a href="contact.html" class="mobile-nav-link flex items-center space-x-3 text-base font-semibold text-night hover:text-auburn transition-all duration-300 group-hover:translate-x-2 whitespace-nowrap" data-section="contact">
                                 <div class="w-8 h-8 bg-white/80 rounded-lg flex items-center justify-center group-hover:bg-white/90 transition-all duration-300 group-hover:scale-110 shadow-lg group-hover:shadow-xl flex-shrink-0">
